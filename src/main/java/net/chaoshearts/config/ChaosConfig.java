@@ -77,7 +77,7 @@ public final class ChaosConfig {
 
 		// --- Resource pack ---
 		/** Host the bundled resource pack from the mod's own HTTP server and offer it on join. */
-		public boolean packServeBuiltin = false;
+		public boolean packServeBuiltin = true;
 		public int packPort = 25580;
 		/** Address players use to reach the pack, e.g. http://play.example.com:25580/pack.zip. Leave blank to use server-ip. */
 		public String packPublicUrl = "";
