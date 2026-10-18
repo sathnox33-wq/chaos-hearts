@@ -360,7 +360,7 @@ public final class SpeedKit extends HeartKit {
 			if (slot.getType() == EquipmentSlot.Type.ANIMAL_ARMOR || slot == EquipmentSlot.SADDLE) continue;
 			list.add(Pair.of(slot, hide ? ItemStack.EMPTY : p.getItemBySlot(slot).copy()));
 		}
-		((ServerLevel) p.level()).getChunkSource().broadcast(p, new ClientboundSetEquipmentPacket(p.getId(), list));
+		((ServerLevel) p.level()).getChunkSource().sendToTrackingPlayers(p, new ClientboundSetEquipmentPacket(p.getId(), list));
 	}
 
 	private boolean slipstream(Ctx c) {

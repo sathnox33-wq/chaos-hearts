@@ -205,7 +205,7 @@ public final class EyeManager {
 			if (slot.getType() == EquipmentSlot.Type.ANIMAL_ARMOR || slot == EquipmentSlot.SADDLE) continue;
 			list.add(Pair.of(slot, hide ? ItemStack.EMPTY : p.getItemBySlot(slot).copy()));
 		}
-		p.level().getChunkSource().broadcast(p, new ClientboundSetEquipmentPacket(p.getId(), list));
+		p.level().getChunkSource().sendToTrackingPlayers(p, new ClientboundSetEquipmentPacket(p.getId(), list));
 	}
 
 	// ---------------------------------------------------------------- tick

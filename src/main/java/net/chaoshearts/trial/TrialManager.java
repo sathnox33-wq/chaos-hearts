@@ -381,7 +381,7 @@ public final class TrialManager {
 				.key(175, boss.add(2, 2.4, 6), boss.add(0, 1.8, 0))
 				.key(INTRO_TICKS, spawn.add(0, 2.6, 4.5), c.add(0, 1.5, 0));
 		Vec3 first = c.add(Math.cos(Math.PI / 2) * (R + 9), 17, Math.sin(Math.PI / 2) * (R + 9));
-		p.teleport(new net.minecraft.world.entity.TeleportTransition(s.level, first, Vec3.ZERO, 0, 30, net.minecraft.world.entity.TeleportTransition.DO_NOTHING));
+		p.teleport(new net.minecraft.world.level.portal.TeleportTransition(s.level, first, Vec3.ZERO, 0, 30, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
 		p.setGameMode(GameType.SPECTATOR);
 		cine.start(s.level);
 		s.cinematic = cine;
@@ -410,7 +410,7 @@ public final class TrialManager {
 			s.cinematic = null;
 			Vec3 spawn = s.arena.playerSpawn();
 			p.setGameMode(GameType.ADVENTURE);
-			p.teleport(new net.minecraft.world.entity.TeleportTransition(s.level, spawn, Vec3.ZERO, 180, 0, net.minecraft.world.entity.TeleportTransition.DO_NOTHING));
+			p.teleport(new net.minecraft.world.level.portal.TeleportTransition(s.level, spawn, Vec3.ZERO, 180, 0, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
 			p.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 60, 4, false, false, true));
 			enter(s, TrialSession.State.WAVES);
 			s.fightStartMillis = System.currentTimeMillis();
@@ -430,7 +430,7 @@ public final class TrialManager {
 		}
 		if (!a.inside(p.position(), 1)) {
 			Vec3 spawn = a.playerSpawn();
-			p.teleport(new net.minecraft.world.entity.TeleportTransition(s.level, spawn, Vec3.ZERO, 180, 0, net.minecraft.world.entity.TeleportTransition.DO_NOTHING));
+			p.teleport(new net.minecraft.world.level.portal.TeleportTransition(s.level, spawn, Vec3.ZERO, 180, 0, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
 			p.resetFallDistance();
 			p.hurtServer(s.level, s.level.damageSources().fellOutOfWorld(), 4f);
 		}
@@ -549,7 +549,7 @@ public final class TrialManager {
 			cine.stop(p);
 			s.cinematic = null;
 			p.setGameMode(GameType.ADVENTURE);
-			p.teleport(new net.minecraft.world.entity.TeleportTransition(s.level, s.resumePos, Vec3.ZERO, s.resumeYaw, s.resumePitch, net.minecraft.world.entity.TeleportTransition.DO_NOTHING));
+			p.teleport(new net.minecraft.world.level.portal.TeleportTransition(s.level, s.resumePos, Vec3.ZERO, s.resumeYaw, s.resumePitch, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
 			Mob boss = s.boss();
 			if (boss == null) {
 				end(s, false, "The boss vanished.", true);
@@ -724,9 +724,9 @@ public final class TrialManager {
 		p.setCamera(p);
 		ServerLevel level = r == null ? null : Dims.level(server, r.dimension);
 		if (level != null && !isTrialLevel(level)) {
-			p.teleport(new net.minecraft.world.entity.TeleportTransition(level, new Vec3(r.x, r.y, r.z), Vec3.ZERO, r.yaw, r.pitch, net.minecraft.world.entity.TeleportTransition.DO_NOTHING));
+			p.teleport(new net.minecraft.world.level.portal.TeleportTransition(level, new Vec3(r.x, r.y, r.z), Vec3.ZERO, r.yaw, r.pitch, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
 		} else {
-			p.teleport(p.findRespawnPositionAndUseSpawnBlock(false, net.minecraft.world.entity.TeleportTransition.DO_NOTHING));
+			p.teleport(p.findRespawnPositionAndUseSpawnBlock(false, net.minecraft.world.level.portal.TeleportTransition.DO_NOTHING));
 		}
 		GameType mode = GameType.SURVIVAL;
 		if (r != null && r.gameMode != null) {
