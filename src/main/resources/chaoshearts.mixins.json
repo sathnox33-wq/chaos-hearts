@@ -1,0 +1,18 @@
+{
+	"required": true,
+	"package": "net.chaoshearts.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+		"BlockDisplayAccessor",
+		"DisplayAccessor",
+		"HopperBlockEntityMixin",
+		"ItemDisplayAccessor",
+		"ItemEntityMixin",
+		"LivingEntityMixin",
+		"ServerGamePacketListenerImplMixin",
+		"TextDisplayAccessor"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

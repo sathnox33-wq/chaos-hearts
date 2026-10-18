@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "chaoshearts:item/focus_speed_awakened"
+  }
+}

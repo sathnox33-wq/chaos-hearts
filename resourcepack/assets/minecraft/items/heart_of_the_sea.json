@@ -1,0 +1,223 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:custom_model_data",
+    "index": 0,
+    "cases": [
+      {
+        "when": "chaoshearts:focus_rage",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_rage"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_rage_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_rage_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_rage",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_rage"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_speed",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_speed"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_speed_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_speed_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_speed",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_speed"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_infernal",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_infernal"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_infernal_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_infernal_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_infernal",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_infernal"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_void",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_void"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_void_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_void_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_void",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_void"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_frozen",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_frozen"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_frozen_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_frozen_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_frozen",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_frozen"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_storm",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_storm"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_storm_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_storm_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_storm",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_storm"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_blood",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_blood"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_blood_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_blood_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_blood",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_blood"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_titan",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_titan"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_titan_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_titan_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_titan",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_titan"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_celestial",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_celestial"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_celestial_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_celestial_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_celestial",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_celestial"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_corruption",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_corruption"
+        }
+      },
+      {
+        "when": "chaoshearts:focus_corruption_awakened",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/focus_corruption_awakened"
+        }
+      },
+      {
+        "when": "chaoshearts:heart_corruption",
+        "model": {
+          "type": "minecraft:model",
+          "model": "chaoshearts:item/heart_corruption"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/heart_of_the_sea"
+    }
+  }
+}
