@@ -202,14 +202,15 @@ public final class HeartManager {
 	private static void onDisconnect(ServerPlayer p) {
 		String action = ChaosConfig.get().combatLogAction;
 		UUID attacker = Combat.lastAttacker(p.getUUID());
-		if (attacker != null && !"off".equalsIgnoreCase(action) && !TrialManager.inTrial(p)) {
-			ServerPlayer killer = online(attacker);
+		ServerPlayer killer = attacker == null ? null : online(attacker);
+		// If the opponent already left, they fled first and the fight is over: the one who stayed loses nothing.
+		if (killer != null && !"off".equalsIgnoreCase(action) && !TrialManager.inTrial(p)) {
 			if ("kill".equalsIgnoreCase(action)) {
 				// Dying fires the normal death handler, which drops the heart for the attacker.
 				p.kill((ServerLevel) p.level());
 			} else {
-				dropLatest(p, attacker, killer == null ? p.position() : null);
-				if (killer != null) killer.sendSystemMessage(Component.literal(p.getName().getString() + " fled the fight and dropped their heart.").withStyle(ChatFormatting.GOLD));
+				dropLatest(p, attacker, null);
+				killer.sendSystemMessage(Component.literal(p.getName().getString() + " fled the fight and dropped their heart.").withStyle(ChatFormatting.GOLD));
 			}
 			ChaosHearts.LOGGER.info("{} disconnected in combat with {}", p.getName().getString(), attacker);
 		}

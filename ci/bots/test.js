@@ -235,7 +235,8 @@ async function afterRestart () {
   const out = await run('chaosadmin inspect Attacker')
   check('progress survives a server restart', /Rage lvl 100 .*awakened/.test(out), out)
   const reg = await run('chaosadmin registry')
-  check('the heart registry survives a restart', /Storm Heart held by Attacker/.test(reg), reg)
+  check('the heart registry survives a restart', /Storm Heart held by Attacker/.test(reg) && /Titan Heart dropped .* for Attacker/.test(reg), reg)
+  check('the player who stayed loses nothing when their opponent fled', !/for Victim/.test(reg), reg)
   attacker.quit()
   await sleep(500)
 }
