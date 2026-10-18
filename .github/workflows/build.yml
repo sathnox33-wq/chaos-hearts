@@ -51,24 +51,28 @@ jobs:
           path: ci-server/logs/
           if-no-files-found: ignore
 
-      # Keeps a short, readable copy of any failure on the ci-logs branch.
-      - name: Save failure summary
-        if: failure() && github.event_name != 'pull_request'
+      # Keeps a readable copy of the build result, the server test and the built files on the
+      # ci-output branch, so they can be read without downloading workflow artifacts.
+      - name: Save CI output
+        if: always() && github.event_name != 'pull_request'
         run: |
+          mkdir -p /tmp/out
           {
-            echo "run ${{ github.run_id }} on ${{ github.sha }}"
-            [ -f build.log ] && grep -E 'error:|warning: \[|\.java:[0-9]+|What went wrong|FAILURE|BUILD|> ' build.log | grep -v '^\s*at ' | head -400
-            [ -f ci-server/server.log ] && { echo '--- server.log ---'; tail -300 ci-server/server.log; }
-            [ -f ci-server/test-summary.txt ] && cat ci-server/test-summary.txt
-          } > /tmp/summary.txt || true
+            echo "run ${{ github.run_id }} on ${{ github.sha }}: ${{ job.status }}"
+            if [ -f build.log ]; then grep -E -A4 'error:' build.log | head -900; grep -E 'What went wrong|FAILURE|BUILD' -A3 build.log | head -40; fi
+          } > /tmp/out/build.txt
+          [ -f ci-server/test-summary.txt ] && cp ci-server/test-summary.txt /tmp/out/
+          [ -f ci-server/server.log ] && grep -vE '^\s+at |Preparing spawn area' ci-server/server.log | tail -1500 > /tmp/out/server.log
+          [ -d dist ] && cp dist/* /tmp/out/
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
-          git fetch origin ci-logs && git checkout ci-logs || git checkout --orphan ci-logs
-          git rm -rfq . >/dev/null 2>&1 || true
-          cp /tmp/summary.txt latest.txt
-          git add latest.txt
-          git commit -qm "CI failure summary for ${{ github.run_id }}"
-          git push -f origin ci-logs
+          git checkout --orphan ci-output
+          git rm -rfq --cached . >/dev/null 2>&1 || true
+          git clean -fdxq -e build -e ci-server -e dist >/dev/null 2>&1 || true
+          cp /tmp/out/* .
+          git add -f -- *.txt *.log *.jar *.zip *.sha1 2>/dev/null || true
+          git commit -qm "CI output for run ${{ github.run_id }}"
+          git push -fq origin ci-output
 
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/v')

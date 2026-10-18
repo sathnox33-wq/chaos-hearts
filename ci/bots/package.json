@@ -1,0 +1,8 @@
+{
+  "name": "chaoshearts-bot-test",
+  "private": true,
+  "description": "Multiplayer scenario run against a real server in CI",
+  "dependencies": {
+    "mineflayer": "4.39.0"
+  }
+}
