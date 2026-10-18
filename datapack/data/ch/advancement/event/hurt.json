@@ -1,0 +1,1 @@
+{"criteria":{"hurt":{"trigger":"minecraft:entity_hurt_player"}},"rewards":{"function":"ch:core/event/hurt"}}

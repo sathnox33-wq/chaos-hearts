@@ -1,0 +1,1552 @@
+{
+ "rage": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Rage Leap",
+    "desc": "Leap forward and slam down, damaging and launching enemies where you land.",
+    "cd": 10
+   },
+   {
+    "slot": 1,
+    "name": "War Cry",
+    "desc": "Roar: weaken nearby enemies and gain Strength. Spends 30 Fury for a stronger roar.",
+    "cd": 25
+   },
+   {
+    "slot": 2,
+    "name": "Berserk Chain",
+    "desc": "Your next 3 melee hits deal bonus damage and send out a shockwave.",
+    "cd": 30
+   },
+   {
+    "slot": 3,
+    "name": "Rampage",
+    "desc": "Become fury itself: Speed, Strength, Resistance and lifesteal. Kills extend it.",
+    "cd": 120
+   }
+  ],
+  "feats": [
+   {
+    "id": "leap3",
+    "name": "Earthshaker",
+    "desc": "Hit 3 enemies with a single Rage Leap",
+    "xp": 400
+   },
+   {
+    "id": "fury10",
+    "name": "Unchained",
+    "desc": "Reach maximum Fury 10 times",
+    "xp": 300
+   },
+   {
+    "id": "cry5",
+    "name": "Battle Hymn",
+    "desc": "Weaken 5 enemies with one War Cry",
+    "xp": 500
+   },
+   {
+    "id": "clutch",
+    "name": "Last Stand",
+    "desc": "Kill a player during Rampage while below 3 hearts",
+    "xp": 800
+   }
+  ],
+  "branches": [
+   {
+    "name": "Butcher",
+    "desc": "Raw damage",
+    "nodes": [
+     {
+      "id": "heavy_landing",
+      "name": "Heavy Landing",
+      "desc": "+20% Rage Leap damage"
+     },
+     {
+      "id": "bloodied_edge",
+      "name": "Bloodied Edge",
+      "desc": "+25% Berserk Chain damage"
+     },
+     {
+      "id": "cleave",
+      "name": "Cleave",
+      "desc": "+40% Berserk shockwave radius"
+     },
+     {
+      "id": "executioner",
+      "name": "Executioner",
+      "desc": "Melee hits deal +15% to targets below 30% health"
+     },
+     {
+      "id": "avalanche",
+      "name": "Avalanche",
+      "desc": "CAPSTONE: Rage Leap can be recast for free within 3 seconds of landing"
+     }
+    ]
+   },
+   {
+    "name": "Juggernaut",
+    "desc": "Survive anything",
+    "nodes": [
+     {
+      "id": "thick_skin",
+      "name": "Thick Skin",
+      "desc": "Take 8% less damage while at 50+ Fury"
+     },
+     {
+      "id": "pain_fuels",
+      "name": "Pain Fuels Me",
+      "desc": "Taking damage grants twice the Fury"
+     },
+     {
+      "id": "unstoppable",
+      "name": "Unstoppable",
+      "desc": "+30% Rampage duration"
+     },
+     {
+      "id": "iron_will",
+      "name": "Iron Will",
+      "desc": "War Cry also grants Resistance I"
+     },
+     {
+      "id": "undying",
+      "name": "Undying Rage",
+      "desc": "CAPSTONE: once every 2 minutes, lethal damage leaves you at 2 hearts and starts a short Rampage"
+     }
+    ]
+   },
+   {
+    "name": "Warlord",
+    "desc": "Lead the charge",
+    "nodes": [
+     {
+      "id": "rallying",
+      "name": "Rallying Roar",
+      "desc": "+30% War Cry radius"
+     },
+     {
+      "id": "shared_fury",
+      "name": "Shared Fury",
+      "desc": "War Cry gives teammates Strength I"
+     },
+     {
+      "id": "momentum",
+      "name": "Momentum",
+      "desc": "Rage Leap recharges 25% faster"
+     },
+     {
+      "id": "fury_engine",
+      "name": "Fury Engine",
+      "desc": "Rage Leap slams grant 25 Fury"
+     },
+     {
+      "id": "banner",
+      "name": "Warlord's Banner",
+      "desc": "CAPSTONE: War Cry plants a banner for 8s: teammates inside regenerate, enemies inside are weakened"
+     }
+    ]
+   }
+  ],
+  "p1": "Fury",
+  "p1d": "Dealing and taking damage builds Fury. At 50+ Fury your melee hits deal 10% more.",
+  "p2": "Bloodlust",
+  "p2d": "Reaching full Fury grants Strength I for 6 seconds.",
+  "aw": "Wrath Incarnate",
+  "awd": "Fury can reach 150. Above 100 Fury you burn with black flame and take 10% less damage."
+ },
+ "speed": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Dash",
+    "desc": "Blink forward, cutting through every enemy in your path.",
+    "cd": 6
+   },
+   {
+    "slot": 1,
+    "name": "Afterimage",
+    "desc": "Leave a decoy behind and vanish completely, armour and all.",
+    "cd": 20
+   },
+   {
+    "slot": 2,
+    "name": "Slipstream",
+    "desc": "Surge to Speed III. Your wake slows enemies that cross it.",
+    "cd": 30
+   },
+   {
+    "slot": 3,
+    "name": "Time Fracture",
+    "desc": "Freeze time around you. Enemies and projectiles crawl; you do not.",
+    "cd": 120
+   }
+  ],
+  "feats": [
+   {
+    "id": "dash_kill",
+    "name": "Blink Strike",
+    "desc": "Kill an enemy within 3 seconds of a Dash",
+    "xp": 400
+   },
+   {
+    "id": "slip2000",
+    "name": "Afterburner",
+    "desc": "Travel 2,000 blocks inside Slipstream",
+    "xp": 500
+   },
+   {
+    "id": "fracture3",
+    "name": "Stopped Clock",
+    "desc": "Catch 3 enemies in one Time Fracture",
+    "xp": 500
+   },
+   {
+    "id": "momentum25",
+    "name": "Unstoppable Force",
+    "desc": "Land 25 Momentum strikes",
+    "xp": 300
+   }
+  ],
+  "branches": [
+   {
+    "name": "Blitz",
+    "desc": "Cut through them",
+    "nodes": [
+     {
+      "id": "sharpened_wind",
+      "name": "Sharpened Wind",
+      "desc": "+25% Dash damage"
+     },
+     {
+      "id": "long_stride",
+      "name": "Long Stride",
+      "desc": "+30% Dash distance"
+     },
+     {
+      "id": "follow_through",
+      "name": "Follow-Through",
+      "desc": "Hitting an enemy with Dash refunds 30% of its cooldown"
+     },
+     {
+      "id": "overload",
+      "name": "Momentum Overload",
+      "desc": "+60% Momentum strike damage"
+     },
+     {
+      "id": "thousand_cuts",
+      "name": "Thousand Cuts",
+      "desc": "CAPSTONE: Dash leaves slashes along its path that strike again half a second later"
+     }
+    ]
+   },
+   {
+    "name": "Phantom",
+    "desc": "Never be where they aim",
+    "nodes": [
+     {
+      "id": "lingering_shade",
+      "name": "Lingering Shade",
+      "desc": "+40% Afterimage invisibility"
+     },
+     {
+      "id": "decoy_burst",
+      "name": "Decoy Burst",
+      "desc": "The decoy bursts when it fades, slowing nearby enemies"
+     },
+     {
+      "id": "slippery",
+      "name": "Slippery",
+      "desc": "Take 10% less damage while sprinting"
+     },
+     {
+      "id": "ghost_step",
+      "name": "Ghost Step",
+      "desc": "Afterimage recharges 25% faster"
+     },
+     {
+      "id": "phase_runner",
+      "name": "Phase Runner",
+      "desc": "CAPSTONE: during Slipstream a quarter of attacks against you miss"
+     }
+    ]
+   },
+   {
+    "name": "Chronomancer",
+    "desc": "Own the clock",
+    "nodes": [
+     {
+      "id": "wider_wake",
+      "name": "Wider Wake",
+      "desc": "+40% Slipstream wake width"
+     },
+     {
+      "id": "tailwind",
+      "name": "Tailwind",
+      "desc": "Slipstream gives teammates Speed II"
+     },
+     {
+      "id": "extended_moment",
+      "name": "Extended Moment",
+      "desc": "+30% Time Fracture duration"
+     },
+     {
+      "id": "broken_clock",
+      "name": "Broken Clock",
+      "desc": "+25% Time Fracture radius"
+     },
+     {
+      "id": "rewind",
+      "name": "Rewind",
+      "desc": "CAPSTONE: when Time Fracture ends you snap back to where you cast it and recover the health you lost"
+     }
+    ]
+   }
+  ],
+  "p1": "Swift",
+  "p1d": "You move 15% faster at all times.",
+  "p2": "Momentum",
+  "p2d": "Sprint for 3 seconds to charge your next melee hit with +4 damage and heavy knockback.",
+  "aw": "Lightspeed",
+  "awd": "Dash recharges twice as fast and sprinting leaves a crackling electric trail."
+ },
+ "infernal": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Fireball Volley",
+    "desc": "Hurl three fireballs that burst and set targets alight.",
+    "cd": 8
+   },
+   {
+    "slot": 1,
+    "name": "Flame Wall",
+    "desc": "Raise a wall of fire that burns enemies and incinerates projectiles.",
+    "cd": 22
+   },
+   {
+    "slot": 2,
+    "name": "Magma Eruption",
+    "desc": "Mark the ground; a second later it erupts in a geyser of magma.",
+    "cd": 28
+   },
+   {
+    "slot": 3,
+    "name": "Inferno Avatar",
+    "desc": "Become a living blaze: a burning aura and fireballs that seek your foes.",
+    "cd": 120
+   }
+  ],
+  "feats": [
+   {
+    "id": "burn20",
+    "name": "Cremation",
+    "desc": "Kill 20 enemies while they burn",
+    "xp": 400
+   },
+   {
+    "id": "volley3",
+    "name": "Triple Threat",
+    "desc": "Hit one target with every fireball of a Volley",
+    "xp": 300
+   },
+   {
+    "id": "firewall",
+    "name": "Firewall",
+    "desc": "Incinerate 10 projectiles with Flame Wall",
+    "xp": 400
+   },
+   {
+    "id": "avatar3",
+    "name": "Living Inferno",
+    "desc": "Get 3 kills during one Inferno Avatar",
+    "xp": 700
+   }
+  ],
+  "branches": [
+   {
+    "name": "Pyromancer",
+    "desc": "Rain fire",
+    "nodes": [
+     {
+      "id": "hotter_cores",
+      "name": "Hotter Cores",
+      "desc": "+20% fireball damage"
+     },
+     {
+      "id": "extra_fuel",
+      "name": "Extra Fuel",
+      "desc": "Volley throws 5 fireballs"
+     },
+     {
+      "id": "seeking_flame",
+      "name": "Seeking Flame",
+      "desc": "Fireballs curve toward the enemy you aim at"
+     },
+     {
+      "id": "scorch",
+      "name": "Scorch",
+      "desc": "Burning enemies take 15% more ability damage from you"
+     },
+     {
+      "id": "meteor",
+      "name": "Meteor",
+      "desc": "CAPSTONE: the last fireball of each Volley is a meteor that explodes in a 3-block blast"
+     }
+    ]
+   },
+   {
+    "name": "Flamewarden",
+    "desc": "Control the battlefield",
+    "nodes": [
+     {
+      "id": "wider_wall",
+      "name": "Wider Wall",
+      "desc": "+40% Flame Wall width"
+     },
+     {
+      "id": "lingering_heat",
+      "name": "Lingering Heat",
+      "desc": "+40% Flame Wall duration"
+     },
+     {
+      "id": "cinder_shield",
+      "name": "Cinder Shield",
+      "desc": "Standing near your Flame Wall grants Resistance I"
+     },
+     {
+      "id": "magma_surge",
+      "name": "Magma Surge",
+      "desc": "+30% Magma Eruption radius"
+     },
+     {
+      "id": "ring_of_fire",
+      "name": "Ring of Fire",
+      "desc": "CAPSTONE: Flame Wall becomes a full ring of fire around you"
+     }
+    ]
+   },
+   {
+    "name": "Ashbringer",
+    "desc": "Burn bright, burn long",
+    "nodes": [
+     {
+      "id": "kindling",
+      "name": "Kindling",
+      "desc": "Your melee burns last twice as long"
+     },
+     {
+      "id": "ember",
+      "name": "Phoenix Ember",
+      "desc": "Heal 1 heart when an enemy you set alight dies"
+     },
+     {
+      "id": "bigger_blaze",
+      "name": "Bigger Blaze",
+      "desc": "+30% Inferno Avatar aura radius"
+     },
+     {
+      "id": "endless_pyre",
+      "name": "Endless Pyre",
+      "desc": "Kills during Inferno Avatar extend it by 2 seconds"
+     },
+     {
+      "id": "phoenix",
+      "name": "Phoenix",
+      "desc": "CAPSTONE: once every 3 minutes, lethal damage makes you explode in flame and rise with 6 hearts"
+     }
+    ]
+   }
+  ],
+  "p1": "Fireproof",
+  "p1d": "Permanent Fire Resistance.",
+  "p2": "Searing",
+  "p2d": "Your melee hits set enemies on fire.",
+  "aw": "Hellfire",
+  "awd": "Your flames burn blue with soul fire and deal 1 extra damage per second to burning enemies."
+ },
+ "void": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Void Step",
+    "desc": "Tear through space and step out where you are looking.",
+    "cd": 8
+   },
+   {
+    "slot": 1,
+    "name": "Rift Orb",
+    "desc": "Launch a slow orb of nothing that drags enemies into it.",
+    "cd": 20
+   },
+   {
+    "slot": 2,
+    "name": "Displace",
+    "desc": "Swap places with a target, leaving them lost in darkness.",
+    "cd": 30
+   },
+   {
+    "slot": 3,
+    "name": "Singularity",
+    "desc": "Open a black hole that swallows everything, then collapses.",
+    "cd": 140
+   }
+  ],
+  "feats": [
+   {
+    "id": "step1000",
+    "name": "Wanderer of Nothing",
+    "desc": "Travel 1,000 blocks with Void Step",
+    "xp": 300
+   },
+   {
+    "id": "orb3",
+    "name": "Gravity Well",
+    "desc": "Pull 3 enemies into a single Rift Orb",
+    "xp": 400
+   },
+   {
+    "id": "swapkill",
+    "name": "Switcheroo",
+    "desc": "Kill an enemy within 5 seconds of Displacing them",
+    "xp": 500
+   },
+   {
+    "id": "sing4",
+    "name": "Event Horizon",
+    "desc": "Catch 4 enemies in one Singularity",
+    "xp": 800
+   }
+  ],
+  "branches": [
+   {
+    "name": "Voidwalker",
+    "desc": "Be everywhere",
+    "nodes": [
+     {
+      "id": "far_reach",
+      "name": "Far Reach",
+      "desc": "+30% Void Step range"
+     },
+     {
+      "id": "quick_fold",
+      "name": "Quick Fold",
+      "desc": "Void Step recharges 25% faster"
+     },
+     {
+      "id": "shadow_wake",
+      "name": "Shadow Wake",
+      "desc": "Enemies near where you vanish are blinded"
+     },
+     {
+      "id": "ambush",
+      "name": "Ambush",
+      "desc": "Your first melee hit within 2s of a Void Step deals +50%"
+     },
+     {
+      "id": "null_dash",
+      "name": "Null Dash",
+      "desc": "CAPSTONE: Void Step tears through enemies on the way for 5 damage"
+     }
+    ]
+   },
+   {
+    "name": "Gravity",
+    "desc": "Everything falls inward",
+    "nodes": [
+     {
+      "id": "dense_core",
+      "name": "Dense Core",
+      "desc": "+40% Rift Orb pull"
+     },
+     {
+      "id": "crushing_weight",
+      "name": "Crushing Weight",
+      "desc": "+30% Rift Orb damage"
+     },
+     {
+      "id": "wider_horizon",
+      "name": "Wider Horizon",
+      "desc": "+25% Singularity radius"
+     },
+     {
+      "id": "lingering_pull",
+      "name": "Lingering Pull",
+      "desc": "Rift Orb lasts 50% longer"
+     },
+     {
+      "id": "collapse",
+      "name": "Collapse",
+      "desc": "CAPSTONE: Rift Orb ends by collapsing into a miniature Singularity"
+     }
+    ]
+   },
+   {
+    "name": "Null",
+    "desc": "Unmake them",
+    "nodes": [
+     {
+      "id": "deep_dark",
+      "name": "Deep Dark",
+      "desc": "Null Touch Darkness lasts twice as long"
+     },
+     {
+      "id": "unravel",
+      "name": "Unravel",
+      "desc": "Displace also weakens the target"
+     },
+     {
+      "id": "slippery_space",
+      "name": "Slippery Space",
+      "desc": "Phase chance doubled to 30%"
+     },
+     {
+      "id": "erasure",
+      "name": "Erasure",
+      "desc": "Abilities deal +20% to enemies in Darkness"
+     },
+     {
+      "id": "oblivion",
+      "name": "Oblivion",
+      "desc": "CAPSTONE: Displace hurls the target high into the sky instead of swapping"
+     }
+    ]
+   }
+  ],
+  "p1": "Phase",
+  "p1d": "15% chance to phase through projectile hits.",
+  "p2": "Null Touch",
+  "p2d": "Melee hits shroud enemies in Darkness.",
+  "aw": "Event Horizon",
+  "awd": "Void Step leaves a rift for 5 seconds; cast it again to return through it."
+ },
+ "frozen": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Ice Shard",
+    "desc": "Fire a piercing shard of ice that chills what it hits.",
+    "cd": 5
+   },
+   {
+    "slot": 1,
+    "name": "Glacial Wall",
+    "desc": "Raise a wall of solid ice in front of you.",
+    "cd": 20
+   },
+   {
+    "slot": 2,
+    "name": "Frost Nova",
+    "desc": "Freeze everything around you in a burst of cold.",
+    "cd": 25
+   },
+   {
+    "slot": 3,
+    "name": "Absolute Zero",
+    "desc": "Call a blizzard: enemies freeze and ice spikes tear through them.",
+    "cd": 130
+   }
+  ],
+  "feats": [
+   {
+    "id": "freeze10",
+    "name": "Deep Freeze",
+    "desc": "Fully freeze 10 enemies with Frostbite",
+    "xp": 400
+   },
+   {
+    "id": "sniper",
+    "name": "Shard Sniper",
+    "desc": "Hit an Ice Shard from 30 or more blocks away",
+    "xp": 400
+   },
+   {
+    "id": "nova4",
+    "name": "Flash Freeze",
+    "desc": "Hit 4 enemies with one Frost Nova",
+    "xp": 500
+   },
+   {
+    "id": "zero2",
+    "name": "Absolute",
+    "desc": "Get 2 kills during one Absolute Zero",
+    "xp": 700
+   }
+  ],
+  "branches": [
+   {
+    "name": "Glacier",
+    "desc": "Lock them in place",
+    "nodes": [
+     {
+      "id": "biting_cold",
+      "name": "Biting Cold",
+      "desc": "Frostbite freezes at 4 stacks instead of 5"
+     },
+     {
+      "id": "thick_ice",
+      "name": "Thick Ice",
+      "desc": "+40% Glacial Wall duration"
+     },
+     {
+      "id": "great_wall",
+      "name": "Great Wall",
+      "desc": "+40% Glacial Wall width"
+     },
+     {
+      "id": "frozen_solid",
+      "name": "Frozen Solid",
+      "desc": "Full freezes last 50% longer"
+     },
+     {
+      "id": "ice_prison",
+      "name": "Ice Prison",
+      "desc": "CAPSTONE: Frost Nova encases enemies in a shell of ice"
+     }
+    ]
+   },
+   {
+    "name": "Shardcaster",
+    "desc": "Cold steel",
+    "nodes": [
+     {
+      "id": "sharper",
+      "name": "Sharper Shards",
+      "desc": "+25% Ice Shard damage"
+     },
+     {
+      "id": "splinter",
+      "name": "Splinter",
+      "desc": "Ice Shard shatters into fragments on impact"
+     },
+     {
+      "id": "piercing_cold",
+      "name": "Piercing Cold",
+      "desc": "Ice Shard pierces 2 more enemies"
+     },
+     {
+      "id": "cold_snap",
+      "name": "Cold Snap",
+      "desc": "+30% Frost Nova damage"
+     },
+     {
+      "id": "hailstorm",
+      "name": "Hailstorm",
+      "desc": "CAPSTONE: Ice Shard fires a fan of three shards"
+     }
+    ]
+   },
+   {
+    "name": "Winter's Heart",
+    "desc": "Endure the cold",
+    "nodes": [
+     {
+      "id": "frost_armor",
+      "name": "Frost Armor",
+      "desc": "Enemies that hit you in melee are slowed"
+     },
+     {
+      "id": "chilled_blood",
+      "name": "Chilled Blood",
+      "desc": "Take 10% less damage from slowed enemies"
+     },
+     {
+      "id": "long_winter",
+      "name": "Long Winter",
+      "desc": "+30% Absolute Zero duration"
+     },
+     {
+      "id": "wider_storm",
+      "name": "Wider Storm",
+      "desc": "+25% Absolute Zero radius"
+     },
+     {
+      "id": "avalanche_heart",
+      "name": "Heart of Winter",
+      "desc": "CAPSTONE: inside Absolute Zero you regenerate and cannot be slowed"
+     }
+    ]
+   }
+  ],
+  "p1": "Coldborn",
+  "p1d": "You never freeze, and water freezes beneath your feet.",
+  "p2": "Frostbite",
+  "p2d": "Melee hits stack Frostbite; at 5 stacks the target freezes solid.",
+  "aw": "Permafrost",
+  "awd": "Frozen enemies shatter when your abilities hit them, taking 40% more damage."
+ },
+ "storm": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Lightning Strike",
+    "desc": "Call down a bolt of lightning on your target.",
+    "cd": 10
+   },
+   {
+    "slot": 1,
+    "name": "Gale Burst",
+    "desc": "Blast every enemy away and ride the updraft into the sky.",
+    "cd": 18
+   },
+   {
+    "slot": 2,
+    "name": "Chain Lightning",
+    "desc": "A bolt that leaps from enemy to enemy.",
+    "cd": 24
+   },
+   {
+    "slot": 3,
+    "name": "Tempest",
+    "desc": "Become the storm. Lightning rains on every enemy near you.",
+    "cd": 130
+   }
+  ],
+  "feats": [
+   {
+    "id": "skyfall",
+    "name": "Skyfall",
+    "desc": "Hit an airborne enemy with Lightning Strike",
+    "xp": 300
+   },
+   {
+    "id": "chain5",
+    "name": "Overcharge",
+    "desc": "Hit 5 enemies with one Chain Lightning",
+    "xp": 500
+   },
+   {
+    "id": "gale4",
+    "name": "Blown Away",
+    "desc": "Knock back 4 enemies with one Gale Burst",
+    "xp": 400
+   },
+   {
+    "id": "tempest15",
+    "name": "Eye of the Storm",
+    "desc": "Land 15 Tempest bolts in one Tempest",
+    "xp": 600
+   }
+  ],
+  "branches": [
+   {
+    "name": "Conduit",
+    "desc": "More voltage",
+    "nodes": [
+     {
+      "id": "high_voltage",
+      "name": "High Voltage",
+      "desc": "+20% Lightning Strike damage"
+     },
+     {
+      "id": "forked_bolt",
+      "name": "Forked Bolt",
+      "desc": "Lightning Strike also hits the nearest other enemy"
+     },
+     {
+      "id": "conductor",
+      "name": "Conductor",
+      "desc": "Chain Lightning bounces 2 more times"
+     },
+     {
+      "id": "overload",
+      "name": "Overload",
+      "desc": "Static triggers on every 3rd hit"
+     },
+     {
+      "id": "thunderstorm",
+      "name": "Thunderstorm",
+      "desc": "CAPSTONE: Lightning Strike calls three bolts marching forward"
+     }
+    ]
+   },
+   {
+    "name": "Windcaller",
+    "desc": "The air obeys",
+    "nodes": [
+     {
+      "id": "strong_gust",
+      "name": "Strong Gust",
+      "desc": "+30% Gale Burst knockback"
+     },
+     {
+      "id": "updraft",
+      "name": "Updraft",
+      "desc": "Gale Burst lifts you higher and you float down longer"
+     },
+     {
+      "id": "wind_wall",
+      "name": "Wind Wall",
+      "desc": "After Gale Burst, a ring of wind deflects projectiles for 3 seconds"
+     },
+     {
+      "id": "tailwind",
+      "name": "Tailwind",
+      "desc": "Your rain speed bonus applies in any weather"
+     },
+     {
+      "id": "cyclone",
+      "name": "Cyclone",
+      "desc": "CAPSTONE: Gale Burst becomes a cyclone that lifts enemies, spins them, then flings them"
+     }
+    ]
+   },
+   {
+    "name": "Tempest",
+    "desc": "Be the weather",
+    "nodes": [
+     {
+      "id": "rolling_thunder",
+      "name": "Rolling Thunder",
+      "desc": "+30% Tempest duration"
+     },
+     {
+      "id": "wide_storm",
+      "name": "Wide Storm",
+      "desc": "+25% Tempest radius"
+     },
+     {
+      "id": "static_field",
+      "name": "Static Field",
+      "desc": "During Tempest, enemies that hit you are shocked"
+     },
+     {
+      "id": "ionized",
+      "name": "Ionized",
+      "desc": "Your lightning ionizes targets: +15% ability damage against them for 4s"
+     },
+     {
+      "id": "ride_lightning",
+      "name": "Ride the Lightning",
+      "desc": "CAPSTONE: you can fly while Tempest lasts"
+     }
+    ]
+   }
+  ],
+  "p1": "Stormborn",
+  "p1d": "Immune to lightning. You move 20% faster in the rain.",
+  "p2": "Static",
+  "p2d": "Every 4th melee hit arcs a spark to another enemy.",
+  "aw": "Thunder God",
+  "awd": "Lightning Strike leaves charged ground that shocks and slows."
+ },
+ "blood": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Blood Spike",
+    "desc": "Hurl a spike of blood that wounds and feeds you.",
+    "cd": 8
+   },
+   {
+    "slot": 1,
+    "name": "Crimson Pact",
+    "desc": "Pay 2 hearts for a surge of Strength II.",
+    "cd": 20
+   },
+   {
+    "slot": 2,
+    "name": "Siphon",
+    "desc": "Tether yourself to an enemy and drink their life.",
+    "cd": 26
+   },
+   {
+    "slot": 3,
+    "name": "Blood Moon",
+    "desc": "The moon bleeds: you drink deeply and every enemy near you bleeds.",
+    "cd": 140
+   }
+  ],
+  "feats": [
+   {
+    "id": "steal500",
+    "name": "Insatiable",
+    "desc": "Heal 500 health with the Blood Heart",
+    "xp": 500
+   },
+   {
+    "id": "bleed10",
+    "name": "Exsanguinate",
+    "desc": "Kill 10 enemies while they bleed",
+    "xp": 400
+   },
+   {
+    "id": "price",
+    "name": "Blood Price",
+    "desc": "Kill a player during Crimson Pact while below 4 hearts",
+    "xp": 600
+   },
+   {
+    "id": "feast",
+    "name": "Feast",
+    "desc": "Heal 20 health during one Blood Moon",
+    "xp": 600
+   }
+  ],
+  "branches": [
+   {
+    "name": "Vampire",
+    "desc": "Never stop drinking",
+    "nodes": [
+     {
+      "id": "thirst",
+      "name": "Thirst",
+      "desc": "+50% lifesteal"
+     },
+     {
+      "id": "long_draw",
+      "name": "Long Draw",
+      "desc": "+40% Siphon duration"
+     },
+     {
+      "id": "night_feeder",
+      "name": "Night Feeder",
+      "desc": "Lifesteal doubles at night"
+     },
+     {
+      "id": "bloodbank",
+      "name": "Bloodbank",
+      "desc": "Siphon healing beyond full health becomes absorption"
+     },
+     {
+      "id": "undeath",
+      "name": "Undeath",
+      "desc": "CAPSTONE: Siphon drains every enemy near you at once"
+     }
+    ]
+   },
+   {
+    "name": "Hemomancer",
+    "desc": "Open every vein",
+    "nodes": [
+     {
+      "id": "deep_cuts",
+      "name": "Deep Cuts",
+      "desc": "Bleeding lasts 50% longer"
+     },
+     {
+      "id": "spike_volley",
+      "name": "Spike Volley",
+      "desc": "Blood Spike throws three spikes"
+     },
+     {
+      "id": "open_veins",
+      "name": "Open Veins",
+      "desc": "Bleeding enemies take 10% more damage from you"
+     },
+     {
+      "id": "blood_rain",
+      "name": "Blood Rain",
+      "desc": "+50% Blood Moon bleed damage"
+     },
+     {
+      "id": "burst",
+      "name": "Hemorrhagic Burst",
+      "desc": "CAPSTONE: bleeding enemies burst when they die, making everyone near them bleed"
+     }
+    ]
+   },
+   {
+    "name": "Berserker",
+    "desc": "Pay any price",
+    "nodes": [
+     {
+      "id": "cheap_price",
+      "name": "Cheap Price",
+      "desc": "Crimson Pact costs 1 heart instead of 2"
+     },
+     {
+      "id": "frenzy",
+      "name": "Blood Frenzy",
+      "desc": "+40% Crimson Pact duration"
+     },
+     {
+      "id": "tolerance",
+      "name": "Pain Tolerance",
+      "desc": "Take 10% less damage below half health"
+     },
+     {
+      "id": "red_haste",
+      "name": "Red Haste",
+      "desc": "Crimson Pact also grants Speed II and Haste II"
+     },
+     {
+      "id": "martyr",
+      "name": "Martyr",
+      "desc": "CAPSTONE: killing a player resets Crimson Pact"
+     }
+    ]
+   }
+  ],
+  "p1": "Lifesteal",
+  "p1d": "Heal 10% of the melee damage you deal.",
+  "p2": "Hemorrhage",
+  "p2d": "Critical hits make enemies bleed for 4 seconds.",
+  "aw": "Sanguine Lord",
+  "awd": "Healing beyond full health becomes up to 3 hearts of absorption."
+ },
+ "titan": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Ground Slam",
+    "desc": "Slam the earth and send a ripping shockwave forward.",
+    "cd": 10
+   },
+   {
+    "slot": 1,
+    "name": "Stone Skin",
+    "desc": "Turn your skin to stone: Resistance II and unshakable footing.",
+    "cd": 24
+   },
+   {
+    "slot": 2,
+    "name": "Boulder Toss",
+    "desc": "Tear a boulder out of the ground and hurl it.",
+    "cd": 22
+   },
+   {
+    "slot": 3,
+    "name": "Colossus",
+    "desc": "Grow to giant size. More health, more reach, every blow a shockwave.",
+    "cd": 150
+   }
+  ],
+  "feats": [
+   {
+    "id": "slam3",
+    "name": "Fault Line",
+    "desc": "Hit 3 enemies with one Ground Slam",
+    "xp": 400
+   },
+   {
+    "id": "catapult",
+    "name": "Catapult",
+    "desc": "Hit an enemy with a boulder thrown from 20 or more blocks",
+    "xp": 400
+   },
+   {
+    "id": "immovable",
+    "name": "Immovable",
+    "desc": "Shrug off 200 damage with Stone Skin",
+    "xp": 500
+   },
+   {
+    "id": "crush3",
+    "name": "Giant's Wrath",
+    "desc": "Get 3 kills during one Colossus",
+    "xp": 700
+   }
+  ],
+  "branches": [
+   {
+    "name": "Earthshaker",
+    "desc": "Break the ground",
+    "nodes": [
+     {
+      "id": "deep_tremor",
+      "name": "Deep Tremor",
+      "desc": "+25% Ground Slam damage"
+     },
+     {
+      "id": "long_fault",
+      "name": "Long Fault",
+      "desc": "+40% Ground Slam length"
+     },
+     {
+      "id": "aftershock",
+      "name": "Aftershock",
+      "desc": "Ground Slam erupts again a second later for half damage"
+     },
+     {
+      "id": "quake_step",
+      "name": "Quake Step",
+      "desc": "As a Colossus, your footsteps damage nearby enemies"
+     },
+     {
+      "id": "tectonic",
+      "name": "Tectonic",
+      "desc": "CAPSTONE: Ground Slam splits into three fault lines"
+     }
+    ]
+   },
+   {
+    "name": "Bastion",
+    "desc": "Be the wall",
+    "nodes": [
+     {
+      "id": "granite",
+      "name": "Granite",
+      "desc": "+1 more heart of maximum health"
+     },
+     {
+      "id": "long_skin",
+      "name": "Enduring Stone",
+      "desc": "+40% Stone Skin duration"
+     },
+     {
+      "id": "spiked_stone",
+      "name": "Spiked Stone",
+      "desc": "Attackers take 2 damage while Stone Skin is active"
+     },
+     {
+      "id": "unshakable",
+      "name": "Unshakable",
+      "desc": "Stone Skin no longer slows you"
+     },
+     {
+      "id": "fortress",
+      "name": "Living Fortress",
+      "desc": "CAPSTONE: Stone Skin also shields teammates near you"
+     }
+    ]
+   },
+   {
+    "name": "Juggernaut",
+    "desc": "Throw mountains",
+    "nodes": [
+     {
+      "id": "heavy_rock",
+      "name": "Heavy Rock",
+      "desc": "+30% Boulder Toss damage"
+     },
+     {
+      "id": "bigger_rock",
+      "name": "Bigger Rock",
+      "desc": "+40% Boulder blast radius"
+     },
+     {
+      "id": "towering",
+      "name": "Towering",
+      "desc": "+30% Colossus duration"
+     },
+     {
+      "id": "titanic_reach",
+      "name": "Titanic Reach",
+      "desc": "Colossus gives 1.5 more blocks of reach"
+     },
+     {
+      "id": "world_breaker",
+      "name": "World Breaker",
+      "desc": "CAPSTONE: Boulder Toss throws three boulders"
+     }
+    ]
+   }
+  ],
+  "p1": "Mountain's Endurance",
+  "p1d": "+2 hearts of maximum health and 30% knockback resistance.",
+  "p2": "Bulwark",
+  "p2d": "Take 10% less damage while below half health.",
+  "aw": "Mountain",
+  "awd": "+1 more heart, and Colossus grows you to twice your size."
+ },
+ "celestial": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Starfall",
+    "desc": "Call a star down from the sky onto your target.",
+    "cd": 9
+   },
+   {
+    "slot": 1,
+    "name": "Sanctuary",
+    "desc": "Consecrate the ground: allies heal, enemies are weakened.",
+    "cd": 28
+   },
+   {
+    "slot": 2,
+    "name": "Radiant Beam",
+    "desc": "A lance of light that pierces everything in a line.",
+    "cd": 22
+   },
+   {
+    "slot": 3,
+    "name": "Ascension",
+    "desc": "Rise into the air, shielded by light, as stars rain on your foes.",
+    "cd": 150
+   }
+  ],
+  "feats": [
+   {
+    "id": "shooting_star",
+    "name": "Shooting Star",
+    "desc": "Hit an airborne enemy with Starfall",
+    "xp": 300
+   },
+   {
+    "id": "haven",
+    "name": "Haven",
+    "desc": "Recover 40 health inside your Sanctuaries",
+    "xp": 400
+   },
+   {
+    "id": "lance3",
+    "name": "Lance of Light",
+    "desc": "Hit 3 enemies with one Radiant Beam",
+    "xp": 500
+   },
+   {
+    "id": "wrath10",
+    "name": "Heaven's Wrath",
+    "desc": "Land 10 star hits in one Ascension",
+    "xp": 700
+   }
+  ],
+  "branches": [
+   {
+    "name": "Astromancer",
+    "desc": "Pull down the heavens",
+    "nodes": [
+     {
+      "id": "heavier_stars",
+      "name": "Heavier Stars",
+      "desc": "+25% Starfall damage"
+     },
+     {
+      "id": "shower",
+      "name": "Meteor Shower",
+      "desc": "Starfall brings two smaller stars with it"
+     },
+     {
+      "id": "starburn",
+      "name": "Starburn",
+      "desc": "Starfall slows what it hits"
+     },
+     {
+      "id": "constellation",
+      "name": "Constellation",
+      "desc": "Starfall recharges 25% faster"
+     },
+     {
+      "id": "comet",
+      "name": "Comet",
+      "desc": "CAPSTONE: Starfall becomes a comet with twice the blast and heavy knockback"
+     }
+    ]
+   },
+   {
+    "name": "Seraph",
+    "desc": "Shelter the faithful",
+    "nodes": [
+     {
+      "id": "wider_sanctuary",
+      "name": "Wider Sanctuary",
+      "desc": "+30% Sanctuary radius"
+     },
+     {
+      "id": "blessed_ground",
+      "name": "Blessed Ground",
+      "desc": "Sanctuary also grants Resistance I"
+     },
+     {
+      "id": "lasting_light",
+      "name": "Lasting Light",
+      "desc": "+40% Sanctuary duration"
+     },
+     {
+      "id": "guardian_angel",
+      "name": "Guardian Angel",
+      "desc": "Radiance pulses heal twice as much and include you"
+     },
+     {
+      "id": "intervention",
+      "name": "Divine Intervention",
+      "desc": "CAPSTONE: Sanctuary purges harmful effects from allies inside it"
+     }
+    ]
+   },
+   {
+    "name": "Radiant",
+    "desc": "Burn with light",
+    "nodes": [
+     {
+      "id": "focused_light",
+      "name": "Focused Light",
+      "desc": "+25% Radiant Beam damage"
+     },
+     {
+      "id": "prism",
+      "name": "Prism",
+      "desc": "The beam splits into two more beams at the first enemy it hits"
+     },
+     {
+      "id": "searing_light",
+      "name": "Searing Light",
+      "desc": "Radiant Beam briefly blinds players"
+     },
+     {
+      "id": "dawn",
+      "name": "Dawn",
+      "desc": "+30% Ascension duration"
+     },
+     {
+      "id": "judgment",
+      "name": "Judgment",
+      "desc": "CAPSTONE: during Ascension, pillars of light strike instead of stars, hitting everything near the target"
+     }
+    ]
+   }
+  ],
+  "p1": "Starlit",
+  "p1d": "Permanent Night Vision. Regeneration I while standing in sunlight.",
+  "p2": "Radiance",
+  "p2d": "+25% damage against undead, and every 4 seconds nearby teammates are healed.",
+  "aw": "Supernova",
+  "awd": "A halo crowns you, and Ascension ends in a blinding supernova."
+ },
+ "corruption": {
+  "abilities": [
+   {
+    "slot": 0,
+    "name": "Plague Bolt",
+    "desc": "A bolt of rot that bursts into a lingering poison cloud.",
+    "cd": 9
+   },
+   {
+    "slot": 1,
+    "name": "Rot Ground",
+    "desc": "Corrupt the earth: everything standing on it withers.",
+    "cd": 22
+   },
+   {
+    "slot": 2,
+    "name": "Infest",
+    "desc": "Plant an infection in a target. It bursts a few seconds later, spreading.",
+    "cd": 30
+   },
+   {
+    "slot": 3,
+    "name": "Pandemic",
+    "desc": "Infect every enemy near you and raise Rotlings to fight for you.",
+    "cd": 150
+   }
+  ],
+  "feats": [
+   {
+    "id": "zero5",
+    "name": "Patient Zero",
+    "desc": "Poison 5 enemies with one Plague Bolt cloud",
+    "xp": 400
+   },
+   {
+    "id": "rot10",
+    "name": "Decomposition",
+    "desc": "Kill 10 enemies standing in your Rot Ground",
+    "xp": 400
+   },
+   {
+    "id": "burst3",
+    "name": "Contagion",
+    "desc": "Hit 3 enemies with one Infest burst",
+    "xp": 500
+   },
+   {
+    "id": "outbreak5",
+    "name": "Outbreak",
+    "desc": "Infect 5 enemies with one Pandemic",
+    "xp": 800
+   }
+  ],
+  "branches": [
+   {
+    "name": "Plaguebringer",
+    "desc": "Fill the air with rot",
+    "nodes": [
+     {
+      "id": "virulent",
+      "name": "Virulent",
+      "desc": "+25% Plague Bolt damage"
+     },
+     {
+      "id": "spreading_cloud",
+      "name": "Spreading Cloud",
+      "desc": "+40% plague cloud radius"
+     },
+     {
+      "id": "miasma",
+      "name": "Lingering Miasma",
+      "desc": "Plague clouds last 50% longer"
+     },
+     {
+      "id": "necrosis",
+      "name": "Necrosis",
+      "desc": "Poisoned enemies take 15% more damage from your abilities"
+     },
+     {
+      "id": "plague_rain",
+      "name": "Plague Rain",
+      "desc": "CAPSTONE: Plague Bolt bursts into four bolts that rain around the impact"
+     }
+    ]
+   },
+   {
+    "name": "Rotmother",
+    "desc": "The dead serve",
+    "nodes": [
+     {
+      "id": "deep_rot",
+      "name": "Deep Rot",
+      "desc": "+30% Rot Ground radius"
+     },
+     {
+      "id": "withering",
+      "name": "Withering",
+      "desc": "Rot Ground inflicts Wither II"
+     },
+     {
+      "id": "mire",
+      "name": "Sticky Mire",
+      "desc": "Rot Ground slows enemies more"
+     },
+     {
+      "id": "brood",
+      "name": "Brood",
+      "desc": "Pandemic raises 2 more Rotlings"
+     },
+     {
+      "id": "hive_mind",
+      "name": "Hive Mind",
+      "desc": "CAPSTONE: Rotlings last 50% longer and burst into plague clouds when they fall"
+     }
+    ]
+   },
+   {
+    "name": "Contagion",
+    "desc": "It spreads",
+    "nodes": [
+     {
+      "id": "short_fuse",
+      "name": "Short Fuse",
+      "desc": "Infest bursts a second sooner"
+     },
+     {
+      "id": "bigger_burst",
+      "name": "Bigger Burst",
+      "desc": "+40% Infest burst radius"
+     },
+     {
+      "id": "feverish",
+      "name": "Feverish",
+      "desc": "Blight becomes Poison II after 2 hits instead of 3"
+     },
+     {
+      "id": "carrier",
+      "name": "Carrier",
+      "desc": "When Infest bursts, it jumps to the nearest enemy"
+     },
+     {
+      "id": "black_death",
+      "name": "Black Death",
+      "desc": "CAPSTONE: every enemy hit by an Infest burst becomes infested too"
+     }
+    ]
+   }
+  ],
+  "p1": "Plagueborn",
+  "p1d": "Immune to Poison and Wither.",
+  "p2": "Blight",
+  "p2d": "Melee hits poison; repeated hits make the poison stronger.",
+  "aw": "Blight Lord",
+  "awd": "If an infested target dies before it bursts, the infection jumps to another enemy."
+ }
+}

@@ -1,0 +1,7 @@
+{
+  "pack": {
+    "description": [{"text": "Chaos Hearts", "color": "#c04cff", "bold": true}, {"text": "\nPvP hearts, mastery, trials and the Eye", "color": "gray"}],
+    "min_format": [94, 1],
+    "max_format": [94, 1]
+  }
+}
