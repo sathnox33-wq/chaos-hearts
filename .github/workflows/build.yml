@@ -6,6 +6,11 @@ on:
     tags: ['v*']
   pull_request:
   workflow_dispatch:
+    inputs:
+      release:
+        description: Publish a GitHub release for the version in gradle.properties
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -75,8 +80,12 @@ jobs:
           git push -fq origin ci-output
 
       - name: Publish release
-        if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
-        with:
-          files: dist/*
-          generate_release_notes: true
+        if: startsWith(github.ref, 'refs/tags/v') || inputs.release
+        run: |
+          VERSION=$(grep '^version=' gradle.properties | cut -d= -f2)
+          TAG="v$VERSION"
+          [ "${GITHUB_REF_TYPE}" = tag ] && TAG="${GITHUB_REF_NAME}"
+          gh release create "$TAG" dist/chaoshearts-*.jar dist/chaoshearts-resourcepack.zip dist/chaoshearts-resourcepack.zip.sha1 \
+            --target "$GITHUB_SHA" --title "Chaos Hearts $VERSION" --notes-file RELEASE_NOTES.md
+        env:
+          GH_TOKEN: ${{ github.token }}
