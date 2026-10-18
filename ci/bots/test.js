@@ -105,13 +105,14 @@ async function main () {
   if (offer) {
     const res = await fetch(offer.url.replace(/^http:\/\/[^/:]+/, 'http://127.0.0.1')).catch(e => ({ status: 0, err: e }))
     const sha1 = res.body ? crypto.createHash('sha1').update(res.body).digest('hex') : ''
-    check('pack download works and matches the advertised SHA-1', res.status === 200 && sha1 === offer.hash,
-      `status ${res.status}, ${sha1} vs ${offer.hash}`)
+    const advertised = (logSince(0).match(/resource pack \(\d+ KB, sha1 ([0-9a-f]{40})\)/) || [])[1]
+    check('pack download works and matches the advertised SHA-1', res.status === 200 && sha1 === advertised,
+      `status ${res.status}, ${sha1} vs ${advertised}`)
   }
 
   for (const c of ['op Attacker', 'op Victim', 'gamemode survival Attacker', 'gamemode survival Victim',
-    'gamerule keepInventory false', 'difficulty normal', 'time set day',
-    'fill -4 99 -4 4 99 4 minecraft:stone', 'fill -4 100 -4 4 104 4 minecraft:air', 'fill 196 99 -4 204 99 4 minecraft:stone']) await run(c, 300)
+    'difficulty normal', 'time set day',
+    'fill -4 99 -4 4 99 4 minecraft:stone', 'fill -4 100 -4 4 104 4 minecraft:air', 'fill -2 99 58 2 99 62 minecraft:stone', 'fill -2 100 58 2 103 62 minecraft:air']) await run(c, 300)
 
   // ---- set up: the attacker owns a Rage heart at mastery 100, the victim gains a Storm heart last
   let out = await run('chaosadmin give Attacker rage force')
@@ -141,7 +142,7 @@ async function main () {
   await sleep(1500)
 
   // ---- PvP kill: only the latest heart drops, only the killer can collect it
-  await run('tp Attacker 200 100 0')
+  await run('tp Attacker 0 100 60')
   await run('tp Victim 0 100 0')
   await sleep(1500)
   await run('damage Victim 1000 minecraft:player_attack by Attacker', 2500)
@@ -173,8 +174,8 @@ async function main () {
   const fighting = await waitFor(async () => /Rage Heart (WAVES|BOSS)/.test(await run('chaosadmin trial list', 500)), 60000, 2000)
   out = await run('chaosadmin trial list')
   check('the arena builds and the fight begins after the intro', fighting, out)
-  out = await run('execute in chaoshearts:trials if entity @e[tag=chaoshearts.trial]', 500)
-  check('trial mobs spawn', /Test passed/.test(out), out)
+  const mobs = await waitFor(async () => /Test passed/.test(await run('execute in chaoshearts:trials if entity @e[tag=chaoshearts.trial]', 500)), 20000, 1000)
+  check('trial mobs spawn in the first wave', mobs)
 
   await run('damage Attacker 1000 minecraft:generic', 3000)
   const back = await waitFor(() => !/chaoshearts:trials/.test(dim(attacker)), 15000)

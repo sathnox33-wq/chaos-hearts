@@ -141,23 +141,30 @@ heart of that type and be out of combat.
   game mode are saved, and they are restored on victory, failure, disconnect or server restart.
   Dying inside a trial does not kill you: it fails the trial and returns you with full health and
   your inventory intact. Trial mobs cannot leave the arena and are removed at the end.
-* **Structure**: cinematic flythrough → Phase 1 (heart-specific mechanic) → Phase 2 (escalation)
-  → Boss (multi-phase, telegraphed attacks, boss bar, theme music) → victory sequence → awakening.
-* **Failure**: death, leaving the arena bounds, or the time limit. You can retry after 10 minutes.
+* **Structure**: an orbiting cinematic flythrough with title cards and the heart's theme music →
+  Wave 1 → Wave 2 (themed adds, raid horn and wave titles) → boss entrance → boss fight in four
+  phases (phase 3 at 50% health brings an enrage wave, phase 4 at 20%) → victory sequence with
+  fireworks → awakening. Every boss attack is telegraphed on the ground first.
+* **Failure**: death, leaving the arena bounds, or the time limit (15 min). You can retry after 10
+  minutes.
 * Replays after awakening are allowed and record your best time; they give no extra rewards.
+* **Exploit protection**: trial mobs only take damage from the challenger, give no XP or drops,
+  can't be leashed out of the arena, and are discarded at the end. Items other than the
+  challenger's own throws are deleted in the trials dimension. Intruders (anyone without a
+  session) are removed every second. Mastery is never granted for hitting trial mobs.
 
-| Heart | Trial | Phase mechanics | Boss |
-|---|---|---|---|
-| Rage | Colosseum of Wrath | Keep Fury up or the sand burns; brute waves | The Warlord (giant brute: charges, slams, enrage) |
-| Speed | The Endless Track | Checkpoint race against time on floating rings | Chronos Wisp (blinks; only hittable after you Dash through its rift) |
-| Infernal | The Molten Forge | Rising lava, collapsing platforms; blaze waves | Forgemaster Ignis (magma slams, fire rain) |
-| Void | The Hollow Expanse | Vanishing islands crossed with Void Step; endermen | The Unmaker (teleporting giant, rifts that drain) |
-| Frozen | The Glacier Throne | Warmth meter: stay near braziers in a blizzard; strays | The Rime Queen (ice spikes, freezing waves) |
-| Storm | The Sky Spire | Charge lightning rods by striking them while wind pushes you | The Thunderlord (giant breeze: wind bursts, lightning) |
-| Blood | The Sanguine Cathedral | Your health drains; only lifesteal heals | The Bloodbound Count (bat swarms, drain tethers) |
-| Titan | The Titan's Quarry | Falling boulders, golem waves | Primordial Golem (3× iron golem: quakes, rock throws) |
-| Celestial | The Astral Observatory | Activate constellations in the shown order | The Fallen Star (giant phantom: star dives, beams) |
-| Corruption | The Blighted Hive | Corruption meter; cleanse in pure pools; spawning eggs | Mother of Rot (giant spider: poison spit, broods) |
+| Heart | Arena | Boss | Phase 1–2 | Phase 3–4 |
+|---|---|---|---|---|
+| Rage | The Crucible of Fury | Gorrath, the Unbroken (ravager) | Charges down a telegraphed lane, roar shockwave | Bloodrage (faster, harder), magma meteors |
+| Speed | The Racing Hour | Vael, the Stolen Second (vindicator) | Blink strikes, afterimage lines that detonate | Slowing clock fields, tick-tock blasts |
+| Infernal | The Cinder Throne | Ignaroth, Lord of Cinders (giant blaze) | Meteor rain, flame wave you must jump | Hellgate fire zones, homing fire charges |
+| Void | The Hollow Beneath | The Hollow Sovereign (enderman) | Pulling rift orb, shadow step with Darkness | Void cracks, event horizon pulling to the centre |
+| Frozen | The Last Winter | Hrimvald, the Last Winter (stray) | Ice spike lines, blizzard that freezes still players | Ice prison, permanent blizzard |
+| Storm | The Eye of the Storm | Voltaris, Crown of the Tempest (trident skeleton) | Called lightning, chain bolt (needs line of sight) | Static zones, tempest swirl with random bolts |
+| Blood | The Crimson Communion | Vesperine, the Crimson Matriarch (evoker) | Draining tether that heals her, dripstone spike fans with Bleed | Crimson rain zones that heal her |
+| Titan | The Mountain That Walks | Golgoth, the Mountain That Walks (2.2× iron golem) | Earthshatter lines, boulder throws | Stone skin (×0.35 damage taken), avalanche |
+| Celestial | The Fallen Firmament | Astrael, the Fallen Star (3.2× vex) | Starfall, radiant beam | Sanctuary shield broken by 7 hits, supernova you hide from behind pillars |
+| Corruption | The Rotting Garden | Nyxara, the Blightmother (giant spider) | Plague spit pools, web snare and lunge | Broods and a rot trail, a rot circle spreading from the centre |
 
 ## 6. Awakening and skill trees
 
@@ -193,8 +200,8 @@ config, reset a player, return dropped hearts.
 of darkness (resource-pack model with a vanilla fallback), the admin's body hidden, free flight,
 invulnerable. While transformed:
 * chat becomes the Eye's voice (styled message, deep sound, floating text above the Eye);
-  `/eye speak`, `/eye whisper <player>`, `/eye title <player>`;
+  `/eye say`, `/eye whisper <player> <message>`, `/eye proclaim <message>`;
 * `/eye gaze <player>`: the Eye stares at a player, who feels darkness and a heartbeat;
-* `/eye give <player> <heart>` and `/eye take <player> <heart|latest>` with beam and tearing
+* `/eye give <player> <heart>` and `/eye take <player> [heart]` with beam and tearing
   animations, going through the same ownership rules as everything else;
 * `/eye size`, `/eye off`. The transformation is undone safely on disconnect or restart.

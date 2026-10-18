@@ -307,7 +307,9 @@ public final class HeartManager {
 			return;
 		}
 		if (p.isSpectator() || !p.isAlive()) return;
-		if (!p.getUUID().equals(rec.collector) && !p.getUUID().equals(rec.previousOwner)) {
+		// Only the victor may claim it. The loser gets it back when the window runs out, not by grabbing it.
+		boolean victor = p.getUUID().equals(rec.collector) || (rec.collector == null && p.getUUID().equals(rec.previousOwner));
+		if (!victor) {
 			notifyOnce(p, Component.literal("This heart can only be claimed by its victor.").withStyle(ChatFormatting.RED));
 			return;
 		}

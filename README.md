@@ -111,16 +111,16 @@ the heart: you get the awakened Focus, the awakened passive and 3 skill points.
 
 | Heart | Boss | Signature mechanic |
 |---|---|---|
-| Rage | Gorrath the Ravager | Charges that follow a red lane, a roaring shockwave, magma meteors |
-| Speed | Vael the Quickblade | Blink strikes, afterimages that detonate, slowing clock fields |
-| Infernal | Ignaroth | Meteor rain, flame waves you jump over, homing fire charges |
-| Void | The Sovereign | Pulling rifts, shadow steps, an event horizon that drags you in |
-| Frozen | Hrimvald | Ice spike lines, a blizzard that freezes you if you stand still, ice prisons |
-| Storm | Voltaris | Called lightning, chain bolts that need line of sight, a tempest |
-| Blood | Vesperine | A draining tether, dripstone spike fans, crimson rain that heals her |
-| Titan | Golgoth | Earthshatter lines, thrown boulders, stone skin, an avalanche |
-| Celestial | Astrael | Starfall, a radiant beam, a shield you break by hitting it, a supernova you hide from behind pillars |
-| Corruption | Nyxara | Plague pools, web snares, broods, a rot circle that spreads from the centre |
+| Rage | Gorrath, the Unbroken | Charges that follow a red lane, a roaring shockwave, magma meteors |
+| Speed | Vael, the Stolen Second | Blink strikes, afterimages that detonate, slowing clock fields |
+| Infernal | Ignaroth, Lord of Cinders | Meteor rain, flame waves you jump over, homing fire charges |
+| Void | The Hollow Sovereign | Pulling rifts, shadow steps, an event horizon that drags you in |
+| Frozen | Hrimvald, the Last Winter | Ice spike lines, a blizzard that freezes you if you stand still, ice prisons |
+| Storm | Voltaris, Crown of the Tempest | Called lightning, chain bolts that need line of sight, a tempest |
+| Blood | Vesperine, the Crimson Matriarch | A draining tether, dripstone spike fans, crimson rain that heals her |
+| Titan | Golgoth, the Mountain That Walks | Earthshatter lines, thrown boulders, stone skin, an avalanche |
+| Celestial | Astrael, the Fallen Star | Starfall, a radiant beam, a shield you break by hitting it, a supernova you hide from behind pillars |
+| Corruption | Nyxara, the Blightmother | Plague pools, web snares, broods, a rot circle that spreads from the centre |
 
 ### Skill trees
 
@@ -136,7 +136,7 @@ All admin commands need permission level 2 (op).
 
 | Command | What it does |
 |---|---|
-| `give <player> <heart> [force]` | Creates a heart for a player. `force` ignores unique-heart and max-heart limits |
+| `give <player> <heart> [force]` | Creates a heart for a player. Adding the word `force` ignores unique-heart and max-heart limits |
 | `take <player> <heart>` | Removes a heart from a player and destroys it. Mastery is kept |
 | `transfer <from> <heart> <to>` | Moves a heart between players |
 | `registry` | Lists every heart on the server and where it is |

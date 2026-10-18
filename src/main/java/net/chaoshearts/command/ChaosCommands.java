@@ -194,7 +194,7 @@ public final class ChaosCommands {
 		d.register(Commands.literal("chaosadmin").requires(Perms.require(Perms.ADMIN))
 				.then(Commands.literal("give").then(Commands.argument("player", EntityArgument.player()).then(heartArg("heart")
 						.executes(c -> give(c, false))
-						.then(Commands.argument("force", BoolArgumentType.bool()).executes(c -> give(c, BoolArgumentType.getBool(c, "force")))))))
+						.then(Commands.literal("force").executes(c -> give(c, true))))))
 				.then(Commands.literal("take").then(Commands.argument("player", EntityArgument.player()).then(heartArg("heart").executes(c -> {
 					ServerPlayer p = EntityArgument.getPlayer(c, "player");
 					HeartType t = heart(c, "heart");
