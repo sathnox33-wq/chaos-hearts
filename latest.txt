@@ -1,0 +1,13 @@
+run 39167601444 on 6c2453fdcb6cc7b459acce3e166dca1f7fbb0736
+FAILURE: Build failed with an exception.
+* What went wrong:
+> Could not resolve all artifacts for configuration 'classpath'.
+   > Could not resolve net.fabricmc:fabric-loom:1.18.4.
+         buildscript of root project 'chaoshearts' > net.fabricmc.fabric-loom-remap:net.fabricmc.fabric-loom-remap.gradle.plugin:1.18-SNAPSHOT:20261010.111021-4
+      > Dependency requires at least JVM runtime version 25. This build uses a Java 21 JVM.
+> Run this build using a Java 25 or newer JVM.
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+BUILD FAILED in 3s
