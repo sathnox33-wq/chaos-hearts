@@ -51,7 +51,7 @@ CORE = [
     "ch.ctag", "ch.opp", "ch.swapcd", "ch.xpday", "ch.day", "ch.tgt", "ch.tgtn", "ch.tgtt",
     "ch.seen", "ch.hud", "ch.ccimm", "ch.trial", "ch.retry", "ch.eye", "ch.msg", "ch.respec",
     "ch.owner", "ch.life", "ch.t", "ch.eid", "ch.hid", "ch.slot", "ch.state", "ch.phase",
-    "ch.v1", "ch.v2", "ch.v3", "ch.v4", "ch.v5", "ch.v6", "ch.tmp", "ch.g", "ch.cfg",
+    "ch.stun", "ch.v1", "ch.v2", "ch.v3", "ch.v4", "ch.v5", "ch.v6", "ch.tmp", "ch.g", "ch.cfg",
 ]
 CONFIG = {
     # name: (default, meaning)
@@ -146,7 +146,7 @@ def gen():
         "scoreboard players set #2 ch.g 2", "scoreboard players set #4 ch.g 4",
         "scoreboard players set #10 ch.g 10", "scoreboard players set #20 ch.g 20",
         "scoreboard players set #38 ch.g 38", "scoreboard players set #60 ch.g 60",
-        "scoreboard players set #100 ch.g 100", "scoreboard players set #1000 ch.g 1000",
+        "scoreboard players set #100 ch.g 100", "scoreboard players set #85 ch.g 85", "scoreboard players set #110 ch.g 110", "scoreboard players set #1000 ch.g 1000",
         "scoreboard players set #1200 ch.g 1200", "scoreboard players set #24000 ch.g 24000",
         "scoreboard players set #-1 ch.g -1",
     ])
@@ -171,6 +171,12 @@ def gen():
             lines.append(f"execute if score @s ch.active matches {i} if score #slot ch.tmp matches {s} run return run function ch:kit/{h}/a{s}")
     lines.append("return fail")
     fn("gen/cast", lines)
+
+    lines = ["# Generated: after a successful cast, applies the ability's listed cooldown unless the kit set its own."]
+    for i, h, *_ in TYPES:
+        for s_, a in enumerate(HEARTS[h]["abilities"], start=1):
+            lines.append(f"execute if score @s ch.active matches {i} if score #slot ch.tmp matches {s_} if score @s ch.cd{s_} matches 0 run return run function ch:api/cooldown {{slot:{s_},t:{a['cd'] * 20}}}")
+    fn("gen/cd_default", lines)
 
     # active-heart derived scores (level, awakened, branches)
     lines = ["# Generated: copies the active heart's level, awakening and tree into ch.lvl, ch.awake and ch.b1-3."]

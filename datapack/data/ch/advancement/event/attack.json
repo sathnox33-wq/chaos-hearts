@@ -1,1 +1,1 @@
-{"criteria":{"hit":{"trigger":"minecraft:player_hurt_entity"}},"rewards":{"function":"ch:core/event/attack"}}
+{"criteria":{"hit":{"trigger":"minecraft:player_hurt_entity","conditions":{"damage":{"type":{"tags":[{"id":"ch:abilities","expected":false}]}}}}},"rewards":{"function":"ch:core/event/attack"}}
