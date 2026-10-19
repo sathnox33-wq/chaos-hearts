@@ -1,0 +1,2 @@
+# The Trial Ward: a lethal blow uses it up instead of killing you, and ends the trial.
+item replace entity @s weapon.offhand with minecraft:totem_of_undying[minecraft:item_model="chaoshearts:trial_ward",minecraft:custom_name={text:"Trial Ward",color:"light_purple",italic:false},minecraft:lore=[{text:"A lethal blow breaks the ward and ends the trial.",color:"gray",italic:false}],minecraft:custom_data={ch:{ward:1}},minecraft:enchantment_glint_override=true]

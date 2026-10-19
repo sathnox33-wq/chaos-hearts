@@ -76,5 +76,22 @@
   "subtitles.chaoshearts.eye_ambient": "Something watches",
   "subtitles.chaoshearts.eye_speak": "The Eye speaks",
   "subtitles.chaoshearts.eye_whisper": "Something whispers",
-  "subtitles.chaoshearts.eye_gaze": "The Eye stares at you"
+  "subtitles.chaoshearts.eye_gaze": "The Eye stares at you",
+  "subtitles.chaoshearts.hit_marker": "Hit",
+  "subtitles.chaoshearts.heart_shuffle": "Heart shuffled",
+  "subtitles.chaoshearts.altar_hum": "Altar hums",
+  "subtitles.chaoshearts.altar_activate": "Altar awakens",
+  "subtitles.chaoshearts.impact_heavy": "Heavy impact",
+  "subtitles.chaoshearts.impact_light": "Impact",
+  "subtitles.chaoshearts.whoosh": "Whoosh",
+  "subtitles.chaoshearts.charge_up": "Power gathers",
+  "subtitles.chaoshearts.rumble": "Ground rumbles",
+  "subtitles.chaoshearts.ui_click": "Click",
+  "subtitles.chaoshearts.ui_open": "Menu opens",
+  "subtitles.chaoshearts.glass_shatter": "Glass shatters",
+  "subtitles.chaoshearts.heart_beat": "Heartbeat",
+  "death.attack.ch_ability": "%1$s was torn apart by Chaos",
+  "death.attack.ch_ability.player": "%1$s was torn apart by %2$s's Chaos Heart",
+  "death.attack.ch_bleed": "%1$s bled out",
+  "death.attack.ch_bleed.player": "%1$s bled out fighting %2$s"
 }

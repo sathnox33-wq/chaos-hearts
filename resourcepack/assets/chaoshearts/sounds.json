@@ -701,6 +701,123 @@
     ],
     "subtitle": "subtitles.chaoshearts.eye_gaze"
   },
+  "hit_marker": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/hit_marker",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.hit_marker"
+  },
+  "heart_shuffle": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/heart_shuffle",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.heart_shuffle"
+  },
+  "altar_hum": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/altar_hum",
+        "attenuation_distance": 32
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.altar_hum"
+  },
+  "altar_activate": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/altar_activate",
+        "attenuation_distance": 32
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.altar_activate"
+  },
+  "impact_heavy": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/impact_heavy",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.impact_heavy"
+  },
+  "impact_light": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/impact_light",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.impact_light"
+  },
+  "whoosh": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/whoosh",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.whoosh"
+  },
+  "charge_up": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/charge_up",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.charge_up"
+  },
+  "rumble": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/rumble",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.rumble"
+  },
+  "ui_click": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/ui_click",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.ui_click"
+  },
+  "ui_open": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/ui_open",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.ui_open"
+  },
+  "glass_shatter": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/glass_shatter",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.glass_shatter"
+  },
+  "heart_beat": {
+    "sounds": [
+      {
+        "name": "chaoshearts:sfx/heart_beat",
+        "attenuation_distance": 20
+      }
+    ],
+    "subtitle": "subtitles.chaoshearts.heart_beat"
+  },
   "trial_music_rage": {
     "sounds": [
       {

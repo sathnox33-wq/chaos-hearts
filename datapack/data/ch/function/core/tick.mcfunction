@@ -8,6 +8,7 @@ execute as @a at @s run function ch:core/player/tick
 function ch:gen/kit_tick
 execute if entity @e[type=item_display,tag=ch.token,limit=1] run function ch:heart/token/tick_all
 execute if score #t20 ch.g matches 0 run function ch:heart/sweep
+execute if score #t20 ch.g matches 0 if entity @e[type=item_display,tag=ch.eyepart,limit=1] unless entity @a[scores={ch.eye=1..},limit=1] run kill @e[type=item_display,tag=ch.eyepart]
 execute if entity @e[type=marker,tag=ch.later,limit=1] as @e[type=marker,tag=ch.later] at @s run function ch:api/later_tick
 execute if entity @e[type=item_display,tag=ch.proj,limit=1] as @e[type=item_display,tag=ch.proj] at @s run function ch:api/proj_tick
 execute if score #stuns ch.g matches 1 run scoreboard players set #stuns ch.g 0

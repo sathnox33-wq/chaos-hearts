@@ -165,7 +165,7 @@ def gen():
         kit_tick.append(f"function ch:kit/{h}/world_tick")
     fn("gen/kit_tick", kit_tick)
 
-    for ev in ("on_attack", "on_hurt", "on_kill", "equip", "unequip", "hud"):
+    for ev in ("on_attack", "on_hurt", "on_kill", "equip", "unequip"):
         lines = [f"# Generated: calls {ev} on the player's active heart."]
         for i, h, *_ in TYPES:
             lines.append(f"execute if score @s ch.active matches {i} run function ch:kit/{h}/{ev}")
@@ -322,7 +322,79 @@ def gen():
         lines.append(f"function ch:kit/{h}/load")
     fn("gen/kit_load", lines)
 
-    # admin helper: full heart list for argument checks
+    # ---- the Awakening Altar: barrier blocks (unbreakable, blast proof) dressed in block displays
+    disp = []
+
+    def block(dx, dy, dz, b):
+        disp.append(f'summon block_display ~{dx} ~{dy} ~{dz} {{Tags:["ch.altarpart","ch.noability"],block_state:{{Name:"minecraft:{b}"}}}}')
+    for dx in range(-4, 5):
+        for dz in range(-4, 5):
+            a, c = abs(dx), abs(dz)
+            if a == 4 and c == 4:
+                b = "chiseled_polished_blackstone"
+            elif a == 4 or c == 4:
+                b = "polished_blackstone_bricks"
+            elif (a == 3 and c == 0) or (a == 0 and c == 3):
+                b = "crying_obsidian"
+            elif a == 3 or c == 3:
+                b = "polished_blackstone"
+            else:
+                b = "blackstone"
+            block(dx, 0, dz, b)
+    for dx in range(-2, 3):
+        for dz in range(-2, 3):
+            a, c = abs(dx), abs(dz)
+            if a == 0 and c == 0:
+                b = "reinforced_deepslate"
+            elif a == 2 or c == 2:
+                b = "deepslate_tiles"
+            elif a == 1 and c == 1:
+                b = "gilded_blackstone"
+            else:
+                b = "polished_deepslate"
+            block(dx, 1, dz, b)
+    for sx in (-4, 4):
+        for sz in (-4, 4):
+            block(sx, 1, sz, "polished_blackstone_wall")
+            block(sx, 2, sz, "polished_blackstone_wall")
+            block(sx, 3, sz, "crying_obsidian")
+            block(sx, 4, sz, "soul_lantern")
+    lines = ["# Generated: builds the Awakening Altar at the aligned position (its south-west base corner is ~-4 ~ ~-4).",
+             "fill ~-4 ~ ~-4 ~4 ~ ~4 minecraft:barrier",
+             "fill ~-2 ~1 ~-2 ~2 ~1 ~2 minecraft:barrier",
+             "fill ~-4 ~1 ~-4 ~-4 ~3 ~-4 minecraft:barrier", "fill ~4 ~1 ~-4 ~4 ~3 ~-4 minecraft:barrier",
+             "fill ~-4 ~1 ~4 ~-4 ~3 ~4 minecraft:barrier", "fill ~4 ~1 ~4 ~4 ~3 ~4 minecraft:barrier",
+             "fill ~-3 ~1 ~-3 ~3 ~6 ~3 minecraft:air replace #ch:passable",
+             "setblock ~-4 ~4 ~-4 minecraft:light[level=12]", "setblock ~4 ~4 ~-4 minecraft:light[level=12]",
+             "setblock ~-4 ~4 ~4 minecraft:light[level=12]", "setblock ~4 ~4 ~4 minecraft:light[level=12]"]
+    lines += disp
+    for k, (i, h, *_rest) in enumerate(TYPES):
+        lines.append(
+            f'summon item_display ~0.5 ~3.4 ~0.5 {{Tags:["ch.altarpart","ch.altar_gem","ch.noability"],Rotation:[{k * 36}f,0f],'
+            f'teleport_duration:40,brightness:{{sky:15,block:15}},transformation:{{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],'
+            f'translation:[0f,0f,2.3f],scale:[0.7f,0.7f,0.7f]}},item:{{id:"minecraft:paper",count:1,components:{{"minecraft:item_model":"chaoshearts:heart_{h}"}}}}}}')
+    lines += [
+        'summon item_display ~0.5 ~4.6 ~0.5 {Tags:["ch.altarpart","ch.altar_crystal","ch.noability"],brightness:{sky:15,block:15},interpolation_duration:40,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.6f,1.6f,1.6f]},item:{id:"minecraft:paper",count:1,components:{"minecraft:item_model":"chaoshearts:altar_crystal","minecraft:custom_model_data":{colors:[12602623]}}}}',
+        'summon item_display ~0.5 ~2.03 ~0.5 {Tags:["ch.altarpart","ch.altar_rune","ch.noability"],brightness:{sky:15,block:15},interpolation_duration:40,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[4.6f,4.6f,4.6f]},item:{id:"minecraft:paper",count:1,components:{"minecraft:item_model":"chaoshearts:altar_rune","minecraft:custom_model_data":{colors:[9061631]}}}}',
+        'summon text_display ~0.5 ~6.6 ~0.5 {Tags:["ch.altarpart","ch.noability"],billboard:"center",background:0,shadow:true,text:[{text:"Awakening Altar",color:"light_purple",bold:true},{text:"\\nRight-click the crystal to face a trial",color:"gray"}]}',
+        'summon interaction ~0.5 ~2 ~0.5 {Tags:["ch.altarpart","ch.altar_i","ch.noability"],width:3.0f,height:3.5f,response:true}',
+        'summon marker ~0.5 ~2 ~0.5 {Tags:["ch.altar","ch.altarpart","ch.noability"]}',
+    ]
+    fn("gen/altar_build", lines)
+
+    lines = ["# Generated: the hearts list in the menu."]
+    for i, h, *_ in TYPES:
+        lines.append(f"execute if score @s ch.cnt.{h} matches 1.. run function ch:menu/heart_line {{h:\"{h}\",i:{i}}}")
+    fn("gen/menu_hearts", lines)
+
+    # trial content dispatch: runs the active trial's function for heart #hid ch.tmp
+    for f, args in (("build", ""), ("intro", ""), ("wave", " with storage ch:tmp tw"), ("boss_spawn", ""),
+                    ("boss_tick", ""), ("phase", " with storage ch:tmp tw"), ("ambient", "")):
+        lines = [f"# Generated: runs trials/<heart>/{f} for the trial of heart #hid ch.tmp."]
+        for i, h, *_ in TYPES:
+            lines.append(f"execute if score #hid ch.tmp matches {i} run return run function ch:trials/{h}/{f}{args}")
+        fn(f"gen/trial_{f}", lines)
+
     print("datapack generated in", DP)
 
 

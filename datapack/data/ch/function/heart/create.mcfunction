@@ -7,6 +7,7 @@ scoreboard players add #hid ch.g 1
 $data modify storage ch:reg hearts append value {id:0,type:"$(h)",state:"held",holder:0}
 execute store result storage ch:reg hearts[-1].id int 1 run scoreboard players get #hid ch.g
 execute store result storage ch:reg hearts[-1].holder int 1 run scoreboard players get @s ch.pid
+$data modify storage ch:tmp args set value {h:"$(h)",i:$(i)}
 execute store result storage ch:tmp args.id int 1 run scoreboard players get #hid ch.g
 function ch:heart/gain with storage ch:tmp args
 return 1

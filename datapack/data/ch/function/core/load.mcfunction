@@ -15,6 +15,9 @@ execute unless data storage ch:data names run data modify storage ch:data names 
 execute unless data storage ch:data returns run data modify storage ch:data returns set value []
 execute unless data storage ch:data pvp run data modify storage ch:data pvp set value []
 team add ch.trial
+team add ch.eye
+team modify ch.eye nametagVisibility never
+team modify ch.eye seeFriendlyInvisibles false
 team modify ch.trial friendlyFire false
 team modify ch.trial seeFriendlyInvisibles false
 function ch:trial/load

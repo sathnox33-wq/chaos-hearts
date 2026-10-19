@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "chaoshearts:item/focus_infernal_awakened"
-  }
-}

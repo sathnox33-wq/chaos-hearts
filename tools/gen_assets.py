@@ -5,7 +5,8 @@ definitions, sound definitions, synthesized sound effects and trial music.
 
 Everything is procedural and seeded, so running it again produces the same pack.
 
-    python3 tools/gen_assets.py            # writes ./resourcepack and the mod icon
+    python3 tools/gen_assets.py              # writes ./resourcepack
+    python3 tools/gen_assets.py --no-audio   # same, but keeps the already generated sounds
 
 Needs numpy, Pillow and an ffmpeg build with libvorbis on PATH.
 """
@@ -19,11 +20,10 @@ import tempfile
 import wave
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PACK = os.path.join(ROOT, "resourcepack")
-ICON = os.path.join(ROOT, "src", "main", "resources", "assets", "chaoshearts", "icon.png")
 SR = 44100
 
 # id, main colour, secondary colour (mirrors HeartType.java)
@@ -194,41 +194,11 @@ def motif(img, inside, kind, main, sec, rng, phase=0.0):
             p(10 + k // 2 + int(2 * math.sin(k * 0.7 + phase * 6)), 9 + int(k / 1.5), dark, 200)
 
 
-def frame_ring(img, metal, rng):
-    """Amulet setting that marks a focus (the casting item) apart from a raw heart."""
-    ys, xs = np.mgrid[0:N, 0:N].astype(np.float64)
-    d = np.hypot(xs + 0.5 - 16, ys + 0.5 - 16)
-    ring = (d > 13.0) & (d <= 15.2)
-    m = rgb(metal)
-    t = 0.6 + 0.4 * np.cos(np.arctan2(ys - 16, xs - 16) + 2.3)
-    for yy, xx in zip(*np.nonzero(ring)):
-        if img[yy, xx, 3] == 0:
-            c = np.clip(m * t[yy, xx] + rng.normal(0, 5), 0, 255)
-            img[yy, xx] = [c[0], c[1], c[2], 255]
-    # bail at the top so it reads as a pendant
-    for x in range(14, 18):
-        for y in range(0, 3):
-            if img[y, x, 3] == 0 or y < 2:
-                img[y, x] = [*(np.clip(m * 0.8, 0, 255)), 255]
-    # gem sockets at the sides
-    for x, y in ((1, 16), (30, 16), (16, 30)):
-        img[y, x] = [255, 255, 255, 255]
-
-
-def sparkle(img, rng, n, color, phase):
-    for k in range(n):
-        ang = phase * 6.283 + k * 6.283 / n
-        r = 11 + 2 * math.sin(phase * 12.56 + k)
-        x = int(16 + math.cos(ang) * r); y = int(16 + math.sin(ang) * r)
-        for dx, dy, a in ((0, 0, 255), (1, 0, 140), (-1, 0, 140), (0, 1, 140), (0, -1, 140)):
-            put(img, x + dx, y + dy, color, a)
-
-
 def to_image(arr):
     return Image.fromarray(np.clip(arr, 0, 255).astype(np.uint8), "RGBA")
 
 
-def save_texture(path, frames, frametime=None):
+def save_texture(path, frames, frametime=None, interpolate=True):
     full = os.path.join(PACK, "assets", "chaoshearts", "textures", path + ".png")
     os.makedirs(os.path.dirname(full), exist_ok=True)
     if len(frames) == 1:
@@ -237,148 +207,1979 @@ def save_texture(path, frames, frametime=None):
     strip = np.concatenate(frames, axis=0)
     to_image(strip).save(full)
     with open(full + ".mcmeta", "w") as f:
-        json.dump({"animation": {"frametime": frametime, "interpolate": True}}, f, indent=2)
+        json.dump({"animation": {"frametime": frametime, "interpolate": interpolate}}, f, indent=2)
 
 
-def heart_textures():
-    for kind, main, sec in HEARTS:
-        rng = np.random.default_rng(sum(map(ord, kind)))
-        # token: a raw heart that beats
-        frames = []
-        for i in range(6):
-            beat = [1.0, 1.06, 1.0, 1.03, 1.0, 1.0][i]
-            img, inside, _, _ = shade_heart(main, sec, 0.92 * beat, np.random.default_rng(i), glow=0.15 * (beat - 1) * 10)
-            motif(img, inside, kind, main, sec, rng, phase=i / 6)
-            frames.append(img)
-        save_texture(f"item/heart_{kind}", frames, 3)
 
-        # focus: the heart set in an amulet
-        img, inside, _, _ = shade_heart(main, sec, 0.74, np.random.default_rng(1))
-        motif(img, inside, kind, main, sec, rng)
-        frame_ring(img, 0x9C9CA8, rng)
-        save_texture(f"item/focus_{kind}", [img])
+# =====================================================================  drawing helpers
 
-        # awakened focus: gold setting, a glowing heart, orbiting sparks
-        frames = []
-        for i in range(8):
-            ph = i / 8
-            glow = 0.35 + 0.35 * math.sin(ph * 6.283)
-            img, inside, _, _ = shade_heart(main, sec, 0.76, np.random.default_rng(i + 3), glow=glow)
-            motif(img, inside, kind, main, sec, rng, phase=ph)
-            frame_ring(img, 0xF2C84B, rng)
-            sparkle(img, rng, 3, np.clip(rgb(main) * 0.3 + 180, 0, 255), ph)
-            frames.append(img)
-        save_texture(f"item/focus_{kind}_awakened", frames, 2)
+GLYPHS = json.load(open(os.path.join(ROOT, "tools", "glyphs.json"), encoding="utf-8"))
+ABILITIES = json.load(open(os.path.join(ROOT, "tools", "hearts.json"), encoding="utf-8"))
+HCOL = {k: (m, s) for k, m, s in HEARTS}
 
+
+def col3(c):
+    return rgb(c) if isinstance(c, (int, np.integer)) else np.asarray(c, dtype=np.float64)
+
+
+def lc(c, k):
+    """Lighten towards white by k (0..1)."""
+    c = col3(c)
+    return c + (255 - c) * k
+
+
+def dk(c, k):
+    """Darken towards black by k (0..1)."""
+    return col3(c) * (1 - k)
+
+
+def mixc(a, b, t):
+    return col3(a) * (1 - t) + col3(b) * t
+
+
+def blank(h, w):
+    return np.zeros((h, w, 4))
+
+
+def over(img, col, a):
+    """Composite a colour (or HxWx3 colour field) with coverage a over a straight-alpha RGBA float image."""
+    a = np.clip(np.broadcast_to(np.asarray(a, dtype=np.float64), img.shape[:2]), 0, 1)[..., None]
+    col = np.broadcast_to(np.asarray(col, dtype=np.float64), img[..., :3].shape)
+    da = img[..., 3:4] / 255
+    oa = a + da * (1 - a)
+    img[..., :3] = (col * a + img[..., :3] * da * (1 - a)) / np.maximum(oa, 1e-6)
+    img[..., 3:4] = oa * 255
+    return img
+
+
+def over_img(dst, src):
+    return over(dst, src[..., :3], src[..., 3] / 255)
+
+
+def smooth(e0, e1, x):
+    t = np.clip((np.asarray(x, dtype=np.float64) - e0) / (e1 - e0), 0, 1)
+    return t * t * (3 - 2 * t)
+
+
+def gauss(x, s):
+    return np.exp(-(np.asarray(x, dtype=np.float64) / s) ** 2)
+
+
+def pnoise(h, w, rng, beta=2.0, aniso=(1.0, 1.0)):
+    """Periodic (tileable) fractal noise in 0..1, made by shaping white noise in the frequency domain."""
+    n = rng.normal(size=(h, w))
+    fy = np.fft.fftfreq(h)[:, None] * h * aniso[1]
+    fx = np.fft.fftfreq(w)[None, :] * w * aniso[0]
+    f = np.sqrt(fx ** 2 + fy ** 2)
+    f[0, 0] = 1
+    F = np.fft.fft2(n) / f ** beta
+    F[0, 0] = 0
+    r = np.real(np.fft.ifft2(F))
+    return (r - r.min()) / (r.max() - r.min() + 1e-9)
+
+
+def uv_grid(h, w):
+    ys, xs = np.mgrid[0:h, 0:w].astype(np.float64)
+    return (xs + 0.5) / w, (ys + 0.5) / h
+
+
+def polar(h, w):
+    """Centred coordinates in -1..1, radius and angle."""
+    u, v = uv_grid(h, w)
+    x, y = u * 2 - 1, v * 2 - 1
+    return x, y, np.hypot(x, y), np.arctan2(y, x)
+
+
+def ellipse_pts(cx, cy, rx, ry, rot=0.0, n=48):
+    c, s = math.cos(math.radians(rot)), math.sin(math.radians(rot))
+    out = []
+    for k in range(n):
+        a = 2 * math.pi * k / n
+        x, y = rx * math.cos(a), ry * math.sin(a)
+        out.append((cx + x * c - y * s, cy + x * s + y * c))
+    return out
+
+
+def arc_pts(cx, cy, r, a0, a1, n=28):
+    return [(cx + r * math.cos(math.radians(a0 + (a1 - a0) * k / (n - 1))),
+             cy + r * math.sin(math.radians(a0 + (a1 - a0) * k / (n - 1)))) for k in range(n)]
+
+
+def star_pts(cx, cy, ro, ri, n, rot=-90.0):
+    pts = []
+    for k in range(n * 2):
+        a = math.radians(rot + 180.0 * k / n)
+        r = ro if k % 2 == 0 else ri
+        pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+    return pts
+
+
+def bez(p0, p1, p2, n=20):
+    return [((1 - t) ** 2 * p0[0] + 2 * (1 - t) * t * p1[0] + t * t * p2[0],
+             (1 - t) ** 2 * p0[1] + 2 * (1 - t) * t * p1[1] + t * t * p2[1]) for t in np.linspace(0, 1, n)]
+
+
+def flame_pts(cx, by, w, h, lean=0.0):
+    r = w / 2
+    pts = arc_pts(cx, by - r, r, 0, 180, 14)
+    pts += bez((cx - r, by - r), (cx - r * 0.7, by - h * 0.62), (cx + lean, by - h), 12)[1:]
+    pts += bez((cx + lean, by - h), (cx + r * 1.05, by - h * 0.5), (cx + r, by - r), 12)[1:]
+    return pts
+
+
+def drop_pts(cx, cy, r, tip=2.3):
+    pts = arc_pts(cx, cy, r, -15, 195, 18)
+    return pts + [(cx, cy - r * tip)]
+
+
+def heart_pts(cx, cy, s, n=40):
+    out = []
+    for k in range(n):
+        t = 2 * math.pi * k / n
+        x = 16 * math.sin(t) ** 3
+        y = 13 * math.cos(t) - 5 * math.cos(2 * t) - 2 * math.cos(3 * t) - math.cos(4 * t)
+        out.append((cx + x * s / 16, cy - y * s / 16))
+    return out
+
+
+def jag(p0, p1, n, amp, rng):
+    """A jagged polyline from p0 to p1 (midpoint-ish displacement)."""
+    pts = []
+    dx, dy = p1[0] - p0[0], p1[1] - p0[1]
+    ln = math.hypot(dx, dy) + 1e-9
+    nx, ny = -dy / ln, dx / ln
+    for k in range(n + 1):
+        t = k / n
+        o = 0 if k in (0, n) else rng.normal(0, amp)
+        pts.append((p0[0] + dx * t + nx * o, p0[1] + dy * t + ny * o))
+    return pts
+
+
+class Art:
+    """Supersampled vector drawing onto a straight-alpha RGBA float image (units are output pixels)."""
+
+    def __init__(self, w, h=None, ss=4):
+        self.w, self.h, self.ss = w, h or w, ss
+        self.img = blank(self.h, self.w)
+
+    def mask(self, draw, blur=0):
+        im = Image.new("L", (self.w * self.ss, self.h * self.ss), 0)
+        draw(ImageDraw.Draw(im), self.ss)
+        if blur:
+            im = im.filter(ImageFilter.GaussianBlur(blur * self.ss))
+        if self.ss > 1:
+            im = im.resize((self.w, self.h), Image.BOX)
+        return np.asarray(im, dtype=np.float64) / 255
+
+    def put(self, m, col, a=1.0):
+        over(self.img, col, m * a)
+        return self
+
+    def poly(self, pts, col, a=1.0, blur=0):
+        return self.put(self.mask(lambda d, s: d.polygon([(x * s, y * s) for x, y in pts], fill=255), blur), col, a)
+
+    def line(self, pts, w, col, a=1.0, blur=0, cap=True):
+        def f(d, s):
+            P = [(x * s, y * s) for x, y in pts]
+            d.line(P, fill=255, width=max(1, int(round(w * s))), joint="curve")
+            if cap:
+                r = w * s / 2
+                for x, y in (P[0], P[-1]):
+                    d.ellipse([x - r, y - r, x + r, y + r], fill=255)
+        return self.put(self.mask(f, blur), col, a)
+
+    def lines(self, polys, col, a=1.0, blur=0):
+        """Many (pts, width) polylines in one mask."""
+        def f(d, s):
+            for pts, w in polys:
+                P = [(x * s, y * s) for x, y in pts]
+                d.line(P, fill=255, width=max(1, int(round(w * s))), joint="curve")
+        return self.put(self.mask(f, blur), col, a)
+
+    def circle(self, cx, cy, r, col, a=1.0, blur=0):
+        return self.put(self.mask(lambda d, s: d.ellipse([(cx - r) * s, (cy - r) * s, (cx + r) * s, (cy + r) * s], fill=255), blur), col, a)
+
+    def ellipse(self, cx, cy, rx, ry, col, a=1.0, blur=0, rot=0):
+        return self.poly(ellipse_pts(cx, cy, rx, ry, rot), col, a, blur)
+
+    def ring(self, cx, cy, r, w, col, a=1.0, blur=0, ry=None, rot=0):
+        pts = ellipse_pts(cx, cy, r, ry or r, rot, 56)
+        return self.line(pts + pts[:2], w, col, a, blur, cap=False)
+
+    def arc(self, cx, cy, r, a0, a1, w, col, a=1.0, blur=0):
+        return self.line(arc_pts(cx, cy, r, a0, a1), w, col, a, blur)
+
+    def star(self, cx, cy, ro, ri, n, col, a=1.0, blur=0, rot=-90):
+        return self.poly(star_pts(cx, cy, ro, ri, n, rot), col, a, blur)
+
+    def rect(self, x0, y0, x1, y1, col, a=1.0, blur=0):
+        return self.poly([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], col, a, blur)
+
+
+def outlined(sym, col=(8, 4, 12), a=0.95):
+    """Puts a 1px dark outline under a sprite so it reads without the text shadow."""
+    al = sym[..., 3] / 255
+    dil = al.copy()
+    for dy in (-1, 0, 1):
+        for dx in (-1, 0, 1):
+            dil = np.maximum(dil, np.roll(np.roll(al, dy, 0), dx, 1))
+    out = blank(*al.shape)
+    over(out, col, np.clip(dil * 1.6, 0, 1) * a)
+    return over_img(out, sym)
+
+
+def save_png(path, img):
+    full = os.path.join(PACK, "assets", "chaoshearts", "textures", path + ".png")
+    os.makedirs(os.path.dirname(full), exist_ok=True)
+    to_image(img).save(full)
+
+
+# =====================================================================  HUD
+
+HUD_DIR = os.path.join(PACK, "assets", "chaoshearts", "textures", "gui", "hud")
+
+# vanilla health heart footprint: o = outline, # = fill
+H_SHAPE = [".oo...oo.",
+           "o##o.o##o",
+           "o###o###o",
+           "o#######o",
+           "o#######o",
+           ".o#####o.",
+           "..o###o..",
+           "...o#o...",
+           "....o...."]
+
+# per-heart 9x9 emblem drawn over the shaded fill ('.' keeps the base); pixels outside the
+# heart are allowed (blood drips) and are drawn in every state except empty
+H_ART = {
+    "rage": ([".........",
+              ".lw...dk.",
+              ".wl...d..",
+              "....k....",
+              "...k.k...",
+              "..bk..d..",
+              "...b.d...",
+              "......b..",
+              "......B.."],
+             {"k": (28, 0, 2), "b": (120, 0, 8), "B": (70, 0, 4), "d": (110, 8, 10)}),
+    "speed": ([".........",
+               ".ww...c..",
+               ".w...c...",
+               "....Wc...",
+               ".c..cW...",
+               "....c....",
+               "...c.....",
+               ".........",
+               "........."],
+              {"c": (41, 211, 242), "W": (235, 255, 255)}),
+    "infernal": ([".........",
+                  ".ll...dl.",
+                  ".l.k..k..",
+                  "..k.yy.k.",
+                  "...yYy...",
+                  "..k.y.k..",
+                  "...k.k...",
+                  ".........",
+                  "........."],
+                 {"k": (70, 10, 0), "y": (255, 214, 90), "Y": (255, 252, 220), "d": (190, 50, 0)}),
+    "void": ([".........",
+              ".wl...ll.",
+              ".l.....l.",
+              "..lkkkl..",
+              ".lkskkkl.",
+              "..kkksk..",
+              "...lkl...",
+              ".........",
+              "........."],
+             {"k": (6, 0, 16), "s": (255, 255, 255)}),
+    "frozen": ([".........",
+                ".ww...lw.",
+                ".wl..ldl.",
+                ".lwlw.dd.",
+                ".llwlldd.",
+                "..lwldd..",
+                "...wdd...",
+                "....d....",
+                "........."],
+               {"w": (250, 255, 255), "l": (190, 240, 255), "d": (70, 140, 200)}),
+    "storm": ([".........",
+               ".gw...gg.",
+               ".ggg.yg..",
+               ".gggy.g..",
+               "...yyy...",
+               "....y....",
+               "...y.....",
+               ".........",
+               "........."],
+              {"g": (120, 140, 175), "y": (255, 245, 150)}),
+    "blood": ([".........",
+               ".ww...lm.",
+               ".wl......",
+               "....p....",
+               "....p....",
+               "...ppp...",
+               "...ppp.b.",
+               "....p..B.",
+               "........."],
+              {"p": (225, 40, 64), "b": (140, 8, 24), "B": (80, 0, 10)}),
+    "titan": ([".........",
+               ".ls...ls.",
+               ".sks.ssk.",
+               ".gygggyg.",
+               ".sssgsss.",
+               "..ssgss..",
+               "...sgs...",
+               "....g....",
+               "........."],
+              {"s": (125, 118, 105), "l": (170, 162, 148), "k": (58, 52, 45), "g": (201, 164, 92), "y": (255, 230, 150)}),
+    "celestial": ([".........",
+                   ".ll...ll.",
+                   ".l.......",
+                   "....w....",
+                   "..ywWwy..",
+                   "....w....",
+                   "....y....",
+                   ".........",
+                   "........."],
+                  {"W": (255, 255, 255), "w": (255, 252, 225), "y": (255, 196, 64)}),
+    "corruption": ([".........",
+                    ".gl...pp.",
+                    ".l.v.pvp.",
+                    "...v.v.p.",
+                    ".pp.v..y.",
+                    "..vp.v...",
+                    "...pv....",
+                    "....p....",
+                    "........."],
+                   {"p": (92, 40, 120), "v": (36, 8, 52), "y": (200, 255, 130), "g": (170, 240, 110)}),
+}
+
+
+def heart9(kind, state):
+    main, sec = HCOL[kind]
+    rows, pal = H_ART[kind]
+    base_pal = {"w": lc(main, 0.75), "l": lc(main, 0.35), "m": col3(main), "d": dk(sec, 0.2)}
+    base_pal.update({k: col3(v) for k, v in pal.items()})
+    husk_c = mixc(dk(sec, 0.82), (16, 12, 18), 0.5)
+    active = state in ("full_active", "half_active", "full_active2")
+    pulse = state == "full_active2"
+    half = state.startswith("half")
+    empty = state == "empty"
+    img = blank(9, 9)
+    for y in range(9):
+        for x in range(9):
+            s = H_SHAPE[y][x]
+            ch = rows[y][x]
+            if s == "o":
+                if active:
+                    c = lc(main, 0.8 if pulse else 0.5)
+                else:
+                    c = mixc(dk(sec, 0.8), (0, 0, 0), 0.6)
+                img[y, x] = [*c, 255]
+            elif s == "#":
+                t = ((8 - x) * 0.35 + (8 - y) * 0.65) / 8
+                c = mixc(dk(main, 0.5), lc(main, 0.12), t)
+                if ch != ".":
+                    c = base_pal[ch]
+                if empty or (half and x > 4):
+                    c = mixc(husk_c * (0.85 + 0.3 * t), c, 0.12)
+                elif active:
+                    c = lc(c, 0.3 if pulse else 0.14)
+                img[y, x] = [*np.clip(c, 0, 255), 255]
+            elif ch != "." and not empty and not (half and x > 4):
+                img[y, x] = [*base_pal[ch], 255]
+    return img
+
+
+def hud_glyph(img, ascent, height):
+    """Font-ready glyph: padded below when the ascent is above the glyph (a bitmap provider may not
+    have ascent > height), and with a near-invisible pixel in the last column so Minecraft does not
+    trim the advance. Returns (image, font height)."""
+    img = img.copy()
+    pad = max(0, ascent - height)
+    if pad:
+        img = np.concatenate([img, blank(pad, img.shape[1])], axis=0)
+    if img[:, -1, 3].max() < 1:
+        img[-1, -1] = [255, 255, 255, 1]
+    return img, height + pad
+
+
+FONTS = {}
+
+
+def font_add(font, file, ascent, height, char, img):
+    """Writes a glyph texture and records its bitmap provider for font `font` (chaoshearts:<font>)."""
+    g, fh = hud_glyph(img, ascent, height)
+    full = os.path.join(PACK, "assets", "chaoshearts", "textures", file)
+    os.makedirs(os.path.dirname(full), exist_ok=True)
+    to_image(g).save(full)
+    FONTS.setdefault(font, []).append({"type": "bitmap", "file": "chaoshearts:" + file, "ascent": ascent,
+                                       "height": fh, "chars": [char]})
+
+
+def cp(h):
+    return chr(int(h, 16))
+
+
+def fname(res):
+    return res.split(":", 1)[1]
+
+
+def hud_hearts():
+    hg = GLYPHS["hearts"]
+    base = int(hg["base"], 16)
+    for i, (kind, _, _) in enumerate(HEARTS):
+        for state, k in hg["states"].items():
+            img = heart9(kind, state)
+            ch = chr(base + i * 8 + k)
+            path = hg["texture"].replace("<h>", kind).replace("<state>", state).split(":", 1)[1]
+            for f in hg["fonts"].values():
+                g, fh = hud_glyph(img, f["ascent"], hg["height"])
+                FONTS.setdefault(fname(f["font"]), []).append(
+                    {"type": "bitmap", "file": "chaoshearts:" + path, "ascent": f["ascent"], "height": fh, "chars": [ch]})
+            full = os.path.join(PACK, "assets", "chaoshearts", "textures", path)
+            os.makedirs(os.path.dirname(full), exist_ok=True)
+            to_image(hud_glyph(img, 0, hg["height"])[0]).save(full)
+
+
+# ---- ability icons
+
+def icon_base(main, sec, rng):
+    u, v = uv_grid(16, 16)
+    r = np.hypot(u - 0.5, v - 0.42)
+    t = np.clip(r * 1.7, 0, 1)[..., None]
+    bg = mixc(main, (0, 0, 0), 0.62)[None, None] * (1 - t) + mixc(sec, (0, 0, 0), 0.82)[None, None] * t
+    bg += rng.normal(0, 4, bg.shape)
+    img = blank(16, 16)
+    img[..., :3] = np.clip(bg, 0, 255)
+    img[..., 3] = 255
+    return img
+
+
+def icon_frame(main, img, inner=True):
+    edge = (12, 8, 16)
+    for y in range(16):
+        for x in range(16):
+            o = x in (0, 15) or y in (0, 15)
+            corner = (x in (0, 15) and y in (0, 15))
+            if corner:
+                img[y, x] = [0, 0, 0, 0]
+            elif o or (x in (1, 14) and y in (1, 14)):
+                img[y, x] = [*edge, 255]
+            elif inner and (x in (1, 14) or y in (1, 14)):
+                k = 0.25 if (y == 1 or x == 1) else 0.6
+                img[y, x] = [*mixc(main, (0, 0, 0), k), 255]
+    return img
+
+
+def interior_mask():
+    m = np.zeros((16, 16))
+    m[1:15, 1:15] = 1
+    for x, y in ((1, 1), (14, 1), (1, 14), (14, 14)):
+        m[y, x] = 0
+    return m
+
+
+def draw_ability(kind, slot, A, m, s, rng):
+    L, W, K = lc(m, 0.55), (255, 255, 255), (10, 4, 10)
+    key = f"{kind}{slot}"
+    if key == "rage1":  # Rage Leap: arcing leap that slams into the ground
+        A.line([(2, 13.6), (14, 13.6)], 1.0, dk(m, 0.4))
+        pts = bez((2.5, 12.5), (6.5, -2.5), (11.8, 10.5), 24)
+        A.line(pts, 2.2, m, 0.45, blur=0.6).line(pts, 1.1, L)
+        A.poly([(10.0, 9.0), (13.6, 9.6), (11.6, 12.6)], W)
+        A.star(11.8, 12.6, 3.4, 1.0, 6, lc(m, 0.3), rot=-75).circle(11.8, 12.6, 1.0, W)
+        for x, y in ((5, 12.2), (14.2, 11.0), (8.8, 11.6)):
+            A.circle(x, y, 0.5, dk(m, 0.2))
+    elif key == "rage2":  # War Cry: a fanged maw and sound waves
+        A.circle(5.5, 8, 3.6, dk(m, 0.75)).circle(5.5, 8, 2.4, (30, 0, 0))
+        A.poly([(3.8, 5.6), (4.6, 7.4), (5.4, 5.4), (6.2, 7.4), (7.0, 5.6)], W)
+        A.poly([(3.8, 10.4), (4.6, 8.8), (5.4, 10.6), (6.2, 8.8), (7.0, 10.4)], W)
+        for i, r in enumerate((5.4, 7.8, 10.2)):
+            A.arc(5.5, 8, r, -42, 42, 1.3 - i * 0.15, lc(m, 0.5 - i * 0.12), 1 - i * 0.2)
+    elif key == "rage3":  # Berserk Chain: chain links dripping blood
+        steel = (190, 175, 175)
+        A.ring(5.2, 5.2, 2.9, 1.3, steel, ry=1.7, rot=45)
+        A.ring(10.6, 10.6, 2.9, 1.3, steel, ry=1.7, rot=45)
+        A.ring(7.9, 7.9, 2.3, 1.3, lc(m, 0.25), ry=1.3, rot=-45)
+        A.poly(drop_pts(12.6, 13.4, 1.2), m).poly(drop_pts(3.4, 11.8, 0.9), dk(m, 0.2))
+        A.circle(7.9, 7.9, 1.2, m, 0.6, blur=0.8)
+    elif key == "rage4":  # Rampage: a horned demon skull wreathed in fury
+        A.circle(8, 8.5, 6.4, m, 0.5, blur=1.4)
+        A.poly([(5.2, 6.4), (1.8, 4.6), (2.0, 1.4), (3.6, 4.0), (6.4, 5.0)], (230, 220, 200))
+        A.poly([(10.8, 6.4), (14.2, 4.6), (14.0, 1.4), (12.4, 4.0), (9.6, 5.0)], (230, 220, 200))
+        A.ellipse(8, 8.6, 4.0, 4.3, dk(m, 0.55))
+        A.poly([(5.0, 7.4), (7.4, 8.4), (5.6, 9.2)], (255, 220, 80)).poly([(11.0, 7.4), (8.6, 8.4), (10.4, 9.2)], (255, 220, 80))
+        A.poly([(6.0, 11.0), (6.6, 12.6), (7.2, 11.0), (8.0, 12.8), (8.8, 11.0), (9.4, 12.6), (10.0, 11.0)], W)
+    elif key == "speed1":  # Dash: chevrons and streaks
+        for y, x0 in ((5.5, 1.5), (8, 1.0), (10.5, 1.5)):
+            A.line([(x0, y), (x0 + 3.5, y)], 0.9, lc(s, 0.3), 0.8)
+        A.line([(5.6, 3.6), (9.6, 8), (5.6, 12.4)], 1.9, s)
+        A.line([(9.0, 3.6), (13.0, 8), (9.0, 12.4)], 1.9, lc(m, 0.2))
+    elif key == "speed2":  # Afterimage: a runner and its fading echoes
+        def runner(dx, col, a):
+            A.circle(9.5 + dx, 3.6, 1.4, col, a)
+            A.line([(9.2 + dx, 5.2), (8.2 + dx, 9.0)], 1.5, col, a)
+            A.line([(6.4 + dx, 6.4), (8.9 + dx, 6.2), (11.2 + dx, 7.8)], 1.1, col, a)
+            A.line([(8.2 + dx, 9.0), (10.6 + dx, 10.6), (10.0 + dx, 13.4)], 1.2, col, a)
+            A.line([(8.2 + dx, 9.0), (6.6 + dx, 11.6), (4.4 + dx, 11.8)], 1.2, col, a)
+        runner(-4.2, s, 0.35)
+        runner(-2.1, mixc(s, m, 0.5), 0.6)
+        runner(0, lc(m, 0.3), 1.0)
+    elif key == "speed3":  # Slipstream: wind ribbons
+        for i, (c, ph) in enumerate(((5.0, 0.0), (8.4, 1.4), (11.8, 2.6))):
+            pts = [(x, c + 1.1 * math.sin(x * 0.7 + ph)) for x in np.linspace(2, 12.5, 18)]
+            A.line(pts, 1.3, lc(s, 0.25) if i != 1 else lc(m, 0.2), 1.0 - 0.15 * (i == 2))
+        A.arc(12.6, 6.6, 1.6, -100, 140, 1.0, lc(s, 0.4))
+        A.arc(12.6, 10.0, 1.4, -120, 120, 1.0, lc(m, 0.4))
+    elif key == "speed4":  # Time Fracture: a shattered clock
+        A.circle(8, 8, 5.6, dk(m, 0.65)).ring(8, 8, 5.6, 1.2, lc(m, 0.15))
+        for k in range(12):
+            a = math.radians(k * 30)
+            A.line([(8 + 4.2 * math.cos(a), 8 + 4.2 * math.sin(a)), (8 + 4.9 * math.cos(a), 8 + 4.9 * math.sin(a))], 0.6, lc(m, 0.4))
+        A.line([(8, 8), (8, 4.3)], 1.0, W).line([(8, 8), (10.8, 9.4)], 1.0, W)
+        crack = [(2.4, 3.2), (5.6, 6.4), (7.2, 5.8), (9.4, 9.6), (11.0, 9.2), (13.8, 13.2)]
+        A.line(crack, 1.6, s, 0.7, blur=0.5).line(crack, 0.7, (240, 255, 255))
+    elif key == "infernal1":  # Fireball Volley: three blazing shots
+        for cx, cy, r in ((4.4, 12.0, 1.7), (8.2, 8.0, 2.0), (12.0, 4.0, 2.2)):
+            A.poly([(cx - r * 0.7, cy - r * 0.5), (cx - r * 2.6, cy + r * 2.2), (cx + r * 0.5, cy + r * 0.7)], s, 0.85)
+            A.circle(cx, cy, r, m).circle(cx + 0.2, cy - 0.2, r * 0.6, (255, 220, 120)).circle(cx + 0.3, cy - 0.3, r * 0.25, W)
+    elif key == "infernal2":  # Flame Wall: a line of flames over hot stone
+        A.rect(1.5, 12.4, 14.5, 14.2, (60, 18, 8))
+        for x in (3.0, 6.3, 9.6, 12.9):
+            A.line([(x - 1.2, 13.3), (x + 1.2, 13.3)], 0.5, (255, 140, 40))
+        for x, h in ((3.4, 7.8), (6.4, 10.2), (9.5, 8.8), (12.5, 10.6)):
+            A.poly(flame_pts(x, 12.6, 3.3, h, 0.4), m)
+            A.poly(flame_pts(x, 12.6, 1.8, h * 0.6, 0.2), (255, 220, 110))
+    elif key == "infernal3":  # Magma Eruption: a volcano spewing lava
+        A.poly(flame_pts(8, 7.5, 4.0, 7.0), m, 0.9).poly(flame_pts(8, 7.5, 2.2, 5.0), (255, 225, 120))
+        A.poly([(0.8, 14.6), (5.8, 7.2), (10.2, 7.2), (15.2, 14.6)], (54, 26, 20))
+        A.poly([(5.8, 7.2), (10.2, 7.2), (9.4, 8.2), (6.6, 8.2)], (255, 160, 40))
+        A.line([(7.4, 8.0), (6.8, 10.6), (7.6, 12.4), (6.8, 14.4)], 1.0, (255, 120, 20))
+        for x, y in ((3.0, 4.6), (12.8, 3.6), (13.6, 7.2), (2.4, 8.4)):
+            A.circle(x, y, 0.8, (255, 170, 50))
+    elif key == "infernal4":  # Inferno Avatar: a burning skull crowned in fire
+        A.poly(flame_pts(8, 15.0, 11.0, 14.0, 0.0), m, 0.9)
+        A.poly(flame_pts(8, 15.0, 7.0, 10.0, 0.5), (255, 200, 80), 0.9)
+        A.ellipse(8, 9.6, 3.6, 3.8, (40, 10, 4))
+        A.rect(6.2, 12.4, 9.8, 14.2, (40, 10, 4))
+        A.circle(6.6, 9.4, 1.0, W).circle(9.4, 9.4, 1.0, W)
+        A.circle(6.6, 9.4, 1.6, (255, 230, 120), 0.5, blur=0.6).circle(9.4, 9.4, 1.6, (255, 230, 120), 0.5, blur=0.6)
+    elif key == "void1":  # Void Step: stepping through a portal
+        A.ellipse(9.6, 8, 3.3, 5.8, (8, 0, 20)).ring(9.6, 8, 3.3, 1.2, lc(m, 0.35), ry=5.8)
+        A.ring(9.6, 8, 4.4, 0.8, m, 0.5, ry=6.8, blur=0.4)
+        for i, x in enumerate((1.8, 3.6, 5.4)):
+            A.circle(x, 8 + (i - 1) * 0.4, 0.6 + i * 0.25, lc(m, 0.2 + i * 0.2), 0.4 + i * 0.25)
+        A.poly([(6.2, 6.0), (9.4, 8), (6.2, 10.0)], W, 0.9)
+    elif key == "void2":  # Rift Orb: an orb split by a tear
+        A.circle(8, 8, 6.0, m, 0.5, blur=1.0).circle(8, 8, 5.0, (20, 0, 46)).ring(8, 8, 5.0, 1.0, lc(m, 0.3))
+        r = [(4.2, 4.4), (7.0, 7.0), (6.2, 8.4), (9.6, 9.6), (8.8, 11.0), (11.8, 12.0)]
+        A.line(r, 1.8, lc(m, 0.4), 0.8, blur=0.4).line(r, 0.7, W)
+        A.circle(13.0, 3.4, 0.7, W).circle(2.8, 12.4, 0.5, lc(m, 0.6))
+    elif key == "void3":  # Displace: two bodies swapping places
+        A.arc(8, 8, 5.2, 200, 330, 1.2, lc(m, 0.4)).poly([(12.6, 4.2), (13.6, 6.8), (11.0, 6.4)], lc(m, 0.4))
+        A.arc(8, 8, 5.2, 20, 150, 1.2, m).poly([(3.4, 11.8), (2.4, 9.2), (5.0, 9.6)], m)
+        A.circle(4.6, 6.4, 1.6, W).circle(11.4, 9.6, 1.6, (20, 0, 46)).ring(11.4, 9.6, 1.6, 0.8, lc(m, 0.5))
+    elif key == "void4":  # Singularity: black hole and accretion disk
+        A.ring(8, 8.4, 6.6, 1.3, mixc(m, (255, 255, 255), 0.3), ry=2.3, rot=-12)
+        A.circle(8, 8, 3.5, lc(m, 0.6), 0.8, blur=0.6).circle(8, 8, 3.0, (0, 0, 0))
+        A.arc(8, 8.4, 6.6, 15, 165, 1.3, W)
+        A.line(arc_pts(8, 8.4, 6.6, 20, 160)[2:-2], 0.5, W)
+    elif key == "frozen1":  # Ice Shard: a long crystal spear
+        ax = [(2.6, 13.4), (13.4, 2.6)]
+        A.poly([(2.6, 13.4), (6.0, 8.4), (13.4, 2.6), (8.0, 10.4)], lc(m, 0.15))
+        A.poly([(2.6, 13.4), (6.0, 8.4), (13.4, 2.6)], lc(m, 0.6))
+        A.line(ax, 0.5, W, 0.8)
+        A.poly([(10.6, 11.4), (12.0, 9.2), (13.4, 13.6)], dk(s, 0.0)).poly([(3.0, 4.4), (5.2, 3.2), (4.4, 6.4)], lc(m, 0.3))
+    elif key == "frozen2":  # Glacial Wall: ice pillars erupting
+        A.line([(1.5, 13.8), (14.5, 13.8)], 1.0, lc(s, 0.2))
+        for x0, x1, top, c in ((1.8, 6.2, 5.0, lc(m, 0.1)), (5.4, 10.6, 2.0, lc(m, 0.45)), (9.8, 14.2, 5.6, lc(m, 0.2))):
+            cx = (x0 + x1) / 2
+            A.poly([(x0, 13.6), (x0, top + 2), (cx, top), (x1, top + 2), (x1, 13.6)], c)
+            A.poly([(cx, top), (x1, top + 2), (x1, 13.6), (cx, 13.6)], s, 0.45)
+            A.line([(cx - 0.6, top + 2.2), (cx - 0.6, 11.8)], 0.5, W, 0.8)
+    elif key == "frozen3":  # Frost Nova: a ring of shards bursting outward
+        A.circle(8, 8, 4.0, lc(m, 0.3), 0.4, blur=1.0).ring(8, 8, 3.6, 1.0, lc(m, 0.5))
+        for k in range(8):
+            a = math.radians(k * 45 + 22.5)
+            c, sn = math.cos(a), math.sin(a)
+            p0 = (8 + 4.6 * c, 8 + 4.6 * sn)
+            A.poly([(p0[0] - sn * 1.0, p0[1] + c * 1.0), (8 + 7.4 * c, 8 + 7.4 * sn), (p0[0] + sn * 1.0, p0[1] - c * 1.0)], lc(m, 0.2 if k % 2 else 0.6))
+        A.star(8, 8, 2.2, 0.7, 6, W)
+    elif key == "frozen4":  # Absolute Zero: a great snowflake
+        A.ring(8, 8, 6.6, 0.8, s, 0.8)
+        for k in range(6):
+            a = math.radians(k * 60 - 90)
+            c, sn = math.cos(a), math.sin(a)
+            A.line([(8, 8), (8 + 6 * c, 8 + 6 * sn)], 1.0, W)
+            for d in (3.0, 4.6):
+                bx, by = 8 + d * c, 8 + d * sn
+                for sg in (-1, 1):
+                    b = a + sg * math.radians(50)
+                    A.line([(bx, by), (bx + 1.5 * math.cos(b), by + 1.5 * math.sin(b))], 0.7, lc(m, 0.5))
+        A.poly(ellipse_pts(8, 8, 1.6, 1.6, 30, 6), lc(m, 0.3))
+    elif key == "storm1":  # Lightning Strike: a bolt from the cloud
+        for x, y, r in ((4.6, 4.4, 2.4), (8.2, 3.6, 3.0), (11.6, 4.6, 2.3), (8, 5.4, 2.6)):
+            A.circle(x, y, r, (70, 84, 110))
+        A.line([(3, 6.4), (13, 6.4)], 0.8, (40, 50, 70))
+        bolt = [(9.2, 6.0), (5.8, 10.2), (8.4, 10.2), (6.0, 15.0), (11.2, 8.8), (8.6, 8.8), (10.6, 6.0)]
+        A.poly(bolt, m, 0.6, blur=0.8).poly(bolt, (255, 250, 200))
+    elif key == "storm2":  # Gale Burst: a gust spiral
+        pts = [(8 + (0.4 + t * 5.6) * math.cos(t * 5.2 + 1), 8 + (0.4 + t * 5.6) * math.sin(t * 5.2 + 1)) for t in np.linspace(0, 1, 40)]
+        A.line(pts, 1.4, lc(m, 0.55))
+        for y, x0, ln in ((3.0, 1.5, 4.5), (13.2, 9.0, 5.0), (12.0, 1.0, 3.0)):
+            A.line([(x0, y), (x0 + ln, y)], 0.8, lc(s, 0.0), 0.8)
+    elif key == "storm3":  # Chain Lightning: arcs leaping between targets
+        nodes = [(3.0, 4.0), (12.6, 6.6), (4.6, 12.6), (12.2, 13.0)]
+        r2 = np.random.default_rng(5)
+        for a, b in zip(nodes, nodes[1:]):
+            p = jag(a, b, 5, 0.8, r2)
+            A.line(p, 1.6, m, 0.6, blur=0.5).line(p, 0.6, W)
+        for x, y in nodes:
+            A.circle(x, y, 1.5, lc(m, 0.3)).circle(x, y, 0.7, W)
+    elif key == "storm4":  # Tempest: a tornado with a bolt
+        for i, y in enumerate(np.linspace(3, 13.5, 7)):
+            w = 6.2 - i * 0.85
+            cx = 8 + math.sin(i * 0.9) * 0.9
+            A.ring(cx, y, w, 0.9, mixc((120, 140, 180), m, i / 7), ry=0.9)
+        A.poly([(13.4, 6.0), (11.6, 9.0), (12.8, 9.0), (11.2, 12.6), (14.4, 8.2), (13.2, 8.2), (14.6, 6.0)], (255, 250, 190))
+    elif key == "blood1":  # Blood Spike: spikes of blood from the ground
+        A.line([(1.5, 13.8), (14.5, 13.8)], 1.2, dk(m, 0.4))
+        for x0, x1, tip, c in ((2.4, 6.2, (4.0, 5.8), lc(m, 0.15)), (5.8, 10.4, (8.0, 2.0), lc(m, 0.35)), (9.8, 13.6, (11.8, 6.6), lc(m, 0.15))):
+            A.poly([(x0, 13.6), tip, (x1, 13.6)], c)
+            A.line([tip, ((tip[0] + x1) / 2 - 0.4, 13.0)], 0.5, (255, 120, 130), 0.8)
+        A.poly(drop_pts(13.6, 4.2, 0.9), lc(m, 0.2)).poly(drop_pts(2.6, 3.2, 0.7), lc(m, 0.2))
+    elif key == "blood2":  # Crimson Pact: a blade over a blood rune circle
+        A.ring(8, 8, 6.0, 0.8, dk(m, 0.1))
+        for k in range(6):
+            a = math.radians(k * 60 + 30)
+            A.circle(8 + 6 * math.cos(a), 8 + 6 * math.sin(a), 0.7, lc(m, 0.4))
+        A.poly([(7.1, 4.4), (8.9, 4.4), (8.0, 12.6)], (225, 225, 235)).poly([(8.0, 4.4), (8.9, 4.4), (8.0, 12.6)], (150, 150, 165))
+        A.rect(5.0, 3.4, 11.0, 4.4, (200, 160, 70)).rect(7.4, 0.8, 8.6, 3.4, (90, 30, 30))
+        A.poly(drop_pts(8, 13.6, 1.1), lc(m, 0.3))
+    elif key == "blood3":  # Siphon: drops drawn into a heart
+        pts = bez((2.2, 2.4), (3.4, 10.4), (9.8, 10.0), 6)
+        for i, (x, y) in enumerate(pts[:-1]):
+            A.poly(drop_pts(x, y, 0.55 + i * 0.12, 1.8), lc(m, 0.1 + i * 0.06))
+        A.poly(heart_pts(11.0, 10.2, 4.4), lc(m, 0.25)).poly(heart_pts(10.4, 9.6, 1.6), (255, 150, 160), 0.7)
+    elif key == "blood4":  # Blood Moon: a crimson moon with a dark crescent
+        A.circle(8, 8, 6.6, m, 0.5, blur=1.2).circle(8, 8, 5.6, lc(m, 0.35))
+        A.circle(10.4, 6.6, 4.8, dk(m, 0.5), 0.6)
+        for x, y, r in ((5.6, 6.4, 1.0), (7.2, 10.6, 1.3), (4.6, 9.6, 0.6)):
+            A.circle(x, y, r, dk(m, 0.2))
+        A.line([(1.5, 13.4), (6.0, 13.0), (9.0, 13.6), (14.5, 13.2)], 0.9, lc(m, 0.2), 0.7)
+    elif key == "titan1":  # Ground Slam: a stone fist cracking the earth
+        A.rect(1.5, 11.2, 14.5, 14.4, dk(s, 0.3))
+        for p in ([(8, 11.2), (5.6, 12.6), (3.0, 12.4), (1.6, 14.0)], [(8, 11.2), (10.6, 12.8), (13.8, 12.2)], [(8, 11.2), (8.4, 14.4)]):
+            A.line(p, 0.8, (20, 16, 12))
+        A.poly([(5.0, 2.0), (11.0, 2.0), (11.6, 8.4), (10.0, 10.4), (6.0, 10.4), (4.4, 8.4)], lc(s, 0.3))
+        for x in (6.2, 8.0, 9.8):
+            A.line([(x, 7.2), (x, 10.0)], 0.6, dk(s, 0.4))
+        A.rect(4.8, 2.0, 11.2, 3.6, m)
+        for x, y in ((3.0, 9.6), (13.2, 9.0), (2.4, 7.0)):
+            A.rect(x, y, x + 1.0, y + 1.0, lc(s, 0.2))
+    elif key == "titan2":  # Stone Skin: a stone shield bound in gold
+        sh = [(8, 1.6), (13.4, 3.2), (12.8, 9.0), (8, 14.4), (3.2, 9.0), (2.6, 3.2)]
+        A.poly(sh, lc(s, 0.25)).line(sh + sh[:2], 1.1, m)
+        A.line([(5.0, 4.4), (7.0, 7.0), (6.2, 9.4)], 0.6, dk(s, 0.5)).line([(11.2, 5.2), (9.6, 8.0), (10.4, 10.6)], 0.6, dk(s, 0.5))
+        A.poly(ellipse_pts(8, 7.6, 1.6, 1.6, 45, 4), lc(m, 0.4))
+    elif key == "titan3":  # Boulder Toss: a hurled boulder
+        for y, x0 in ((6.2, 1.0), (9.4, 0.6), (12.4, 1.6)):
+            A.line([(x0, y), (x0 + 3.6, y - 0.6)], 0.9, lc(m, 0.2), 0.7)
+        rock = [(6.0, 6.4), (8.6, 3.0), (12.6, 3.4), (14.6, 7.2), (13.4, 11.6), (9.2, 12.8), (5.8, 10.4)]
+        A.poly(rock, s).poly([(8.6, 3.0), (12.6, 3.4), (14.6, 7.2), (10.6, 7.0)], lc(s, 0.35))
+        A.line([(10.6, 7.0), (9.2, 12.8)], 0.5, dk(s, 0.5)).line([(10.6, 7.0), (5.8, 10.4)], 0.5, dk(s, 0.5))
+    elif key == "titan4":  # Colossus: a giant's crested helm
+        A.poly([(3.0, 14.4), (3.0, 7.0), (5.0, 3.6), (8, 2.6), (11.0, 3.6), (13.0, 7.0), (13.0, 14.4)], lc(s, 0.15))
+        A.poly([(5.0, 7.4), (11.0, 7.4), (11.0, 8.8), (9.0, 8.8), (9.0, 14.4), (7.0, 14.4), (7.0, 8.8), (5.0, 8.8)], (14, 10, 8))
+        A.line([(8, 2.6), (8, 0.8)], 1.0, m).poly([(4.4, 2.6), (8, 0.6), (11.6, 2.6), (8, 1.8)], m)
+        A.line([(3.0, 7.0), (13.0, 7.0)], 0.7, m)
+    elif key == "celestial1":  # Starfall: falling stars
+        for cx, cy, r in ((11.0, 4.4, 2.6), (5.4, 8.6, 2.0), (11.6, 12.0, 1.6)):
+            A.line([(cx + 1.0, cy - 1.0), (cx + 4.5, cy - 4.5)], r * 0.7, s, 0.5)
+            A.star(cx, cy, r, r * 0.4, 4, lc(m, 0.3)).circle(cx, cy, r * 0.3, W)
+    elif key == "celestial2":  # Sanctuary: a holy dome
+        A.line([(1.5, 13.4), (14.5, 13.4)], 1.0, s)
+        A.poly(arc_pts(8, 13.2, 6.2, 180, 360, 24), lc(m, 0.2), 0.35)
+        A.arc(8, 13.2, 6.2, 180, 360, 1.2, lc(m, 0.5))
+        A.line([(8, 6.6), (8, 12.2)], 1.1, s).line([(6.0, 8.6), (10.0, 8.6)], 1.1, s)
+    elif key == "celestial3":  # Radiant Beam: a pillar of light
+        A.rect(4.8, 0.5, 11.2, 12.4, lc(m, 0.2), 0.45, blur=0.8).rect(6.6, 0.5, 9.4, 12.4, W)
+        A.ellipse(8, 12.6, 5.6, 1.6, s)
+        for k in range(5):
+            a = math.radians(200 + k * 35)
+            A.line([(8 + 3 * math.cos(a), 12.6 + 1.6 * math.sin(a)), (8 + 6.8 * math.cos(a), 12.6 + 3.6 * math.sin(a))], 0.6, lc(m, 0.4))
+    elif key == "celestial4":  # Ascension: wings and a halo
+        A.ring(8, 3.0, 2.6, 0.9, s, ry=0.9)
+        for sg in (-1, 1):
+            pts = [(8 + sg * 1.2, 7.6), (8 + sg * 6.6, 3.8), (8 + sg * 6.8, 6.4), (8 + sg * 6.0, 9.0),
+                   (8 + sg * 4.4, 11.2), (8 + sg * 1.6, 11.0)]
+            A.poly(pts, lc(m, 0.25))
+            for k in range(3):
+                A.line([(8 + sg * 1.8, 8.4 + k), (8 + sg * (6.0 - k * 0.9), 5.0 + k * 2.0)], 0.4, s, 0.8)
+        A.ellipse(8, 9.0, 1.3, 2.6, W)
+    elif key == "corruption1":  # Plague Bolt: a toxic glob with a trail
+        trail = [(2.0, 14.0), (4.6, 11.0), (6.2, 11.6), (8.6, 7.8)]
+        A.line(trail, 2.2, s, 0.8).line(trail, 0.9, lc(m, 0.2), 0.8)
+        A.circle(10.6, 5.6, 3.2, m, 0.5, blur=0.8).circle(10.6, 5.6, 2.6, m)
+        A.circle(9.8, 4.8, 0.7, (40, 70, 20)).circle(11.6, 6.4, 0.6, (40, 70, 20)).circle(11.2, 4.4, 0.45, (220, 255, 160))
+        A.poly(drop_pts(4.0, 7.4, 0.6), lc(m, 0.3))
+    elif key == "corruption2":  # Rot Ground: a bubbling bog and fumes
+        A.ellipse(8, 12.2, 6.6, 2.2, s).ellipse(8, 12.0, 5.2, 1.4, dk(m, 0.2))
+        for x, y, r in ((5.4, 10.4, 1.0), (9.6, 9.6, 1.4), (11.6, 11.4, 0.7)):
+            A.ring(x, y, r, 0.5, lc(m, 0.3))
+        for x in (5.0, 8.6, 11.8):
+            A.line([(x, 8.2), (x - 0.8, 6.4), (x + 0.4, 4.6), (x - 0.4, 2.6)], 0.7, lc(s, 0.3), 0.8)
+    elif key == "corruption3":  # Infest: crawling beetles
+        for cx, cy, rot in ((5.0, 5.0, -35), (11.0, 7.0, 20), (6.4, 11.6, 60)):
+            for k in (-1, 0, 1):
+                a = math.radians(rot + 90 + k * 30)
+                A.line([(cx - 2.4 * math.cos(a), cy - 2.4 * math.sin(a)), (cx + 2.4 * math.cos(a), cy + 2.4 * math.sin(a))], 0.4, s)
+            A.ellipse(cx, cy, 2.0, 1.3, mixc(m, s, 0.4), rot=rot)
+            A.circle(cx + 2.0 * math.cos(math.radians(rot)), cy + 2.0 * math.sin(math.radians(rot)), 0.8, dk(s, 0.3))
+            A.line([(cx - 1.6 * math.cos(math.radians(rot)), cy - 1.6 * math.sin(math.radians(rot))), (cx + 1.6 * math.cos(math.radians(rot)), cy + 1.6 * math.sin(math.radians(rot)))], 0.3, lc(m, 0.5))
+    elif key == "corruption4":  # Pandemic: a biohazard sigil
+        A.circle(8, 8, 6.6, s, 0.6, blur=1.0)
+        for k in range(3):
+            a = math.radians(-90 + k * 120)
+            A.ring(8 + 3.1 * math.cos(a), 8 + 3.1 * math.sin(a), 2.8, 1.1, m)
+        A.ring(8, 8, 2.0, 0.9, lc(m, 0.3)).circle(8, 8, 0.8, lc(m, 0.6))
+        for x, y in ((2.0, 13.4), (13.8, 2.6), (14.0, 13.0)):
+            A.circle(x, y, 0.6, lc(m, 0.4))
+    else:
+        raise SystemExit(f"no icon for {key}")
+
+
+def ability_icons():
+    g = GLYPHS["abilities"]
+    base = int(g["base"], 16)
+    imask = interior_mask()
+    for i, (kind, main, sec) in enumerate(HEARTS):
+        for slot in range(1, 5):
+            rng = np.random.default_rng(i * 10 + slot)
+            img = icon_base(main, sec, rng)
+            A = Art(16, 16, 6)
+            draw_ability(kind, slot, A, col3(main), col3(sec), rng)
+            sym = outlined(A.img)
+            sym[..., 3] *= imask
+            over_img(img, sym)
+            icon_frame(col3(main), img)
+            path = g["texture"].replace("<h>", kind).replace("<slot>", str(slot)).split(":", 1)[1]
+            font_add(fname(g["font"]), path, g["ascent"], g["height"], chr(base + i * 4 + slot - 1), img)
+
+
+def padlock():
+    img = blank(16, 16)
+    over(img, (6, 4, 10), interior_mask() * 0.78)
+    A = Art(16, 16, 6)
+    A.arc(8, 6.6, 2.6, 180, 360, 1.3, (200, 200, 210))
+    A.line([(5.4, 6.6), (5.4, 8.0)], 1.3, (200, 200, 210), cap=False).line([(10.6, 6.6), (10.6, 8.0)], 1.3, (200, 200, 210), cap=False)
+    A.rect(4.2, 7.6, 11.8, 13.0, (225, 190, 90)).rect(4.2, 7.6, 11.8, 8.6, (255, 230, 150))
+    A.circle(8, 10.0, 0.9, (40, 26, 8)).rect(7.6, 10.2, 8.4, 11.8, (40, 26, 8))
+    over_img(img, outlined(A.img))
+    return icon_frame((120, 120, 130), img)
+
+
+def hud_extras():
+    ex = GLYPHS["ability_extra"]
+    font, asc, hgt = fname(ex["font"]), ex["ascent"], ex["height"]
+    imask = interior_mask()
+    for name, code in ex["glyphs"].items():
+        if name == "lock":
+            img = padlock()
+        elif name == "frame":
+            img = icon_frame((150, 150, 160), blank(16, 16))
+        elif name == "ready_frame":
+            img = blank(16, 16)
+            u, v = uv_grid(16, 16)
+            d = np.minimum.reduce([u * 16 - 0.5, 15.5 - u * 16, v * 16 - 0.5, 15.5 - v * 16])
+            glow = np.clip(1.0 - d / 3.2, 0, 1) ** 1.6
+            over(img, (255, 248, 220), glow * 0.85)
+            for y in range(16):
+                for x in range(16):
+                    if (x in (0, 15) and y in (0, 15)):
+                        img[y, x] = 0
+                    elif x in (0, 15) or y in (0, 15) or (x in (1, 14) and y in (1, 14)):
+                        img[y, x] = [255, 255, 255, 255]
+            for x, y in ((1, 1), (14, 1), (1, 14), (14, 14), (8, 0), (0, 8), (15, 8), (8, 15)):
+                img[y, x] = [255, 255, 255, 255]
+        else:
+            k = int(name.split("_")[1])
+            img = blank(16, 16)
+            if k:
+                cov = np.zeros((16, 16))
+                cov[: k * 2] = 1
+                over(img, (0, 0, 0), cov * imask * 0.72)
+        path = f"gui/hud/{name}.png"
+        font_add(font, path, asc, hgt, cp(code), img)
+
+
+DIGITS = ["111101101101111", "010110010010111", "111001111100111", "111001111001111", "101101111001001",
+          "111100111001111", "111100111101111", "111001010010010", "111101111101111", "111101111001111"]
+
+
+def hud_digits():
+    g = GLYPHS["digits"]
+    base = int(g["base"], 16)
+    for n, bits in enumerate(DIGITS):
+        img = blank(5, 3)
+        for k, b in enumerate(bits):
+            if b == "1":
+                img[k // 3, k % 3] = [255, 255, 255, 255]
+        path = g["texture"].replace("<n>", str(n)).split(":", 1)[1]
+        font_add(fname(g["font"]), path, g["ascent"], g["height"], chr(base + n), img)
+
+
+def hud_meters():
+    g = GLYPHS["meter"]
+    base = int(g["base"], 16)
+    W, H = 74, 4
+    for n in range(21):
+        img = blank(H, W)
+        img[:, :, :3] = 0
+        img[:, 1:-1, 3] = 190
+        img[1:-1, 0, 3] = 190
+        img[1:-1, -1, 3] = 190
+        img[1:-1, 1:-1] = [255, 255, 255, 60]
+        fill = round(n * (W - 2) / 20)
+        if fill:
+            img[1, 1:1 + fill] = [255, 255, 255, 255]
+            img[2, 1:1 + fill] = [200, 200, 200, 255]
+            if fill < W - 2:
+                img[1:3, fill] = [255, 255, 255, 255]
+        for x in range(9, W - 2, 9):  # segment ticks
+            if x > fill:
+                img[1:3, x, 3] = 110
+        path = g["texture"].replace("<n>", str(n)).split(":", 1)[1]
+        font_add(fname(g["font"]), path, g["ascent"], g["height"], chr(base + n), img)
+
+
+# ---- full screen overlays
+
+OW, OH = 512, 280
+
+
+def walks(rng, n, starts, steps, step, jitter, branch=0.08, width=3.0, depth=2):
+    """Branching random walks (cracks, veins, frost). Returns [(pts, width)] in short tapered pieces."""
+    out = []
+
+    def go(x, y, ang, steps_left, w, d):
+        pts = [(x, y)]
+        for k in range(steps_left):
+            ang += rng.normal(0, jitter)
+            x += math.cos(ang) * step
+            y += math.sin(ang) * step
+            pts.append((x, y))
+            if d > 0 and rng.random() < branch:
+                go(x, y, ang + rng.choice([-1, 1]) * rng.uniform(0.4, 1.0), int((steps_left - k) * 0.6), w * 0.6, d - 1)
+            if k % 4 == 3:
+                out.append((pts, w))
+                w *= 0.93
+                pts = [(x, y)]
+        if len(pts) > 1:
+            out.append((pts, w))
+
+    for _ in range(n):
+        x, y, ang = starts(rng)
+        go(x, y, ang, steps, width, depth)
+    return out
+
+
+def edge_start(rng):
+    side = rng.integers(0, 4)
+    if side == 0:
+        x, y = rng.uniform(0, OW), -2.0
+    elif side == 1:
+        x, y = rng.uniform(0, OW), OH + 2.0
+    elif side == 2:
+        x, y = -2.0, rng.uniform(0, OH)
+    else:
+        x, y = OW + 2.0, rng.uniform(0, OH)
+    ang = math.atan2(OH / 2 - y, OW / 2 - x) + rng.normal(0, 0.5)
+    return x, y, ang
+
+
+def corner_start(rng):
+    cx, cy = [(0, 0), (OW, 0), (0, OH), (OW, OH)][rng.integers(0, 4)]
+    x = cx + (rng.uniform(0, 120) if cx == 0 else -rng.uniform(0, 120))
+    y = cy + (rng.uniform(0, 70) if cy == 0 else -rng.uniform(0, 70))
+    return x, y, math.atan2(OH / 2 - y, OW / 2 - x) + rng.normal(0, 0.6)
+
+
+def overlay(name):
+    rng = np.random.default_rng(sum(map(ord, name)) * 131)
+    W, H = OW, OH
+    u, v = uv_grid(H, W)
+    ex, ey = u * 2 - 1, v * 2 - 1
+    re = np.hypot(ex, ey)
+    sup = (np.abs(ex) ** 4 + np.abs(ey) ** 4) ** 0.25
+    n1 = pnoise(H, W, rng, 1.8)
+    n2 = pnoise(H, W, rng, 1.2)
+    img = blank(H, W)
+    A = Art(W, H, 2)
+    A.img = img
+    if name == "vignette":
+        over(img, (255, 255, 255), smooth(0.35, 1.2, re) ** 1.4 * (0.85 + 0.15 * n1))
+    elif name == "flash":
+        over(img, (255, 255, 255), 0.5 + 0.38 * smooth(0.1, 1.25, re))
+    elif name == "rage":
+        over(img, mixc((90, 0, 0), (200, 10, 20), n1[..., None]), smooth(0.5, 1.25, re + 0.2 * (n1 - 0.5)) * 0.8)
+        cr = walks(rng, 34, edge_start, 26, 7, 0.35, 0.12, 4.0, 2)
+        fade = smooth(0.25, 0.85, re)
+        g = A.mask(lambda d, s: [d.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * 3 * s)), joint="curve") for p, w in cr], blur=4)
+        c = A.mask(lambda d, s: [d.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * s)), joint="curve") for p, w in cr])
+        over(img, (255, 40, 30), g * fade * 0.8)
+        over(img, (60, 0, 0), c * fade)
+        over(img, (255, 120, 90), A.mask(lambda d, s: [d.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * 0.35 * s)), joint="curve") for p, w in cr]) * fade * 0.8)
+    elif name == "speed":
+        over(img, (255, 255, 255), smooth(0.6, 1.3, re) * 0.25)
+        R = math.hypot(W, H) / 2 + 10
+        for k in range(190):
+            a = rng.uniform(0, 2 * math.pi)
+            r0 = rng.uniform(0.42, 0.85) * R
+            w = rng.uniform(0.6, 3.2)
+            c, s_ = math.cos(a), math.sin(a)
+            p0 = (W / 2 + c * r0, H / 2 + s_ * r0 * 0.75)
+            p1 = (W / 2 + c * R * 1.2 - s_ * w, H / 2 + s_ * R * 0.9 + c * w)
+            p2 = (W / 2 + c * R * 1.2 + s_ * w, H / 2 + s_ * R * 0.9 - c * w)
+            col = [(255, 255, 255), (255, 245, 170), (180, 240, 255)][k % 3]
+            A.poly([p0, p1, p2], col, rng.uniform(0.45, 0.95))
+    elif name == "infernal":
+        heat = smooth(0.45, 1.15, re + 0.35 * (v - 0.4) + 0.25 * (n1 - 0.5))
+        col = mixc((150, 20, 0), (255, 180, 50), np.clip(n2 * 1.4 - 0.2 + (v - 0.5), 0, 1)[..., None])
+        over(img, col, heat * 0.85)
+        fl = pnoise(H, W, rng, 1.6, (1.0, 0.25))
+        tongues = smooth(0.0, 0.5, (v - 0.55) * 2.2 + (fl - 0.5) * 1.6)
+        over(img, mixc((255, 90, 0), (255, 240, 160), tongues[..., None] ** 2), tongues * 0.85)
+        for _ in range(220):
+            x, y = rng.uniform(0, W), rng.uniform(0, H)
+            e = math.hypot(x / W * 2 - 1, y / H * 2 - 1)
+            if e < 0.55 and rng.random() < 0.8:
+                continue
+            r = rng.uniform(0.6, 2.4)
+            A.circle(x, y, r * 3, (255, 120, 20), 0.35, blur=2).circle(x, y, r, (255, 230, 150), rng.uniform(0.6, 1))
+    elif name == "void":
+        d = sup + 0.22 * (n1 - 0.5) + 0.08 * (n2 - 0.5)
+        outside = smooth(0.80, 0.84, d)
+        stars = (rng.random((H, W)) > 0.996) * outside
+        dark = mixc((10, 0, 24), (40, 0, 70), n2[..., None])
+        over(img, dark, outside * 0.94)
+        over(img, (255, 255, 255), stars)
+        over(img, (150, 70, 255), gauss(d - 0.82, 0.06) * 0.6)
+        over(img, (230, 200, 255), gauss(d - 0.815, 0.012))
+        over(img, (90, 20, 160), smooth(0.4, 1.0, re) * 0.25)
+    elif name == "frozen":
+        k = np.sqrt(np.abs(ex * ey))
+        frost = smooth(0.42, 0.85, k + 0.35 * (n1 - 0.5) + 0.25 * sup - 0.1)
+        over(img, mixc((170, 220, 255), (250, 255, 255), n2[..., None]), frost * 0.8)
+        cr = walks(rng, 30, corner_start, 22, 6, 0.25, 0.22, 2.4, 3)
+        g = A.mask(lambda d_, s: [d_.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * 2.6 * s)), joint="curve") for p, w in cr], blur=2)
+        c = A.mask(lambda d_, s: [d_.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * 0.8 * s)), joint="curve") for p, w in cr])
+        fade = smooth(0.2, 0.7, re)
+        over(img, (120, 200, 255), g * fade * 0.7)
+        over(img, (255, 255, 255), c * fade)
+    elif name == "storm":
+        over(img, mixc((20, 30, 60), (70, 90, 130), n1[..., None]), smooth(0.55, 1.25, re + 0.25 * (n1 - 0.5)) * 0.75)
+        bolts = []
+        for _ in range(16):
+            side = rng.integers(0, 4)
+            if side < 2:
+                y = rng.uniform(2, 30) if side == 0 else H - rng.uniform(2, 30)
+                x0 = rng.uniform(-20, W - 120)
+                p0, p1 = (x0, y), (x0 + rng.uniform(80, 200), y + rng.normal(0, 14))
+            else:
+                x = rng.uniform(2, 40) if side == 2 else W - rng.uniform(2, 40)
+                y0 = rng.uniform(-20, H - 60)
+                p0, p1 = (x, y0), (x + rng.normal(0, 18), y0 + rng.uniform(50, 130))
+            pts = jag(p0, p1, 14, 6, rng)
+            bolts.append((pts, 2.2))
+            for _ in range(2):
+                j = int(rng.integers(2, 12))
+                q = pts[j]
+                bolts.append((jag(q, (q[0] + rng.normal(0, 40), q[1] + rng.normal(0, 40)), 6, 4, rng), 1.2))
+        A.lines([(p, w * 5) for p, w in bolts], (60, 150, 255), 0.6, blur=4)
+        A.lines([(p, w * 2) for p, w in bolts], (150, 210, 255), 0.9, blur=1)
+        A.lines(bolts, (255, 255, 255), 1.0)
+    elif name == "blood":
+        over(img, (120, 0, 10), smooth(0.6, 1.3, re) * 0.5)
+        for _ in range(16):
+            x, y, _a = edge_start(rng)
+            x = np.clip(x, 0, W)
+            y = np.clip(y, 0, H)
+            x += (W / 2 - x) * rng.uniform(0.0, 0.15)
+            y += (H / 2 - y) * rng.uniform(0.0, 0.25)
+            r = rng.uniform(10, 34)
+            base = mixc((90, 0, 8), (170, 8, 24), rng.uniform(0, 1))
+            blob = [(x + r * (0.75 + 0.35 * rng.random()) * math.cos(t), y + r * (0.75 + 0.35 * rng.random()) * math.sin(t)) for t in np.linspace(0, 2 * math.pi, 22, endpoint=False)]
+            A.poly(blob, base, 0.92)
+            A.circle(x - r * 0.3, y - r * 0.3, r * 0.25, lc(base, 0.3), 0.5, blur=2)
+            for _ in range(int(rng.integers(6, 14))):
+                a = rng.uniform(0, 2 * math.pi)
+                dd = r * rng.uniform(1.1, 2.6)
+                A.circle(x + math.cos(a) * dd, y + math.sin(a) * dd, rng.uniform(1, r * 0.22), base, 0.9)
+            if y < H * 0.5:
+                for _ in range(int(rng.integers(1, 4))):
+                    dx = rng.uniform(-r * 0.6, r * 0.6)
+                    ln = rng.uniform(20, 90)
+                    A.line([(x + dx, y), (x + dx, y + ln)], rng.uniform(2, 4), base, 0.9)
+                    A.circle(x + dx, y + ln, 3.0, base, 0.9)
+    elif name == "titan":
+        dust = smooth(0.5, 1.2, re + 0.3 * (v - 0.5) + 0.3 * (n1 - 0.5))
+        over(img, mixc((110, 92, 70), (200, 182, 150), n2[..., None]), dust * 0.75)
+        cr = walks(rng, 26, edge_start, 18, 9, 0.5, 0.15, 3.4, 2)
+        fade = smooth(0.25, 0.8, re)
+        over(img, (215, 195, 160), A.mask(lambda d, s: [d.line([(x * s + s, y * s + s) for x, y in p], fill=255, width=max(1, int(w * s)), joint="curve") for p, w in cr]) * fade * 0.8)
+        over(img, (30, 24, 18), A.mask(lambda d, s: [d.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * s)), joint="curve") for p, w in cr]) * fade)
+        for _ in range(70):
+            x, y, _a = edge_start(rng)
+            x = float(np.clip(x, 0, W)) + rng.normal(0, 20)
+            y = float(np.clip(y, 0, H)) + rng.normal(0, 14)
+            r = rng.uniform(1.5, 6)
+            rock = [(x + r * (0.7 + 0.5 * rng.random()) * math.cos(t), y + r * (0.7 + 0.5 * rng.random()) * math.sin(t)) for t in np.linspace(0, 2 * math.pi, 7, endpoint=False)]
+            A.poly(rock, mixc((70, 60, 50), (150, 135, 110), rng.random()), 0.95)
+    elif name == "celestial":
+        sx, sy = W / 2, -80
+        ang = np.arctan2(v * H - sy, u * W - sx)
+        rays = (0.5 + 0.5 * np.sin(ang * 46 + 3 * np.sin(ang * 7))) ** 3
+        dist_ = np.hypot(u * W - sx, v * H - sy) / H
+        a = rays * smooth(1.9, 0.4, dist_) * (0.25 + 0.75 * smooth(0.2, 1.0, re)) * 0.65
+        over(img, (255, 244, 190), a)
+        over(img, (255, 214, 110), smooth(0.55, 1.25, re) * 0.55)
+        for _ in range(60):
+            x, y = rng.uniform(0, W), rng.uniform(0, H)
+            if math.hypot(x / W * 2 - 1, y / H * 2 - 1) < 0.6:
+                continue
+            r = rng.uniform(2, 6)
+            A.star(x, y, r, r * 0.25, 4, (255, 255, 235), rng.uniform(0.5, 1)).circle(x, y, r * 0.8, (255, 230, 150), 0.3, blur=2)
+    elif name == "corruption":
+        over(img, mixc((30, 6, 40), (70, 20, 90), n1[..., None]), smooth(0.5, 1.25, re + 0.3 * (n2 - 0.5)) * 0.8)
+        cr = walks(rng, 30, edge_start, 30, 6, 0.45, 0.16, 3.6, 3)
+        fade = smooth(0.2, 0.8, re)
+        over(img, (120, 230, 60), A.mask(lambda d, s: [d.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * 3 * s)), joint="curve") for p, w in cr], blur=3) * fade * 0.55)
+        over(img, (60, 10, 80), A.mask(lambda d, s: [d.line([(x * s, y * s) for x, y in p], fill=255, width=max(1, int(w * s)), joint="curve") for p, w in cr]) * fade)
+        for _ in range(90):
+            x, y, _a = edge_start(rng)
+            x = float(np.clip(x, 0, W)) + rng.normal(0, 40)
+            y = float(np.clip(y, 0, H)) + rng.normal(0, 26)
+            A.circle(x, y, rng.uniform(1, 3.5), (190, 255, 120), rng.uniform(0.4, 0.9))
+    elif name == "eye":
+        over(img, (0, 0, 0), 0.5 + 0.48 * smooth(0.2, 1.0, re))
+        top = [(x, H / 2 - 120 * math.sin(math.pi * (x - 16) / (W - 32))) for x in np.linspace(16, W - 16, 60)]
+        bot = [(x, H / 2 + 110 * math.sin(math.pi * (x - 16) / (W - 32))) for x in np.linspace(16, W - 16, 60)]
+        A.line(top, 5, (120, 30, 170), 0.35, blur=3).line(bot, 5, (120, 30, 170), 0.35, blur=3)
+        A.line(top, 1.6, (170, 80, 220), 0.35).line(bot, 1.6, (170, 80, 220), 0.35)
+        A.ring(W / 2, H / 2, 88, 3, (150, 20, 40), 0.25, blur=2)
+        A.ellipse(W / 2, H / 2, 16, 84, (90, 0, 20), 0.22, blur=3)
+    elif name == "awaken":
+        ang = np.arctan2(v * H - H / 2, u * W - W / 2)
+        rays = (0.5 + 0.5 * np.sin(ang * 36)) ** 4 + 0.6 * (0.5 + 0.5 * np.sin(ang * 13 + 1)) ** 6
+        over(img, mixc((255, 200, 80), (255, 255, 230), n1[..., None]), rays * smooth(0.25, 1.1, re) * 0.7)
+        over(img, (255, 220, 120), gauss(re - 0.62, 0.06) * 0.6)
+        over(img, (255, 200, 90), smooth(0.7, 1.3, re) * 0.7)
+        for _ in range(80):
+            a = rng.uniform(0, 2 * math.pi)
+            rr = rng.uniform(0.55, 1.2)
+            x, y = W / 2 + math.cos(a) * rr * W / 2, H / 2 + math.sin(a) * rr * H / 2
+            r = rng.uniform(1.5, 5)
+            A.star(x, y, r, r * 0.25, 4, (255, 255, 240), rng.uniform(0.6, 1))
+    elif name == "shatter":
+        cx, cy = W * 0.63, H * 0.42
+        R = W * 1.2
+        rad = []
+        a0 = rng.uniform(0, 2 * math.pi)
+        for k in range(20):
+            a = a0 + k * 2 * math.pi / 20 + rng.normal(0, 0.08)
+            rad.append(a)
+        polys = []
+        for a in rad:
+            polys.append((jag((cx, cy), (cx + math.cos(a) * R, cy + math.sin(a) * R), 16, 3, rng), 1.6))
+        rings = [14, 34, 70, 120, 190]
+        for r in rings:
+            for a, b in zip(rad, rad[1:] + [rad[0] + 2 * math.pi]):
+                if rng.random() < 0.75:
+                    rr = r * rng.uniform(0.85, 1.15)
+                    polys.append((jag((cx + math.cos(a) * rr, cy + math.sin(a) * rr), (cx + math.cos(b) * rr * rng.uniform(0.9, 1.1), cy + math.sin(b) * rr * rng.uniform(0.9, 1.1)), 3, 1.5, rng), 1.0))
+        for i, (a, b) in enumerate(zip(rad, rad[1:] + [rad[0] + 2 * math.pi])):
+            if i % 3 == 0:
+                r0, r1 = rings[1], rings[3]
+                A.poly([(cx + math.cos(a) * r0, cy + math.sin(a) * r0), (cx + math.cos(a) * r1, cy + math.sin(a) * r1),
+                        (cx + math.cos(b) * r1, cy + math.sin(b) * r1), (cx + math.cos(b) * r0, cy + math.sin(b) * r0)], (220, 235, 255), 0.12)
+        A.lines([([(x + 1.2, y + 1.2) for x, y in p], w) for p, w in polys], (0, 0, 0), 0.5)
+        A.lines([(p, w * 3) for p, w in polys], (255, 255, 255), 0.25, blur=1.5)
+        A.lines(polys, (255, 255, 255), 0.95)
+        A.circle(cx, cy, 10, (255, 255, 255), 0.6, blur=4)
+    else:
+        raise SystemExit(f"no overlay recipe for {name}")
+    return A.img
+
+
+def hud_overlays():
+    g = GLYPHS["overlays"]
+    for name, code in g["glyphs"].items():
+        img = overlay(name)
+        path = g["texture"].replace("<name>", name).split(":", 1)[1]
+        font_add(fname(g["font"]), path, g["ascent"], g["height"], cp(code), img)
+        print("overlay", name)
+
+
+def write_fonts():
+    sp = {"type": "space", "advances": {cp(k): v for k, v in GLYPHS["space"]["advances"].items()}}
+    names = set(FONTS) | {fname(GLYPHS["space"]["font"])}
+    for name in sorted(names):
+        write_json(f"assets/chaoshearts/font/{name}.json", {"providers": [sp] + FONTS.get(name, [])})
+
+
+def hud():
+    FONTS.clear()
+    hud_hearts()
+    ability_icons()
+    hud_extras()
+    hud_digits()
+    hud_meters()
+    hud_overlays()
+    write_fonts()
+
+
+# =====================================================================  model helpers
+
+ROT_OK = (-45, -22.5, 0, 22.5, 45)
+
+
+def r3(p):
+    return [round(float(c), 4) for c in p]
+
+
+def fc(tex, uv=(0, 0, 16, 16), tint=True, rot=0):
+    f = {"uv": [round(float(c), 4) for c in uv], "texture": "#" + tex}
+    if tint:
+        f["tintindex"] = 0
+    if rot:
+        f["rotation"] = rot
+    return f
+
+
+def el(fr, to, faces, rot=None, emit=15):
+    e = {"from": r3(fr), "to": r3(to), "shade": False, "faces": faces}
+    if rot:
+        axis, angle = rot[0], rot[1]
+        origin = rot[2] if len(rot) > 2 else (8, 8, 8)
+        assert angle in ROT_OK, angle
+        if angle:
+            e["rotation"] = {"angle": angle, "axis": axis, "origin": r3(origin)}
+    if emit:
+        e["light_emission"] = emit
+    return e
+
+
+def box(fr, to, tex, tint=True, rot=None, faces=None, proj=False, emit=15):
+    """A cuboid. tex is a texture key or a dict face->key. proj maps uvs by projection so neighbouring
+    boxes share one continuous image."""
+    out = {}
+    names = faces or ("north", "south", "east", "west", "up", "down")
+    for f in names:
+        t = tex.get(f) if isinstance(tex, dict) else tex
+        if t is None:
+            continue
+        if proj:
+            x0, y0, z0 = fr
+            x1, y1, z1 = to
+            uv = {"south": (x0, 16 - y1, x1, 16 - y0), "north": (16 - x1, 16 - y1, 16 - x0, 16 - y0),
+                  "east": (16 - z1, 16 - y1, 16 - z0, 16 - y0), "west": (z0, 16 - y1, z1, 16 - y0),
+                  "up": (x0, z0, x1, z1), "down": (x0, 16 - z1, x1, 16 - z0)}[f]
+            uv = tuple(min(16, max(0, c)) for c in uv)
+        else:
+            uv = (0, 0, 16, 16)
+        out[f] = fc(t, uv, tint)
+    return el(fr, to, out, rot, emit)
+
+
+def plane_xz(x0, z0, x1, z1, y, tex, tint=True, rot=None, both=True, emit=15):
+    f = {"up": fc(tex, (0, 0, 16, 16), tint)}
+    if both:
+        f["down"] = fc(tex, (0, 16, 16, 0), tint)
+    return el((x0, y, z0), (x1, y, z1), f, rot, emit)
+
+
+def plane_xy(x0, y0, x1, y1, z, tex, tint=True, rot=None, both=True, uv=(0, 0, 16, 16), front="south", emit=15):
+    f = {front: fc(tex, uv, tint)}
+    if both:
+        f["north" if front == "south" else "south"] = fc(tex, uv, tint)
+    return el((x0, y0, z), (x1, y1, z), f, rot, emit)
+
+
+def plane_zy(z0, y0, z1, y1, x, tex, tint=True, rot=None, both=True, uv=(0, 0, 16, 16), front="east", emit=15):
+    f = {front: fc(tex, uv, tint)}
+    if both:
+        f["west" if front == "east" else "east"] = fc(tex, uv, tint)
+    return el((x, y0, z0), (x, y1, z1), f, rot, emit)
+
+
+def crossed(x0, x1, y0, y1, tex, n=4, tint=True, flip_diag=True):
+    """Vertical planes through the model centre at 0, 90 and (n=4) +-45 degrees."""
+    out = [plane_xy(x0, y0, x1, y1, 8, tex, tint), plane_zy(x0, y0, x1, y1, 8, tex, tint)]
+    if n >= 4:
+        uv = (16, 0, 0, 16) if flip_diag else (0, 0, 16, 16)
+        out.append(plane_xy(x0, y0, x1, y1, 8, tex, tint, ("y", 45), uv=uv))
+        out.append(plane_xy(x0, y0, x1, y1, 8, tex, tint, ("y", -45), uv=uv))
+    return out
+
+
+def band(r, y0, y1, tex, n=16, tint=True, both=True, cx=8, cz=8):
+    """A ring wall of n vertical quads at radius r (n = 4, 8 or 16)."""
+    out = []
+    w = 2 * r * math.tan(math.pi / n) * 1.06
+    step = 360 / n
+    for i in range(n):
+        th = i * step
+        q = int(((th + 45) % 360) // 90)
+        res = ((th - q * 90 + 180) % 360) - 180
+        rot = ("y", res, (cx, 8, cz)) if res else None
+        if q in (0, 2):
+            z = cz + r if q == 0 else cz - r
+            e = plane_xy(cx - w / 2, y0, cx + w / 2, y1, z, tex, tint, rot, both, front="south" if q == 0 else "north")
+        else:
+            x = cx + r if q == 1 else cx - r
+            e = plane_zy(cz - w / 2, y0, cz + w / 2, y1, x, tex, tint, rot, both, front="east" if q == 1 else "west")
+        if rot:
+            e["rotation"]["origin"] = r3((cx, 8, cz))
+        out.append(e)
+    return out
+
+
+def model(name, textures, elements, display=None, gui_light=None):
+    tex = {k: v for k, v in textures.items()}
+    tex.setdefault("particle", next(iter(textures.values())))
+    m = {"textures": tex, "elements": elements}
+    if gui_light:
+        m["gui_light"] = gui_light
+    m["display"] = display or {
+        "gui": {"rotation": [30, 225, 0], "translation": [0, 0, 0], "scale": [0.6, 0.6, 0.6]},
+        "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.4, 0.4, 0.4]},
+        "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [0.6, 0.6, 0.6]},
+        "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
+        "firstperson_righthand": {"rotation": [0, 45, 0], "translation": [0, 0, 0], "scale": [0.4, 0.4, 0.4]},
+        "head": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
+    }
+    write_json(f"assets/chaoshearts/models/item/{name}.json", m)
+
+
+ITEM_DEFS = {}
+
+
+def item_def(name, tints=None, model_id=None):
+    m = {"type": "minecraft:model", "model": model_id or f"chaoshearts:item/{name}"}
+    if tints is not None:
+        m["tints"] = [{"type": "minecraft:custom_model_data", "index": 0, "default": tints}]
+    ITEM_DEFS[name] = {"model": m}
+
+
+def write_item_defs():
+    for name, d in ITEM_DEFS.items():
+        write_json(f"assets/chaoshearts/items/{name}.json", d)
+
+
+# =====================================================================  FX textures
+
+def gtex(alpha, lum=1.0):
+    h, w = alpha.shape
+    img = blank(h, w)
+    img[..., :3] = np.clip(np.broadcast_to(np.asarray(lum, dtype=np.float64), (h, w)) * 255, 0, 255)[..., None]
+    img[..., 3] = np.clip(alpha, 0, 1) * 255
+    return img
+
+
+def art_to_grey(A):
+    """White-on-transparent art (colour discarded into luminance)."""
+    img = A.img.copy()
+    lum = img[..., :3].mean(axis=2)
+    img[..., :3] = lum[..., None]
+    return img
+
+
+def rune_glyph(A, cx, cy, size, rng, col=(255, 255, 255), w=1.4):
+    """A random angular rune made of 2-4 strokes on a 3x3 lattice."""
+    pts = [(cx + (i % 3 - 1) * size / 2, cy + (i // 3 - 1) * size / 2) for i in range(9)]
+    for _ in range(int(rng.integers(2, 5))):
+        a, b = rng.choice(9, 2, replace=False)
+        A.line([pts[a], pts[b]], w, col)
+    if rng.random() < 0.5:
+        A.circle(*pts[int(rng.integers(0, 9))], w * 0.9, col)
+
+
+def rune_circle_frames(S, nframes, seed, glyphs=16, inner_sym=6):
+    """Frames of a rotating rune circle: the glyph ring turns once over the loop, the inner sigil
+    turns backwards by one symmetry step (so the loop is seamless)."""
+    rng0 = np.random.default_rng(seed)
+    gl_seeds = [int(rng0.integers(0, 1 << 30)) for _ in range(glyphs)]
+    frames = []
+    c = S / 2
+    for f in range(nframes):
+        ph = f / nframes
+        A = Art(S, S, 3)
+        A.ring(c, c, S * 0.47, S * 0.018, (255, 255, 255))
+        A.ring(c, c, S * 0.47, S * 0.05, (255, 255, 255), 0.3, blur=S * 0.01)
+        A.ring(c, c, S * 0.35, S * 0.014, (255, 255, 255))
+        for k in range(glyphs):
+            a = 2 * math.pi * (k / glyphs + ph)
+            gx, gy = c + math.cos(a) * S * 0.41, c + math.sin(a) * S * 0.41
+            rune_glyph(A, gx, gy, S * 0.07, np.random.default_rng(gl_seeds[k]), w=max(1.0, S * 0.012))
+        rot = -360.0 / inner_sym * ph
+        n = inner_sym
+        tri1 = [(c + S * 0.33 * math.cos(math.radians(rot + 90 + k * 360 / n * 2)), c + S * 0.33 * math.sin(math.radians(rot + 90 + k * 360 / n * 2))) for k in range(n // 2 + 1)]
+        tri2 = [(c + S * 0.33 * math.cos(math.radians(rot + 90 + 360 / n + k * 360 / n * 2)), c + S * 0.33 * math.sin(math.radians(rot + 90 + 360 / n + k * 360 / n * 2))) for k in range(n // 2 + 1)]
+        A.line(tri1, S * 0.012, (255, 255, 255), 0.9).line(tri2, S * 0.012, (255, 255, 255), 0.9)
+        A.ring(c, c, S * 0.17, S * 0.012, (255, 255, 255), 0.9)
+        for k in range(n):
+            a = math.radians(rot + k * 360 / n)
+            A.circle(c + math.cos(a) * S * 0.25, c + math.sin(a) * S * 0.25, S * 0.018, (255, 255, 255))
+        A.circle(c, c, S * 0.05, (255, 255, 255), 0.8, blur=S * 0.02)
+        g = art_to_grey(A)
+        x, y, r, _ = polar(S, S)
+        over(g, (255, 255, 255), gauss(r - 0.94, 0.08) * 0.25)
+        frames.append(g)
+    return frames
+
+
+def bolt_frames(S, n, seed):
+    rng = np.random.default_rng(seed)
+    frames = []
+    for f in range(n):
+        A = Art(S, S, 2)
+        main = jag((S / 2 + rng.normal(0, S * 0.08), 0), (S / 2 + rng.normal(0, S * 0.08), S), 12, S * 0.06, rng)
+        br = []
+        for _ in range(3):
+            j = int(rng.integers(2, 10))
+            q = main[j]
+            br.append(jag(q, (q[0] + rng.normal(0, S * 0.3), q[1] + rng.uniform(S * 0.1, S * 0.35)), 5, S * 0.03, rng))
+        dim = 0.45 if f % 4 == 3 else 1.0
+        A.line(main, S * 0.12, (255, 255, 255), 0.35 * dim, blur=S * 0.04)
+        for b in br:
+            A.line(b, S * 0.03, (255, 255, 255), 0.7 * dim)
+        A.line(main, S * 0.045, (255, 255, 255), dim)
+        frames.append(art_to_grey(A))
+    return frames
+
+
+def flame_frames(S, n, seed, core=False):
+    rng = np.random.default_rng(seed)
+    nz = pnoise(S * 2, S, rng, 1.7, (1.0, 0.6))
+    nz2 = pnoise(S * 2, S, rng, 1.2)
+    u, v = uv_grid(S, S)
+    frames = []
+    for f in range(n):
+        off = int(f * 2 * S / n)
+        a1 = np.roll(nz, -off, axis=0)[:S]
+        a2 = np.roll(nz2, -off // 2, axis=0)[:S]
+        hgt = 1 - v
+        width = (0.36 if not core else 0.22) * (1 - hgt ** 1.6) + 0.02
+        d = np.abs(u - 0.5 + 0.05 * (a2 - 0.5) * hgt * 4) - width
+        body = smooth(0.08, -0.06, d + (a1 - 0.5) * 0.28 * hgt)
+        body *= smooth(0.0, 0.05, v)
+        lum = 0.55 + 0.45 * smooth(0.6, 0.0, np.abs(u - 0.5) / (width + 0.01) * 0.6 + hgt * 0.8)
+        frames.append(gtex(body * (0.95 if not core else 1.0), lum))
+    return frames
+
+
+def fx_textures():
+    S = 64
+    x, y, r, ang = polar(S, S)
+    u, v = uv_grid(S, S)
+    rng = np.random.default_rng(404)
+    angn = pnoise(1, 64, rng, 1.0)[0]
+    ai = ((ang + math.pi) / (2 * math.pi) * 63).astype(int)
+    T = "item/fx/"
+    save_png(T + "ring", gtex(np.clip(gauss(r - 0.86, 0.05) + 0.5 * gauss(r - 0.86, 0.16), 0, 1) * (0.8 + 0.2 * angn[ai]) * smooth(1.0, 0.97, r),
+                              1 - 0.12 * gauss(r - 0.86, 0.2)))
+    streak = pnoise(64, 64, rng, 1.0, (1.0, 0.1))
+    save_png(T + "ring_band", gtex((1 - v) ** 1.6 * (0.7 + 0.3 * streak) + gauss(v - 0.97, 0.04) * 0.6))
+    save_png(T + "ring_soft", gtex(0.8 * gauss(r - 0.7, 0.2) * smooth(1.0, 0.9, r)))
+    save_png(T + "ring_soft_band", gtex((1 - v) ** 2.2 * 0.55 * (0.8 + 0.2 * streak)))
+    save_png(T + "disc", gtex(smooth(1.0, 0.9, r) * (0.3 + 0.45 * (1 - r)) + 0.55 * gauss(r - 0.92, 0.05) * smooth(1.0, 0.97, r)))
+    # hex lattice used by dome, hex and cube
+    def hexlines(sz, k, wdt):
+        """Edges of a pointy-top hex lattice with k cells across (1 on the edges)."""
+        X, Y = (u - 0.5) * k, (v - 0.5) * k
+        h3 = math.sqrt(3)
+
+        def hexd(px, py):
+            px, py = np.abs(px), np.abs(py)
+            return np.maximum(px, px * 0.5 + py * h3 / 2)
+        da = hexd(np.mod(X, 1) - 0.5, np.mod(Y, h3) - h3 / 2)
+        db = hexd(np.mod(X - 0.5, 1) - 0.5, np.mod(Y - h3 / 2, h3) - h3 / 2)
+        return smooth(0.5 - wdt, 0.5, np.minimum(da, db))
+    hl = hexlines(S, 6, 0.08)
+    save_png(T + "dome", gtex(0.16 + 0.7 * hl, 0.85 + 0.15 * hl))
+    save_png(T + "dome_cap", gtex((0.16 + 0.7 * hl) * smooth(1.0, 0.9, r)))
+    # slash: a crescent on the +Z half (texture bottom), thickest straight ahead
+    th = np.arctan2(y, x)  # +Z is +y in texture
+    front = np.clip(np.sin(th), 0, 1)
+    outer = 0.92
+    thick = 0.42 * front ** 1.4
+    inside = (r < outer) & (r > outer - thick) & (y > 0)
+    t = np.clip((outer - r) / np.maximum(thick, 1e-3), 0, 1)
+    sl = inside * (1 - t) ** 0.8 * smooth(0.0, 0.25, front)
+    save_png(T + "slash", gtex(sl + gauss(r - outer, 0.025) * front ** 2 * 0.9, 0.85 + 0.15 * (1 - t)))
+    save_png(T + "slash_glow", gtex(gauss(r - outer + 0.1, 0.16) * front ** 2 * (y > -0.1) * 0.55))
+    # beam: animated scrolling energy
+    bn = pnoise(128, 64, rng, 1.0, (1.0, 0.2))
+    frames = []
+    for f in range(8):
+        n_ = np.roll(bn, f * 16, axis=0)[:64]
+        a = (gauss(u - 0.5, 0.1) + gauss(u - 0.5, 0.32) * 0.45 * (0.6 + 0.4 * n_)) * smooth(0.0, 0.18, v)
+        frames.append(gtex(a, 0.9 + 0.1 * n_))
+    save_texture(T + "beam", frames, 1)
+    save_png(T + "beam_core", gtex(0.92 + 0.0 * u, 0.92 + 0.08 * np.sin(v * 40)))
+    save_png(T + "orb_core", gtex(np.ones_like(r), 1 - 0.22 * np.clip(r, 0, 1) ** 2))
+    save_png(T + "orb_glow", gtex(gauss(r, 0.5) * 0.85 * smooth(1.0, 0.85, r)))
+    # crystal facets (shard, altar)
+    pts = rng.uniform(0, 1, (9, 2))
+    dd = np.stack([np.hypot(u - px, v - py) for px, py in pts])
+    cell = np.argmin(dd, axis=0)
+    srt = np.sort(dd, axis=0)
+    edge = smooth(0.03, 0.0, srt[1] - srt[0])
+    flum = 0.62 + 0.38 * (cell * 0.37 % 1)
+    save_png(T + "shard", gtex(0.82 + 0.18 * edge, np.clip(flum + 0.4 * edge, 0, 1)))
+    save_png(T + "shard_plane", gtex(smooth(1.0, 0.9, np.abs(x) * 2.6 + np.abs(y)) * 0.55 + gauss(x, 0.05) * smooth(1, 0.6, np.abs(y)) * 0.4))
+    # spike: a triangle pointing up
+    half = 0.5 * v
+    sp = smooth(0.03, -0.02, np.abs(u - 0.5) - half)
+    save_png(T + "spike", gtex(sp, 0.7 + 0.3 * gauss(u - 0.5 - 0.1 * v, 0.08 + 0.1 * v)))
+    save_png(T + "spike_core", gtex(np.ones_like(u), 0.8 + 0.2 * (1 - v)))
+    save_texture(T + "rune", rune_circle_frames(64, 32, 77, 12, 4), 2)
+    save_png(T + "rune_glow", gtex(gauss(r - 0.7, 0.28) * 0.35 * smooth(1.0, 0.9, r)))
+    save_texture(T + "bolt", bolt_frames(64, 8, 9), 1)
+    save_texture(T + "flame", flame_frames(64, 16, 31), 1)
+    save_texture(T + "flame_core", flame_frames(32, 16, 32, core=True), 1)
+    # swirl: three spiral arms, turning one arm step over the loop
+    frames = []
+    for f in range(16):
+        ph = f / 16 * 2 * math.pi / 3
+        s_ = np.sin(3 * (ang - ph) + 5.5 * r)
+        a = smooth(0.2, 1.0, s_) * smooth(1.0, 0.75, r) * smooth(0.05, 0.25, r)
+        frames.append(gtex(a * 0.9 + gauss(r, 0.18) * 0.4))
+    save_texture(T + "swirl", frames, 1)
+    wn = pnoise(128, 64, rng, 1.4, (0.4, 1.0))
+    frames = []
+    for f in range(8):
+        n_ = np.roll(wn, f * 16, axis=0)[:64]
+        a = smooth(0.55, 0.85, n_) * smooth(0.5, 0.2, np.abs(u - 0.5)) * smooth(0, 0.2, v) * smooth(1, 0.8, v)
+        frames.append(gtex(a * 0.8))
+    save_texture(T + "swirl_wisp", frames, 2)
+    st = np.exp(-np.abs(x) * 16) * np.exp(-np.abs(y) * 2.4) + np.exp(-np.abs(y) * 16) * np.exp(-np.abs(x) * 2.4) + gauss(r, 0.2)
+    save_png(T + "star", gtex(np.clip(st, 0, 1) * smooth(1.0, 0.85, r)))
+    # crack: branching fissure from the centre
+    A = Art(S, S, 3)
+    cr = []
+    r2 = np.random.default_rng(12)
+    for k in range(7):
+        a = k * 2 * math.pi / 7 + r2.normal(0, 0.25)
+        p = (S / 2, S / 2)
+        w = 2.6
+        for _ in range(6):
+            a += r2.normal(0, 0.45)
+            q = (p[0] + math.cos(a) * S * 0.07, p[1] + math.sin(a) * S * 0.07)
+            cr.append(([p, q], w))
+            if r2.random() < 0.3:
+                b = a + r2.choice([-1, 1]) * 0.9
+                cr.append(([q, (q[0] + math.cos(b) * S * 0.08, q[1] + math.sin(b) * S * 0.08)], w * 0.5))
+            p = q
+            w *= 0.82
+    A.lines([(p_, w * 3) for p_, w in cr], (255, 255, 255), 0.35, blur=1.5)
+    A.lines(cr, (255, 255, 255), 1.0)
+    crack = art_to_grey(A)
+    crack[..., 3] *= smooth(1.0, 0.85, r)
+    save_png(T + "crack", crack)
+    save_png(T + "crack_glow", gtex(gauss(r, 0.45) * 0.3))
+    hexd = np.maximum.reduce([np.abs(x), np.abs(x * 0.5 + y * 0.866), np.abs(x * 0.5 - y * 0.866)])
+    save_png(T + "hex", gtex(np.clip(gauss(hexd - 0.86, 0.04) + 0.35 * gauss(hexd - 0.86, 0.15) + (hexd < 0.86) * (0.12 + 0.5 * hexlines(S, 9, 0.06)), 0, 1) * smooth(0.98, 0.92, hexd)))
+    de = np.minimum.reduce([u, 1 - u, v, 1 - v])
+    save_png(T + "cube", gtex(0.18 + 0.82 * smooth(0.12, 0.0, de), 0.85 + 0.15 * smooth(0.12, 0.0, de)))
+    save_png(T + "cube_core", gtex(0.75 + 0.0 * u, 1 - 0.2 * np.hypot(u - 0.5, v - 0.5)))
+    # skull: 16px bone pixel art (greyscale so it tints)
+    face = ["................",
+            ".bbbbbbbbbbbbbb.",
+            ".bBBBBBBBBBBBBb.",
+            ".bBBBBBBBBBBBBb.",
+            ".bBBBBBBBBBBBBb.",
+            ".bBkkkkBBkkkkBb.",
+            ".bBkKKkBBkKKkBb.",
+            ".bBkKKkBBkKKkBb.",
+            ".bBkkkkBBkkkkBb.",
+            ".bBBBBBBBBBBBBb.",
+            ".bBBBBBkkBBBBBb.",
+            ".bBBBBkkkkBBBBb.",
+            ".bBBBBBBBBBBBBb.",
+            ".bbBBBBBBBBBBbb.",
+            "..bbbbbbbbbbbb..",
+            "................"]
+    jaw = ["................",
+           ".bbbbbbbbbbbbbb.",
+           ".bWkWkWkWkWkWkb.",
+           ".bWkWkWkWkWkWkb.",
+           ".bBBBBBBBBBBBBb.",
+           ".bBBBBBBBBBBBBb.",
+           ".bbBBBBBBBBBBbb.",
+           "..bbbbbbbbbbbb..",
+           "................"] + ["................"] * 7
+    pal = {"b": (150, 1), "B": (225, 1), "k": (40, 1), "K": (8, 1), "W": (250, 1), ".": (0, 0)}
+
+    def pix(rows):
+        img = blank(16, 16)
+        for yy, row in enumerate(rows):
+            for xx, ch in enumerate(row):
+                l, a = pal[ch]
+                img[yy, xx] = [l, l, l, 255 * a]
+        return img
+    save_png(T + "skull_face", pix(face))
+    save_png(T + "skull_jaw", pix(jaw))
+    side = blank(16, 16)
+    side[..., :3] = (205 + rng.normal(0, 10, (16, 16)))[..., None]
+    side[..., 3] = 255
+    save_png(T + "skull_side", side)
+    # cloud: drifting puffs
+    cn = pnoise(32, 32, rng, 1.6)
+    cu, cv = uv_grid(32, 32)
+    cr_ = np.hypot(cu - 0.5, cv - 0.5)
+    frames = []
+    for f in range(8):
+        n_ = np.roll(np.roll(cn, f * 4, axis=1), f * 2, axis=0)
+        frames.append(gtex(smooth(0.3, 0.7, n_) * smooth(0.7, 0.3, cr_) * 0.85 + smooth(0.6, 0.2, cr_) * 0.25, 0.78 + 0.22 * n_))
+    save_texture(T + "cloud", frames, 3)
+    # feather
+    A = Art(32, 32, 4)
+    shaft = bez((16, 31), (17.5, 16), (15, 2), 20)
+    for i, (px, py) in enumerate(shaft[2:-1]):
+        t_ = i / 17
+        wv = 9 * math.sin(math.pi * (0.15 + 0.85 * t_)) ** 0.7
+        A.line([(px, py), (px - wv, py - 3.2)], 1.6, (235, 235, 235))
+        A.line([(px, py), (px + wv, py - 3.0)], 1.6, (255, 255, 255))
+    A.line(shaft, 1.2, (200, 200, 200))
+    save_png(T + "feather", art_to_grey(A))
+
+
+# =====================================================================  FX models
+
+FX = ["ring", "ring_soft", "disc", "dome", "slash", "beam", "orb", "shard", "spike", "rune", "bolt", "flame",
+      "swirl", "star", "crack", "hex", "cube", "skull", "cloud", "feather"]
+
+
+def fx_models():
+    P = "chaoshearts:item/fx/"
+    for name in FX:
+        tx = {}
+        E = []
+
+        def t(key, tex=None):
+            tx[key] = P + (tex or key)
+            return key
+
+        if name == "ring":
+            E += [plane_xz(0, 0, 16, 16, 8, t("ring"))]
+            E += band(6.9, 8, 9.6, t("ring_band"))
+        elif name == "ring_soft":
+            E += [plane_xz(0, 0, 16, 16, 8, t("ring_soft"))]
+            E += band(5.6, 8, 11.5, t("ring_soft_band"))
+        elif name == "disc":
+            E += [plane_xz(0, 0, 16, 16, 8, t("disc")), plane_xz(3, 3, 13, 13, 8.04, t("orb_glow"))]
+        elif name == "dome":
+            angs = [0, 15, 30, 45, 60, 75]
+            for a0, a1 in zip(angs, angs[1:]):
+                y0, y1 = 8 + 8 * math.sin(math.radians(a0)), 8 + 8 * math.sin(math.radians(a1))
+                rr = 8 * math.cos(math.radians((a0 + a1) / 2))
+                E += band(rr, y0, y1, t("dome"))
+            cap = 8 * math.cos(math.radians(75))
+            E += [plane_xz(8 - cap, 8 - cap, 8 + cap, 8 + cap, 8 + 8 * math.sin(math.radians(75)), t("dome_cap")),
+                  plane_xz(0, 0, 16, 16, 8.02, t("ring"))]
+        elif name == "slash":
+            E += [plane_xz(0, 0, 16, 16, 8, t("slash")), plane_xz(0, 0, 16, 16, 8.15, t("slash_glow")),
+                  plane_xz(1, 1, 15, 15, 7.85, t("slash_glow"))]
+        elif name == "beam":
+            E += crossed(0, 16, 8, 24, t("beam"))
+            E += [box((6.5, 8, 6.5), (9.5, 24, 9.5), t("beam_core"), faces=("north", "south", "east", "west"))]
+        elif name == "orb":
+            c = t("orb_core")
+            E += [box((5, 5, 5), (11, 11, 11), c), box((4, 6, 6), (12, 10, 10), c), box((6, 4, 6), (10, 12, 10), c),
+                  box((6, 6, 4), (10, 10, 12), c)]
+            g = t("orb_glow")
+            E += [plane_xy(0, 0, 16, 16, 8, g), plane_xz(0, 0, 16, 16, 8, g), plane_zy(0, 0, 16, 16, 8, g),
+                  plane_xy(0, 0, 16, 16, 8, g, rot=("y", 45)), plane_xy(0, 0, 16, 16, 8, g, rot=("y", -45))]
+        elif name == "shard":
+            s_ = t("shard")
+            E += [box((6, 3, 6), (10, 13, 10), s_, rot=("y", 45)), box((6.6, 1.2, 6.6), (9.4, 14.8, 9.4), s_, rot=("y", 45)),
+                  box((7.3, 0, 7.3), (8.7, 16, 8.7), s_, rot=("y", 45)), box((6.4, 2, 6.4), (9.6, 14, 9.6), s_, rot=("y", 22.5))]
+            E += crossed(3, 13, 0, 16, t("shard_plane"), n=2)
+        elif name == "spike":
+            E += crossed(4, 12, 8, 24, t("spike"))
+            c = t("spike_core")
+            E += [box((6.5, 8, 6.5), (9.5, 13, 9.5), c, rot=("y", 45)), box((7, 13, 7), (9, 18, 9), c, rot=("y", 45)),
+                  box((7.5, 18, 7.5), (8.5, 22, 8.5), c, rot=("y", 45))]
+        elif name == "rune":
+            E += [plane_xz(0, 0, 16, 16, 8, t("rune")), plane_xz(0, 0, 16, 16, 8.04, t("rune_glow"))]
+        elif name == "bolt":
+            E += crossed(0, 16, 0, 16, t("bolt"))
+        elif name == "flame":
+            E += crossed(0, 16, 8, 24, t("flame"))
+            E += crossed(3, 13, 8, 19, t("flame_core"), n=2)
+        elif name == "swirl":
+            s_ = t("swirl")
+            E += [plane_xz(3, 3, 13, 13, 3, s_), plane_xz(0, 0, 16, 16, 8, s_), plane_xz(1.5, 1.5, 14.5, 14.5, 12.5, s_)]
+            E += crossed(1, 15, 0, 16, t("swirl_wisp"))
+        elif name == "star":
+            E += [plane_xz(0, 0, 16, 16, 8, t("star")), plane_xz(3, 3, 13, 13, 8.03, t("star"), rot=("y", 45))]
+        elif name == "crack":
+            E += [plane_xz(0, 0, 16, 16, 8, t("crack")), plane_xz(2, 2, 14, 14, 8.03, t("crack_glow"))]
+        elif name == "hex":
+            E += [plane_xz(0, 0, 16, 16, 8, t("hex")), plane_xz(1, 1, 15, 15, 8.03, t("orb_glow"))]
+        elif name == "cube":
+            E += [box((2, 2, 2), (14, 14, 14), t("cube")), box((5, 5, 5), (11, 11, 11), t("cube_core")),
+                  box((5, 5, 5), (11, 11, 11), t("cube_core"), rot=("y", 45))]
+        elif name == "skull":
+            face, side, jaw = t("skull_face"), t("skull_side"), t("skull_jaw")
+            E += [box((3.5, 6, 3.5), (12.5, 14, 12.5), {"south": face, "north": side, "east": side, "west": side, "up": side, "down": side}),
+                  box((4.5, 3, 4.5), (11.5, 6, 11.5), {"south": jaw, "north": side, "east": side, "west": side, "down": side})]
+        elif name == "cloud":
+            c = t("cloud")
+            E += [box((2, 5, 4), (10, 11, 12), c), box((6, 4, 3), (14, 10, 11), c), box((4, 7, 5), (12, 13, 12), c, rot=("y", 45)),
+                  box((1, 6, 6), (7, 10, 10), c), box((9, 6, 6), (15, 10, 11), c), box((5, 3, 5), (11, 7, 11), c, rot=("y", 22.5))]
+        elif name == "feather":
+            f_ = t("feather")
+            E += [plane_xy(2, 0, 14, 16, 8, f_), plane_zy(2, 0, 14, 16, 8, f_)]
+        model(f"fx/{name}", tx, E)
+        item_def(f"fx/{name}", 16777215)
+
+
+# =====================================================================  the Eye
 
 def eye_textures():
+    T = "item/eye/"
     rng = np.random.default_rng(66)
-    S = 32
-    ys, xs = np.mgrid[0:S, 0:S].astype(np.float64)
-    # sclera, sickly and veined
-    sclera = np.zeros((S, S, 4))
-    base = np.array([214, 204, 190.0])
-    sclera[..., :3] = base + rng.normal(0, 7, (S, S, 3))
-    sclera[..., 3] = 255
-    for _ in range(14):
-        x, y = rng.uniform(0, S), rng.uniform(0, S)
-        ang = rng.uniform(0, 6.28)
-        for step in range(int(rng.integers(6, 16))):
-            ix, iy = int(x) % S, int(y) % S
-            sclera[iy, ix, :3] = [150 + rng.integers(-20, 20), 20, 30]
-            ang += rng.normal(0, 0.6)
-            x += math.cos(ang); y += math.sin(ang)
-    # darken towards the edges of each face so the cube reads as round
-    d = np.maximum(np.abs(xs - 15.5), np.abs(ys - 15.5)) / 16
-    sclera[..., :3] *= (1 - 0.45 * d ** 2)[..., None]
-    save_texture("entity/the_eye_sclera", [sclera])
+    S = 64
+    x, y, r, ang = polar(S, S)
+    ivory = np.array([228, 216, 198.0])
+    n = pnoise(S, S, rng, 1.5)
+    col = ivory[None, None] * (0.92 + 0.12 * n[..., None])
+    pink = np.array([196, 96, 98.0])
+    col = col * (1 - smooth(0.45, 1.0, r)[..., None] * 0.55) + pink * smooth(0.45, 1.0, r)[..., None] * 0.55
+    col *= (1 - 0.45 * smooth(0.55, 1.05, r))[..., None]
+    img = blank(S, S)
+    img[..., :3] = col
+    img[..., 3] = 255
+    A = Art(S, S, 3)
+    A.img = img
 
-    # iris: burning violet-crimson with a slit pupil, animated so it seems alive
+    def vstart(rg):
+        a = rg.uniform(0, 2 * math.pi)
+        return S / 2 + math.cos(a) * S * 0.52, S / 2 + math.sin(a) * S * 0.52, a + math.pi + rg.normal(0, 0.3)
+    vs = walks(rng, 26, vstart, 9, S * 0.03, 0.4, 0.25, 1.3, 2)
+    A.lines([(p, w * 1.8) for p, w in vs], (170, 40, 50), 0.4, blur=0.6)
+    A.lines(vs, (140, 14, 26), 0.95)
+    save_png(T + "sclera_front", A.img)
+    side = blank(32, 32)
+    side[..., :3] = (ivory * 0.8)[None, None] * (0.9 + 0.15 * pnoise(32, 32, rng, 1.5)[..., None])
+    side[..., 3] = 255
+    B = Art(32, 32, 3)
+    B.img = side
+    vs = walks(rng, 10, lambda rg: (rg.uniform(0, 32), rg.uniform(0, 32), rg.uniform(0, 6.28)), 8, 1.6, 0.5, 0.2, 0.9, 1)
+    B.lines(vs, (130, 20, 30), 0.85)
+    save_png(T + "sclera_side", B.img)
+    # dark scaly lid flesh
+    lid = blank(32, 32)
+    u, v = uv_grid(32, 32)
+    lid[..., :3] = np.array([46, 22, 36.0])
+    lid[..., 3] = 255
+    for row in range(9):
+        for k in range(9):
+            cx = k * 4 + (2 if row % 2 else 0)
+            cy = row * 4
+            d = np.hypot(u * 32 - cx, (v * 32 - cy) * 1.2)
+            sc = d < 2.6
+            hl = smooth(2.6, 0.5, d) * (v * 32 < cy)
+            lid[sc, :3] = (np.array([60, 30, 48.0]) + hl[sc][:, None] * np.array([40, 22, 32.0]))
+            rim = (d >= 2.6) & (d < 3.0)
+            lid[rim, :3] = [20, 8, 14]
+    lid[..., :3] *= (0.9 + 0.2 * pnoise(32, 32, rng, 1.4))[..., None]
+    save_png(T + "lid", lid)
+    rim = blank(32, 32)
+    rim[..., :3] = mixc((110, 22, 36), (170, 50, 64), pnoise(32, 32, rng, 1.2)[..., None])
+    rim[..., 3] = 255
+    over(rim, (240, 170, 180), smooth(0.8, 0.95, pnoise(32, 32, rng, 0.8, (1, 0.2))) * 0.7)
+    save_png(T + "lid_rim", rim)
+    dark = blank(64, 64)
+    over(dark, (4, 0, 8), smooth(1.0, 0.45, r))
+    save_png(T + "darkness", dark)
+    sock = blank(64, 64)
+    over(sock, mixc((10, 2, 14), (40, 6, 20), pnoise(64, 64, rng, 1.5)[..., None]), smooth(0.43, 0.5, r) * smooth(1.0, 0.8, r))
+    save_png(T + "socket", sock)
+    gl = blank(16, 16)
+    gx, gy, gr, _ = polar(16, 16)
+    over(gl, (255, 255, 255), smooth(1.0, 0.3, gr) * 0.85)
+    save_png(T + "glint", gl)
+    # iris: violet and amber, swirling, with a slit pupil that breathes
     frames = []
-    for i in range(8):
-        ph = i / 8
-        img = sclera.copy()
-        r = np.hypot(xs - 15.5, ys - 15.5)
-        ang = np.arctan2(ys - 15.5, xs - 15.5)
-        iris = r < 12.5
-        fib = 0.5 + 0.5 * np.sin(ang * 22 + r * 0.8 + ph * 6.28)
-        inner = np.array([255, 70, 40.0]); outer = np.array([110, 10, 160.0])
-        t = np.clip(r / 12.5, 0, 1)[..., None]
-        col = inner * (1 - t) + outer * t
-        col *= (0.7 + 0.3 * fib)[..., None]
-        img[iris, :3] = col[iris]
-        ring = (r >= 11.5) & (r < 12.8)
-        img[ring, :3] = [30, 0, 30]
-        dil = 2.2 + 0.8 * math.sin(ph * 6.28)
-        pupil = (np.abs(xs - 15.5) < dil) & (np.abs(ys - 15.5) < 10.5 - np.abs(xs - 15.5) * 0.8)
-        img[pupil, :3] = [5, 0, 8]
-        glint = np.hypot(xs - 11.5, ys - 10.5) < 1.6
-        img[glint, :3] = [255, 240, 240]
+    swirl_n = pnoise(64, 64, rng, 1.0, (1.0, 0.15))
+    for f in range(16):
+        ph = f / 16
+        a2 = ang + 0.9 * r + ph * 2 * math.pi / 6
+        fib = 0.5 + 0.5 * np.sin(a2 * 24 + 6 * r)
+        fib2 = 0.5 + 0.5 * np.sin(a2 * 7 - 4 * r + ph * 2 * math.pi)
+        amber = np.array([255, 176, 40.0])
+        violet = np.array([140, 40, 230.0])
+        deep = np.array([40, 0, 60.0])
+        t1 = smooth(0.15, 0.55, r)[..., None]
+        t2 = smooth(0.6, 0.98, r)[..., None]
+        c = amber * (1 - t1) + violet * t1
+        c = c * (1 - t2) + deep * t2
+        c *= (0.62 + 0.38 * fib[..., None]) * (0.85 + 0.25 * fib2[..., None])
+        ii = int(f * 4) % 64
+        c *= (0.9 + 0.2 * np.roll(swirl_n, ii, axis=1)[..., None])
+        img = blank(S, S)
+        img[..., :3] = np.clip(c, 0, 255)
+        img[..., 3] = smooth(1.0, 0.95, r) * 255
+        wpx = 0.12 * (0.8 + 0.2 * math.sin(ph * 2 * math.pi))
+        slit = np.abs(x) < wpx * np.sqrt(np.clip(1 - (y / 0.8) ** 2, 0, 1))
+        glow = gauss(np.abs(x) - wpx * np.sqrt(np.clip(1 - (y / 0.8) ** 2, 0, 1)), 0.06) * (np.abs(y) < 0.85)
+        over(img, (255, 60, 30), glow * 0.6 * (r < 0.95))
+        img[slit & (r < 0.95), :3] = [3, 0, 6]
         frames.append(img)
-    save_texture("entity/the_eye_iris", frames, 4)
+    save_texture(T + "iris", frames, 2)
+    cor = blank(64, 64)
+    over(cor, (255, 255, 255), gauss(r - 0.9, 0.06) * 0.22 + gauss(np.hypot(x + 0.35, y + 0.4), 0.18) * 0.35)
+    save_png(T + "cornea", cor)
+    # smoky shroud
+    sn = pnoise(32, 32, rng, 1.5)
+    su, sv = uv_grid(32, 32)
+    sr = np.hypot(su - 0.5, sv - 0.5) * 2
+    de = np.minimum.reduce([su, 1 - su, sv, 1 - sv])
+    for nm, hole in (("shroud", False), ("shroud_front", True)):
+        frames = []
+        for f in range(8):
+            n_ = np.roll(np.roll(sn, f * 4, axis=0), f * 2, axis=1)
+            img = blank(32, 32)
+            img[..., :3] = mixc((10, 2, 18), (48, 14, 70), n_[..., None])
+            a = (0.3 + 0.55 * n_) * smooth(0.0, 0.22, de)
+            if hole:
+                a *= smooth(0.45, 0.85, sr)
+            img[..., 3] = a * 255
+            frames.append(img)
+        save_texture(T + nm, frames, 3)
+    # tendril: writhing shadow, 16x48 frames
+    frames = []
+    for f in range(12):
+        ph = f / 12 * 2 * math.pi
+        A = Art(16, 48, 4)
+        pts = []
+        for k in range(25):
+            t_ = k / 24
+            yy = 48 - t_ * 47
+            xx = 8 + (1.2 + 4.2 * t_) * math.sin(ph + t_ * 5.5) * t_ ** 0.6
+            pts.append((xx, yy))
+        for k in range(len(pts) - 1):
+            t_ = k / 24
+            w = 4.6 * (1 - t_) ** 0.9 + 0.4
+            A.line([pts[k], pts[k + 1]], w + 1.6, (120, 40, 190), 0.5, blur=0.6)
+            A.line([pts[k], pts[k + 1]], w, (14, 2, 22))
+        for k in range(3, 20, 4):
+            px, py = pts[k]
+            A.circle(px + 0.8, py, 0.6, (190, 90, 255), 0.8)
+        frames.append(A.img)
+    save_texture(T + "tendril", frames, 2)
+    full = os.path.join(PACK, "assets", "chaoshearts", "textures", T + "tendril.png.mcmeta")
+    with open(full, "w") as fh:
+        json.dump({"animation": {"frametime": 2, "interpolate": True, "width": 16, "height": 48}}, fh, indent=2)
 
 
-def models():
-    for kind, _, _ in HEARTS:
-        for name in (f"heart_{kind}", f"focus_{kind}", f"focus_{kind}_awakened"):
-            write_json(f"assets/chaoshearts/models/item/{name}.json", {
-                "parent": "minecraft:item/generated",
-                "textures": {"layer0": f"chaoshearts:item/{name}"},
-            })
+def eye_models():
+    P = "chaoshearts:item/eye/"
+    tx = {"front": P + "sclera_front", "side": P + "sclera_side", "lid": P + "lid", "rim": P + "lid_rim",
+          "dark": P + "darkness", "socket": P + "socket", "glint": P + "glint", "particle": P + "sclera_side"}
+    E = []
+    sc = {"south": "front", "north": "side", "east": "side", "west": "side", "up": "side", "down": "side"}
+    R = 7.0
+    for y0, y1 in ((-7, -5.5), (-5.5, -3.5), (-3.5, -1.5), (-1.5, 1.5), (1.5, 3.5), (3.5, 5.5), (5.5, 7)):
+        mid = (y0 + y1) / 2
+        w = math.sqrt(max(R * R - mid * mid, 1)) * 0.985
+        for rot in (0, 22.5, 45, -22.5):
+            E.append(box((8 - w, 8 + y0, 8 - w), (8 + w, 8 + y1, 8 + w), sc, tint=False, rot=("y", rot) if rot else None, proj=True, emit=0))
+    lidf = {"south": "lid", "east": "lid", "west": "lid", "up": "lid", "north": "lid", "down": "rim"}
+    lowf = {"south": "lid", "east": "lid", "west": "lid", "down": "lid", "north": "lid", "up": "rim"}
+    for rot in (0, 45, -45):
+        rr = ("y", rot) if rot else None
+        E.append(box((2.4, 11.6, 9), (13.6, 15.6, 16.6), lidf, False, rr, emit=0))
+        E.append(box((2.8, 0.6, 9), (13.2, 4.2, 16.3), lowf, False, rr, emit=0))
+    E.append(box((3.6, 13.2, 5), (12.4, 16.6, 15.4), lidf, False, ("x", -22.5), emit=0))
+    E.append(box((3.8, -0.4, 6), (12.2, 2.6, 15.0), lowf, False, ("x", 22.5), emit=0))
+    E.append(plane_xy(-8, -8, 24, 24, 9.5, "socket", False, front="south", both=False, emit=0))
+    E.append(plane_xy(-16, -16, 32, 32, 1, "dark", False, front="south", both=True, emit=0))
+    E.append(plane_xy(4.4, 8.8, 6.6, 11.0, 15.95, "glint", False, front="south", both=False))
+    model("the_eye", tx, E, display=eye_display(0.5))
+    item_def("the_eye")
 
-    sc, ir = "#sclera", "#iris"
-    full = {"uv": [0, 0, 16, 16]}
-    write_json("assets/chaoshearts/models/item/the_eye.json", {
-        "textures": {"sclera": "chaoshearts:entity/the_eye_sclera", "iris": "chaoshearts:entity/the_eye_iris",
-                     "particle": "chaoshearts:entity/the_eye_sclera"},
-        "elements": [
-            # core of the eyeball; the iris is on both the front and back so it looks at you from either way the display faces
-            {"from": [1, 1, 1], "to": [15, 15, 15], "shade": False, "faces": {
-                "north": {**full, "texture": ir}, "south": {**full, "texture": ir},
-                "east": {**full, "texture": sc}, "west": {**full, "texture": sc},
-                "up": {**full, "texture": sc}, "down": {**full, "texture": sc}}},
-            # rounding bands so the silhouette is less of a cube
-            {"from": [0, 3, 3], "to": [16, 13, 13], "shade": False, "faces": {
-                "east": {**full, "texture": sc}, "west": {**full, "texture": sc},
-                "up": {**full, "texture": sc}, "down": {**full, "texture": sc}}},
-            {"from": [3, 0, 3], "to": [13, 16, 13], "shade": False, "faces": {
-                "north": {**full, "texture": sc}, "south": {**full, "texture": sc},
-                "east": {**full, "texture": sc}, "west": {**full, "texture": sc},
-                "up": {**full, "texture": sc}, "down": {**full, "texture": sc}}},
-            # bulging cornea over the iris, front and back
-            {"from": [3, 3, 0.4], "to": [13, 13, 15.6], "shade": False, "faces": {
-                "north": {**full, "texture": ir}, "south": {**full, "texture": ir}}},
-        ],
-        "display": {
-            "fixed": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]},
-            "gui": {"rotation": [20, 35, 0], "scale": [0.6, 0.6, 0.6]},
-            "ground": {"scale": [0.4, 0.4, 0.4], "translation": [0, 3, 0]},
-            "thirdperson_righthand": {"rotation": [75, 45, 0], "translation": [0, 2.5, 0], "scale": [0.375, 0.375, 0.375]},
-            "firstperson_righthand": {"rotation": [0, 45, 0], "scale": [0.4, 0.4, 0.4]},
-        },
-    })
+    tx = {"iris": P + "iris", "cornea": P + "cornea", "particle": P + "iris"}
+    E = [plane_xy(3.5, 3.5, 12.5, 12.5, 15.4, "iris", False, front="south", both=False),
+         plane_xy(3.1, 3.1, 12.9, 12.9, 15.75, "cornea", False, front="south", both=False)]
+    model("eye_pupil", tx, E, display=eye_display(0.6))
+    item_def("eye_pupil")
 
+    tx = {"s": P + "shroud", "f": P + "shroud_front", "particle": P + "shroud"}
+    sh = {"south": "f", "north": "s", "east": "s", "west": "s", "up": "s", "down": "s"}
+    E = [box((-3, -3, -3), (19, 19, 19), sh, False, emit=0),
+         box((-1, -1, -1), (17, 17, 17), "f", False, ("y", 45), emit=0),
+         box((0, -2, 0), (16, 18, 16), "f", False, ("x", 45), emit=0)]
+    model("eye_shroud", tx, E, display=eye_display(0.35))
+    item_def("eye_shroud")
 
-def item_definitions():
-    cases = []
-    for kind, _, _ in HEARTS:
-        for name in (f"focus_{kind}", f"focus_{kind}_awakened", f"heart_{kind}"):
-            cases.append({"when": f"chaoshearts:{name}",
-                          "model": {"type": "minecraft:model", "model": f"chaoshearts:item/{name}"}})
-    write_json("assets/minecraft/items/heart_of_the_sea.json", {"model": {
-        "type": "minecraft:select", "property": "minecraft:custom_model_data", "index": 0,
-        "cases": cases,
-        "fallback": {"type": "minecraft:model", "model": "minecraft:item/heart_of_the_sea"}}})
-    write_json("assets/minecraft/items/ender_eye.json", {"model": {
-        "type": "minecraft:select", "property": "minecraft:custom_model_data", "index": 0,
-        "cases": [{"when": "chaoshearts:the_eye", "model": {"type": "minecraft:model", "model": "chaoshearts:item/the_eye"}}],
-        "fallback": {"type": "minecraft:model", "model": "minecraft:item/ender_eye"}}})
+    tx = {"t": P + "tendril", "particle": P + "tendril"}
+    E = [plane_xy(4, 8, 12, 32, 8, "t", False, emit=0), plane_zy(4, 8, 12, 32, 8, "t", False, emit=0),
+         plane_xy(4, 8, 12, 32, 8, "t", False, ("y", 45), uv=(16, 0, 0, 16), emit=0),
+         plane_xy(4, 8, 12, 32, 8, "t", False, ("y", -45), uv=(16, 0, 0, 16), emit=0)]
+    model("eye_tendril", tx, E, display=eye_display(0.4))
+    item_def("eye_tendril")
 
 
-def mod_icon():
-    big = 128
+def eye_display(gs):
+    return {"gui": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [gs, gs, gs]},
+            "fixed": {"rotation": [0, 180, 0], "translation": [0, 0, 0], "scale": [gs, gs, gs]},
+            "ground": {"rotation": [0, 0, 0], "translation": [0, 3, 0], "scale": [0.3, 0.3, 0.3]},
+            "head": {"rotation": [0, 0, 0], "translation": [0, 0, 0], "scale": [1, 1, 1]}}
+
+
+# =====================================================================  altar, ward, gems
+
+def altar_textures():
+    T = "item/altar/"
+    rng = np.random.default_rng(808)
+    u, v = uv_grid(32, 32)
+    pts = rng.uniform(0, 1, (7, 2))
+    dd = np.stack([np.hypot(u - px, v - py) for px, py in pts])
+    cell = np.argmin(dd, axis=0)
+    srt = np.sort(dd, axis=0)
+    edge = smooth(0.05, 0.0, srt[1] - srt[0])
+    frames = []
+    for f in range(12):
+        ph = f / 12 * 2 * math.pi
+        flum = 0.55 + 0.35 * ((cell * 0.41 + 0.15 * np.sin(ph + cell)) % 1)
+        band_ = gauss(((v - f / 12) % 1) - 0.5, 0.12) * 0.25
+        frames.append(gtex(0.62 + 0.3 * edge + band_, np.clip(flum + 0.45 * edge + band_, 0, 1)))
+    save_texture(T + "crystal", frames, 2)
+    cu, cv = uv_grid(16, 16)
+    frames = [gtex(0.75 + 0.25 * math.sin(f / 12 * 2 * math.pi) + 0 * cu, 0.9 + 0.1 * np.sin(cv * 12 + f)) for f in range(12)]
+    save_texture(T + "crystal_core", frames, 2)
+    x, y, r, _ = polar(64, 64)
+    frames = [gtex(gauss(np.hypot(x * 1.4, y), 0.55) * (0.35 + 0.15 * math.sin(f / 12 * 2 * math.pi)) * smooth(1.0, 0.85, r)) for f in range(12)]
+    save_texture(T + "crystal_halo", frames, 2)
+    save_texture(T + "rune_circle", rune_circle_frames(128, 32, 4242, 18, 6), 2)
+    # obelisk stone: dark basalt with carved bevels
+    stone = blank(32, 32)
+    n = pnoise(32, 32, rng, 1.6)
+    stone[..., :3] = mixc((24, 20, 30), (58, 52, 66), n[..., None])
+    stone[..., 3] = 255
+    for yy in (0, 31):
+        stone[yy, :, :3] *= 0.6
+    stone[:, 0, :3] *= 0.6
+    stone[:, 31, :3] *= 0.6
+    stone[1, 1:31, :3] = np.clip(stone[1, 1:31, :3] * 1.5, 0, 255)
+    save_png(T + "obelisk_stone", stone)
+    frames = []
+    seeds = [int(s) for s in rng.integers(0, 1 << 30, 6)]
+    for f in range(8):
+        A = Art(16, 32, 4)
+        for k, sd in enumerate(seeds):
+            rune_glyph(A, 8, 3 + k * 5.2, 3.4, np.random.default_rng(sd), w=0.9)
+        g = art_to_grey(A)
+        pulse = 0.65 + 0.35 * math.sin(f / 8 * 2 * math.pi + 0)
+        glow = Image.fromarray(np.clip(g[..., 3], 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))
+        ga = np.asarray(glow, dtype=np.float64) / 255
+        out = blank(32, 16)
+        over(out, (255, 255, 255), ga * 0.6 * pulse)
+        over_img(out, g * np.array([1, 1, 1, pulse]))
+        frames.append(out)
+    save_texture(T + "obelisk_runes", frames, 3)
+    full = os.path.join(PACK, "assets", "chaoshearts", "textures", T + "obelisk_runes.png.mcmeta")
+    with open(full, "w") as fh:
+        json.dump({"animation": {"frametime": 3, "interpolate": True, "width": 16, "height": 32}}, fh, indent=2)
+    # trial ward: a winged totem with a chaos heart gem
+    A = Art(32, 32, 4)
+    gold, goldl, goldd = (214, 170, 70), (255, 226, 130), (120, 84, 30)
+    for sg in (-1, 1):
+        A.poly([(16 + sg * 5, 10), (16 + sg * 14, 5), (16 + sg * 15, 11), (16 + sg * 12, 16), (16 + sg * 6, 17)], goldd)
+        for k in range(3):
+            A.line([(16 + sg * 6, 11 + k * 2), (16 + sg * (14 - k * 2), 6 + k * 3)], 1.0, goldl, 0.8)
+    A.poly([(10, 6), (22, 6), (23, 27), (19, 31), (13, 31), (9, 27)], gold)
+    A.rect(11, 7, 21, 9, goldl)
+    A.rect(12, 11, 15, 13, (30, 16, 6)).rect(17, 11, 20, 13, (30, 16, 6))
+    A.circle(13.5, 12, 0.9, (120, 255, 200)).circle(18.5, 12, 0.9, (120, 255, 200))
+    A.poly(heart_pts(16, 21, 4.6), (150, 40, 220)).poly(heart_pts(15, 20, 1.8), (240, 180, 255), 0.8)
+    A.line([(12, 27), (20, 27)], 1.0, goldd)
+    save_png("item/trial_ward", outlined(A.img, (30, 18, 6)))
+
+
+def altar_models():
+    P = "chaoshearts:item/altar/"
+    # crystal: centred, two blocks tall (-8..24), a 16-facet bipyramid with a glowing core
+    tx = {"c": P + "crystal", "k": P + "crystal_core", "h": P + "crystal_halo", "particle": P + "crystal"}
+    E = []
+    layers = [(-8, -6, 0.5), (-6, -2, 1.4), (-2, 3, 2.4), (3, 13, 3.2), (13, 18, 2.4), (18, 22, 1.4), (22, 24, 0.5)]
+    for y0, y1, w in layers:
+        for rot in (0, 45, 22.5, -22.5):
+            E.append(box((8 - w, y0, 8 - w), (8 + w, y1, 8 + w), "c", True, ("y", rot) if rot else None))
+    E += [box((6.8, -2, 6.8), (9.2, 18, 9.2), "k", True), box((6.8, -2, 6.8), (9.2, 18, 9.2), "k", True, ("y", 45))]
+    E += [plane_xy(-4, -8, 20, 24, 8, "h", True), plane_zy(-4, -8, 20, 24, 8, "h", True)]
+    model("altar_crystal", tx, E, display=eye_display(0.4))
+    item_def("altar_crystal", 0xB070FF)
+    # rune circle: three blocks across, flat on the ground
+    tx = {"r": P + "rune_circle", "g": "chaoshearts:item/fx/rune_glow", "particle": P + "rune_circle"}
+    E = [plane_xz(-16, -16, 32, 32, 8.02, "r", True), plane_xz(-12, -12, 28, 28, 8.06, "g", True)]
+    model("altar_rune", tx, E, display=eye_display(0.3))
+    item_def("altar_rune", 0xB070FF)
+    # obelisk: stands on the origin, 1.5 blocks tall, with glowing rune inlays on all four sides
+    tx = {"s": P + "obelisk_stone", "r": P + "obelisk_runes", "particle": P + "obelisk_stone"}
+    E = [box((1, 8, 1), (15, 10, 15), "s", False, proj=True, emit=0), box((2.5, 10, 2.5), (13.5, 12.5, 13.5), "s", False, proj=True, emit=0),
+         box((4, 12.5, 4), (12, 28, 12), "s", False, emit=0), box((5, 28, 5), (11, 30, 11), "s", False, emit=0),
+         box((6.5, 30, 6.5), (9.5, 31.4, 9.5), "s", False, emit=0), box((7.4, 31.4, 7.4), (8.6, 32, 8.6), "s", False, emit=0)]
+    E += [plane_xy(5, 13.5, 11, 27, 12.05, "r", True, both=False, front="south"),
+          plane_xy(5, 13.5, 11, 27, 3.95, "r", True, both=False, front="north"),
+          plane_zy(5, 13.5, 11, 27, 12.05, "r", True, both=False, front="east"),
+          plane_zy(5, 13.5, 11, 27, 3.95, "r", True, both=False, front="west")]
+    for x0, z0, x1, z1 in ((7, 2.45, 9, 2.45), (7, 13.55, 9, 13.55)):
+        E.append(plane_xy(x0, 10.4, x1, 12.1, z0, "r", True, both=True))
+    model("altar_obelisk", tx, E, display=eye_display(0.4))
+    item_def("altar_obelisk", 0xB070FF)
+    write_json("assets/chaoshearts/models/item/trial_ward.json", {"parent": "minecraft:item/generated",
+                                                                  "textures": {"layer0": "chaoshearts:item/trial_ward"}})
+    item_def("trial_ward")
+
+
+def heart_gems():
+    for kind, main, sec in HEARTS:
+        rng = np.random.default_rng(sum(map(ord, kind)))
+        frames = []
+        for i in range(8):
+            beat = [1.0, 1.07, 1.0, 1.035, 1.0, 1.0, 1.0, 1.0][i]
+            img, inside, hx, hy = shade_heart(main, sec, 0.9 * beat, np.random.default_rng(i), glow=0.15 * (beat - 1) * 10)
+            motif(img, inside, kind, main, sec, rng, phase=i / 8)
+            # a moving glint across the gem
+            band_ = np.exp(-((hx + hy * 0.6 - (i / 8 * 3.4 - 1.7)) ** 2) * 14) * inside
+            img[..., :3] = np.clip(img[..., :3] + band_[..., None] * 70, 0, 255)
+            # soft halo outside the outline
+            halo = np.zeros(inside.shape)
+            m = inside | outline(inside)
+            g2 = m.copy()
+            for _ in range(2):
+                g2 = g2 | outline(g2)
+            halo[g2 & ~m] = 1
+            lite = np.clip(rgb(main) * 0.6 + 100, 0, 255)
+            sel = halo > 0
+            img[sel, :3] = lite
+            img[sel, 3] = 70 + 40 * math.sin(i / 8 * 2 * math.pi)
+            frames.append(img)
+        save_texture(f"item/heart_{kind}", frames, 2)
+        write_json(f"assets/chaoshearts/models/item/heart_{kind}.json", {
+            "parent": "minecraft:item/generated", "textures": {"layer0": f"chaoshearts:item/heart_{kind}"}})
+        item_def(f"heart_{kind}")
+
+def pack_icon():
     img, inside, _, _ = shade_heart(0x8A3CFF, 0x14002B, 0.8, np.random.default_rng(2), glow=0.3)
-    # split the heart into the ten colours like a stained glass window
+    # the heart split into the ten colours like a stained glass window
     f, x, y = heart_field(N, 0.8)
     ang = (np.arctan2(y, x) + math.pi) / (2 * math.pi)
     for i, (_, main, sec) in enumerate(HEARTS):
@@ -389,8 +2190,6 @@ def mod_icon():
     img[outline(inside)] = [20, 0, 30, 255]
     hl = np.exp(-(((x + 0.45) ** 2) + ((y - 0.55) ** 2)) * 18)
     img[..., :3] = np.clip(img[..., :3] + (hl * 160 * inside)[..., None], 0, 255)
-    os.makedirs(os.path.dirname(ICON), exist_ok=True)
-    to_image(img).resize((big, big), Image.NEAREST).save(ICON)
     to_image(img).resize((128, 128), Image.NEAREST).save(os.path.join(PACK, "pack.png"))
 
 
@@ -880,6 +2679,68 @@ def rec_eye(name, rng):
         return reverb(mix(stab * 1.3, boom(rng, 1.0, 80, 30) * 0.6, at(heartbeat(rng) * 0.7, 0.5)), rng, 2.2, 0.4)
 
 
+def rec_fx(name, rng):
+    if name == "hit_marker":
+        d = 0.07
+        n = int(d * SR)
+        click = osc(3200, d) * env(n, 0.0005, 0.018) * 0.7 + osc(5300, d) * env(n, 0.0003, 0.008) * 0.4
+        return click + fft_filter(noise(d, rng), 2500, 11000) * env(n, 0.0003, 0.006) * 0.6
+    if name == "heart_shuffle":
+        return reverb(mix(heartbeat(rng) * 0.9, at(whoosh(rng, 0.45, 300, 6000) * 0.7, 0.06), at(bell(880, 0.5, rng) * 0.22, 0.28)), rng, 1.0, 0.3)
+    if name == "altar_hum":
+        return altar_hum_loop(rng)
+    if name == "altar_activate":
+        swell = reverse(reverb(chord([note(0, 110), note(7, 110), note(12, 110)], 1.2, "saw", rng, 0.01, 0.8), rng, 1.2, 0.7))[:int(1.5 * SR)]
+        bells = mix(*[at(bell(note(s, 440), 1.6, rng) * 0.35, i * 0.08) for i, s in enumerate((0, 7, 12, 19))])
+        return reverb(mix(fft_filter(swell, 40, 3000), at(boom(rng, 1.6, 80, 24, 3) * 0.9, 1.45), at(bells, 1.5),
+                          at(crackle(rng, 1.0, 80) * 0.4, 1.45)), rng, 2.2, 0.35)
+    if name == "impact_heavy":
+        snap = fft_filter(noise(0.08, rng), 1000, 8000) * env(int(0.08 * SR), 0.0005, 0.02) * 0.8
+        return reverb(mix(boom(rng, 1.1, 95, 26, 3.5), crackle(rng, 0.5, 120, 5000) * 0.7, snap), rng, 1.0, 0.22)
+    if name == "impact_light":
+        snap = fft_filter(noise(0.05, rng), 1500, 9000) * env(int(0.05 * SR), 0.0005, 0.012)
+        return mix(boom(rng, 0.25, 160, 70, 2) * 0.7, snap)
+    if name == "whoosh":
+        return whoosh(rng, 0.5, 300, 4500)
+    if name == "charge_up":
+        d = 1.3
+        n = int(d * SR)
+        ramp = np.linspace(0, 1, n) ** 1.4
+        trem = 0.65 + 0.35 * osc(sweep(6, 30, d), d)
+        tone = fft_filter(osc(sweep(110, 880, d, 1.6), d, "saw") + osc(sweep(165, 1320, d, 1.6), d, "saw") * 0.5, 60, 5000) * 0.5
+        hiss = lowpass_sweep(noise(d, rng), 300, 9000) * 0.6
+        return (tone * trem + hiss) * ramp
+    if name == "rumble":
+        d = 2.2
+        return lowpass_sweep(noise(d, rng), 220, 70) * adsr(int(d * SR), 0.4, 0.2, 0.8, 0.8) * 3 + drone(36, d, rng, 0.4) * 0.4
+    if name == "ui_click":
+        d = 0.04
+        n = int(d * SR)
+        return osc(1800, d, "tri") * env(n, 0.0003, 0.01) + fft_filter(noise(d, rng), 3000, 12000) * env(n, 0.0002, 0.003) * 0.5
+    if name == "ui_open":
+        return reverb(mix(bell(note(0, 880), 0.5, rng) * 0.4, at(bell(note(7, 880), 0.6, rng) * 0.4, 0.07), whoosh(rng, 0.25, 1500, 7000) * 0.25), rng, 0.9, 0.3)
+    if name == "glass_shatter":
+        return reverb(mix(glass(rng, 1.1, 2200) * 1.2, crackle(rng, 0.4, 400, 14000) * 0.8, boom(rng, 0.3, 200, 90) * 0.3), rng, 1.0, 0.3)
+    if name == "heart_beat":
+        return reverb(heartbeat(rng), rng, 0.6, 0.15)
+
+
+def altar_hum_loop(rng):
+    """Exactly 4 s; every partial and the LFO complete whole cycles and the noise is filtered
+    circularly, so the sound loops without a seam."""
+    N = 4 * SR
+    t = np.arange(N) / SR
+    s = np.zeros(N)
+    for f, a in ((55.0, 1.0), (55.25, 0.8), (82.5, 0.45), (110.0, 0.35), (165.0, 0.18), (220.5, 0.08), (330.0, 0.05)):
+        s += a * np.sin(2 * np.pi * f * t)
+    lfo = 0.78 + 0.22 * np.sin(2 * np.pi * 0.5 * t)
+    air = fft_filter(rng.normal(0, 1, N), 60, 400) * 0.6 + fft_filter(rng.normal(0, 1, N), 2000, 5000) * 0.05 * (0.5 + 0.5 * np.sin(2 * np.pi * 0.25 * t))
+    return dist(s * lfo * 0.3, 1.4) + air * 0.4
+
+
+LOOPS = {"altar_hum"}
+
+
 SOUNDS = {}
 for _prefix, _fn, _names in [
     ("rage", rec_rage, ["rage_slam", "rage_leap", "rage_warcry", "rage_bloodlust", "rage_berserk", "rage_rampage"]),
@@ -894,6 +2755,8 @@ for _prefix, _fn, _names in [
     ("corruption", rec_corruption, ["corruption_bolt", "corruption_spread", "corruption_infest", "corruption_rot", "corruption_burst", "corruption_pandemic"]),
     ("core", rec_core, ["heart_acquire", "heart_drop", "heart_awaken", "mastery_milestone", "skill_unlock", "trial_intro", "trial_wave", "trial_telegraph", "trial_victory", "trial_fail", "boss_roar", "boss_phase"]),
     ("eye", rec_eye, ["eye_open", "eye_close", "eye_ambient", "eye_speak", "eye_whisper", "eye_gaze"]),
+    ("fx", rec_fx, ["hit_marker", "heart_shuffle", "altar_hum", "altar_activate", "impact_heavy", "impact_light", "whoosh",
+                    "charge_up", "rumble", "ui_click", "ui_open", "glass_shatter", "heart_beat"]),
 ]:
     for _n in _names:
         SOUNDS[_n] = _fn
@@ -905,6 +2768,17 @@ SUBTITLES = {
     "trial_fail": "Trial failed", "boss_roar": "Guardian roars", "boss_phase": "Guardian grows enraged",
     "eye_open": "The Eye opens", "eye_close": "The Eye closes", "eye_ambient": "Something watches",
     "eye_speak": "The Eye speaks", "eye_whisper": "Something whispers", "eye_gaze": "The Eye stares at you",
+    "hit_marker": "Hit", "heart_shuffle": "Heart shuffled", "altar_hum": "Altar hums", "altar_activate": "Altar awakens",
+    "impact_heavy": "Heavy impact", "impact_light": "Impact", "whoosh": "Whoosh", "charge_up": "Power gathers",
+    "rumble": "Ground rumbles", "ui_click": "Click", "ui_open": "Menu opens", "glass_shatter": "Glass shatters",
+    "heart_beat": "Heartbeat",
+}
+
+LANG_EXTRA = {
+    "death.attack.ch_ability": "%1$s was torn apart by Chaos",
+    "death.attack.ch_ability.player": "%1$s was torn apart by %2$s's Chaos Heart",
+    "death.attack.ch_bleed": "%1$s bled out",
+    "death.attack.ch_bleed.player": "%1$s bled out fighting %2$s",
 }
 
 
@@ -1075,52 +2949,78 @@ def write_ogg(name, x, folder, quality=4):
         os.unlink(path)
 
 
-def audio():
-    folder = os.path.join(PACK, "assets", "chaoshearts", "sounds")
+def sound_defs():
+    """sounds.json and the language file (needs no synthesis)."""
     defs = {}
     lang = {}
+    for name in SOUNDS:
+        far = name.startswith(("boss", "eye", "trial", "heart_awaken", "altar"))
+        d = {"sounds": [{"name": f"chaoshearts:sfx/{name}", "attenuation_distance": 32 if far else 20}]}
+        sub = SUBTITLES.get(name) or name.split("_", 1)[0].capitalize() + " heart: " + name.split("_", 1)[1].replace("_", " ")
+        d["subtitle"] = f"subtitles.chaoshearts.{name}"
+        lang[f"subtitles.chaoshearts.{name}"] = sub
+        defs[name] = d
+    for kind in THEMES:
+        defs[f"trial_music_{kind}"] = {"sounds": [{"name": f"chaoshearts:music/trial_music_{kind}", "stream": True, "volume": 0.8}]}
+    lang.update(LANG_EXTRA)
+    write_json("assets/chaoshearts/sounds.json", defs)
+    write_json("assets/chaoshearts/lang/en_us.json", lang)
+
+
+def audio():
+    folder = os.path.join(PACK, "assets", "chaoshearts", "sounds")
     for name, fn in SOUNDS.items():
         rng = np.random.default_rng(sum(map(ord, name)) * 7919)
         x = fn(name, rng)
         if x is None:
             raise SystemExit(f"no recipe produced audio for {name}")
-        x = fade(normalize(x, 0.92))
-        # trim trailing silence left by reverb tails
-        thr = np.nonzero(np.abs(x) > 0.004)[0]
-        if len(thr):
-            x = fade(x[:thr[-1] + int(0.05 * SR)])
+        if name in LOOPS:
+            x = normalize(x, 0.85)
+        else:
+            x = fade(normalize(x, 0.92))
+            # trim trailing silence left by reverb tails
+            thr = np.nonzero(np.abs(x) > 0.004)[0]
+            if len(thr):
+                x = fade(x[:thr[-1] + int(0.05 * SR)])
         write_ogg(name, x, os.path.join(folder, "sfx"))
-        d = {"sounds": [{"name": f"chaoshearts:sfx/{name}", "attenuation_distance": 32 if name.startswith(("boss", "eye", "trial", "heart_awaken")) else 20}]}
-        sub = SUBTITLES.get(name) or name.split("_", 1)[0].capitalize() + " heart: " + name.split("_", 1)[1].replace("_", " ")
-        d["subtitle"] = f"subtitles.chaoshearts.{name}"
-        lang[f"subtitles.chaoshearts.{name}"] = sub
-        defs[name] = d
         print("sfx", name, f"{len(x) / SR:.2f}s")
     for kind in THEMES:
         rng = np.random.default_rng(sum(map(ord, kind)) * 104729)
         x = music(kind, rng)
         write_ogg(f"trial_music_{kind}", x, os.path.join(folder, "music"), 3)
-        defs[f"trial_music_{kind}"] = {"sounds": [{"name": f"chaoshearts:music/trial_music_{kind}", "stream": True, "volume": 0.8}]}
         print("music", kind, f"{len(x) / SR:.2f}s")
-    write_json("assets/chaoshearts/sounds.json", defs)
-    write_json("assets/chaoshearts/lang/en_us.json", lang)
-
 
 def main():
-    if not shutil.which("ffmpeg"):
+    with_audio = "--no-audio" not in sys.argv
+    if with_audio and not shutil.which("ffmpeg"):
         sys.exit("ffmpeg is needed to encode the sounds")
+    sounds_dir = os.path.join(PACK, "assets", "chaoshearts", "sounds")
+    kept = None
+    if not with_audio and os.path.isdir(sounds_dir):
+        kept = tempfile.mkdtemp()
+        shutil.move(sounds_dir, os.path.join(kept, "sounds"))
     if os.path.isdir(PACK):
         shutil.rmtree(PACK)
     os.makedirs(PACK)
+    if kept:
+        os.makedirs(os.path.dirname(sounds_dir), exist_ok=True)
+        shutil.move(os.path.join(kept, "sounds"), sounds_dir)
+        shutil.rmtree(kept)
     write_json("pack.mcmeta", {"pack": {
         "description": [{"text": "Chaos Hearts", "color": "#c04cff", "bold": True}, {"text": "\nHearts, trials, effects and sounds", "color": "gray"}],
-        "pack_format": 75, "min_format": [75, 0], "max_format": [75, 0]}})
-    heart_textures()
+        "min_format": 75, "max_format": 75}})
+    hud()
+    fx_textures()
+    fx_models()
     eye_textures()
-    models()
-    item_definitions()
-    mod_icon()
-    if "--no-audio" not in sys.argv:
+    eye_models()
+    altar_textures()
+    altar_models()
+    heart_gems()
+    write_item_defs()
+    pack_icon()
+    sound_defs()
+    if with_audio:
         audio()
     print("resource pack written to", PACK)
 

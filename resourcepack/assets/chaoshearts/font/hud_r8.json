@@ -1,0 +1,565 @@
+{
+  "providers": [
+    {
+      "type": "space",
+      "advances": {
+        "\uf801": -1,
+        "\uf802": -2,
+        "\uf803": -4,
+        "\uf804": -8,
+        "\uf805": -16,
+        "\uf806": -32,
+        "\uf807": -64,
+        "\uf808": -128,
+        "\uf821": 1,
+        "\uf822": 2,
+        "\uf823": 4,
+        "\uf824": 8,
+        "\uf825": 16,
+        "\uf826": 32,
+        "\uf827": 64,
+        "\uf828": 128
+      }
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_rage_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue000"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_rage_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue001"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_rage_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue002"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_rage_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue003"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_rage_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue004"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_rage_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue005"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_speed_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue008"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_speed_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue009"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_speed_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue00a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_speed_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue00b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_speed_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue00c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_speed_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue00d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_infernal_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue010"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_infernal_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue011"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_infernal_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue012"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_infernal_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue013"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_infernal_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue014"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_infernal_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue015"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_void_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue018"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_void_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue019"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_void_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue01a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_void_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue01b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_void_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue01c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_void_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue01d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_frozen_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue020"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_frozen_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue021"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_frozen_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue022"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_frozen_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue023"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_frozen_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue024"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_frozen_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue025"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_storm_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue028"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_storm_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue029"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_storm_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue02a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_storm_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue02b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_storm_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue02c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_storm_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue02d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_blood_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue030"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_blood_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue031"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_blood_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue032"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_blood_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue033"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_blood_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue034"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_blood_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue035"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_titan_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue038"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_titan_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue039"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_titan_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue03a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_titan_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue03b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_titan_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue03c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_titan_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue03d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_celestial_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue040"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_celestial_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue041"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_celestial_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue042"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_celestial_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue043"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_celestial_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue044"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_celestial_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue045"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_corruption_full.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue048"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_corruption_half.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue049"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_corruption_empty.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue04a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_corruption_full_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue04b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_corruption_half_active.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue04c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/heart_corruption_full_active2.png",
+      "ascent": -18,
+      "height": 9,
+      "chars": [
+        "\ue04d"
+      ]
+    }
+  ]
+}

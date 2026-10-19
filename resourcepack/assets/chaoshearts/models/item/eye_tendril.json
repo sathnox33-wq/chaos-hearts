@@ -1,0 +1,228 @@
+{
+  "textures": {
+    "t": "chaoshearts:item/eye/tendril",
+    "particle": "chaoshearts:item/eye/tendril"
+  },
+  "elements": [
+    {
+      "from": [
+        4.0,
+        8.0,
+        8.0
+      ],
+      "to": [
+        12.0,
+        32.0,
+        8.0
+      ],
+      "shade": false,
+      "faces": {
+        "south": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#t"
+        },
+        "north": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#t"
+        }
+      }
+    },
+    {
+      "from": [
+        8.0,
+        8.0,
+        4.0
+      ],
+      "to": [
+        8.0,
+        32.0,
+        12.0
+      ],
+      "shade": false,
+      "faces": {
+        "east": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#t"
+        },
+        "west": {
+          "uv": [
+            0.0,
+            0.0,
+            16.0,
+            16.0
+          ],
+          "texture": "#t"
+        }
+      }
+    },
+    {
+      "from": [
+        4.0,
+        8.0,
+        8.0
+      ],
+      "to": [
+        12.0,
+        32.0,
+        8.0
+      ],
+      "shade": false,
+      "faces": {
+        "south": {
+          "uv": [
+            16.0,
+            0.0,
+            0.0,
+            16.0
+          ],
+          "texture": "#t"
+        },
+        "north": {
+          "uv": [
+            16.0,
+            0.0,
+            0.0,
+            16.0
+          ],
+          "texture": "#t"
+        }
+      },
+      "rotation": {
+        "angle": 45,
+        "axis": "y",
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      }
+    },
+    {
+      "from": [
+        4.0,
+        8.0,
+        8.0
+      ],
+      "to": [
+        12.0,
+        32.0,
+        8.0
+      ],
+      "shade": false,
+      "faces": {
+        "south": {
+          "uv": [
+            16.0,
+            0.0,
+            0.0,
+            16.0
+          ],
+          "texture": "#t"
+        },
+        "north": {
+          "uv": [
+            16.0,
+            0.0,
+            0.0,
+            16.0
+          ],
+          "texture": "#t"
+        }
+      },
+      "rotation": {
+        "angle": -45,
+        "axis": "y",
+        "origin": [
+          8.0,
+          8.0,
+          8.0
+        ]
+      }
+    }
+  ],
+  "display": {
+    "gui": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        0,
+        180,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        0.4,
+        0.4,
+        0.4
+      ]
+    },
+    "ground": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        0
+      ],
+      "scale": [
+        0.3,
+        0.3,
+        0.3
+      ]
+    },
+    "head": {
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

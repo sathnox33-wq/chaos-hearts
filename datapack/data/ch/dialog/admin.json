@@ -1,0 +1,179 @@
+{
+ "type": "minecraft:multi_action",
+ "title": {
+  "text": "Chaos Hearts admin",
+  "color": "light_purple",
+  "bold": true
+ },
+ "inputs": [
+  {
+   "type": "minecraft:text",
+   "key": "player",
+   "label": {
+    "text": "Player"
+   },
+   "width": 200,
+   "max_length": 16
+  },
+  {
+   "type": "minecraft:single_option",
+   "key": "heart",
+   "label": {
+    "text": "Heart"
+   },
+   "options": [
+    {
+     "id": "rage",
+     "display": {
+      "text": "Rage"
+     }
+    },
+    {
+     "id": "speed",
+     "display": {
+      "text": "Speed"
+     }
+    },
+    {
+     "id": "infernal",
+     "display": {
+      "text": "Infernal"
+     }
+    },
+    {
+     "id": "void",
+     "display": {
+      "text": "Void"
+     }
+    },
+    {
+     "id": "frozen",
+     "display": {
+      "text": "Frozen"
+     }
+    },
+    {
+     "id": "storm",
+     "display": {
+      "text": "Storm"
+     }
+    },
+    {
+     "id": "blood",
+     "display": {
+      "text": "Blood"
+     }
+    },
+    {
+     "id": "titan",
+     "display": {
+      "text": "Titan"
+     }
+    },
+    {
+     "id": "celestial",
+     "display": {
+      "text": "Celestial"
+     }
+    },
+    {
+     "id": "corruption",
+     "display": {
+      "text": "Corruption"
+     }
+    }
+   ]
+  },
+  {
+   "type": "minecraft:number_range",
+   "key": "level",
+   "label": {
+    "text": "Mastery"
+   },
+   "start": 0,
+   "end": 100,
+   "step": 1,
+   "initial": 100
+  }
+ ],
+ "actions": [
+  {
+   "label": {
+    "text": "Give heart"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:admin/give {player:\"$(player)\",heart:\"$(heart)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Take heart"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:admin/take {player:\"$(player)\",heart:\"$(heart)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Set mastery"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:admin/mastery {player:\"$(player)\",heart:\"$(heart)\",level:$(level)}"
+   }
+  },
+  {
+   "label": {
+    "text": "Awaken heart"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:admin/awaken {player:\"$(player)\",heart:\"$(heart)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Place altar here"
+   },
+   "action": {
+    "type": "minecraft:run_command",
+    "command": "function ch:admin/altar/place"
+   }
+  },
+  {
+   "label": {
+    "text": "Become the Eye"
+   },
+   "action": {
+    "type": "minecraft:run_command",
+    "command": "function ch:eye/on"
+   }
+  },
+  {
+   "label": {
+    "text": "List hearts"
+   },
+   "action": {
+    "type": "minecraft:run_command",
+    "command": "function ch:admin/list"
+   }
+  },
+  {
+   "label": {
+    "text": "Help"
+   },
+   "action": {
+    "type": "minecraft:run_command",
+    "command": "function ch:admin/help"
+   }
+  }
+ ],
+ "columns": 2,
+ "exit_action": {
+  "label": {
+   "text": "Done"
+  }
+ }
+}

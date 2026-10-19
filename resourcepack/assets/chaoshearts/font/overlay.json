@@ -1,0 +1,160 @@
+{
+  "providers": [
+    {
+      "type": "space",
+      "advances": {
+        "\uf801": -1,
+        "\uf802": -2,
+        "\uf803": -4,
+        "\uf804": -8,
+        "\uf805": -16,
+        "\uf806": -32,
+        "\uf807": -64,
+        "\uf808": -128,
+        "\uf821": 1,
+        "\uf822": 2,
+        "\uf823": 4,
+        "\uf824": 8,
+        "\uf825": 16,
+        "\uf826": 32,
+        "\uf827": 64,
+        "\uf828": 128
+      }
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/vignette.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue300"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/rage.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue301"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/speed.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue302"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/infernal.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue303"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/void.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue304"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/frozen.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue305"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/storm.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue306"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/blood.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue307"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/titan.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue308"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/celestial.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue309"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/corruption.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue30a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/flash.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue30b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/eye.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue30c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/awaken.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue30d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/overlay/shatter.png",
+      "ascent": 67,
+      "height": 140,
+      "chars": [
+        "\ue30e"
+      ]
+    }
+  ]
+}

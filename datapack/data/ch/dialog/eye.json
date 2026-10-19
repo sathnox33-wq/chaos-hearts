@@ -1,0 +1,169 @@
+{
+ "type": "minecraft:multi_action",
+ "title": {
+  "text": "◉ The Eye",
+  "color": "dark_purple",
+  "bold": true
+ },
+ "body": [
+  {
+   "type": "minecraft:plain_message",
+   "width": 320,
+   "contents": {
+    "text": "Speak, whisper, gaze, and give or take hearts. Avoid double quotes in your words.",
+    "color": "gray"
+   }
+  }
+ ],
+ "inputs": [
+  {
+   "type": "minecraft:text",
+   "key": "msg",
+   "label": {
+    "text": "Words"
+   },
+   "width": 300,
+   "max_length": 200
+  },
+  {
+   "type": "minecraft:text",
+   "key": "player",
+   "label": {
+    "text": "Player"
+   },
+   "width": 200,
+   "max_length": 16
+  },
+  {
+   "type": "minecraft:single_option",
+   "key": "heart",
+   "label": {
+    "text": "Heart"
+   },
+   "options": [
+    {
+     "id": "rage",
+     "display": {
+      "text": "Rage"
+     }
+    },
+    {
+     "id": "speed",
+     "display": {
+      "text": "Speed"
+     }
+    },
+    {
+     "id": "infernal",
+     "display": {
+      "text": "Infernal"
+     }
+    },
+    {
+     "id": "void",
+     "display": {
+      "text": "Void"
+     }
+    },
+    {
+     "id": "frozen",
+     "display": {
+      "text": "Frozen"
+     }
+    },
+    {
+     "id": "storm",
+     "display": {
+      "text": "Storm"
+     }
+    },
+    {
+     "id": "blood",
+     "display": {
+      "text": "Blood"
+     }
+    },
+    {
+     "id": "titan",
+     "display": {
+      "text": "Titan"
+     }
+    },
+    {
+     "id": "celestial",
+     "display": {
+      "text": "Celestial"
+     }
+    },
+    {
+     "id": "corruption",
+     "display": {
+      "text": "Corruption"
+     }
+    }
+   ]
+  }
+ ],
+ "actions": [
+  {
+   "label": {
+    "text": "Speak to all"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:eye/say {msg:\"$(msg)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Whisper"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:eye/whisper {player:\"$(player)\",msg:\"$(msg)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Gaze upon"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:eye/gaze {player:\"$(player)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Grant heart"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:eye/give {player:\"$(player)\",heart:\"$(heart)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Tear heart away"
+   },
+   "action": {
+    "type": "minecraft:dynamic/run_command",
+    "template": "function ch:eye/take {player:\"$(player)\",heart:\"$(heart)\"}"
+   }
+  },
+  {
+   "label": {
+    "text": "Close the Eye"
+   },
+   "action": {
+    "type": "minecraft:run_command",
+    "command": "function ch:eye/off"
+   }
+  }
+ ],
+ "columns": 2,
+ "exit_action": {
+  "label": {
+   "text": "Done"
+  }
+ }
+}

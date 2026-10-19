@@ -2,13 +2,13 @@ name: Build
 
 on:
   push:
-    branches: [main]
+    branches: [main, datapack-wip]
     tags: ['v*']
   pull_request:
   workflow_dispatch:
     inputs:
       release:
-        description: Publish a GitHub release for the version in gradle.properties
+        description: Publish a GitHub release for the version in VERSION
         type: boolean
         default: false
 
@@ -21,27 +21,34 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - uses: actions/setup-java@v5
+      - uses: actions/setup-python@v5
         with:
-          distribution: temurin
-          java-version: '25'
+          python-version: '3.12'
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
 
-      - name: Build the mod
+      - name: Generate the datapack functions
         run: |
           set -o pipefail
-          ./gradlew build --console=plain 2>&1 | tee build.log
+          python3 tools/build_datapack.py 2>&1 | tee build.log
 
-      - name: Collect release files
+      - name: Lint the datapack (informational)
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          python3 tools/lint_datapack.py 2>&1 | tee lint.log
+
+      - name: Package the datapack and resource pack
         run: |
           mkdir -p dist
-          cp build/libs/chaoshearts-*[0-9].jar dist/
-          cp build/resourcepack/chaoshearts-resourcepack.zip dist/
-          (cd dist && sha1sum chaoshearts-resourcepack.zip > chaoshearts-resourcepack.zip.sha1)
+          (cd datapack && zip -qr -X ../dist/chaoshearts-datapack.zip pack.mcmeta data)
+          (cd resourcepack && zip -qr -X ../dist/chaoshearts-resourcepack.zip .)
+          (cd dist && sha1sum chaoshearts-datapack.zip > chaoshearts-datapack.zip.sha1 && sha1sum chaoshearts-resourcepack.zip > chaoshearts-resourcepack.zip.sha1)
           ls -la dist
 
-      - name: Boot a real server with the mod and run the admin commands
+      - name: Boot a vanilla 1.21.11 server with the packs and run the bot scenario
         run: bash ci/server-test.sh dist
 
       - uses: actions/upload-artifact@v4
@@ -59,15 +66,16 @@ jobs:
       - name: Publish release
         if: startsWith(github.ref, 'refs/tags/v') || inputs.release
         run: |
-          VERSION=$(grep '^version=' gradle.properties | cut -d= -f2)
+          VERSION=$(cat VERSION)
           TAG="v$VERSION"
           [ "${GITHUB_REF_TYPE}" = tag ] && TAG="${GITHUB_REF_NAME}"
-          gh release create "$TAG" dist/chaoshearts-*.jar dist/chaoshearts-resourcepack.zip dist/chaoshearts-resourcepack.zip.sha1 \
+          gh release create "$TAG" dist/chaoshearts-datapack.zip dist/chaoshearts-datapack.zip.sha1 \
+            dist/chaoshearts-resourcepack.zip dist/chaoshearts-resourcepack.zip.sha1 \
             --target "$GITHUB_SHA" --title "Chaos Hearts $VERSION" --notes-file RELEASE_NOTES.md
         env:
           GH_TOKEN: ${{ github.token }}
 
-      # Keeps a readable copy of the build result, the server test and the built files on the
+      # Keeps a readable copy of the generator output, the lint, the server test and the built files on the
       # ci-output branch, so they can be read without downloading workflow artifacts.
       - name: Save CI output
         if: always() && github.event_name != 'pull_request'
@@ -75,17 +83,18 @@ jobs:
           mkdir -p /tmp/out
           {
             echo "run ${{ github.run_id }} on ${{ github.sha }}: ${{ job.status }}"
-            if [ -f build.log ]; then grep -E -A4 'error:' build.log | head -900; grep -E 'What went wrong|FAILURE|BUILD' -A3 build.log | head -40; fi
+            [ -f build.log ] && tail -200 build.log
           } > /tmp/out/build.txt
+          [ -f lint.log ] && cp lint.log /tmp/out/lint.txt
           [ -f ci-server/test-summary.txt ] && cp ci-server/test-summary.txt /tmp/out/
-          [ -f ci-server/server.log ] && grep -vE '^\s+at |Preparing spawn area' ci-server/server.log | tail -1500 > /tmp/out/server.log
+          [ -f ci-server/server.log ] && grep -vE '^\s+at |Preparing spawn area' ci-server/server.log | tail -3000 > /tmp/out/server.log
           [ -d dist ] && cp dist/* /tmp/out/
           git config user.name "github-actions"
           git config user.email "github-actions@users.noreply.github.com"
           git checkout --orphan ci-output
           git rm -rfq --cached . >/dev/null 2>&1 || true
-          git clean -fdxq -e build -e ci-server -e dist >/dev/null 2>&1 || true
+          git clean -fdxq -e ci-server -e dist >/dev/null 2>&1 || true
           cp /tmp/out/* .
-          git add -f -- *.txt *.log *.jar *.zip *.sha1 2>/dev/null || true
+          git add -f -- *.txt *.log *.zip *.sha1 2>/dev/null || true
           git commit -qm "CI output for run ${{ github.run_id }}"
           git push -fq origin ci-output
