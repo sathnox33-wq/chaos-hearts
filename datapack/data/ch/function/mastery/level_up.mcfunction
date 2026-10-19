@@ -11,4 +11,3 @@ execute if score #old ch.tmp matches ..59 if score #lvl ch.tmp matches 60.. run 
 execute if score #old ch.tmp matches ..74 if score #lvl ch.tmp matches 75.. run function ch:mastery/milestone {m:"Ultimate unlocked: sneak + swap hands"}
 execute if score #old ch.tmp matches ..89 if score #lvl ch.tmp matches 90.. run function ch:mastery/milestone {m:"Your heart now shows its aura"}
 execute if score #old ch.tmp matches ..99 if score #lvl ch.tmp matches 100.. run function ch:mastery/milestone {m:"Mastery 100: the Awakening Trial is open. /trigger hearts"}
-$execute if score @s ch.active matches $(i) run function ch:focus/restyle

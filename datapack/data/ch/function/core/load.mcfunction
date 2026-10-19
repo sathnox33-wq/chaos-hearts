@@ -3,6 +3,8 @@ function ch:gen/objectives
 function ch:gen/config_defaults
 function ch:gen/constants
 function ch:gen/menu_data
+function ch:gen/hud_tables
+function ch:gen/overlays
 scoreboard players set #unlock1 ch.g 0
 scoreboard players set #unlock2 ch.g 10
 scoreboard players set #unlock3 ch.g 40

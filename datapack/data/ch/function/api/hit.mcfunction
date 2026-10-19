@@ -24,6 +24,7 @@ execute store result storage ch:tmp dmg.w int 1 run scoreboard players get #w ch
 scoreboard players operation #d ch.tmp %= #10 ch.g
 execute store result storage ch:tmp dmg.f int 1 run scoreboard players get #d ch.tmp
 function ch:api/hit_apply with storage ch:tmp dmg
+function ch:api/hit_text with storage ch:tmp dmg
 scoreboard players add #hits ch.tmp 1
 particle minecraft:crit ~ ~1 ~ 0.3 0.4 0.3 0.25 8
 execute as @a[tag=ch.caster,limit=1] at @s run function ch:api/hit_mark

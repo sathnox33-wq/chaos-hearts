@@ -7,4 +7,4 @@ scoreboard players set @s ch.cd1 0
 scoreboard players set @s ch.cd2 0
 scoreboard players set @s ch.cd3 0
 scoreboard players set @s ch.cd4 0
-function ch:focus/restyle
+scoreboard players set @s ch.hud 5

@@ -9,4 +9,4 @@ function ch:heart/pending/apply
 function ch:trial/rejoin
 function ch:eye/rejoin
 function ch:gen/sync_active
-function ch:focus/ensure
+function ch:core/player/max_health

@@ -1,0 +1,27 @@
+# Generated: resets every setting to its default.
+scoreboard players set #starter ch.cfg 1
+scoreboard players set #unique ch.cfg 0
+scoreboard players set #max_hearts ch.cfg 0
+scoreboard players set #collect_sec ch.cfg 300
+scoreboard players set #combat_sec ch.cfg 15
+scoreboard players set #combat_log ch.cfg 1
+scoreboard players set #swap_sec ch.cfg 2
+scoreboard players set #xp_pct ch.cfg 100
+scoreboard players set #daily_cap ch.cfg 2500
+scoreboard players set #cap_pct ch.cfg 25
+scoreboard players set #xp_hit_player ch.cfg 15
+scoreboard players set #xp_hit_mob ch.cfg 5
+scoreboard players set #xp_kill_mob ch.cfg 8
+scoreboard players set #xp_pvp_kill ch.cfg 150
+scoreboard players set #xp_boss ch.cfg 400
+scoreboard players set #pvp_pct ch.cfg 75
+scoreboard players set #cc_pct ch.cfg 50
+scoreboard players set #dmg_pct ch.cfg 100
+scoreboard players set #cd_pct ch.cfg 100
+scoreboard players set #awaken_pts ch.cfg 3
+scoreboard players set #asc_per_pt ch.cfg 1000
+scoreboard players set #max_pts ch.cfg 15
+scoreboard players set #respec_lvls ch.cfg 20
+scoreboard players set #trial_retry_min ch.cfg 10
+scoreboard players set #trial_pct ch.cfg 100
+scoreboard players set #trial_min ch.cfg 15

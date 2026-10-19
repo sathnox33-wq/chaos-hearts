@@ -1,0 +1,124 @@
+{
+ "_doc": "Shared glyph map. tools/gen_assets.py makes the textures and font JSONs from it; tools/build_datapack.py builds the HUD text from it. Codepoints are hex strings.",
+ "space": {
+  "font": "chaoshearts:hud",
+  "advances": {
+   "F801": -1,
+   "F802": -2,
+   "F803": -4,
+   "F804": -8,
+   "F805": -16,
+   "F806": -32,
+   "F807": -64,
+   "F808": -128,
+   "F821": 1,
+   "F822": 2,
+   "F823": 4,
+   "F824": 8,
+   "F825": 16,
+   "F826": 32,
+   "F827": 64,
+   "F828": 128
+  }
+ },
+ "hearts": {
+  "_doc": "9x9 heart icons drawn over the second health row (the extra hearts each Chaos Heart gives). One font per vanilla row spacing; same chars in each. Code = base + (index-1)*8 + state.",
+  "fonts": {
+   "10": {
+    "font": "chaoshearts:hud_r10",
+    "ascent": -16
+   },
+   "9": {
+    "font": "chaoshearts:hud_r9",
+    "ascent": -17
+   },
+   "8": {
+    "font": "chaoshearts:hud_r8",
+    "ascent": -18
+   },
+   "7": {
+    "font": "chaoshearts:hud_r7",
+    "ascent": -19
+   }
+  },
+  "height": 9,
+  "base": "E000",
+  "states": {
+   "full": 0,
+   "half": 1,
+   "empty": 2,
+   "full_active": 3,
+   "half_active": 4,
+   "full_active2": 5
+  },
+  "texture": "chaoshearts:gui/hud/heart_<h>_<state>.png"
+ },
+ "abilities": {
+  "_doc": "16x16 ability icons above the hotbar, centre of screen. Code = base + (index-1)*4 + (slot-1).",
+  "font": "chaoshearts:hud",
+  "ascent": 25,
+  "height": 16,
+  "base": "E100",
+  "texture": "chaoshearts:gui/hud/ability_<h>_<slot>.png"
+ },
+ "ability_extra": {
+  "font": "chaoshearts:hud",
+  "ascent": 25,
+  "height": 16,
+  "glyphs": {
+   "lock": "E180",
+   "ready_frame": "E181",
+   "frame": "E182",
+   "cd_0": "E190",
+   "cd_1": "E191",
+   "cd_2": "E192",
+   "cd_3": "E193",
+   "cd_4": "E194",
+   "cd_5": "E195",
+   "cd_6": "E196",
+   "cd_7": "E197",
+   "cd_8": "E198"
+  },
+  "_cd": "cd_k darkens the top k/8 of an icon (k=8 fully dark). Textures chaoshearts:gui/hud/<name>.png"
+ },
+ "digits": {
+  "_doc": "3x5 white digits shown on the bottom right of a cooling icon.",
+  "font": "chaoshearts:hud_num",
+  "ascent": 15,
+  "height": 5,
+  "base": "E1A0",
+  "texture": "chaoshearts:gui/hud/digit_<n>.png"
+ },
+ "meter": {
+  "_doc": "74x4 white bar under the icons, tinted by text colour. Code = base + fill (0..20).",
+  "font": "chaoshearts:hud_meter",
+  "ascent": 7,
+  "height": 4,
+  "base": "E200",
+  "texture": "chaoshearts:gui/hud/meter_<n>.png"
+ },
+ "overlays": {
+  "_doc": "Full screen overlays shown as a title. Tinted by text colour, so draw them in their own colours (white = tintable).",
+  "font": "chaoshearts:overlay",
+  "height": 140,
+  "ascent": 67,
+  "glyphs": {
+   "vignette": "E300",
+   "rage": "E301",
+   "speed": "E302",
+   "infernal": "E303",
+   "void": "E304",
+   "frozen": "E305",
+   "storm": "E306",
+   "blood": "E307",
+   "titan": "E308",
+   "celestial": "E309",
+   "corruption": "E30A",
+   "flash": "E30B",
+   "eye": "E30C",
+   "awaken": "E30D",
+   "shatter": "E30E"
+  },
+  "texture": "chaoshearts:gui/overlay/<name>.png"
+ }
+}

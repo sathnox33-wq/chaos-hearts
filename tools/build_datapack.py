@@ -51,7 +51,7 @@ CORE = [
     "ch.ctag", "ch.opp", "ch.swapcd", "ch.xpday", "ch.day", "ch.tgt", "ch.tgtn", "ch.tgtt",
     "ch.seen", "ch.hud", "ch.ccimm", "ch.trial", "ch.retry", "ch.eye", "ch.msg", "ch.respec",
     "ch.owner", "ch.life", "ch.t", "ch.eid", "ch.hid", "ch.slot", "ch.state", "ch.phase",
-    "ch.stun", "ch.v1", "ch.v2", "ch.v3", "ch.v4", "ch.v5", "ch.v6", "ch.tmp", "ch.g", "ch.cfg",
+    "ch.stun", "ch.shake", "ch.shakes", "ch.meter", "ch.tap", "ch.kj", "ch.ks", "ch.ka", "ch.kd", "ch.kb", "ch.dta", "ch.dtd", "ch.v1", "ch.v2", "ch.v3", "ch.v4", "ch.v5", "ch.v6", "ch.tmp", "ch.g", "ch.cfg",
 ]
 CONFIG = {
     # name: (default, meaning)
@@ -61,7 +61,7 @@ CONFIG = {
     "#collect_sec": (300, "Seconds a killer has to collect a dropped heart"),
     "#combat_sec": (15, "Seconds of combat tag after PvP damage"),
     "#combat_log": (1, "1 makes logging out in combat drop your latest heart for your opponent"),
-    "#swap_sec": (30, "Cooldown in seconds on changing the active heart"),
+    "#swap_sec": (2, "Cooldown in seconds on shuffling the active heart"),
     "#xp_pct": (100, "Mastery XP multiplier in percent"),
     "#daily_cap": (2500, "Daily mastery XP before the soft cap applies"),
     "#cap_pct": (25, "Percent of XP still earned above the daily cap"),
@@ -112,7 +112,7 @@ def gen():
         for p in PER_HEART:
             lines.append(f"scoreboard objectives add ch.{p}.{h} dummy")
     lines += [
-        "scoreboard objectives add ch.use minecraft.used:minecraft.carrot_on_a_stick",
+        "scoreboard objectives add ch.health health",
         "scoreboard objectives add ch.deaths deathCount",
         "scoreboard objectives add ch.leave minecraft.custom:minecraft.leave_game",
         "scoreboard objectives add hearts trigger",
@@ -143,13 +143,19 @@ def gen():
         f"data modify storage ch:const names set value {snbt(const['names'])}",
         f"data modify storage ch:const titles set value {snbt(const['titles'])}",
         f"data modify storage ch:const colors set value {snbt(const['colors'])}",
-        "scoreboard players set #2 ch.g 2", "scoreboard players set #4 ch.g 4",
+        "scoreboard players set #2 ch.g 2", "scoreboard players set #4 ch.g 4", "scoreboard players set #5 ch.g 5", "scoreboard players set #8 ch.g 8",
         "scoreboard players set #10 ch.g 10", "scoreboard players set #20 ch.g 20",
         "scoreboard players set #38 ch.g 38", "scoreboard players set #60 ch.g 60",
         "scoreboard players set #100 ch.g 100", "scoreboard players set #85 ch.g 85", "scoreboard players set #110 ch.g 110", "scoreboard players set #1000 ch.g 1000",
         "scoreboard players set #1200 ch.g 1200", "scoreboard players set #24000 ch.g 24000",
         "scoreboard players set #-1 ch.g -1",
     ])
+
+    # ---- overlay glyphs for ch:api/fx/screen
+    glyphs = json.load(open(os.path.join(ROOT, "tools", "glyphs.json"), encoding="utf-8"))
+    ov = {k: chr(int(v, 16)) for k, v in glyphs["overlays"]["glyphs"].items()}
+    fn("gen/overlays", ["# Generated: overlay glyph characters for ch:api/fx/screen.",
+                        f"data modify storage ch:const overlay set value {snbt(ov)}"])
 
     # ---- per heart dispatch tables
     kit_tick = ["# Generated: runs each heart's per-player and world tick."]
@@ -244,58 +250,64 @@ def gen():
     lines.append('execute if score #i ch.tmp matches 0 run data modify storage ch:tmp h set value {name:"none",title:"None",color:"#888888",i:0,rgb:8947848,rgbf:"[0.5,0.5,0.5]"}')
     fn("gen/describe", lines)
 
-    # ---- Focus item modifiers
-    for i, h, name, col, _ in TYPES:
-        meta = HEARTS[h]
-        for awakened in (False, True):
-            lore = [{"text": LORE[h], "color": "dark_gray", "italic": True}, {"text": ""}]
-            for s, a in enumerate(meta["abilities"]):
-                key = ["Right-click", "Sneak + Right-click", "Swap hands (F)", "Sneak + Swap hands"][s]
-                lore.append({"text": "", "italic": False, "extra": [
-                    {"text": f"{a['name']}", "color": col},
-                    {"text": f"  {key}", "color": "gray"},
-                    {"text": f"  (mastery {UNLOCK[s]})" if UNLOCK[s] else "", "color": "dark_gray"}]})
-            lore.append({"text": ""})
-            lore.append({"text": "Your mastery and skills belong to you, not the heart.", "color": "dark_gray", "italic": False})
-            comps = {
-                "minecraft:item_model": f"chaoshearts:focus_{h}" + ("_awakened" if awakened else ""),
-                "minecraft:custom_name": {"text": ("Awakened " if awakened else "") + f"{name} Focus", "color": col,
-                                          "italic": False, "bold": awakened},
-                "minecraft:lore": lore,
-                "minecraft:custom_data": {"ch": {"focus": 1, "h": i}},
-                "minecraft:rarity": "epic" if awakened else "rare",
-                "minecraft:unbreakable": {},
-                "minecraft:enchantment_glint_override": awakened,
-                "minecraft:tooltip_display": {"hidden_components": ["minecraft:unbreakable"]},
-            }
-            suffix = "_awakened" if awakened else ""
-            write(f"data/ch/item_modifier/focus/{h}{suffix}.json",
-                  json.dumps([{"function": "minecraft:set_components", "components": comps}], indent=1, ensure_ascii=False))
-    write("data/ch/item_modifier/focus/glint.json", json.dumps(
-        [{"function": "minecraft:set_components", "components": {"minecraft:enchantment_glint_override": True}}], indent=1))
-    write("data/ch/item_modifier/focus/blank.json", json.dumps(
-        [{"function": "minecraft:set_components", "components": {
-            "minecraft:item_model": "chaoshearts:focus_none",
-            "minecraft:custom_name": {"text": "Empty Focus", "color": "gray", "italic": False},
-            "minecraft:lore": [{"text": "You have no heart. Win one in PvP.", "color": "dark_gray", "italic": False}],
-            "minecraft:custom_data": {"ch": {"focus": 1, "h": 0}}}}], indent=1))
+    # next held heart for the shuffle hotkey: smallest index above the active one, else the smallest held
+    lines = ["# Generated: #next ch.tmp = the heart the shuffle hotkey moves to.",
+             "scoreboard players operation #next ch.tmp = @s ch.active", "scoreboard players set #wrap ch.tmp 0"]
+    for i, h, *_ in reversed(TYPES):
+        lines.append(f"execute if score @s ch.cnt.{h} matches 1.. if score @s ch.active matches ..{i - 1} run scoreboard players set #above ch.tmp {i}")
+    lines.insert(3, "scoreboard players set #above ch.tmp 0")
+    for i, h, *_ in reversed(TYPES):
+        lines.append(f"execute if score @s ch.cnt.{h} matches 1.. run scoreboard players set #wrap ch.tmp {i}")
+    lines += ["execute if score #above ch.tmp matches 1.. run return run scoreboard players operation #next ch.tmp = #above ch.tmp",
+              "execute if score #wrap ch.tmp matches 1.. run scoreboard players operation #next ch.tmp = #wrap ch.tmp"]
+    fn("gen/next_held", lines)
 
-    # applies the right Focus look to whichever slot holds the Focus
-    slots = ["weapon.mainhand", "weapon.offhand"] + [f"hotbar.{n}" for n in range(9)] + [f"inventory.{n}" for n in range(27)]
-    lines = ["# Generated: restyles every Focus the player carries. Macro: $(mod) is the item modifier.",
-             "scoreboard players set #found ch.tmp 0"]
-    for s in slots:
-        lines.append(f"$execute if items entity @s {s} carrot_on_a_stick[custom_data~{{ch:{{focus:1}}}}] "
-                     f"store success score #found ch.tmp run item modify entity @s {s} $(mod)")
-    fn("gen/focus_restyle", lines)
+    # ---- HUD glyph tables (see tools/glyphs.json)
+    gl = glyphs
+    sp = {int(v): chr(int(k, 16)) for k, v in gl["space"]["advances"].items()}
+
+    def space(n):
+        out = ""
+        for step in (128, 64, 32, 16, 8, 4, 2, 1):
+            while abs(n) >= step:
+                out += sp[step if n > 0 else -step]
+                n += -step if n > 0 else step
+        return out
+    hb = int(gl["hearts"]["base"], 16)
+    ab = int(gl["abilities"]["base"], 16)
+    ex = gl["ability_extra"]["glyphs"]
+    hud = {
+        "sp": [space(n) for n in range(-200, 201)],
+        "hg": [chr(hb + k) for k in range(80)],
+        "ab": [chr(ab + k) for k in range(40)],
+        "lock": chr(int(ex["lock"], 16)), "ready": chr(int(ex["ready_frame"], 16)), "frame": chr(int(ex["frame"], 16)),
+        "cd": [chr(int(ex[f"cd_{k}"], 16)) for k in range(9)],
+        "dg": [chr(int(gl["digits"]["base"], 16) + k) for k in range(10)],
+        "mt": [chr(int(gl["meter"]["base"], 16) + k) for k in range(21)],
+    }
+    lines = ["# Generated: draws one HUD heart per Chaos Heart held (up to 3 of a type)."]
+    for i, h, *_ in TYPES:
+        for c in range(1, 4):
+            lines.append(f"execute if score @s ch.cnt.{h} matches {c}.. run function ch:core/hud/heart {{i:{i}}}")
+    fn("gen/hud_hearts", lines)
+    fn("gen/hud_tables", ["# Generated: HUD glyph characters and pixel spaces (sp[n+200] moves the pen n pixels).",
+                          f"data modify storage ch:const hud set value {snbt(hud)}"])
 
     # ---- menu text for each heart (abilities, passives, branches) kept in storage for the dialogs
     menu = {}
     for i, h, name, col, _ in TYPES:
-        m = HEARTS[h]
+        m = json.loads(json.dumps(HEARTS[h]))
+        ov_path = os.path.join(ROOT, "tools", "kits", f"{h}.json")
+        if os.path.exists(ov_path):
+            ov = json.load(open(ov_path, encoding="utf-8"))
+            for n, a in enumerate(ov.get("abilities", [])[:4]):
+                m["abilities"][n].update({k: v for k, v in a.items() if k in ("desc", "variants")})
+            for k in ("p1d", "p2d", "awd"):
+                if k in ov:
+                    m[k] = ov[k]
         menu[h] = {
             "title": name, "color": col, "lore": LORE[h], "i": i,
-            "a": [{"name": a["name"], "desc": a["desc"], "cd": a["cd"], "unlock": UNLOCK[n]} for n, a in enumerate(m["abilities"])],
+            "a": [{"name": a["name"], "desc": a["desc"], "var": a.get("variants", ""), "cd": a["cd"], "unlock": UNLOCK[n]} for n, a in enumerate(m["abilities"])],
             "p1": m["p1"], "p1d": m["p1d"], "p2": m["p2"], "p2d": m["p2d"], "aw": m["aw"], "awd": m["awd"],
             "feats": [{"name": f["name"], "desc": f["desc"], "xp": f["xp"]} for f in m["feats"]],
             "br": [{"name": b["name"], "desc": b["desc"], "n": [{"name": n["name"], "desc": n["desc"]} for n in b["nodes"]]}

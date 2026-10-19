@@ -10,3 +10,4 @@ $execute unless score @s ch.active matches 1.. run function ch:heart/set_active 
 $scoreboard players set #i ch.tmp $(i)
 function ch:gen/describe
 function ch:heart/gain_fx with storage ch:tmp h
+function ch:core/player/max_health
