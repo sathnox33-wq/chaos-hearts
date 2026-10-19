@@ -820,8 +820,8 @@ def draw_ability(kind, slot, A, m, s, rng):
         A.poly(ellipse_pts(8, 8, 1.6, 1.6, 30, 6), lc(m, 0.3))
     elif key == "storm1":  # Lightning Strike: a bolt from the cloud
         for x, y, r in ((4.6, 4.4, 2.4), (8.2, 3.6, 3.0), (11.6, 4.6, 2.3), (8, 5.4, 2.6)):
-            A.circle(x, y, r, (70, 84, 110))
-        A.line([(3, 6.4), (13, 6.4)], 0.8, (40, 50, 70))
+            A.circle(x, y, r, (150, 168, 200))
+        A.line([(3, 6.4), (13, 6.4)], 0.8, (90, 104, 136))
         bolt = [(9.2, 6.0), (5.8, 10.2), (8.4, 10.2), (6.0, 15.0), (11.2, 8.8), (8.6, 8.8), (10.6, 6.0)]
         A.poly(bolt, m, 0.6, blur=0.8).poly(bolt, (255, 250, 200))
     elif key == "storm2":  # Gale Burst: a gust spiral
@@ -1145,12 +1145,12 @@ def overlay(name):
             col = [(255, 255, 255), (255, 245, 170), (180, 240, 255)][k % 3]
             A.poly([p0, p1, p2], col, rng.uniform(0.45, 0.95))
     elif name == "infernal":
-        heat = smooth(0.45, 1.15, re + 0.35 * (v - 0.4) + 0.25 * (n1 - 0.5))
+        heat = smooth(0.55, 1.2, re + 0.2 * (v - 0.5) + 0.25 * (n1 - 0.5))
         col = mixc((150, 20, 0), (255, 180, 50), np.clip(n2 * 1.4 - 0.2 + (v - 0.5), 0, 1)[..., None])
         over(img, col, heat * 0.85)
         fl = pnoise(H, W, rng, 1.6, (1.0, 0.25))
-        tongues = smooth(0.0, 0.5, (v - 0.55) * 2.2 + (fl - 0.5) * 1.6)
-        over(img, mixc((255, 90, 0), (255, 240, 160), tongues[..., None] ** 2), tongues * 0.85)
+        tongues = smooth(0.0, 0.5, (v - 0.78) * 3.0 + (fl - 0.5) * 0.9)
+        over(img, mixc((255, 90, 0), (255, 240, 160), tongues[..., None] ** 2), tongues * 0.75)
         for _ in range(220):
             x, y = rng.uniform(0, W), rng.uniform(0, H)
             e = math.hypot(x / W * 2 - 1, y / H * 2 - 1)
@@ -1242,7 +1242,7 @@ def overlay(name):
         ang = np.arctan2(v * H - sy, u * W - sx)
         rays = (0.5 + 0.5 * np.sin(ang * 46 + 3 * np.sin(ang * 7))) ** 3
         dist_ = np.hypot(u * W - sx, v * H - sy) / H
-        a = rays * smooth(1.9, 0.4, dist_) * (0.25 + 0.75 * smooth(0.2, 1.0, re)) * 0.65
+        a = rays * smooth(1.9, 0.4, dist_) * (0.08 + 0.92 * smooth(0.35, 1.05, re)) * 0.65
         over(img, (255, 244, 190), a)
         over(img, (255, 214, 110), smooth(0.55, 1.25, re) * 0.55)
         for _ in range(60):
@@ -2002,7 +2002,7 @@ def eye_models():
             E.append(box((8 - w, 8 + y0, 8 - w), (8 + w, 8 + y1, 8 + w), sc, tint=False, rot=("y", rot) if rot else None, proj=True, emit=0))
     lidf = {"south": "lid", "east": "lid", "west": "lid", "up": "lid", "north": "lid", "down": "rim"}
     lowf = {"south": "lid", "east": "lid", "west": "lid", "down": "lid", "north": "lid", "up": "rim"}
-    for rot in (0, 45, -45):
+    for rot in (0, 22.5, -22.5, 45, -45):
         rr = ("y", rot) if rot else None
         E.append(box((2.4, 11.6, 9), (13.6, 15.6, 16.6), lidf, False, rr, emit=0))
         E.append(box((2.8, 0.6, 9), (13.2, 4.2, 16.3), lowf, False, rr, emit=0))
@@ -2030,8 +2030,8 @@ def eye_models():
 
     tx = {"t": P + "tendril", "particle": P + "tendril"}
     E = [plane_xy(4, 8, 12, 32, 8, "t", False, emit=0), plane_zy(4, 8, 12, 32, 8, "t", False, emit=0),
-         plane_xy(4, 8, 12, 32, 8, "t", False, ("y", 45), uv=(16, 0, 0, 16), emit=0),
-         plane_xy(4, 8, 12, 32, 8, "t", False, ("y", -45), uv=(16, 0, 0, 16), emit=0)]
+         plane_xy(4, 8, 12, 32, 8, "t", False, ("y", 45), emit=0),
+         plane_xy(4, 8, 12, 32, 8, "t", False, ("y", -45), emit=0)]
     model("eye_tendril", tx, E, display=eye_display(0.4))
     item_def("eye_tendril")
 
