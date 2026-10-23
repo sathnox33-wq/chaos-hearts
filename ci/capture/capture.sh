@@ -27,6 +27,7 @@ level-seed=chaos
 level-type=minecraft\:flat
 generate-structures=false
 enable-command-block=true
+allow-flight=true
 P
 mkfifo console
 exec 3<>console

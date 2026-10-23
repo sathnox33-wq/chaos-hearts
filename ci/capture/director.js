@@ -122,6 +122,8 @@ async function moves () {
 async function firstPerson () {
   // The HUD and screen overlays only show to the caster, so Cam plays a few moves in first person.
   await run('kill @e[type=husk]')
+  await run('scoreboard players set #mode cap 0')
+  await run('tp Cam 0.5 -60 -2.5 0 5', 300)
   await run('gamemode survival Cam', 200)
   await run('effect give Cam minecraft:resistance 600 4 true')
   for (const h of ['rage', 'storm', 'void', 'frozen', 'celestial']) await run(`function ch:admin/give {player:"Cam",heart:"${h}"}`, 300)
@@ -169,7 +171,7 @@ async function setPieces () {
   await orbit('altar.mp4', 0.5, -59, 30.5, 14)
   await run('tp Caster 0.5 -57 0.5 180 0', 300)
   await run('execute as Caster at @s run function ch:eye/on', 3000)
-  await orbit('eye.mp4', 0.5, -57, 0.5, 14, async () => { await run('execute as Caster at @s run function ch:eye/gaze {player:"Cam"}', 100) })
+  await orbit('eye.mp4', 0.5, -56, 0.5, 14)
   await run('execute as Caster run function ch:eye/off', 1500)
   await run('scoreboard players set #mode cap 1')
 }
@@ -181,9 +183,8 @@ async function main () {
   const caster = await join('Caster')
   caster.on('error', e => meta.errors.push('caster: ' + e.message))
   for (const c of ['op Cam', 'op Caster', 'gamemode spectator Cam', 'gamemode survival Caster', 'difficulty normal',
-    'time set 6000', 'gamerule advance_time false', 'gamerule do_daylight_cycle false', 'weather clear 1000000',
-    'gamerule advance_weather false', 'gamerule do_weather_cycle false', 'gamerule do_mob_spawning false',
-    'gamerule spawn_mobs false', 'kill @e[type=!player]', 'scoreboard players set #mode cap 1']) await run(c, 200)
+    'time set 6000', 'gamerule advance_time false', 'weather clear 1000000',
+    'gamerule advance_weather false', 'gamerule spawn_mobs false', 'kill @e[type=!player]', 'scoreboard players set #mode cap 1']) await run(c, 200)
   await sleep(12000) // let the client finish loading chunks and the resource pack
   key('F1')
   await sleep(1000)
