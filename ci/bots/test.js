@@ -67,6 +67,8 @@ function join (username) {
     const bot = mineflayer.createBot({ host: '127.0.0.1', port: 25565, username, version: VERSION, auth: 'offline' })
     bot.packOffers = []
     bot.titles = []
+    bot.on('title', (t) => { bot.titles.push(String(t?.toString?.() ?? JSON.stringify(t)).slice(0, 160)); if (bot.titles.length > 12) bot.titles.shift() })
+    bot.titles = []
     bot.on('resourcePack', (url, hash) => { bot.packOffers.push({ url, hash }); try { bot.acceptResourcePack() } catch (e) {} })
     bot.on('title', (t) => bot.titles.push(String(t)))
     bot.once('spawn', () => resolve(bot))
@@ -165,11 +167,13 @@ async function main () {
   await run('effect clear Victim')
   await run('scoreboard players set Attacker ch.cd1 0')
   const hpBefore = victim.health
+  await run('tp Attacker 0 100 0 0 60')
+  await sleep(300)
   await hotkey(attacker, 'jump')
   const cast = await waitFor(async () => (await score('Attacker', 'ch.cd1')) > 0, 4000)
   check('sneak + jump casts ability 1', cast)
   await waitFor(() => victim.health < hpBefore, 5000)
-  check('Rage Leap damages a nearby player', victim.health < hpBefore, `victim health ${hpBefore} -> ${victim.health}`)
+  check('Rage Leap (Earthsplitter, looking down) damages a player in front', victim.health < hpBefore, `victim health ${hpBefore} -> ${victim.health}`)
   await run('effect give Victim minecraft:instant_health 1 10')
 
   // ---- every ability of every heart, in each variant
@@ -213,9 +217,10 @@ async function main () {
   await sleep(1200)
   const victimPid = await score('Victim', 'ch.pid')
   const attackerPid = await score('Attacker', 'ch.pid')
+  const droppedBefore = new Set((await registry()).filter(r => r.state === 'dropped').map(r => r.id))
   await run('damage Victim 1000 minecraft:player_attack by Attacker', 2500)
   let reg = await registry()
-  const dropped = reg.filter(r => r.state === 'dropped')
+  const dropped = reg.filter(r => r.state === 'dropped' && !droppedBefore.has(r.id))
   check('a PvP death drops a heart for the killer', dropped.length === 1 && dropped[0].collector === attackerPid, reg)
   check('the heart that drops is the most recent one (titan)', dropped.length === 1 && dropped[0].type === 'titan', dropped)
 
@@ -229,7 +234,7 @@ async function main () {
   await run('tp Attacker 0 100 0')
   const got = await waitFor(async () => (await registry()).some(r => r.type === 'titan' && r.state === 'held' && r.holder === attackerPid), 10000, 1000)
   check('the killer collects the heart by walking over it', got, await registry())
-  check('the victim keeps their other hearts', (await score('Victim', 'ch.cnt.storm')) >= 1)
+  check('the victim keeps their other hearts', (await registry()).some(r => r.state === 'held' && r.holder === victimPid), await registry())
 
   // ---- the Awakening Altar and a trial that is lost
   await run('execute as Attacker at @s run function ch:admin/altar/place', 1500)
@@ -244,7 +249,7 @@ async function main () {
   await run('execute as Attacker run function ch:heart/set_active {i:1}')
   attacker.chat('/trigger chmenu set 900')
   const inTrial = await waitFor(async () => (await score('Attacker', 'ch.trial')) >= 1 && /trials/.test(dim(attacker)), 15000, 700)
-  check('a player at mastery 100 starts a trial at the altar', inTrial, `${await score('Attacker', 'ch.trial')} ${dim(attacker)}`)
+  check('a player at mastery 100 starts a trial at the altar', inTrial, `${await score('Attacker', 'ch.trial')} ${dim(attacker)} lvl ${await score('Attacker', 'ch.lvl')} titles ${attacker.titles.join(' | ')}`)
   const fighting = await waitFor(async () => (await score('#s0', 'ch.state')) >= 3, 40000, 1500)
   check('the arena builds and the fight begins after the intro', fighting, await score('#s0', 'ch.state'))
   out = await run('execute in ch:trials positioned 0 100 0 if entity @e[tag=ch.tmob,type=!#ch:ignore,distance=..90] run say trial-mobs-ok', 900)

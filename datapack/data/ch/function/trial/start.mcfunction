@@ -5,7 +5,7 @@ execute unless score @s ch.lvl matches 100.. run return run function ch:core/msg
 execute if score @s ch.awake matches 1 run return run function ch:core/msg/say {m:"This heart is already awakened.",c:"gold"}
 execute if score @s ch.ctag > #now ch.g run return run function ch:core/msg/say {m:"You cannot enter a trial while in combat.",c:"red"}
 execute unless entity @e[type=marker,tag=ch.altar,distance=..8,limit=1] run return run function ch:core/msg/say {m:"Trials begin at an Awakening Altar.",c:"gray"}
-execute unless items entity @s weapon.offhand minecraft:air run return run function ch:core/msg/say {m:"Empty your off hand: the Trial Ward goes there.",c:"yellow"}
+execute if items entity @s weapon.offhand * run return run function ch:core/msg/say {m:"Empty your off hand: the Trial Ward goes there.",c:"yellow"}
 scoreboard players operation #i ch.tmp = @s ch.active
 function ch:gen/describe
 function ch:trial/check_retry with storage ch:tmp h
