@@ -16,6 +16,7 @@ scoreboard objectives add ch.blood.so dummy
 scoreboard objectives add ch.blood.vit dummy
 scoreboard objectives add ch.blood.tol dummy
 scoreboard objectives add ch.blood.hit dummy
+scoreboard objectives add ch.blood.tbl dummy
 scoreboard objectives add ch.blood.g dummy
 scoreboard players set #3 ch.blood.g 3
 scoreboard players set #11 ch.blood.g 11
