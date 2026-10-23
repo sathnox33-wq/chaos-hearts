@@ -1,54 +1,39 @@
 # Chaos Hearts SMP — Design
 
-Target: **Minecraft Java 1.21.11**, Fabric Loader 0.19.5, Fabric API 0.141.6+1.21.11,
-Loom 1.18 (official Mojang mappings), Java 21. Verified against FabricMC's own 1.21.11
-example-mod branch and the Fabric API 1.21.11 sources.
+Target: **Minecraft Java 1.21.11**, as a datapack (format 94.1) plus a resource pack (format 75).
+No mods or plugins. `docs/DATAPACK_SPEC.md` is the technical contract for kits, trials and the core API.
 
 ## 1. Architecture
 
-The mod is **server-side only**. Players join with a vanilla 1.21.11 client; nothing is
-registered that a vanilla client would reject (no custom blocks, items or entity types).
-Everything players see is built from vanilla objects:
+Everything runs in functions under the `ch` namespace; assets live in the `chaoshearts` namespace.
 
-| Need | How it is done with a vanilla client |
+| Need | How it is done in a datapack |
 |---|---|
-| Heart items, the casting Focus | `heart_of_the_sea` stacks with `custom_data`, `custom_model_data` strings, name, lore, glint |
-| Custom textures / 3D models | Server resource pack overrides `assets/minecraft/items/heart_of_the_sea.json` with a `select` on `custom_model_data`, so players without the pack still see a sensible vanilla item |
-| Projectiles, beams, black holes, boulders | Server-simulated projectiles (ray-cast every tick) drawn with particles and interpolated `item_display` / `block_display` entities |
-| Bosses | Vanilla mobs with the `scale` attribute, custom attributes, equipment, boss bars and scripted attack patterns run by the mod |
-| Trials | A void dimension `chaoshearts:trials` shipped in the mod's datapack; arenas are generated per run |
-| Cinematics | The client camera is moved to an interpolated display entity (`ClientboundSetCameraPacket`), with titles and music |
-| Custom sounds / music | `chaoshearts:*` sound events in the resource pack, sent as direct holders; every effect also layers vanilla sounds so it still sounds right without the pack |
-| Menus | Chest GUIs (heart management, skill trees) |
-| Screen effects | Frost vignette (`ticksFrozen`), darkness pulses, fire overlay, titles, action bar HUD |
-| Ability input | Holding the Focus: right-click, sneak + right-click, swap-hands key (F), sneak + F. Also `/chaos cast <1-4>` |
-
-Optional resource pack: the mod can host its own pack over HTTP (configurable port and public
-URL) and push it to players on join, or you can host `chaoshearts-resourcepack.zip` yourself.
+| Hearts | Not items. Ownership lives in scoreboards (`ch.cnt.<heart>`) and the registry in storage `ch:reg`. Each heart held adds +2 max health through the `ch:hearts` attribute modifier |
+| Heart icons on the health bar | Action-bar text in custom fonts (`hud_r10`..`hud_r7`) whose glyphs sit exactly over the second health row; pixel-space glyphs position them with a net width of 0 |
+| Ability HUD | The same action bar: four ability icons with lock, cooldown sweep and digits, plus the heart's resource meter |
+| Casting | The `minecraft:player` `input` predicate (sneak + jump, sprint, double-tap left/right, back), read every tick. `/trigger cast` as a fallback |
+| Effects | Emissive, tinted `item_display` models (`chaoshearts:fx/*`) that interpolate and fade, screen overlays as full-screen font glyphs in titles, camera shake, dynamic light blocks, floating damage numbers |
+| Motion | A vector marker in a forceloaded chunk turns a facing into velocity; mobs get `Motion`, players get wind-charge bursts |
+| Trials | The `ch:trials` dimension, 8 arena slots 1024 blocks apart, each with its own state machine (build, intro, waves, boss intro, boss, victory) |
+| Altar | Barrier blocks dressed in block displays, with an interaction entity that opens a dialog |
+| Menus | Dialogs (`/trigger hearts`) built from storage, with buttons that run `/trigger chmenu` |
+| The Eye | Item-display models (eyeball, pupil, shroud, tendrils) that follow the admin, who flies invisibly |
 
 ### Data and persistence
-* All state lives in `<world>/chaoshearts/data.json`, written atomically (temp file + move),
-  with the previous good copy kept as `data.json.bak`. Saved on every ownership change, every
-  two minutes, and on shutdown. If `data.json` is unreadable the backup is loaded and the bad
-  file is kept as `data.json.corrupt-<time>`.
-* **Player record**: owned hearts (ordered by acquisition time), active heart, per-heart
-  mastery XP, awakened flags, skill points and unlocked nodes, feats completed, cooldowns,
-  daily XP counters, trial return point and saved game mode, Eye transformation flag.
-* **Heart registry**: every physical heart has a UUID and exactly one state:
-  `HELD(player)` or `DROPPED(entity uuid, position, intended collector, previous owner, expiry)`.
+* All state is in the world: scoreboards for per-player numbers (mastery XP and level, awakened flags,
+  skill points and nodes, feats, cooldowns, combat tags) and storage `ch:reg` for the heart registry.
+  Minecraft saves both with the world, so they survive restarts and backups.
+* **Heart registry**: every heart has an id and exactly one state: `held` by a player id, or `dropped`
+  with a collector, its previous holder, an expiry time and a position.
 
 ### Anti-duplication rules
-1. A heart is never a real inventory item. Owned hearts live in the player record. The Focus item
-   is only a caster bound to its owner and holds nothing; copying or stashing it gives nothing.
-2. A dropped heart is an invulnerable, non-despawning item entity that only its intended collector
-   can pick up. Pickup is intercepted: the entity is removed and the registry moves the heart to
-   the collector in one step, then the data file is saved.
-3. Every heart item entity is validated when it loads. If the registry does not say
-   `DROPPED` with that exact entity UUID, the item is deleted. Any heart item that ends up in an
-   inventory or container (creative middle-click, /give of a copied stack) is removed on sight.
-4. Hoppers, minecart hoppers and allays cannot collect heart items.
-5. If a dropped heart is destroyed (void, /kill) or its collection window expires, it returns to
-   the player who lost it.
+1. A heart is never an inventory item, so it cannot be copied, stashed or duplicated with containers.
+2. A dropped heart is a display entity linked to a registry id. Only its collector can claim it by walking
+   over it; the claim moves the registry entry and the scores in one function.
+3. A heart token whose registry entry does not say `dropped` with its id is removed. A dropped heart
+   whose window expires, or whose token disappears, returns to the player who lost it.
+4. Only admin functions create hearts; every creation takes a fresh registry id.
 
 ## 2. Hearts and ownership
 
@@ -95,7 +80,7 @@ Casting into the air gives nothing; mastery comes from abilities that land.
 |---|---|
 | 0 | Ability 1, Passive I |
 | 10 | Ability 2 |
-| 25 | Passive II, Focus gains its glint |
+| 25 | Passive II, the heart icon gains its glow |
 | 40 | Ability 3 |
 | 60 | Honed: all abilities −15% cooldown, +10% damage |
 | 75 | Ultimate |
@@ -104,8 +89,8 @@ Casting into the air gives nothing; mastery comes from abilities that land.
 
 ## 4. Hearts
 
-Controls with the Focus in your main hand: **A1** right-click, **A2** sneak + right-click,
-**A3** swap-hands key, **ULT** sneak + swap-hands key.
+Controls, all while sneaking: **A1** jump, **A2** sprint, **A3** double-tap left, **ULT** double-tap right,
+shuffle with back. Each ability has three variants: cast looking level, up or down.
 
 | Heart | Passive I / II | A1 | A2 | A3 | Ultimate | Awakened |
 |---|---|---|---|---|---|---|
@@ -122,7 +107,7 @@ Controls with the Focus in your main hand: **A1** right-click, **A2** sneak + ri
 
 Every ability has: an activation sequence (wind-up particles and sound), its main effect,
 impact VFX and sound, a hit indicator for the caster (sound + particles on the target + action
-bar "✦ HIT"), and cooldown feedback (Focus cooldown overlay, action bar HUD, a "ready" chime).
+bar "✦ HIT"), and cooldown feedback (cooldown sweep and digits on the action-bar HUD, a "ready" chime).
 
 ### Feats (examples)
 Rage: hit 3 enemies with one Rage Leap; win a fight below 3 hearts while Rampaging.
@@ -168,7 +153,7 @@ heart of that type and be out of combat.
 
 ## 6. Awakening and skill trees
 
-Awakening (per player × heart type, like mastery) grants: the awakened Focus model and aura,
+Awakening (per player × heart type, like mastery) grants: the awakened heart icon and aura,
 the awakened passive, **3 skill points**, and opens the heart's skill tree.
 
 * **Skill points after awakening**: mastery XP keeps accumulating as *Ascension XP*; every 1,000
@@ -188,7 +173,7 @@ the awakened passive, **3 skill points**, and opens the heart's skill tree.
 * Total ability damage bonus from the skill tree is capped at +40%.
 * Ultimates have 120–150 s cooldowns. Ascension-style defensive ultimates reduce damage rather
   than grant invulnerability.
-* Every number is in `config/chaoshearts.json`.
+* Every number is a `ch.cfg` score (see the README's Settings table).
 
 ## 8. Admin tools
 
