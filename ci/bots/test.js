@@ -67,7 +67,7 @@ function join (username) {
     const bot = mineflayer.createBot({ host: '127.0.0.1', port: 25565, username, version: VERSION, auth: 'offline' })
     bot.packOffers = []
     bot.titles = []
-    bot.on('title', (t) => { bot.titles.push(String(t?.toString?.() ?? JSON.stringify(t)).slice(0, 160)); if (bot.titles.length > 12) bot.titles.shift() })
+    bot.on('title', (t) => { bot.titles.push((typeof t === 'string' ? t : JSON.stringify(t)).slice(0, 160)); if (bot.titles.length > 12) bot.titles.shift() })
     bot.titles = []
     bot.on('resourcePack', (url, hash) => { bot.packOffers.push({ url, hash }); try { bot.acceptResourcePack() } catch (e) {} })
     bot.on('title', (t) => bot.titles.push(String(t)))
@@ -295,9 +295,9 @@ async function main () {
       return st >= 5
     }, 60000, 1500)
     await sleep(3000)
-    out = await run('execute in ch:trials positioned 0 100 0 if entity @e[tag=ch.boss,distance=..120] run say boss-alive', 400)
-    const bossAlive = /boss-alive/.test(out)
-    await run('execute in ch:trials positioned 0 100 0 run kill @e[tag=ch.boss,distance=..120]', 500)
+    // the boss must still be standing after its entrance; killing it then also proves it was there
+    out = await run('execute in ch:trials positioned 0 100 0 run kill @e[tag=ch.boss,distance=..120]', 900)
+    const bossAlive = /Killed /.test(out)
     const awake = await waitFor(async () => (await score('Attacker', `ch.awk.${h}`)) === 1, 8000)
     const home = await waitFor(async () => (await score('Attacker', 'ch.trial')) === 0, 15000)
     check(`the ${h} trial runs: waves, boss, awakening`, started && waves && spawned && boss && bossAlive && awake && home,
