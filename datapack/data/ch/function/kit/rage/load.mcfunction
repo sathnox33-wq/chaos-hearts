@@ -35,3 +35,4 @@ scoreboard players set #7 ch.rage.g 7
 scoreboard players set #12 ch.rage.g 12
 scoreboard players set #13 ch.rage.g 13
 scoreboard players set #150 ch.rage.g 150
+scoreboard players set #160 ch.rage.g 160

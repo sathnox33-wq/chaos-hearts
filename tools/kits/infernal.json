@@ -9,7 +9,7 @@
   {"desc": "Become a living blaze for 10 s, with a burning aura and fireballs that seek your foes.",
    "variants": "Level: the Avatar form. Up: Ascendant, rise and hover while fire rains down twice as fast. Down: Supernova, a 1.5 s charge that detonates in a huge 14-damage blast around you."}
  ],
- "p1d": "Permanent Fire Resistance. Once every 3 minutes, falling to 2 hearts makes you rise as a Phoenix: you heal and explode in flame.",
+ "p1d": "Permanent Fire Resistance.",
  "p2d": "Your melee hits sear: they set enemies on fire and build Heat.",
  "awd": "Your flames turn into blue soul fire and deal 1 extra damage per second to burning enemies."
 }

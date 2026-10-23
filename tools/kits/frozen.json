@@ -1,7 +1,7 @@
 {
  "abilities": [
   {"desc": "Fire a shard of ice (5 damage) that chills and stacks Frostbite. Frozen hits fill Frost, the meter under your abilities. At 100 Frost your shard becomes a piercing Glacial Lance (11 damage).",
-   "variants": "Level: a single shard (a fan of shards with Shard Fan). Up: Icicle Rain, icicles fall onto the area you look at after a warning. Down: Frost Step, dash back and leave an ice decoy that explodes."},
+   "variants": "Level: a piercing shard (a fan of three with Hailstorm). Up: Icicle Rain, icicles fall onto the area you look at after a warning. Down: Frost Step, dash back and leave an ice decoy that explodes."},
   {"desc": "Raise a wall of solid ice that blocks enemies and projectiles, then melts after 8 s.",
    "variants": "Level: a wall of ice ahead of you. Up: Glacier Ram, a moving wall that bulldozes forward and slams enemies. Down: Frozen Bastion, a ring of ice pillars around you and Resistance II."},
   {"desc": "Release a burst of frost that freezes everything around you solid.",
