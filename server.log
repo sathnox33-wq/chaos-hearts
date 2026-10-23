@@ -1,0 +1,2221 @@
+Unpacking 1.21.11/server-1.21.11.jar (versions:1.21.11) to versions/1.21.11/server-1.21.11.jar
+Unpacking at/yawk/lz4/lz4-java/1.8.1/lz4-java-1.8.1.jar (libraries:at.yawk.lz4:lz4-java:1.8.1) to libraries/at/yawk/lz4/lz4-java/1.8.1/lz4-java-1.8.1.jar
+Unpacking com/azure/azure-json/1.4.0/azure-json-1.4.0.jar (libraries:com.azure:azure-json:1.4.0) to libraries/com/azure/azure-json/1.4.0/azure-json-1.4.0.jar
+Unpacking com/github/oshi/oshi-core/6.9.0/oshi-core-6.9.0.jar (libraries:com.github.oshi:oshi-core:6.9.0) to libraries/com/github/oshi/oshi-core/6.9.0/oshi-core-6.9.0.jar
+Unpacking com/google/code/gson/gson/2.13.2/gson-2.13.2.jar (libraries:com.google.code.gson:gson:2.13.2) to libraries/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar
+Unpacking com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar (libraries:com.google.guava:failureaccess:1.0.3) to libraries/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar
+Unpacking com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar (libraries:com.google.guava:guava:33.5.0-jre) to libraries/com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar
+Unpacking com/microsoft/azure/msal4j/1.23.1/msal4j-1.23.1.jar (libraries:com.microsoft.azure:msal4j:1.23.1) to libraries/com/microsoft/azure/msal4j/1.23.1/msal4j-1.23.1.jar
+Unpacking com/mojang/authlib/7.0.61/authlib-7.0.61.jar (libraries:com.mojang:authlib:7.0.61) to libraries/com/mojang/authlib/7.0.61/authlib-7.0.61.jar
+Unpacking com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar (libraries:com.mojang:brigadier:1.3.10) to libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
+Unpacking com/mojang/datafixerupper/9.0.19/datafixerupper-9.0.19.jar (libraries:com.mojang:datafixerupper:9.0.19) to libraries/com/mojang/datafixerupper/9.0.19/datafixerupper-9.0.19.jar
+Unpacking com/mojang/jtracy/1.0.37/jtracy-1.0.37.jar (libraries:com.mojang:jtracy:1.0.37) to libraries/com/mojang/jtracy/1.0.37/jtracy-1.0.37.jar
+Unpacking com/mojang/logging/1.6.11/logging-1.6.11.jar (libraries:com.mojang:logging:1.6.11) to libraries/com/mojang/logging/1.6.11/logging-1.6.11.jar
+Unpacking commons-io/commons-io/2.20.0/commons-io-2.20.0.jar (libraries:commons-io:commons-io:2.20.0) to libraries/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar
+Unpacking io/netty/netty-buffer/4.2.7.Final/netty-buffer-4.2.7.Final.jar (libraries:io.netty:netty-buffer:4.2.7.Final) to libraries/io/netty/netty-buffer/4.2.7.Final/netty-buffer-4.2.7.Final.jar
+Unpacking io/netty/netty-codec-base/4.2.7.Final/netty-codec-base-4.2.7.Final.jar (libraries:io.netty:netty-codec-base:4.2.7.Final) to libraries/io/netty/netty-codec-base/4.2.7.Final/netty-codec-base-4.2.7.Final.jar
+Unpacking io/netty/netty-codec-compression/4.2.7.Final/netty-codec-compression-4.2.7.Final.jar (libraries:io.netty:netty-codec-compression:4.2.7.Final) to libraries/io/netty/netty-codec-compression/4.2.7.Final/netty-codec-compression-4.2.7.Final.jar
+Unpacking io/netty/netty-codec-http/4.2.7.Final/netty-codec-http-4.2.7.Final.jar (libraries:io.netty:netty-codec-http:4.2.7.Final) to libraries/io/netty/netty-codec-http/4.2.7.Final/netty-codec-http-4.2.7.Final.jar
+Unpacking io/netty/netty-common/4.2.7.Final/netty-common-4.2.7.Final.jar (libraries:io.netty:netty-common:4.2.7.Final) to libraries/io/netty/netty-common/4.2.7.Final/netty-common-4.2.7.Final.jar
+Unpacking io/netty/netty-handler/4.2.7.Final/netty-handler-4.2.7.Final.jar (libraries:io.netty:netty-handler:4.2.7.Final) to libraries/io/netty/netty-handler/4.2.7.Final/netty-handler-4.2.7.Final.jar
+Unpacking io/netty/netty-resolver/4.2.7.Final/netty-resolver-4.2.7.Final.jar (libraries:io.netty:netty-resolver:4.2.7.Final) to libraries/io/netty/netty-resolver/4.2.7.Final/netty-resolver-4.2.7.Final.jar
+Unpacking io/netty/netty-transport/4.2.7.Final/netty-transport-4.2.7.Final.jar (libraries:io.netty:netty-transport:4.2.7.Final) to libraries/io/netty/netty-transport/4.2.7.Final/netty-transport-4.2.7.Final.jar
+Unpacking io/netty/netty-transport-classes-epoll/4.2.7.Final/netty-transport-classes-epoll-4.2.7.Final.jar (libraries:io.netty:netty-transport-classes-epoll:4.2.7.Final) to libraries/io/netty/netty-transport-classes-epoll/4.2.7.Final/netty-transport-classes-epoll-4.2.7.Final.jar
+Unpacking io/netty/netty-transport-classes-kqueue/4.2.7.Final/netty-transport-classes-kqueue-4.2.7.Final.jar (libraries:io.netty:netty-transport-classes-kqueue:4.2.7.Final) to libraries/io/netty/netty-transport-classes-kqueue/4.2.7.Final/netty-transport-classes-kqueue-4.2.7.Final.jar
+Unpacking io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-x86_64.jar (libraries:io.netty:netty-transport-native-epoll:4.2.7.Final:linux-x86_64) to libraries/io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-x86_64.jar
+Unpacking io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-aarch_64.jar (libraries:io.netty:netty-transport-native-epoll:4.2.7.Final:linux-aarch_64) to libraries/io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-aarch_64.jar
+Unpacking io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-x86_64.jar (libraries:io.netty:netty-transport-native-kqueue:4.2.7.Final:osx-x86_64) to libraries/io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-x86_64.jar
+Unpacking io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-aarch_64.jar (libraries:io.netty:netty-transport-native-kqueue:4.2.7.Final:osx-aarch_64) to libraries/io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-aarch_64.jar
+Unpacking io/netty/netty-transport-native-unix-common/4.2.7.Final/netty-transport-native-unix-common-4.2.7.Final.jar (libraries:io.netty:netty-transport-native-unix-common:4.2.7.Final) to libraries/io/netty/netty-transport-native-unix-common/4.2.7.Final/netty-transport-native-unix-common-4.2.7.Final.jar
+Unpacking it/unimi/dsi/fastutil/8.5.18/fastutil-8.5.18.jar (libraries:it.unimi.dsi:fastutil:8.5.18) to libraries/it/unimi/dsi/fastutil/8.5.18/fastutil-8.5.18.jar
+Unpacking net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar (libraries:net.java.dev.jna:jna:5.17.0) to libraries/net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar
+Unpacking net/java/dev/jna/jna-platform/5.17.0/jna-platform-5.17.0.jar (libraries:net.java.dev.jna:jna-platform:5.17.0) to libraries/net/java/dev/jna/jna-platform/5.17.0/jna-platform-5.17.0.jar
+Unpacking net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar (libraries:net.sf.jopt-simple:jopt-simple:5.0.4) to libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+Unpacking org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar (libraries:org.apache.commons:commons-lang3:3.19.0) to libraries/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar
+Unpacking org/apache/logging/log4j/log4j-api/2.25.2/log4j-api-2.25.2.jar (libraries:org.apache.logging.log4j:log4j-api:2.25.2) to libraries/org/apache/logging/log4j/log4j-api/2.25.2/log4j-api-2.25.2.jar
+Unpacking org/apache/logging/log4j/log4j-core/2.25.2/log4j-core-2.25.2.jar (libraries:org.apache.logging.log4j:log4j-core:2.25.2) to libraries/org/apache/logging/log4j/log4j-core/2.25.2/log4j-core-2.25.2.jar
+Unpacking org/apache/logging/log4j/log4j-slf4j2-impl/2.25.2/log4j-slf4j2-impl-2.25.2.jar (libraries:org.apache.logging.log4j:log4j-slf4j2-impl:2.25.2) to libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.25.2/log4j-slf4j2-impl-2.25.2.jar
+Unpacking org/joml/joml/1.10.8/joml-1.10.8.jar (libraries:org.joml:joml:1.10.8) to libraries/org/joml/joml/1.10.8/joml-1.10.8.jar
+Unpacking org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar (libraries:org.jspecify:jspecify:1.0.0) to libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+Unpacking org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar (libraries:org.slf4j:slf4j-api:2.0.17) to libraries/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar
+Starting net.minecraft.server.Main
+[18:16:34] [ServerMain/WARN]: resource-pack-id missing, using default of 545980a7-57c3-3d89-b1f5-3d3ffd56f2da
+[18:16:34] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[18:16:34] [ServerMain/INFO]: Found new data pack file/chaoshearts-datapack.zip, loading it automatically
+[18:16:35] [ServerMain/INFO]: No existing world data, creating new world
+[18:16:35] [ServerMain/ERROR]: No key layers in MapLike[{}]
+[18:16:37] [ServerMain/INFO]: Loaded 1470 recipes
+[18:16:37] [ServerMain/INFO]: Loaded 1591 advancements
+[18:16:37] [Server thread/INFO]: Starting minecraft server version 1.21.11
+[18:16:37] [Server thread/INFO]: Loading properties
+[18:16:37] [Server thread/INFO]: Default game type: SURVIVAL
+[18:16:37] [Server thread/INFO]: Generating keypair
+[18:16:37] [Server thread/INFO]: Starting Minecraft server on *:25565
+[18:16:37] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[18:16:37] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[18:16:37] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[18:16:37] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[18:16:37] [Server thread/INFO]: Preparing level "world"
+[18:16:37] [Server thread/INFO]: Selecting global world spawn...
+[18:16:38] [Server thread/INFO]: Loading 0 persistent chunks...
+[18:16:38] [Server thread/INFO]: Time elapsed: 489 ms
+[18:16:38] [Server thread/INFO]: Done (0.593s)! For help, type "help"
+[18:16:38] [Server thread/INFO]: There are 2 data pack(s) enabled: [vanilla (built-in)], [file/chaoshearts-datapack.zip (world)]
+[18:16:40] [Server thread/INFO]: [Not Secure] [Server] trials-dimension-ok
+[18:16:41] [Server thread/INFO]: Running function ch:admin/help
+[18:16:51] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+java.lang.IllegalStateException: Unexpected request for task finish, current task: prepare_spawn, requested: server_resource_pack
+[18:16:52] [Server thread/INFO]: Attacker[/127.0.0.1:60172] logged in with entity id 3 at (-9.5, -60.0, -0.5)
+[18:16:52] [Server thread/INFO]: Attacker joined the game
+[18:16:54] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+java.lang.IllegalStateException: Unexpected request for task finish, current task: prepare_spawn, requested: server_resource_pack
+[18:16:54] [Server thread/INFO]: Victim[/127.0.0.1:60184] logged in with entity id 18 at (-6.5, -60.0, -1.5)
+[18:16:54] [Server thread/INFO]: Victim joined the game
+[18:16:57] [Server thread/INFO]: Made Attacker a server operator
+[18:16:57] [Server thread/INFO]: Made Victim a server operator
+[18:16:58] [Server thread/INFO]: The difficulty has been set to Normal
+[18:16:58] [Server thread/INFO]: Set the time to 1000
+[18:16:58] [Server thread/INFO]: Gamerule keep_inventory is now set to: true
+[18:16:59] [Server thread/INFO]: Incorrect argument for command
+[18:16:59] [Server thread/INFO]: gamerule do_mob_spawning false<--[HERE]
+[18:16:59] [Server thread/INFO]: Gamerule pvp is now set to: true
+[18:16:59] [Server thread/INFO]: Successfully filled 625 block(s)
+[18:16:59] [Server thread/INFO]: No blocks were filled
+[18:17:00] [Server thread/INFO]: Successfully filled 49 block(s)
+[18:17:00] [Server thread/INFO]: No blocks were filled
+[18:17:00] [Server thread/INFO]: Attacker has 10 [ch.active]
+[18:17:00] [Server thread/INFO]: Victim has 9 [ch.active]
+[18:17:01] [Server thread/INFO]: The value of modifier ch:hearts on attribute Max Health for entity Attacker is 2.0
+[18:17:02] [Server thread/INFO]: Running function ch:admin/give
+[18:17:02] [Server thread/INFO]: Running function ch:admin/give
+[18:17:03] [Server thread/INFO]: Running function ch:admin/mastery
+[18:17:04] [Server thread/INFO]: Attacker has 1 [ch.cnt.rage]
+[18:17:04] [Server thread/INFO]: Victim has 1 [ch.cnt.storm]
+[18:17:04] [Server thread/INFO]: Attacker has 100 [ch.lvl.rage]
+[18:17:05] [Server thread/INFO]: Attacker has 100 [ch.lvl.rage]
+[18:17:05] [Server thread/INFO]: The value of modifier ch:hearts on attribute Max Health for entity Attacker is 4.0
+[18:17:06] [Server thread/INFO]: Running function ch:heart/set_active
+[18:17:07] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:07] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 3.500000
+[18:17:09] [Server thread/INFO]: Attacker has 1 [ch.active]
+[18:17:10] [Server thread/INFO]: Attacker has 10 [ch.active]
+[18:17:10] [Server thread/INFO]: Set [ch.swapcd] for Attacker to 0
+[18:17:11] [Server thread/INFO]: Running function ch:heart/set_active
+[18:17:12] [Server thread/INFO]: Removed every effect from Victim
+[18:17:13] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:13] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:15] [Server thread/INFO]: Attacker has 161 [ch.cd1]
+[18:17:15] [Server thread/INFO]: Applied effect Instant Health to Victim
+[18:17:16] [Server thread/INFO]: Applied effect Resistance to Victim
+[18:17:17] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:17:17] [Server thread/INFO]: Running function ch:admin/give
+[18:17:18] [Server thread/INFO]: Running function ch:admin/mastery
+[18:17:18] [Server thread/INFO]: Running function ch:heart/set_active
+[18:17:18] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:19] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:19] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:19] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:19] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:19] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:19] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:17:19] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:17:21] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:21] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:21] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:21] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:21] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:21] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:21] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:17:21] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:17:23] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:23] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:23] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:23] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:23] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:23] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:23] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:17:24] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:17:25] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:25] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:25] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:25] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:26] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:26] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:26] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:17:26] [Server thread/INFO]: Attacker has 425 [ch.cd2]
+[18:17:27] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:28] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:28] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:28] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:28] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:28] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:28] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:17:28] [Server thread/INFO]: Attacker has 425 [ch.cd2]
+[18:17:30] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:30] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:30] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:30] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:30] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:30] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:30] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:17:30] [Server thread/INFO]: Attacker has 425 [ch.cd2]
+[18:17:32] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:32] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:32] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:32] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:32] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:32] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:33] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:17:33] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:17:34] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:34] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:34] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:34] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:35] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:35] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:35] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:17:35] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:17:36] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:37] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:37] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:37] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:37] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:37] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:37] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:17:37] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:17:39] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:39] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:39] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:39] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:39] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:39] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:39] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:17:39] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:17:41] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:41] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:41] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:41] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:41] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:41] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:42] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:17:42] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:17:43] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:43] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:43] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:43] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:44] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:44] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:44] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:17:44] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:17:45] [Server thread/INFO]: Killed 4 entities
+[18:17:46] [Server thread/INFO]: No blocks were filled
+[18:17:46] [Server thread/INFO]: No blocks were filled
+[18:17:46] [Server thread/INFO]: No blocks were filled
+[18:17:46] [Server thread/INFO]: No blocks were filled
+[18:17:47] [Server thread/INFO]: Running function ch:admin/give
+[18:17:47] [Server thread/INFO]: Running function ch:admin/mastery
+[18:17:47] [Server thread/INFO]: Running function ch:heart/set_active
+[18:17:48] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:48] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:48] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:48] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:48] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:48] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:48] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:17:48] [Server thread/INFO]: Attacker has 102 [ch.cd1]
+[18:17:50] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:50] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:50] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:50] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:50] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:50] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:50] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:17:50] [Server thread/INFO]: Attacker has 102 [ch.cd1]
+[18:17:52] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:52] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:52] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:52] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:52] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:53] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:53] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:17:53] [Server thread/INFO]: Attacker has 102 [ch.cd1]
+[18:17:54] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:54] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:55] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:55] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:55] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:55] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:55] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:17:55] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:17:57] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:17:57] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:17:57] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:17:57] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:17:57] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:17:57] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:17:57] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:17:57] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:17:58] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:17:59] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:17:59] [Server thread/INFO]: Named entity cze['Attacker'/367, l='ServerLevel[world]', x=0.50, y=-400.00, z=0.50] died: Attacker was killed
+[18:18:00] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:18:02] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:02] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:02] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:02] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:02] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:02] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:02] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:18:02] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:18:03] [Server thread/INFO]: Named entity cze['Attacker'/378, l='ServerLevel[world]', x=0.50, y=-400.00, z=9.30] died: Attacker was killed
+[18:18:04] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:04] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:04] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:04] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:04] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:04] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:05] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:18:05] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:18:06] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:06] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:06] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:06] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:07] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:07] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:07] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:18:07] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:18:08] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:09] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:09] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:09] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:09] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:09] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:09] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:18:09] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:18:11] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:11] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:11] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:11] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:11] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:11] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:11] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:18:11] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:18:13] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:13] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:13] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:13] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:13] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:13] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:14] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:18:14] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:18:15] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:15] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:15] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:16] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:16] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:16] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:16] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:18:16] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:18:17] [Server thread/INFO]: Killed 7 entities
+[18:18:18] [Server thread/INFO]: No blocks were filled
+[18:18:18] [Server thread/INFO]: No blocks were filled
+[18:18:18] [Server thread/INFO]: No blocks were filled
+[18:18:18] [Server thread/INFO]: No blocks were filled
+[18:18:19] [Server thread/INFO]: Running function ch:admin/give
+[18:18:19] [Server thread/INFO]: Running function ch:admin/mastery
+[18:18:19] [Server thread/INFO]: Running function ch:heart/set_active
+[18:18:20] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:20] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:20] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:20] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:20] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:20] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:20] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:18:20] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:18:22] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:22] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:22] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:22] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:22] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:22] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:22] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:18:23] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:18:24] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:24] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:24] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:24] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:25] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:25] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:25] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:18:25] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:18:26] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:27] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:27] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:27] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:27] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:27] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:27] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:18:27] [Server thread/INFO]: Attacker has 374 [ch.cd2]
+[18:18:29] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:29] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:29] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:29] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:29] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:29] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:29] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:18:29] [Server thread/INFO]: Attacker has 374 [ch.cd2]
+[18:18:31] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:31] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:31] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:31] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:31] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:31] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:32] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:18:32] [Server thread/INFO]: Attacker has 374 [ch.cd2]
+[18:18:33] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:33] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:33] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:33] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:34] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:34] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:34] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:18:34] [Server thread/INFO]: Attacker has 476 [ch.cd3]
+[18:18:35] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:36] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:36] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:36] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:36] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:36] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:36] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:18:36] [Server thread/INFO]: Attacker has 476 [ch.cd3]
+[18:18:38] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:38] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:38] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:38] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:38] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:38] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:38] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:18:38] [Server thread/INFO]: Attacker has 476 [ch.cd3]
+[18:18:40] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:40] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:40] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:40] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:40] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:40] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:41] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:18:41] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:18:42] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:42] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:42] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:42] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:43] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:43] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:43] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:18:43] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:18:44] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:45] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:45] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:45] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:45] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:45] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:45] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:18:45] [Server thread/INFO]: Attacker has 2040 [ch.cd4]
+[18:18:47] [Server thread/INFO]: No entity was found
+[18:18:47] [Server thread/INFO]: No blocks were filled
+[18:18:47] [Server thread/INFO]: No blocks were filled
+[18:18:47] [Server thread/INFO]: No blocks were filled
+[18:18:48] [Server thread/INFO]: No blocks were filled
+[18:18:48] [Server thread/INFO]: Running function ch:admin/give
+[18:18:48] [Server thread/INFO]: Running function ch:admin/mastery
+[18:18:49] [Server thread/INFO]: Running function ch:heart/set_active
+[18:18:49] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:49] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:49] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:49] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:49] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:49] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:49] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:18:49] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:18:51] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:51] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:51] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:51] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:51] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:52] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:52] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:18:52] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:18:53] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:53] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:54] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:54] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:54] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:54] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:54] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:18:54] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:18:56] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:56] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:56] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:56] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:56] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:56] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:56] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:18:56] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:18:57] [Server thread/INFO]: Attacker has 325 [ch.cd2]
+[18:18:59] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:18:59] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:18:59] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:18:59] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:18:59] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:18:59] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:18:59] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:18:59] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:19:00] [Server thread/INFO]: Attacker has 325 [ch.cd2]
+[18:19:02] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:02] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:02] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:02] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:02] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:02] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:02] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:19:02] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:19:04] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:04] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:04] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:04] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:04] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:04] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:05] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:19:05] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:19:06] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:06] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:07] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:07] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:07] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:07] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:07] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:19:07] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:08] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:08] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:09] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:11] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:11] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:12] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:12] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:12] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:12] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:12] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:19:12] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:13] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:14] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:14] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:16] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:16] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:17] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:17] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:17] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:17] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:17] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:19:17] [Server thread/INFO]: Attacker has 2380 [ch.cd4]
+[18:19:19] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:19] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:19] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:19] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:19] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:19] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:19] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:19:19] [Server thread/INFO]: Attacker has 2380 [ch.cd4]
+[18:19:21] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:21] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:21] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:21] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:21] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:21] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:21] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:19:21] [Server thread/INFO]: Attacker has 2380 [ch.cd4]
+[18:19:23] [Server thread/INFO]: No entity was found
+[18:19:23] [Server thread/INFO]: No blocks were filled
+[18:19:23] [Server thread/INFO]: Victim has made the advancement [Who Needs Rockets?]
+[18:19:24] [Server thread/INFO]: No blocks were filled
+[18:19:24] [Server thread/INFO]: No blocks were filled
+[18:19:24] [Server thread/INFO]: No blocks were filled
+[18:19:24] [Server thread/INFO]: Running function ch:admin/give
+[18:19:25] [Server thread/INFO]: Running function ch:admin/mastery
+[18:19:25] [Server thread/INFO]: Running function ch:heart/set_active
+[18:19:25] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:25] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:26] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:26] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:26] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:26] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:26] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:19:26] [Server thread/INFO]: Attacker has 85 [ch.cd1]
+[18:19:28] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:28] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:28] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:28] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:28] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:28] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:28] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:19:28] [Server thread/INFO]: Attacker has 85 [ch.cd1]
+[18:19:30] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:30] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:30] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:30] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:30] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:30] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:30] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:19:30] [Server thread/INFO]: Attacker has 85 [ch.cd1]
+[18:19:32] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:32] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:32] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:32] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:32] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:32] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:33] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:19:33] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:19:34] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:34] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:35] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:35] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:35] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:35] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:35] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:19:35] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:19:37] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:37] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:37] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:37] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:37] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:37] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:37] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:19:37] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:19:39] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:39] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:39] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:39] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:39] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:39] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:39] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:19:39] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:19:40] [Server thread/INFO]: Attacker has 410 [ch.cd3]
+[18:19:42] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:42] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:42] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:42] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:42] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:42] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:42] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:19:43] [Server thread/INFO]: Attacker has 425 [ch.cd3]
+[18:19:44] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:44] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:44] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:44] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:45] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:45] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:45] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:19:45] [Server thread/INFO]: Attacker has 425 [ch.cd3]
+[18:19:46] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:47] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:47] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:47] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:47] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:47] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:47] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:19:47] [Server thread/INFO]: Attacker has 2210 [ch.cd4]
+[18:19:49] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:49] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:49] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:49] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:49] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:49] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:49] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:19:49] [Server thread/INFO]: Attacker has 2210 [ch.cd4]
+[18:19:51] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:51] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:51] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:51] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:51] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:51] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:52] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:19:52] [Server thread/INFO]: Attacker has 2210 [ch.cd4]
+[18:19:53] [Server thread/INFO]: No entity was found
+[18:19:53] [Server thread/INFO]: No blocks were filled
+[18:19:54] [Server thread/INFO]: No blocks were filled
+[18:19:54] [Server thread/INFO]: No blocks were filled
+[18:19:54] [Server thread/INFO]: No blocks were filled
+[18:19:54] [Server thread/INFO]: Running function ch:admin/give
+[18:19:55] [Server thread/INFO]: Running function ch:admin/mastery
+[18:19:55] [Server thread/INFO]: Running function ch:heart/set_active
+[18:19:55] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:55] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:56] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:56] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:56] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:56] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:56] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:19:56] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:19:58] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:19:58] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:19:58] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:19:58] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:19:58] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:19:58] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:19:58] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:19:58] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:20:00] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:00] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:00] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:00] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:00] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:00] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:00] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:20:00] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:20:02] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:02] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:02] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:02] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:02] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:03] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:03] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:20:03] [Server thread/INFO]: Attacker has 306 [ch.cd2]
+[18:20:04] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:04] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:05] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:05] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:05] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:05] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:05] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:20:05] [Server thread/INFO]: Attacker has 306 [ch.cd2]
+[18:20:07] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:07] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:07] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:07] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:07] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:07] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:07] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:20:07] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:20:08] [Server thread/INFO]: Attacker has 291 [ch.cd2]
+[18:20:10] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:10] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:10] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:10] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:10] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:10] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:10] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:10] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:20:11] [Server thread/INFO]: Attacker has 393 [ch.cd3]
+[18:20:13] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:13] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:13] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:13] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:13] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:13] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:13] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:20:13] [Server thread/INFO]: Attacker has 408 [ch.cd3]
+[18:20:15] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:15] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:15] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:15] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:15] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:15] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:16] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:20:16] [Server thread/INFO]: Attacker has 408 [ch.cd3]
+[18:20:17] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:17] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:18] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:18] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:18] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:18] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:18] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:20:18] [Server thread/INFO]: Attacker has 2210 [ch.cd4]
+[18:20:19] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:20] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:20] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:20] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:20] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:20] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:20] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:20:20] [Server thread/INFO]: Attacker has 2210 [ch.cd4]
+[18:20:22] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:22] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:22] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:22] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:22] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:22] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:22] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:20:22] [Server thread/INFO]: Attacker has 2210 [ch.cd4]
+[18:20:24] [Server thread/INFO]: No entity was found
+[18:20:24] [Server thread/INFO]: No blocks were filled
+[18:20:25] [Server thread/INFO]: Successfully filled 1 block(s)
+[18:20:25] [Server thread/INFO]: No blocks were filled
+[18:20:25] [Server thread/INFO]: No blocks were filled
+[18:20:25] [Server thread/INFO]: Running function ch:admin/give
+[18:20:26] [Server thread/INFO]: Running function ch:admin/mastery
+[18:20:26] [Server thread/INFO]: Running function ch:heart/set_active
+[18:20:26] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:26] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:26] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:27] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:27] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:27] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:27] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:20:27] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:20:28] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:29] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:29] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:29] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:29] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:29] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:29] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:20:29] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:20:31] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:31] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:31] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:31] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:31] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:31] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:31] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:20:31] [Server thread/INFO]: Attacker has 136 [ch.cd1]
+[18:20:33] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:33] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:33] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:33] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:33] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:33] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:34] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:20:34] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:20:35] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:35] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:35] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:36] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:36] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:36] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:36] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:20:36] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:20:37] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:38] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:38] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:38] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:38] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:38] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:38] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:20:38] [Server thread/INFO]: Attacker has 340 [ch.cd2]
+[18:20:40] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:40] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:40] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:40] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:40] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:40] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:40] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:20:40] [Server thread/INFO]: Attacker has 442 [ch.cd3]
+[18:20:42] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:42] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:42] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:42] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:42] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:42] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:43] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:43] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:20:43] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:44] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:45] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:47] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:47] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:47] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:47] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:47] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:47] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:48] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:48] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:20:48] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:49] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:50] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:20:52] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:52] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:52] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:52] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:52] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:53] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:53] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:20:53] [Server thread/INFO]: Attacker has 2380 [ch.cd4]
+[18:20:54] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:54] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:55] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:55] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:55] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:55] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:55] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:20:55] [Server thread/INFO]: Attacker has 2380 [ch.cd4]
+[18:20:57] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:20:57] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:20:57] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:20:57] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:20:57] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:20:57] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:20:57] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:20:57] [Server thread/INFO]: Attacker has 2380 [ch.cd4]
+[18:20:59] [Server thread/INFO]: No entity was found
+[18:20:59] [Server thread/INFO]: No blocks were filled
+[18:20:59] [Server thread/INFO]: No blocks were filled
+[18:21:00] [Server thread/INFO]: No blocks were filled
+[18:21:00] [Server thread/INFO]: No blocks were filled
+[18:21:00] [Server thread/INFO]: Running function ch:admin/give
+[18:21:00] [Server thread/INFO]: Running function ch:admin/mastery
+[18:21:01] [Server thread/INFO]: Running function ch:heart/set_active
+[18:21:01] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:01] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:01] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:01] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:01] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:01] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:02] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:21:02] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:21:03] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:03] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:04] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:04] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:04] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:04] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:04] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:21:04] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:21:06] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:06] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:06] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:06] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:06] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:06] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:06] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:21:06] [Server thread/INFO]: Attacker has 170 [ch.cd1]
+[18:21:08] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:08] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:08] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:08] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:08] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:08] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:08] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:21:08] [Server thread/INFO]: Attacker has 408 [ch.cd2]
+[18:21:10] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:10] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:10] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:10] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:10] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:10] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:11] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:21:11] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:21:11] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:21:12] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:21:13] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:21:15] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:15] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:15] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:15] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:16] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:16] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:16] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:21:16] [Server thread/INFO]: Attacker has 408 [ch.cd2]
+[18:21:17] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:18] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:18] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:18] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:18] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:18] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:18] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:21:18] [Server thread/INFO]: Attacker has 374 [ch.cd3]
+[18:21:20] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:20] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:20] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:20] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:20] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:20] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:20] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:21:20] [Server thread/INFO]: Attacker has 374 [ch.cd3]
+[18:21:22] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:22] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:22] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:22] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:22] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:22] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:23] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:21:23] [Server thread/INFO]: Attacker has 374 [ch.cd3]
+[18:21:24] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:24] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:24] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:24] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:25] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:25] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:25] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:21:25] [Server thread/INFO]: Attacker has 2550 [ch.cd4]
+[18:21:26] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:27] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:27] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:27] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:27] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:27] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:27] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:21:27] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:28] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:29] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:29] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:31] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:32] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:32] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:32] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:32] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:32] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:32] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:21:32] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:33] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:34] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:34] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:21:36] [Server thread/INFO]: No entity was found
+[18:21:37] [Server thread/INFO]: No blocks were filled
+[18:21:37] [Server thread/INFO]: No blocks were filled
+[18:21:37] [Server thread/INFO]: No blocks were filled
+[18:21:38] [Server thread/INFO]: No blocks were filled
+[18:21:38] [Server thread/INFO]: Running function ch:admin/give
+[18:21:38] [Server thread/INFO]: Running function ch:admin/mastery
+[18:21:38] [Server thread/INFO]: Running function ch:heart/set_active
+[18:21:39] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:39] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:39] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:39] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:39] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:39] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:39] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:21:39] [Server thread/INFO]: Attacker has 153 [ch.cd1]
+[18:21:41] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:41] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:41] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:41] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:41] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:41] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:42] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:21:42] [Server thread/INFO]: Attacker has 153 [ch.cd1]
+[18:21:43] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:43] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:43] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:44] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:44] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:44] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:44] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:21:44] [Server thread/INFO]: Attacker has 153 [ch.cd1]
+[18:21:45] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:46] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:46] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:46] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:46] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:46] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:46] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:21:46] [Server thread/INFO]: Attacker has 476 [ch.cd2]
+[18:21:48] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:48] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:48] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:48] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:48] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:48] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:48] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:21:48] [Server thread/INFO]: Attacker has 476 [ch.cd2]
+[18:21:50] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:50] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:50] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:50] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:50] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:50] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:51] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:21:51] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:21:51] [Server thread/INFO]: Attacker has 460 [ch.cd2]
+[18:21:53] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:53] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:53] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:53] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:53] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:53] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:54] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:21:54] [Server thread/INFO]: Attacker has 374 [ch.cd3]
+[18:21:55] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:55] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:56] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:56] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:56] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:56] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:56] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:21:56] [Server thread/INFO]: Attacker has 374 [ch.cd3]
+[18:21:58] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:21:58] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:21:58] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:21:58] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:21:58] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:21:58] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:21:58] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:21:58] [Server thread/INFO]: Attacker has 374 [ch.cd3]
+[18:22:00] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:00] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:00] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:00] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:00] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:00] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:00] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:22:00] [Server thread/INFO]: Attacker has 2550 [ch.cd4]
+[18:22:02] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:02] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:02] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:02] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:02] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:02] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:03] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:22:03] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:03] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:04] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:05] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:07] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:07] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:07] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:07] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:07] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:08] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:08] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:22:08] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:09] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:09] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:10] [Server thread/INFO]: Attacker has 0 [ch.cd4]
+[18:22:12] [Server thread/INFO]: No entity was found
+[18:22:12] [Server thread/INFO]: No blocks were filled
+[18:22:13] [Server thread/INFO]: No blocks were filled
+[18:22:13] [Server thread/INFO]: No blocks were filled
+[18:22:13] [Server thread/INFO]: No blocks were filled
+[18:22:13] [Server thread/INFO]: Running function ch:admin/give
+[18:22:14] [Server thread/INFO]: Running function ch:admin/mastery
+[18:22:14] [Server thread/INFO]: Running function ch:heart/set_active
+[18:22:14] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:14] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:15] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:15] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:15] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:15] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:15] [Server thread/INFO]: Attacker has 0 [ch.cd1]
+[18:22:15] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:22:16] [Server thread/INFO]: Attacker has 138 [ch.cd1]
+[18:22:17] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:18] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:18] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:18] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:18] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:18] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:18] [Server thread/INFO]: Attacker has 0 [ch.cd1]
+[18:22:18] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:22:19] [Server thread/INFO]: Attacker has 138 [ch.cd1]
+[18:22:20] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:21] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:21] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:21] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:21] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:21] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:21] [Server thread/INFO]: Attacker has 0 [ch.cd1]
+[18:22:21] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 1)]
+[18:22:22] [Server thread/INFO]: Attacker has 138 [ch.cd1]
+[18:22:24] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:24] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:24] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:24] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:24] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:24] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:24] [Server thread/INFO]: Attacker has 0 [ch.cd2]
+[18:22:24] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:22:25] [Server thread/INFO]: Attacker has 358 [ch.cd2]
+[18:22:27] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:27] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:27] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:27] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:27] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:27] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:27] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:22:27] [Server thread/INFO]: Attacker has 374 [ch.cd2]
+[18:22:29] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:29] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:29] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:29] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:29] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:29] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:29] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 2)]
+[18:22:29] [Server thread/INFO]: Attacker has 374 [ch.cd2]
+[18:22:31] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:31] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:31] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:31] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:31] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:32] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:32] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:22:32] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:22:33] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:33] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:34] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:34] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:34] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:34] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:34] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:22:34] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:22:35] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:22:36] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:22:36] [Server thread/INFO]: Attacker has 0 [ch.cd3]
+[18:22:38] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:39] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:39] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:39] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:39] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:39] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:39] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 3)]
+[18:22:39] [Server thread/INFO]: Attacker has 510 [ch.cd3]
+[18:22:41] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:41] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:41] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:41] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:41] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:41] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:41] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:22:41] [Server thread/INFO]: Attacker has 2550 [ch.cd4]
+[18:22:43] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:43] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:43] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:43] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:43] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:43] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:44] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:22:44] [Server thread/INFO]: Attacker has 2550 [ch.cd4]
+[18:22:45] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:22:45] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 4.500000
+[18:22:45] [Server thread/INFO]: Set [ch.cd1] for Attacker to 0
+[18:22:45] [Server thread/INFO]: Set [ch.cd2] for Attacker to 0
+[18:22:46] [Server thread/INFO]: Set [ch.cd3] for Attacker to 0
+[18:22:46] [Server thread/INFO]: Set [ch.cd4] for Attacker to 0
+[18:22:46] [Server thread/INFO]: [Attacker: Triggered [cast] (set value to 4)]
+[18:22:46] [Server thread/INFO]: Attacker has 2550 [ch.cd4]
+[18:22:47] [Server thread/INFO]: No entity was found
+[18:22:48] [Server thread/INFO]: No blocks were filled
+[18:22:48] [Server thread/INFO]: No blocks were filled
+[18:22:48] [Server thread/INFO]: No blocks were filled
+[18:22:48] [Server thread/INFO]: No blocks were filled
+[18:22:49] [Server thread/INFO]: Removed every effect from Victim
+[18:22:49] [Server thread/INFO]: Removed every effect from Attacker
+[18:22:50] [Server thread/INFO]: Running function ch:heart/set_active
+[18:22:51] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, -39.500000
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5410, l='ServerLevel[world]', x=0.50, y=100.00, z=3.10] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5412, l='ServerLevel[world]', x=-0.31, y=100.00, z=3.21] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5415, l='ServerLevel[world]', x=0.17, y=100.00, z=3.01] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5440, l='ServerLevel[world]', x=1.14, y=100.00, z=4.31] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5452, l='ServerLevel[world]', x=0.50, y=100.00, z=3.10] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5456, l='ServerLevel[world]', x=-0.31, y=100.00, z=3.21] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5466, l='ServerLevel[world]', x=0.17, y=100.00, z=3.01] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5490, l='ServerLevel[world]', x=0.50, y=100.00, z=3.10] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5494, l='ServerLevel[world]', x=-0.31, y=100.00, z=3.21] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Named entity dcm['Rotling'/5502, l='ServerLevel[world]', x=0.17, y=100.00, z=3.01] died: Rotling was killed
+[18:22:51] [Server thread/INFO]: Killed 42 entities
+[18:22:56] [Server thread/INFO]: Victim was doomed to fall
+[18:23:00] [Server thread/INFO]: Applied effect Instant Health to Victim
+[18:23:01] [Server thread/INFO]: Running function ch:admin/give
+[18:23:02] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 40.500000
+[18:23:02] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 0.500000
+[18:23:04] [Server thread/INFO]: Victim has 2 [ch.pid]
+[18:23:05] [Server thread/INFO]: Attacker has 1 [ch.pid]
+[18:23:05] [Server thread/INFO]: Running function ch:admin/list
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:05] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 2 collector 0
+[18:23:06] [Server thread/INFO]: Victim was slain by Attacker
+[18:23:06] [Server thread/INFO]: Applied 1000.0 damage to Victim
+[18:23:08] [Server thread/INFO]: Running function ch:admin/list
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:08] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan dropped holder 2 collector 1
+[18:23:11] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, 0.500000
+[18:23:14] [Server thread/INFO]: Running function ch:admin/list
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:14] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan dropped holder 2 collector 1
+[18:23:15] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, -7.500000
+[18:23:16] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, 0.500000
+[18:23:17] [Server thread/INFO]: Running function ch:admin/list
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:17] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: Running function ch:admin/list
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:18] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: Running function ch:admin/list
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: Running function ch:admin/list
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial held holder 2 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm dropped holder 2 collector 1
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:23:19] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 1 collector 0
+[18:23:20] [Server thread/INFO]: Running function ch:admin/altar/place
+[18:23:22] [Server thread/INFO]: [Not Secure] [Server] altar-barrier-ok
+[18:23:23] [Server thread/INFO]: Changed the block at 4, 100, 4
+[18:23:23] [Server thread/INFO]: Set [ch.cfg] for #trial_retry_min to 0
+[18:23:24] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:23:25] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:23:25] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:23:27] [Server thread/INFO]: Running function ch:heart/set_active
+[18:23:27] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:23:27] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:23:29] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:23:29] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:23:29] [Server thread/INFO]: Attacker has 100 [ch.lvl]
+[18:23:29] [Server thread/WARN]: Attacker moved too quickly! -5.3384964502829915,-8.446544260715513,-1.002464541454156
+[18:23:30] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:32] [Server thread/WARN]: Attacker moved too quickly! -11.004034121262578,-0.486282014053117,-9.274881667202964
+[18:23:32] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:33] [Server thread/WARN]: Attacker moved too quickly! -2.014634651136884,-8.185399376883737,-11.487119491183762
+[18:23:34] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:35] [Server thread/WARN]: Attacker moved too quickly! 5.03402135189172,-7.893999100056632,-10.168161863571719
+[18:23:35] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:37] [Server thread/WARN]: Attacker moved too quickly! 9.804105214849145,-7.612043873789986,-5.053872203610323
+[18:23:37] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:39] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:23:40] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:23:40] [Server thread/INFO]: [Not Secure] [Server] trial-mobs-ok
+[18:23:41] [Server thread/INFO]: [Not Secure] [Server] ward-ok
+[18:23:42] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5915, l='ServerLevel[world]', x=-10.51, y=100.00, z=-9.59] died: Fury Thrall was killed
+[18:23:42] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5914, l='ServerLevel[world]', x=10.42, y=100.00, z=11.35] died: Fury Thrall was killed
+[18:23:42] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5916, l='ServerLevel[world]', x=0.50, y=100.00, z=-12.29] died: Fury Thrall was killed
+[18:23:42] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5913, l='ServerLevel[world]', x=11.51, y=100.00, z=-9.59] died: Fury Thrall was killed
+[18:23:42] [Server thread/INFO]: Attacker has reached the goal [Postmortal]
+[18:23:42] [Server thread/INFO]: Target is invulnerable to the given damage type
+[18:23:45] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:23:45] [Server thread/INFO]: #s0 has 0 [ch.state]
+[18:23:48] [Server thread/INFO]: Running function ch:admin/mastery
+[18:23:48] [Server thread/INFO]: Set [ch.awk.rage] for Attacker to 0
+[18:23:48] [Server thread/INFO]: Running function ch:heart/set_active
+[18:23:49] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:23:49] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:23:49] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:23:49] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:23:51] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:23:51] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:23:51] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:23:51] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:23:51] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:23:51] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:51] [Server thread/WARN]: Attacker moved too quickly! -5.3384964502829915,-8.446544260715513,-1.002464541454156
+[18:23:53] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:54] [Server thread/WARN]: Attacker moved too quickly! -11.15195024566236,-0.47813163751578713,-9.55921783099133
+[18:23:55] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:56] [Server thread/WARN]: Attacker moved too quickly! -1.8667185267371025,-8.185399376883737,-11.202783327395398
+[18:23:57] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:57] [Server thread/WARN]: Attacker moved too quickly! 5.03402135189172,-7.893999100056632,-10.168161863571719
+[18:23:59] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:23:59] [Server thread/WARN]: Attacker moved too quickly! 10.121154344817509,-7.604007471199765,-5.1008615798391315
+[18:24:01] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:01] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:01] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:02] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5974, l='ServerLevel[world]', x=-13.29, y=100.00, z=0.17] died: Fury Thrall was killed
+[18:24:02] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5972, l='ServerLevel[world]', x=14.71, y=100.00, z=0.17] died: Fury Thrall was killed
+[18:24:02] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5973, l='ServerLevel[world]', x=1.33, y=100.00, z=14.50] died: Fury Thrall was killed
+[18:24:02] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5975, l='ServerLevel[world]', x=0.50, y=100.00, z=-12.67] died: Fury Thrall was killed
+[18:24:02] [Server thread/INFO]: Killed 4 entities
+[18:24:04] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:04] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:04] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5989, l='ServerLevel[world]', x=-7.87, y=100.00, z=12.52] died: Fury Thrall was killed
+[18:24:04] [Server thread/INFO]: Named entity dcm['Berserker'/5992, l='ServerLevel[world]', x=-15.89, y=100.00, z=0.91] died: Berserker was killed
+[18:24:04] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5990, l='ServerLevel[world]', x=-5.69, y=100.00, z=-12.23] died: Fury Thrall was killed
+[18:24:04] [Server thread/INFO]: Named entity dcm['Berserker'/5991, l='ServerLevel[world]', x=9.48, y=100.00, z=14.04] died: Berserker was killed
+[18:24:04] [Server thread/INFO]: Named entity dcm['Berserker'/5993, l='ServerLevel[world]', x=7.74, y=100.00, z=-13.83] died: Berserker was killed
+[18:24:04] [Server thread/INFO]: Named entity dbf['Fury Thrall'/5988, l='ServerLevel[world]', x=14.61, y=100.00, z=-0.30] died: Fury Thrall was killed
+[18:24:04] [Server thread/INFO]: Killed 6 entities
+[18:24:06] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:06] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:07] [Server thread/INFO]: Named entity dcm['Berserker'/6022, l='ServerLevel[world]', x=-17.31, y=100.00, z=-0.24] died: Berserker was killed
+[18:24:07] [Server thread/INFO]: Named entity dbf['Fury Thrall'/6019, l='ServerLevel[world]', x=-11.30, y=100.00, z=11.30] died: Fury Thrall was killed
+[18:24:07] [Server thread/INFO]: Named entity dbm['Gorrath's Chosen'/6018, l='ServerLevel[world]', x=-7.90, y=100.00, z=-8.10] died: Gorrath's Chosen was killed
+[18:24:07] [Server thread/INFO]: Named entity dbm['Gorrath's Chosen'/6017, l='ServerLevel[world]', x=8.64, y=100.00, z=9.18] died: Gorrath's Chosen was killed
+[18:24:07] [Server thread/INFO]: Named entity dbf['Fury Thrall'/6020, l='ServerLevel[world]', x=12.30, y=100.00, z=-10.30] died: Fury Thrall was killed
+[18:24:07] [Server thread/INFO]: Named entity dcm['Berserker'/6021, l='ServerLevel[world]', x=17.50, y=100.00, z=0.50] died: Berserker was killed
+[18:24:07] [Server thread/INFO]: Killed 6 entities
+[18:24:09] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:09] [Server thread/INFO]: No entity was found
+[18:24:11] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:11] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:24:13] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:14] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:24:17] [Server thread/INFO]: Named entity dad['Gorrath, the Unbroken'/6046, l='ServerLevel[world]', x=5.60, y=100.00, z=0.37] died: Gorrath, the Unbroken was killed
+[18:24:17] [Server thread/INFO]: Killed Gorrath, the Unbroken
+[18:24:18] [Server thread/INFO]: Attacker has 1 [ch.awk.rage]
+[18:24:18] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:19] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:20] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:21] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:22] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:23] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:24] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:24:24] [Server thread/INFO]: Running function ch:admin/mastery
+[18:24:24] [Server thread/INFO]: Set [ch.awk.speed] for Attacker to 0
+[18:24:24] [Server thread/INFO]: Running function ch:heart/set_active
+[18:24:25] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:24:25] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:24:25] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:24:26] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:24:27] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:27] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:24:27] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:24:27] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:24:27] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:24:27] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:24:28] [Server thread/WARN]: Attacker moved too quickly! -5.3384964502829915,-8.86219012150299,-1.002464541454156
+[18:24:28] [Server thread/WARN]: Attacker moved too quickly! -4.863731161643989,-8.723036861120505,-2.417112078143809
+[18:24:29] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:24:30] [Server thread/WARN]: Attacker moved too quickly! -7.073276488761037,-8.429253886956289,-8.896744190821313
+[18:24:31] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:24:32] [Server thread/WARN]: Attacker moved too quickly! -0.7067628847611047,-8.136737116887488,-11.333445496930416
+[18:24:33] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:24:34] [Server thread/WARN]: Attacker moved too quickly! 6.080541099995088,-7.845566540134342,-9.576807489972762
+[18:24:35] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:24:36] [Server thread/WARN]: Attacker moved too quickly! 10.615320271414207,-7.555817148075533,-3.965210553762418
+[18:24:37] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:37] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:37] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:38] [Server thread/INFO]: Named entity dcn['Quickling'/6093, l='ServerLevel[world]', x=-6.29, y=100.00, z=11.97] died: Quickling was killed
+[18:24:38] [Server thread/INFO]: Named entity dcn['Quickling'/6095, l='ServerLevel[world]', x=-4.96, y=100.00, z=-12.50] died: Quickling was killed
+[18:24:38] [Server thread/INFO]: Named entity dcn['Quickling'/6094, l='ServerLevel[world]', x=-13.35, y=100.00, z=-0.41] died: Quickling was killed
+[18:24:38] [Server thread/INFO]: Named entity dcn['Quickling'/6092, l='ServerLevel[world]', x=7.35, y=100.00, z=12.59] died: Quickling was killed
+[18:24:38] [Server thread/INFO]: Named entity dcn['Quickling'/6096, l='ServerLevel[world]', x=8.50, y=100.00, z=-12.50] died: Quickling was killed
+[18:24:38] [Server thread/INFO]: Named entity dcn['Quickling'/6091, l='ServerLevel[world]', x=13.92, y=100.00, z=-1.03] died: Quickling was killed
+[18:24:38] [Server thread/INFO]: Killed 6 entities
+[18:24:40] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:40] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:40] [Server thread/INFO]: Named entity dcn['Quickling'/6102, l='ServerLevel[world]', x=-10.84, y=100.00, z=2.73] died: Quickling was killed
+[18:24:40] [Server thread/INFO]: Named entity dcn['Quickling'/6103, l='ServerLevel[world]', x=-3.42, y=100.00, z=-11.50] died: Quickling was killed
+[18:24:40] [Server thread/INFO]: Named entity daf['Tick'/6108, l='ServerLevel[world]', x=-0.66, y=100.00, z=-8.27] died: Tick was killed
+[18:24:40] [Server thread/INFO]: Named entity daf['Tick'/6107, l='ServerLevel[world]', x=-8.41, y=100.00, z=-0.51] died: Tick was killed
+[18:24:40] [Server thread/INFO]: Named entity dcn['Quickling'/6100, l='ServerLevel[world]', x=11.84, y=100.00, z=1.73] died: Quickling was killed
+[18:24:40] [Server thread/INFO]: Named entity dcn['Quickling'/6101, l='ServerLevel[world]', x=0.38, y=100.00, z=11.59] died: Quickling was killed
+[18:24:40] [Server thread/INFO]: Named entity daf['Tick'/6106, l='ServerLevel[world]', x=3.30, y=100.00, z=8.75] died: Tick was killed
+[18:24:40] [Server thread/INFO]: Named entity dcn['Quickling'/6104, l='ServerLevel[world]', x=5.28, y=100.00, z=-11.50] died: Quickling was killed
+[18:24:40] [Server thread/INFO]: Named entity daf['Tick'/6105, l='ServerLevel[world]', x=9.41, y=100.00, z=-0.51] died: Tick was killed
+[18:24:40] [Server thread/INFO]: Killed 9 entities
+[18:24:42] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:42] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:43] [Server thread/INFO]: Named entity dbf['Second Hand'/6115, l='ServerLevel[world]', x=-16.50, y=100.00, z=0.50] died: Second Hand was killed
+[18:24:43] [Server thread/INFO]: Named entity dcn['Quickling'/6118, l='ServerLevel[world]', x=-3.37, y=100.00, z=6.40] died: Quickling was killed
+[18:24:43] [Server thread/INFO]: Named entity dai['Lost Second'/6122, l='ServerLevel[world]', x=-7.90, y=102.01, z=0.16] died: Lost Second was killed
+[18:24:43] [Server thread/INFO]: Named entity dcn['Quickling'/6119, l='ServerLevel[world]', x=-11.50, y=100.00, z=-4.50] died: Quickling was killed
+[18:24:43] [Server thread/INFO]: Named entity dcn['Quickling'/6117, l='ServerLevel[world]', x=12.50, y=100.00, z=5.50] died: Quickling was killed
+[18:24:43] [Server thread/INFO]: Named entity dbf['Second Hand'/6114, l='ServerLevel[world]', x=0.50, y=100.00, z=17.50] died: Second Hand was killed
+[18:24:43] [Server thread/INFO]: Named entity dbf['Second Hand'/6116, l='ServerLevel[world]', x=0.50, y=100.00, z=-16.50] died: Second Hand was killed
+[18:24:43] [Server thread/INFO]: Named entity dcn['Quickling'/6120, l='ServerLevel[world]', x=5.50, y=100.00, z=-11.50] died: Quickling was killed
+[18:24:43] [Server thread/INFO]: Named entity dai['Lost Second'/6121, l='ServerLevel[world]', x=8.97, y=102.83, z=-0.43] died: Lost Second was killed
+[18:24:43] [Server thread/INFO]: Named entity dbf['Second Hand'/6113, l='ServerLevel[world]', x=17.50, y=100.00, z=0.50] died: Second Hand was killed
+[18:24:43] [Server thread/INFO]: Killed 10 entities
+[18:24:45] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:24:45] [Server thread/INFO]: No entity was found
+[18:24:47] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:47] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:24:49] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:24:50] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:24:53] [Server thread/INFO]: Named entity dbf['Vael, the Stolen Second'/6126, l='ServerLevel[world]', x=0.62, y=100.00, z=-13.90] died: Vael, the Stolen Second was killed
+[18:24:53] [Server thread/INFO]: Killed Vael, the Stolen Second
+[18:24:54] [Server thread/INFO]: Attacker has 1 [ch.awk.speed]
+[18:24:54] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:55] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:56] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:57] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:58] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:24:59] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:00] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:25:00] [Server thread/INFO]: Running function ch:admin/mastery
+[18:25:00] [Server thread/INFO]: Set [ch.awk.infernal] for Attacker to 0
+[18:25:01] [Server thread/INFO]: Running function ch:heart/set_active
+[18:25:01] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:25:01] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:25:01] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:25:02] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:25:03] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:03] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:25:03] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:25:03] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:25:03] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:25:03] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:04] [Server thread/WARN]: Attacker moved too quickly! -5.3384964502829915,-8.446544260715513,-1.002464541454156
+[18:25:04] [Server thread/WARN]: Attacker moved too quickly! -4.863731161643989,-8.723036861120505,-2.417112078143809
+[18:25:05] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:05] [Server thread/WARN]: Attacker moved too quickly! -4.007979456295436,-8.584153072454797,-3.664590896740643
+[18:25:07] [Server thread/WARN]: Attacker moved too quickly! -4.279017685077623,-8.290958415058185,-10.524446283110791
+[18:25:07] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:09] [Server thread/WARN]: Attacker moved too quickly! 2.777636678390916,-7.990979976513913,-11.31863199245119
+[18:25:09] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:11] [Server thread/WARN]: Attacker moved too quickly! 8.788934187127252,-7.70050927210815,-7.1627789143936
+[18:25:11] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:13] [Server thread/WARN]: Attacker moved too quickly! 11.321188251550337,-7.411502607999566,-0.29408772703291675
+[18:25:13] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:13] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:13] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:14] [Server thread/INFO]: Named entity czo['Cinderling'/6199, l='ServerLevel[world]', x=-6.50, y=100.84, z=12.50] died: Cinderling was killed
+[18:25:14] [Server thread/INFO]: Named entity czo['Cinderling'/6200, l='ServerLevel[world]', x=-6.50, y=104.58, z=-11.50] died: Cinderling was killed
+[18:25:14] [Server thread/INFO]: Named entity czo['Cinderling'/6198, l='ServerLevel[world]', x=14.50, y=100.54, z=0.50] died: Cinderling was killed
+[18:25:14] [Server thread/INFO]: Named entity czy['Molten Husk'/6201, l='ServerLevel[world]', x=1.66, y=100.00, z=10.71] died: Molten Husk was killed
+[18:25:14] [Server thread/INFO]: Named entity czy['Molten Husk'/6202, l='ServerLevel[world]', x=1.61, y=100.00, z=-8.71] died: Molten Husk was killed
+[18:25:14] [Server thread/INFO]: Killed 5 entities
+[18:25:16] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:16] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:16] [Server thread/INFO]: Named entity czy['Molten Husk'/6210, l='ServerLevel[world]', x=1.26, y=100.00, z=11.01] died: Molten Husk was killed
+[18:25:16] [Server thread/INFO]: Named entity czy['Molten Husk'/6211, l='ServerLevel[world]', x=2.49, y=100.00, z=11.21] died: Molten Husk was killed
+[18:25:16] [Server thread/INFO]: Named entity czy['Molten Husk'/6212, l='ServerLevel[world]', x=1.06, y=100.00, z=11.91] died: Molten Husk was killed
+[18:25:16] [Server thread/INFO]: Named entity czy['Molten Husk'/6213, l='ServerLevel[world]', x=0.59, y=100.00, z=-8.90] died: Molten Husk was killed
+[18:25:16] [Server thread/INFO]: Named entity czy['Molten Husk'/6214, l='ServerLevel[world]', x=2.31, y=100.00, z=-9.53] died: Molten Husk was killed
+[18:25:16] [Server thread/INFO]: Killed 5 entities
+[18:25:18] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:18] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:19] [Server thread/INFO]: Named entity dca['Ashguard'/6219, l='ServerLevel[world]', x=-10.20, y=100.00, z=3.20] died: Ashguard was killed
+[18:25:19] [Server thread/INFO]: Named entity czo['Cinderling'/6222, l='ServerLevel[world]', x=-9.50, y=100.00, z=-9.50] died: Cinderling was killed
+[18:25:19] [Server thread/INFO]: Named entity dca['Ashguard'/6218, l='ServerLevel[world]', x=10.48, y=100.00, z=4.81] died: Ashguard was killed
+[18:25:19] [Server thread/INFO]: Named entity czy['Molten Husk'/6223, l='ServerLevel[world]', x=1.37, y=100.00, z=11.69] died: Molten Husk was killed
+[18:25:19] [Server thread/INFO]: Named entity dca['Ashguard'/6220, l='ServerLevel[world]', x=0.50, y=100.00, z=-12.26] died: Ashguard was killed
+[18:25:19] [Server thread/INFO]: Named entity czo['Cinderling'/6221, l='ServerLevel[world]', x=10.50, y=100.00, z=-9.50] died: Cinderling was killed
+[18:25:19] [Server thread/INFO]: Killed 6 entities
+[18:25:21] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:21] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:21] [Server thread/INFO]: Named entity czy['Molten Husk'/6236, l='ServerLevel[world]', x=1.24, y=100.00, z=10.59] died: Molten Husk was killed
+[18:25:21] [Server thread/INFO]: Named entity czy['Molten Husk'/6237, l='ServerLevel[world]', x=2.47, y=100.00, z=11.35] died: Molten Husk was killed
+[18:25:21] [Server thread/INFO]: Named entity czy['Molten Husk'/6238, l='ServerLevel[world]', x=1.64, y=100.00, z=12.52] died: Molten Husk was killed
+[18:25:21] [Server thread/INFO]: Killed 3 entities
+[18:25:23] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:23] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:24] [Server thread/INFO]: Named entity czo['Cinderling'/6246, l='ServerLevel[world]', x=-8.50, y=100.66, z=9.50] died: Cinderling was killed
+[18:25:24] [Server thread/INFO]: Named entity dca['Ashguard'/6244, l='ServerLevel[world]', x=-1.67, y=100.00, z=11.33] died: Ashguard was killed
+[18:25:24] [Server thread/INFO]: Named entity czy['Molten Husk'/6248, l='ServerLevel[world]', x=-7.37, y=100.00, z=-12.47] died: Molten Husk was killed
+[18:25:24] [Server thread/INFO]: Named entity dbm['Hellforged Brute'/6243, l='ServerLevel[world]', x=-7.36, y=100.00, z=-5.66] died: Hellforged Brute was killed
+[18:25:24] [Server thread/INFO]: Named entity czo['Cinderling'/6245, l='ServerLevel[world]', x=9.50, y=103.36, z=9.50] died: Cinderling was killed
+[18:25:24] [Server thread/INFO]: Named entity czy['Molten Husk'/6247, l='ServerLevel[world]', x=10.03, y=100.00, z=-8.89] died: Molten Husk was killed
+[18:25:24] [Server thread/INFO]: Named entity dbm['Hellforged Brute'/6242, l='ServerLevel[world]', x=7.78, y=100.00, z=-6.22] died: Hellforged Brute was killed
+[18:25:24] [Server thread/INFO]: Killed 7 entities
+[18:25:26] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:26] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:26] [Server thread/INFO]: Named entity czy['Molten Husk'/6262, l='ServerLevel[world]', x=-7.00, y=100.00, z=-13.16] died: Molten Husk was killed
+[18:25:26] [Server thread/INFO]: Named entity czy['Molten Husk'/6263, l='ServerLevel[world]', x=-5.81, y=100.00, z=-13.38] died: Molten Husk was killed
+[18:25:26] [Server thread/INFO]: Named entity czy['Molten Husk'/6264, l='ServerLevel[world]', x=-8.23, y=100.00, z=-12.27] died: Molten Husk was killed
+[18:25:26] [Server thread/INFO]: Named entity czy['Molten Husk'/6265, l='ServerLevel[world]', x=-6.93, y=100.00, z=-11.39] died: Molten Husk was killed
+[18:25:26] [Server thread/INFO]: Named entity czy['Molten Husk'/6260, l='ServerLevel[world]', x=9.57, y=100.00, z=-8.54] died: Molten Husk was killed
+[18:25:26] [Server thread/INFO]: Named entity czy['Molten Husk'/6261, l='ServerLevel[world]', x=9.96, y=100.00, z=-9.88] died: Molten Husk was killed
+[18:25:26] [Server thread/INFO]: Killed 6 entities
+[18:25:28] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:28] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:25:30] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:31] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:25:34] [Server thread/INFO]: Named entity dca['Ignaroth, Lord of Cinders'/6269, l='ServerLevel[world]', x=1.26, y=100.00, z=-10.74] died: Ignaroth, Lord of Cinders was killed
+[18:25:34] [Server thread/INFO]: Killed Ignaroth, Lord of Cinders
+[18:25:35] [Server thread/INFO]: Attacker has 1 [ch.awk.infernal]
+[18:25:35] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:36] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:37] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:38] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:39] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:40] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:41] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:25:41] [Server thread/INFO]: Running function ch:admin/mastery
+[18:25:42] [Server thread/INFO]: Set [ch.awk.void] for Attacker to 0
+[18:25:42] [Server thread/INFO]: Running function ch:heart/set_active
+[18:25:42] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:25:42] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:25:42] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:25:43] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:25:44] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:25:44] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:25:44] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:25:44] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:25:44] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:25:44] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:46] [Server thread/WARN]: Attacker moved too quickly! -10.465200036782859,-7.714860229742072,-3.6028013012566547
+[18:25:46] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:47] [Server thread/WARN]: Attacker moved too quickly! -7.031951729215438,-7.412968894099308,-9.314974556129421
+[18:25:48] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:49] [Server thread/WARN]: Attacker moved too quickly! -0.40356789861737496,-7.12863053798948,-11.04195336895052
+[18:25:50] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:51] [Server thread/WARN]: Attacker moved too quickly! 5.998993779161637,-6.845566540134342,-9.26684457098586
+[18:25:52] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:25:53] [Server thread/WARN]: Attacker moved too quickly! 10.615320271414207,-6.555817148075533,-3.965210553762418
+[18:25:54] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:54] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:55] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:55] [Server thread/INFO]: Named entity czt['Voidling'/6395, l='ServerLevel[world]', x=-5.77, y=101.00, z=11.58] died: Voidling was killed
+[18:25:55] [Server thread/INFO]: Named entity czt['Voidling'/6397, l='ServerLevel[world]', x=-11.08, y=101.00, z=0.21] died: Voidling was killed
+[18:25:55] [Server thread/INFO]: Named entity czt['Voidling'/6399, l='ServerLevel[world]', x=-3.29, y=101.00, z=-10.50] died: Voidling was killed
+[18:25:55] [Server thread/INFO]: Named entity dai['Rift Shade'/6405, l='ServerLevel[world]', x=-4.37, y=99.74, z=-7.29] died: Rift Shade was killed
+[18:25:55] [Server thread/INFO]: Named entity czt['Voidling'/6391, l='ServerLevel[world]', x=13.18, y=101.00, z=0.33] died: Voidling was killed
+[18:25:55] [Server thread/INFO]: Named entity czt['Voidling'/6393, l='ServerLevel[world]', x=6.77, y=101.00, z=11.58] died: Voidling was killed
+[18:25:55] [Server thread/INFO]: Named entity dai['Rift Shade'/6403, l='ServerLevel[world]', x=3.91, y=100.79, z=1.40] died: Rift Shade was killed
+[18:25:55] [Server thread/INFO]: Named entity czt['Voidling'/6401, l='ServerLevel[world]', x=6.63, y=101.00, z=-10.68] died: Voidling was killed
+[18:25:55] [Server thread/INFO]: Killed 8 entities
+[18:25:57] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:25:57] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:25:57] [Server thread/INFO]: Named entity czt['Voidling'/6415, l='ServerLevel[world]', x=-4.48, y=101.00, z=11.15] died: Voidling was killed
+[18:25:57] [Server thread/INFO]: Named entity czt['Voidling'/6417, l='ServerLevel[world]', x=-10.38, y=101.00, z=-5.58] died: Voidling was killed
+[18:25:57] [Server thread/INFO]: Named entity dai['Rift Shade'/6423, l='ServerLevel[world]', x=-3.04, y=101.70, z=-6.67] died: Rift Shade was killed
+[18:25:57] [Server thread/INFO]: Named entity czt['Voidling'/6413, l='ServerLevel[world]', x=11.46, y=101.00, z=4.55] died: Voidling was killed
+[18:25:57] [Server thread/INFO]: Named entity dai['Rift Shade'/6421, l='ServerLevel[world]', x=8.18, y=101.18, z=8.32] died: Rift Shade was killed
+[18:25:57] [Server thread/INFO]: Named entity czs['Hollow Watcher'/6427, l='ServerLevel[world]', x=0.00, y=101.00, z=16.50] died: Hollow Watcher was killed
+[18:25:57] [Server thread/INFO]: Named entity czt['Voidling'/6419, l='ServerLevel[world]', x=7.83, y=101.00, z=-11.44] died: Voidling was killed
+[18:25:57] [Server thread/INFO]: Named entity dai['Rift Shade'/6425, l='ServerLevel[world]', x=2.43, y=99.87, z=-9.51] died: Rift Shade was killed
+[18:25:57] [Server thread/INFO]: Named entity czs['Hollow Watcher'/6429, l='ServerLevel[world]', x=1.00, y=101.00, z=-15.50] died: Hollow Watcher was killed
+[18:25:57] [Server thread/INFO]: Killed 9 entities
+[18:25:59] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:00] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:26:00] [Server thread/INFO]: Named entity czs['Hollow Watcher'/6446, l='ServerLevel[world]', x=-16.30, y=101.00, z=-2.10] died: Hollow Watcher was killed
+[18:26:00] [Server thread/INFO]: Named entity dai['Rift Shade'/6452, l='ServerLevel[world]', x=-6.32, y=100.14, z=3.29] died: Rift Shade was killed
+[18:26:00] [Server thread/INFO]: Named entity dca['Null Knight'/6442, l='ServerLevel[world]', x=-14.20, y=101.00, z=-2.50] died: Null Knight was killed
+[18:26:00] [Server thread/INFO]: Named entity dai['Rift Shade'/6454, l='ServerLevel[world]', x=-0.30, y=100.38, z=-7.22] died: Rift Shade was killed
+[18:26:00] [Server thread/INFO]: Named entity dca['Null Knight'/6440, l='ServerLevel[world]', x=15.20, y=101.00, z=3.50] died: Null Knight was killed
+[18:26:00] [Server thread/INFO]: Named entity dai['Rift Shade'/6450, l='ServerLevel[world]', x=7.16, y=100.26, z=2.25] died: Rift Shade was killed
+[18:26:00] [Server thread/INFO]: Named entity czs['Hollow Watcher'/6444, l='ServerLevel[world]', x=6.70, y=101.00, z=16.30] died: Hollow Watcher was killed
+[18:26:00] [Server thread/INFO]: Named entity czs['Hollow Watcher'/6448, l='ServerLevel[world]', x=11.10, y=101.00, z=-12.80] died: Hollow Watcher was killed
+[18:26:00] [Server thread/INFO]: Killed 8 entities
+[18:26:02] [Server thread/WARN]: [art] Serialization errors:
+czs['The Hollow Sovereign'/6468, l='ServerLevel[world]', x=0.50, y=101.00, z=0.50]: Failed to decode value '{bold:1b,color:"purple",text:"The Hollow Sovereign"}' from field 'CustomName': Invalid color name: purple
+[18:26:02] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:26:04] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:04] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:26:06] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:06] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:26:10] [Server thread/INFO]: Named entity czs['The Hollow Sovereign'/6468, l='ServerLevel[world]', x=0.50, y=101.00, z=0.50] died: The Hollow Sovereign was killed
+[18:26:10] [Server thread/INFO]: Killed The Hollow Sovereign
+[18:26:11] [Server thread/INFO]: Attacker has 1 [ch.awk.void]
+[18:26:11] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:12] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:13] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:14] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:15] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:16] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:16] [Server thread/INFO]: Attacker has made the advancement [Who is Cutting Onions?]
+[18:26:16] [Server thread/INFO]: Attacker has made the advancement [Ice Bucket Challenge]
+[18:26:17] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:26:17] [Server thread/INFO]: Running function ch:admin/mastery
+[18:26:17] [Server thread/INFO]: Set [ch.awk.frozen] for Attacker to 0
+[18:26:17] [Server thread/INFO]: Running function ch:heart/set_active
+[18:26:18] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:26:18] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:26:18] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:26:18] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:26:19] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:20] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:26:20] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:26:20] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:26:20] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:26:20] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:20] [Server thread/WARN]: Attacker moved too quickly! -5.033724729703126,-8.870384253868309,-0.903269361392077
+[18:26:21] [Server thread/WARN]: Attacker moved too quickly! -4.902544504438431,-8.731215242573654,-2.3374444451251115
+[18:26:22] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:22] [Server thread/WARN]: Attacker moved too quickly! -4.068089610099607,-8.44545460486114,-3.597786173965906
+[18:26:23] [Server thread/WARN]: Attacker moved too quickly! -2.9008430513829886,-8.453687512097162,-4.590557209765581
+[18:26:24] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:25] [Server thread/WARN]: Attacker moved too quickly! -1.2238729385011133,-8.152953780276164,-11.596750826528224
+[18:26:26] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:27] [Server thread/WARN]: Attacker moved too quickly! 5.980904885536241,-7.853636293389172,-9.99584402649549
+[18:26:28] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:28] [Server thread/WARN]: Attacker moved too quickly! 10.541460693830983,-7.5638465281376455,-4.158562411419503
+[18:26:30] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:26:30] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:30] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:26:31] [Server thread/INFO]: Named entity dbz['Frostbound'/6570, l='ServerLevel[world]', x=-12.97, y=100.00, z=-1.03] died: Frostbound was killed
+[18:26:31] [Server thread/INFO]: Named entity dbz['Frostbound'/6571, l='ServerLevel[world]', x=0.50, y=100.00, z=15.50] died: Frostbound was killed
+[18:26:31] [Server thread/INFO]: Named entity cxf['Rimeclaw'/6573, l='ServerLevel[world]', x=10.50, y=100.00, z=10.50] died: Rimeclaw was killed
+[18:26:31] [Server thread/INFO]: Named entity dbz['Frostbound'/6572, l='ServerLevel[world]', x=0.29, y=100.00, z=-12.91] died: Frostbound was killed
+[18:26:31] [Server thread/INFO]: Named entity dbz['Frostbound'/6569, l='ServerLevel[world]', x=14.53, y=100.00, z=-0.44] died: Frostbound was killed
+[18:26:31] [Server thread/INFO]: Killed 5 entities
+[18:26:32] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:33] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:26:33] [Server thread/INFO]: Named entity dbz['Frostbound'/6589, l='ServerLevel[world]', x=-12.46, y=100.00, z=5.53] died: Frostbound was killed
+[18:26:33] [Server thread/INFO]: Named entity cxf['Rimeclaw'/6591, l='ServerLevel[world]', x=-9.50, y=100.00, z=-9.50] died: Rimeclaw was killed
+[18:26:33] [Server thread/INFO]: Named entity dbz['Frostbound'/6588, l='ServerLevel[world]', x=12.74, y=100.00, z=4.74] died: Frostbound was killed
+[18:26:33] [Server thread/INFO]: Named entity dcn['Frost Revenant'/6592, l='ServerLevel[world]', x=0.59, y=100.00, z=13.37] died: Frost Revenant was killed
+[18:26:33] [Server thread/INFO]: Named entity cxf['Rimeclaw'/6590, l='ServerLevel[world]', x=10.50, y=100.00, z=-9.50] died: Rimeclaw was killed
+[18:26:33] [Server thread/INFO]: Named entity dcn['Frost Revenant'/6593, l='ServerLevel[world]', x=0.50, y=100.00, z=-12.16] died: Frost Revenant was killed
+[18:26:33] [Server thread/INFO]: Killed 6 entities
+[18:26:35] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:26:36] [Server thread/INFO]: Named entity dcn['Frost Revenant'/6610, l='ServerLevel[world]', x=-12.50, y=100.00, z=4.50] died: Frost Revenant was killed
+[18:26:36] [Server thread/INFO]: Named entity dbz['Frostbound'/6613, l='ServerLevel[world]', x=-8.94, y=100.00, z=10.01] died: Frostbound was killed
+[18:26:36] [Server thread/INFO]: Named entity dcn['Frost Revenant'/6609, l='ServerLevel[world]', x=13.50, y=100.00, z=4.50] died: Frost Revenant was killed
+[18:26:36] [Server thread/INFO]: Named entity dcn['Frost Revenant'/6611, l='ServerLevel[world]', x=0.50, y=100.00, z=14.50] died: Frost Revenant was killed
+[18:26:36] [Server thread/INFO]: Named entity dbz['Frostbound'/6612, l='ServerLevel[world]', x=10.13, y=100.00, z=10.21] died: Frostbound was killed
+[18:26:36] [Server thread/INFO]: Named entity cxf['Elder Rimeclaw'/6608, l='ServerLevel[world]', x=0.74, y=100.00, z=-12.82] died: Elder Rimeclaw was killed
+[18:26:36] [Server thread/INFO]: Killed 6 entities
+[18:26:38] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:26:38] [Server thread/INFO]: No entity was found
+[18:26:40] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:40] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:26:42] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:26:42] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:26:46] [Server thread/INFO]: Named entity dbz['Hrimvald, the Last Winter'/6631, l='ServerLevel[world]', x=-2.91, y=100.00, z=-16.71] died: Hrimvald, the Last Winter was killed
+[18:26:46] [Server thread/INFO]: Killed Hrimvald, the Last Winter
+[18:26:47] [Server thread/INFO]: Attacker has 1 [ch.awk.frozen]
+[18:26:47] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:48] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:49] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:50] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:51] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:52] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:53] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:26:53] [Server thread/INFO]: Running function ch:admin/mastery
+[18:26:53] [Server thread/INFO]: Set [ch.awk.storm] for Attacker to 0
+[18:26:53] [Server thread/INFO]: Running function ch:heart/set_active
+[18:26:54] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:26:54] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:26:54] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:26:54] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:26:55] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:26:56] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:26:56] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:26:56] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:26:56] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:26:56] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:56] [Server thread/WARN]: Attacker moved too quickly! -5.033724729703126,-8.870384253868309,-0.903269361392077
+[18:26:57] [Server thread/WARN]: Attacker moved too quickly! -4.902544504438431,-8.445185127917867,-2.3374444451251115
+[18:26:58] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:26:58] [Server thread/WARN]: Attacker moved too quickly! -4.068089610099607,-8.592315708222273,-3.597786173965906
+[18:26:59] [Server thread/WARN]: Attacker moved too quickly! -2.9008430513829886,-8.44572594308741,-4.590557209765581
+[18:27:00] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:01] [Server thread/WARN]: Attacker moved too quickly! -1.3488796226166926,-8.169173950002474,-10.968061934097374
+[18:27:02] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:03] [Server thread/WARN]: Attacker moved too quickly! 5.624241980678086,-7.869777558219326,-10.201600583973978
+[18:27:04] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:04] [Server thread/WARN]: Attacker moved too quickly! 10.383443334333158,-7.579907043069753,-4.540525457304144
+[18:27:06] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:06] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:06] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:07] [Server thread/INFO]: Named entity dab['Stormwing'/6744, l='ServerLevel[world]', x=-6.51, y=106.07, z=12.53] died: Stormwing was killed
+[18:27:07] [Server thread/INFO]: Named entity dab['Stormwing'/6745, l='ServerLevel[world]', x=-4.88, y=108.56, z=-10.92] died: Stormwing was killed
+[18:27:07] [Server thread/INFO]: Named entity dby['Stormcaller'/6747, l='ServerLevel[world]', x=-10.93, y=100.00, z=-11.58] died: Stormcaller was killed
+[18:27:07] [Server thread/INFO]: Named entity dby['Stormcaller'/6746, l='ServerLevel[world]', x=12.50, y=100.00, z=12.50] died: Stormcaller was killed
+[18:27:07] [Server thread/INFO]: Named entity dab['Stormwing'/6743, l='ServerLevel[world]', x=16.37, y=108.85, z=0.89] died: Stormwing was killed
+[18:27:07] [Server thread/INFO]: Killed 5 entities
+[18:27:09] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:09] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:09] [Server thread/INFO]: Named entity dab['Stormwing'/6755, l='ServerLevel[world]', x=-3.34, y=106.76, z=13.83] died: Stormwing was killed
+[18:27:09] [Server thread/INFO]: Named entity dby['Stormcaller'/6759, l='ServerLevel[world]', x=-15.61, y=100.00, z=1.39] died: Stormcaller was killed
+[18:27:09] [Server thread/INFO]: Named entity dab['Stormwing'/6756, l='ServerLevel[world]', x=-11.22, y=107.00, z=-4.13] died: Stormwing was killed
+[18:27:09] [Server thread/INFO]: Named entity dal['Gale Wisp'/6761, l='ServerLevel[world]', x=-4.39, y=101.15, z=-8.80] died: Gale Wisp was killed
+[18:27:09] [Server thread/INFO]: Named entity dab['Stormwing'/6754, l='ServerLevel[world]', x=15.65, y=108.32, z=5.89] died: Stormwing was killed
+[18:27:09] [Server thread/INFO]: Named entity dal['Gale Wisp'/6760, l='ServerLevel[world]', x=4.50, y=100.00, z=9.50] died: Gale Wisp was killed
+[18:27:09] [Server thread/INFO]: Named entity dab['Stormwing'/6757, l='ServerLevel[world]', x=7.59, y=108.18, z=-12.10] died: Stormwing was killed
+[18:27:09] [Server thread/INFO]: Named entity dby['Stormcaller'/6758, l='ServerLevel[world]', x=17.50, y=100.00, z=0.50] died: Stormcaller was killed
+[18:27:09] [Server thread/INFO]: Killed 8 entities
+[18:27:11] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:11] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:12] [Server thread/INFO]: Named entity dbz['Thunderborn'/6767, l='ServerLevel[world]', x=-7.50, y=100.00, z=14.50] died: Thunderborn was killed
+[18:27:12] [Server thread/INFO]: Named entity dab['Stormwing'/6770, l='ServerLevel[world]', x=-9.12, y=107.66, z=6.76] died: Stormwing was killed
+[18:27:12] [Server thread/INFO]: Named entity dal['Gale Wisp'/6773, l='ServerLevel[world]', x=-7.50, y=100.00, z=0.50] died: Gale Wisp was killed
+[18:27:12] [Server thread/INFO]: Named entity dbz['Thunderborn'/6768, l='ServerLevel[world]', x=-7.50, y=100.00, z=-13.50] died: Thunderborn was killed
+[18:27:12] [Server thread/INFO]: Named entity dab['Stormwing'/6769, l='ServerLevel[world]', x=12.25, y=108.77, z=6.79] died: Stormwing was killed
+[18:27:12] [Server thread/INFO]: Named entity dal['Gale Wisp'/6772, l='ServerLevel[world]', x=8.50, y=100.00, z=0.50] died: Gale Wisp was killed
+[18:27:12] [Server thread/INFO]: Named entity dab['Stormwing'/6771, l='ServerLevel[world]', x=1.22, y=108.62, z=-11.23] died: Stormwing was killed
+[18:27:12] [Server thread/INFO]: Named entity dbz['Thunderborn'/6766, l='ServerLevel[world]', x=16.50, y=100.00, z=0.50] died: Thunderborn was killed
+[18:27:12] [Server thread/INFO]: Killed 8 entities
+[18:27:14] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:14] [Server thread/INFO]: No entity was found
+[18:27:16] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:16] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:27:18] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:19] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:27:22] [Server thread/INFO]: Named entity dcl['Voltaris, Crown of the Tempest'/6782, l='ServerLevel[world]', x=0.50, y=100.00, z=-1.84] died: Voltaris, Crown of the Tempest was killed
+[18:27:22] [Server thread/INFO]: Killed Voltaris, Crown of the Tempest
+[18:27:23] [Server thread/INFO]: Attacker has 1 [ch.awk.storm]
+[18:27:23] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:24] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:25] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:26] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:27] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:28] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:29] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:27:29] [Server thread/INFO]: Running function ch:admin/mastery
+[18:27:29] [Server thread/INFO]: Set [ch.awk.blood] for Attacker to 0
+[18:27:29] [Server thread/INFO]: Running function ch:heart/set_active
+[18:27:30] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:27:30] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:27:30] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:27:31] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:27:32] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:27:32] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:27:32] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:27:32] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:27:32] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:27:32] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:33] [Server thread/WARN]: Attacker moved too quickly! -5.3384964502829915,-8.86219012150299,-1.002464541454156
+[18:27:33] [Server thread/WARN]: Attacker moved too quickly! -4.597772783858566,-8.731215242573654,-2.2382492650630326
+[18:27:34] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:34] [Server thread/WARN]: Attacker moved too quickly! -4.068089610099607,-8.592315708222273,-3.597786173965906
+[18:27:35] [Server thread/WARN]: Attacker moved too quickly! -2.9008430513829886,-8.44572594308741,-4.590557209765581
+[18:27:36] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:37] [Server thread/WARN]: Attacker moved too quickly! -1.2891188537581328,-8.16106386468509,-11.282951710821454
+[18:27:38] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:39] [Server thread/WARN]: Attacker moved too quickly! 5.803420067472816,-7.86170604340127,-10.100336196302457
+[18:27:40] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:27:40] [Server thread/WARN]: Attacker moved too quickly! 10.464158379916448,-7.5718759067616475,-4.350344312854366
+[18:27:42] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:42] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:42] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:43] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6883, l='ServerLevel[world]', x=-13.83, y=100.00, z=3.58] died: Bloodthrall was killed
+[18:27:43] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6884, l='ServerLevel[world]', x=-6.87, y=100.00, z=-12.36] died: Bloodthrall was killed
+[18:27:43] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6881, l='ServerLevel[world]', x=13.92, y=100.00, z=6.04] died: Bloodthrall was killed
+[18:27:43] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6882, l='ServerLevel[world]', x=1.36, y=100.00, z=13.37] died: Bloodthrall was killed
+[18:27:43] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6885, l='ServerLevel[world]', x=9.83, y=100.00, z=-10.62] died: Bloodthrall was killed
+[18:27:43] [Server thread/INFO]: Killed 5 entities
+[18:27:45] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:45] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:45] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6902, l='ServerLevel[world]', x=-6.40, y=100.00, z=11.94] died: Bloodthrall was killed
+[18:27:45] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6903, l='ServerLevel[world]', x=-5.50, y=100.00, z=-11.52] died: Bloodthrall was killed
+[18:27:45] [Server thread/INFO]: Named entity daj['Blood Witch'/6905, l='ServerLevel[world]', x=-12.57, y=100.00, z=-13.10] died: Blood Witch was killed
+[18:27:45] [Server thread/INFO]: Named entity daj['Blood Witch'/6904, l='ServerLevel[world]', x=13.21, y=100.00, z=13.91] died: Blood Witch was killed
+[18:27:45] [Server thread/INFO]: Named entity dcn['Bloodthrall'/6901, l='ServerLevel[world]', x=13.79, y=100.00, z=-0.13] died: Bloodthrall was killed
+[18:27:45] [Server thread/INFO]: Killed 5 entities
+[18:27:47] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:47] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:48] [Server thread/INFO]: Named entity daj['Blood Witch'/6932, l='ServerLevel[world]', x=-18.50, y=100.00, z=0.50] died: Blood Witch was killed
+[18:27:48] [Server thread/INFO]: Named entity dcc['Vein Crawler'/6933, l='ServerLevel[world]', x=-7.23, y=100.00, z=16.21] died: Vein Crawler was killed
+[18:27:48] [Server thread/INFO]: Named entity dca['Crimson Revenant'/6930, l='ServerLevel[world]', x=-4.20, y=100.00, z=-11.60] died: Crimson Revenant was killed
+[18:27:48] [Server thread/INFO]: Named entity dcc['Vein Crawler'/6934, l='ServerLevel[world]', x=-8.80, y=100.00, z=-12.50] died: Vein Crawler was killed
+[18:27:48] [Server thread/INFO]: Named entity dca['Crimson Revenant'/6929, l='ServerLevel[world]', x=5.20, y=100.00, z=12.60] died: Crimson Revenant was killed
+[18:27:48] [Server thread/INFO]: Named entity daj['Blood Witch'/6931, l='ServerLevel[world]', x=19.50, y=100.00, z=0.50] died: Blood Witch was killed
+[18:27:48] [Server thread/INFO]: Named entity dcc['Vein Crawler'/6935, l='ServerLevel[world]', x=16.40, y=100.00, z=-1.00] died: Vein Crawler was killed
+[18:27:48] [Server thread/INFO]: Killed 7 entities
+[18:27:50] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:27:50] [Server thread/INFO]: No entity was found
+[18:27:52] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:52] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:27:54] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:27:55] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:27:58] [Server thread/INFO]: Named entity dbb['Vesperine, the Crimson Matriarch'/6965, l='ServerLevel[world]', x=0.50, y=100.00, z=6.50] died: Vesperine, the Crimson Matriarch was killed
+[18:27:58] [Server thread/INFO]: Killed Vesperine, the Crimson Matriarch
+[18:27:58] [Server thread/INFO]: Named entity dai['Blood Wisp'/6981, l='ServerLevel[world]', x=-5.52, y=102.04, z=11.53] died: Blood Wisp was killed
+[18:27:58] [Server thread/INFO]: Named entity dai['Blood Wisp'/6980, l='ServerLevel[world]', x=0.41, y=103.48, z=-10.38] died: Blood Wisp was killed
+[18:27:58] [Server thread/INFO]: Named entity dai['Blood Wisp'/6979, l='ServerLevel[world]', x=0.52, y=102.28, z=-9.50] died: Blood Wisp was killed
+[18:27:59] [Server thread/INFO]: Attacker has 1 [ch.awk.blood]
+[18:27:59] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:00] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:01] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:02] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:03] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:04] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:05] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:28:05] [Server thread/INFO]: Running function ch:admin/mastery
+[18:28:05] [Server thread/INFO]: Set [ch.awk.titan] for Attacker to 0
+[18:28:06] [Server thread/INFO]: Running function ch:heart/set_active
+[18:28:06] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:28:06] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:28:06] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:28:07] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:28:08] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:08] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:28:08] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:28:08] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:28:08] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:28:08] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:09] [Server thread/WARN]: Attacker moved too quickly! -5.033724729703126,-8.870384253868309,-0.903269361392077
+[18:28:09] [Server thread/WARN]: Attacker moved too quickly! -4.902544504438431,-8.731215242573654,-2.3374444451251115
+[18:28:10] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:10] [Server thread/WARN]: Attacker moved too quickly! -4.068089610099607,-8.592315708222273,-3.597786173965906
+[18:28:11] [Server thread/WARN]: Attacker moved too quickly! -2.9008430513829886,-8.44572594308741,-4.590557209765581
+[18:28:12] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:13] [Server thread/WARN]: Attacker moved too quickly! -1.5330307397076375,-3.2016283100379184,-9.699559078321371
+[18:28:14] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:14] [Server thread/WARN]: Attacker moved too quickly! 4.892071963432793,-7.90207411856494,-10.573813513925048
+[18:28:16] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:16] [Server thread/WARN]: Attacker moved too quickly! 10.344171145925772,-7.604007471199765,-5.331059360756637
+[18:28:18] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:18] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:18] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7132, l='ServerLevel[world]', x=-8.00, y=100.00, z=9.00] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7136, l='ServerLevel[world]', x=-7.67, y=100.00, z=-7.97] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity dcm['Quarry Brute'/7144, l='ServerLevel[world]', x=-11.05, y=100.00, z=-11.64] died: Quarry Brute was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7134, l='ServerLevel[world]', x=-9.33, y=100.00, z=-1.67] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7126, l='ServerLevel[world]', x=12.18, y=100.00, z=0.33] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7128, l='ServerLevel[world]', x=8.96, y=100.00, z=9.15] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7130, l='ServerLevel[world]', x=0.65, y=100.00, z=12.27] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity dcm['Quarry Brute'/7142, l='ServerLevel[world]', x=12.12, y=100.00, z=12.57] died: Quarry Brute was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7140, l='ServerLevel[world]', x=8.96, y=100.00, z=-7.85] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Named entity daf['Stonemite'/7138, l='ServerLevel[world]', x=0.05, y=100.00, z=-11.50] died: Stonemite was killed
+[18:28:19] [Server thread/INFO]: Killed 10 entities
+[18:28:21] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:21] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:21] [Server thread/INFO]: Named entity daf['Stonemite'/7154, l='ServerLevel[world]', x=-8.01, y=100.00, z=8.86] died: Stonemite was killed
+[18:28:21] [Server thread/INFO]: Named entity dcm['Quarry Brute'/7164, l='ServerLevel[world]', x=-13.36, y=100.00, z=9.12] died: Quarry Brute was killed
+[18:28:21] [Server thread/INFO]: Named entity daf['Stonemite'/7156, l='ServerLevel[world]', x=-11.02, y=100.00, z=-3.97] died: Stonemite was killed
+[18:28:21] [Server thread/INFO]: Named entity daf['Stonemite'/7158, l='ServerLevel[world]', x=-1.00, y=100.00, z=-13.95] died: Stonemite was killed
+[18:28:21] [Server thread/INFO]: Named entity daf['Stonemite'/7150, l='ServerLevel[world]', x=10.81, y=100.00, z=3.77] died: Stonemite was killed
+[18:28:21] [Server thread/INFO]: Named entity daf['Stonemite'/7152, l='ServerLevel[world]', x=3.55, y=100.00, z=12.24] died: Stonemite was killed
+[18:28:21] [Server thread/INFO]: Named entity dcm['Quarry Brute'/7162, l='ServerLevel[world]', x=13.78, y=100.00, z=9.25] died: Quarry Brute was killed
+[18:28:21] [Server thread/INFO]: Named entity dbf['Shale Stalker'/7168, l='ServerLevel[world]', x=0.57, y=100.00, z=14.14] died: Shale Stalker was killed
+[18:28:21] [Server thread/INFO]: Named entity daf['Stonemite'/7160, l='ServerLevel[world]', x=9.09, y=100.00, z=-8.94] died: Stonemite was killed
+[18:28:21] [Server thread/INFO]: Named entity dcm['Quarry Brute'/7166, l='ServerLevel[world]', x=0.40, y=100.00, z=-15.91] died: Quarry Brute was killed
+[18:28:21] [Server thread/INFO]: Killed 10 entities
+[18:28:23] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:23] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:24] [Server thread/INFO]: Named entity dcm['Dust Wraith'/7177, l='ServerLevel[world]', x=-5.30, y=100.00, z=14.30] died: Dust Wraith was killed
+[18:28:24] [Server thread/INFO]: Named entity daf['Stonemite'/7185, l='ServerLevel[world]', x=-8.40, y=100.00, z=5.00] died: Stonemite was killed
+[18:28:24] [Server thread/INFO]: Named entity dcm['Dust Wraith'/7179, l='ServerLevel[world]', x=-13.30, y=100.00, z=-5.30] died: Dust Wraith was killed
+[18:28:24] [Server thread/INFO]: Named entity daf['Stonemite'/7187, l='ServerLevel[world]', x=-4.00, y=100.00, z=-8.40] died: Stonemite was killed
+[18:28:24] [Server thread/INFO]: Named entity dad['Boulderback'/7172, l='ServerLevel[world]', x=0.50, y=100.00, z=14.50] died: Boulderback was killed
+[18:28:24] [Server thread/INFO]: Named entity daf['Stonemite'/7183, l='ServerLevel[world]', x=5.00, y=100.00, z=9.40] died: Stonemite was killed
+[18:28:24] [Server thread/INFO]: Named entity dcm['Dust Wraith'/7181, l='ServerLevel[world]', x=6.30, y=100.00, z=-13.30] died: Dust Wraith was killed
+[18:28:24] [Server thread/INFO]: Named entity daf['Stonemite'/7189, l='ServerLevel[world]', x=8.80, y=100.00, z=-5.17] died: Stonemite was killed
+[18:28:24] [Server thread/INFO]: Named entity dcm['Dust Wraith'/7175, l='ServerLevel[world]', x=16.31, y=100.00, z=8.31] died: Dust Wraith was killed
+[18:28:24] [Server thread/INFO]: Killed 9 entities
+[18:28:26] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:28:28] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:28] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:28:30] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:30] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:28:34] [Server thread/INFO]: Named entity dcm['Golgoth, the Mountain That Walks'/7196, l='ServerLevel[world]', x=1.00, y=100.00, z=0.66] died: Golgoth, the Mountain That Walks was killed
+[18:28:34] [Server thread/INFO]: Killed Golgoth, the Mountain That Walks
+[18:28:35] [Server thread/INFO]: Attacker has 1 [ch.awk.titan]
+[18:28:35] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:36] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:37] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:38] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:39] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:40] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:40] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:28:41] [Server thread/INFO]: Running function ch:admin/mastery
+[18:28:41] [Server thread/INFO]: Set [ch.awk.celestial] for Attacker to 0
+[18:28:41] [Server thread/INFO]: Running function ch:heart/set_active
+[18:28:42] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:28:42] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:28:42] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:28:42] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:28:43] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:28:44] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:28:44] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:28:44] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:28:44] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:28:44] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:44] [Server thread/WARN]: Attacker moved too quickly! -5.033724729703126,-8.870384253868309,-0.903269361392077
+[18:28:45] [Server thread/WARN]: Attacker moved too quickly! -4.902544504438431,-8.731215242573654,-2.3374444451251115
+[18:28:46] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:46] [Server thread/WARN]: Attacker moved too quickly! -4.068089610099607,-8.592315708222273,-3.597786173965906
+[18:28:47] [Server thread/WARN]: Attacker moved too quickly! -2.9008430513829886,-8.44572594308741,-4.590557209765581
+[18:28:48] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:49] [Server thread/WARN]: Attacker moved too quickly! -1.2238729385011133,-8.152953780276164,-11.596750826528224
+[18:28:50] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:51] [Server thread/WARN]: Attacker moved too quickly! 5.738174152215796,-7.86170604340127,-9.786537080595687
+[18:28:52] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:28:52] [Server thread/WARN]: Attacker moved too quickly! 10.464158379916448,-7.5718759067616475,-4.350344312854366
+[18:28:54] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:54] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:54] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:55] [Server thread/INFO]: Named entity dai['Starling'/7314, l='ServerLevel[world]', x=-9.59, y=101.74, z=9.36] died: Starling was killed
+[18:28:55] [Server thread/INFO]: Named entity dai['Starling'/7316, l='ServerLevel[world]', x=-10.79, y=101.66, z=-6.02] died: Starling was killed
+[18:28:55] [Server thread/INFO]: Named entity dai['Starling'/7318, l='ServerLevel[world]', x=-0.39, y=101.82, z=-11.23] died: Starling was killed
+[18:28:55] [Server thread/INFO]: Named entity dai['Starling'/7312, l='ServerLevel[world]', x=3.74, y=100.88, z=7.55] died: Starling was killed
+[18:28:55] [Server thread/INFO]: Named entity dai['Starling'/7310, l='ServerLevel[world]', x=15.09, y=102.83, z=-0.67] died: Starling was killed
+[18:28:55] [Server thread/INFO]: Killed 5 entities
+[18:28:56] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:28:57] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:28:57] [Server thread/INFO]: Named entity dai['Starling'/7327, l='ServerLevel[world]', x=-5.05, y=101.37, z=12.06] died: Starling was killed
+[18:28:57] [Server thread/INFO]: Named entity dab['Comet'/7335, l='ServerLevel[world]', x=-9.94, y=108.46, z=1.05] died: Comet was killed
+[18:28:57] [Server thread/INFO]: Named entity dai['Starling'/7329, l='ServerLevel[world]', x=-7.25, y=100.80, z=-8.16] died: Starling was killed
+[18:28:57] [Server thread/INFO]: Named entity dai['Starling'/7325, l='ServerLevel[world]', x=9.05, y=100.69, z=1.50] died: Starling was killed
+[18:28:57] [Server thread/INFO]: Named entity dab['Comet'/7333, l='ServerLevel[world]', x=13.79, y=109.64, z=0.73] died: Comet was killed
+[18:28:57] [Server thread/INFO]: Named entity dai['Starling'/7331, l='ServerLevel[world]', x=7.39, y=101.05, z=-12.26] died: Starling was killed
+[18:28:57] [Server thread/INFO]: Killed 6 entities
+[18:28:59] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:00] [Server thread/INFO]: Named entity dai['Starling'/7347, l='ServerLevel[world]', x=-7.18, y=101.15, z=7.89] died: Starling was killed
+[18:29:00] [Server thread/INFO]: Named entity dbz['Hollow Seraph'/7343, l='ServerLevel[world]', x=-4.77, y=100.00, z=-13.80] died: Hollow Seraph was killed
+[18:29:00] [Server thread/INFO]: Named entity dai['Starling'/7349, l='ServerLevel[world]', x=-1.13, y=101.16, z=-11.62] died: Starling was killed
+[18:29:00] [Server thread/INFO]: Named entity dbz['Hollow Seraph'/7341, l='ServerLevel[world]', x=6.50, y=100.00, z=14.19] died: Hollow Seraph was killed
+[18:29:00] [Server thread/INFO]: Named entity dai['Starling'/7345, l='ServerLevel[world]', x=13.51, y=101.85, z=3.61] died: Starling was killed
+[18:29:00] [Server thread/INFO]: Named entity dab['Comet'/7351, l='ServerLevel[world]', x=1.86, y=107.90, z=12.90] died: Comet was killed
+[18:29:00] [Server thread/INFO]: Named entity dab['Comet'/7353, l='ServerLevel[world]', x=0.27, y=107.92, z=-11.23] died: Comet was killed
+[18:29:00] [Server thread/INFO]: Killed 7 entities
+[18:29:02] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:02] [Server thread/INFO]: No entity was found
+[18:29:04] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:04] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:29:06] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:06] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:29:10] [Server thread/INFO]: Named entity dai['Astrael, the Fallen Star'/7362, l='ServerLevel[world]', x=5.40, y=108.66, z=15.36] died: Astrael, the Fallen Star was killed
+[18:29:10] [Server thread/INFO]: Killed Astrael, the Fallen Star
+[18:29:11] [Server thread/INFO]: Attacker has 1 [ch.awk.celestial]
+[18:29:11] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:12] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:13] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:14] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:15] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:16] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:17] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:29:17] [Server thread/INFO]: Running function ch:admin/mastery
+[18:29:17] [Server thread/INFO]: Set [ch.awk.corruption] for Attacker to 0
+[18:29:17] [Server thread/INFO]: Running function ch:heart/set_active
+[18:29:18] [Server thread/INFO]: Set [ch.ctag] for Attacker to 0
+[18:29:18] [Server thread/INFO]: Replaced a slot on Attacker with [Air]
+[18:29:18] [Server thread/INFO]: Teleported Attacker to 0.500000, 102.000000, 1.500000
+[18:29:18] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 900)]
+[18:29:19] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:20] [Server thread/INFO]: Applied effect Resistance to Attacker
+[18:29:20] [Server thread/INFO]: Applied effect Fire Resistance to Attacker
+[18:29:20] [Server thread/INFO]: Applied effect Regeneration to Attacker
+[18:29:20] [Server thread/INFO]: Applied effect Saturation to Attacker
+[18:29:20] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:29:21] [Server thread/WARN]: Attacker moved too quickly! -10.981921057677551,-7.698508708377318,-3.982109838464959
+[18:29:22] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:29:23] [Server thread/WARN]: Attacker moved too quickly! -6.618367945808389,-7.404827271381421,-9.239127851393228
+[18:29:24] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:29:25] [Server thread/WARN]: Attacker moved too quickly! -0.12117338026595803,-7.112420883706051,-11.353913029948703
+[18:29:26] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:29:27] [Server thread/WARN]: Attacker moved too quickly! 6.323504932035775,-6.829432300566921,-9.047774677697
+[18:29:28] [Server thread/INFO]: #s0 has 2 [ch.state]
+[18:29:28] [Server thread/WARN]: Attacker moved too quickly! 10.111551837676297,-6.555817148075533,-3.5688589535809836
+[18:29:30] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:30] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:30] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:31] [Server thread/INFO]: Named entity dcc['Blightling'/7527, l='ServerLevel[world]', x=-6.50, y=101.00, z=12.60] died: Blightling was killed
+[18:29:31] [Server thread/INFO]: Named entity dcc['Blightling'/7529, l='ServerLevel[world]', x=-13.50, y=101.00, z=0.50] died: Blightling was killed
+[18:29:31] [Server thread/INFO]: Named entity dcc['Blightling'/7531, l='ServerLevel[world]', x=-6.50, y=101.00, z=-11.60] died: Blightling was killed
+[18:29:31] [Server thread/INFO]: Named entity dcc['Blightling'/7523, l='ServerLevel[world]', x=14.50, y=100.88, z=0.50] died: Blightling was killed
+[18:29:31] [Server thread/INFO]: Named entity dcc['Blightling'/7525, l='ServerLevel[world]', x=9.69, y=101.00, z=10.31] died: Blightling was killed
+[18:29:31] [Server thread/INFO]: Named entity dcc['Blightling'/7533, l='ServerLevel[world]', x=7.50, y=101.00, z=-11.53] died: Blightling was killed
+[18:29:31] [Server thread/INFO]: Killed 6 entities
+[18:29:32] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:33] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:33] [Server thread/INFO]: Named entity dbw['Rotting Archer'/7554, l='ServerLevel[world]', x=-17.92, y=101.00, z=2.04] died: Rotting Archer was killed
+[18:29:33] [Server thread/INFO]: Named entity dcc['Blightling'/7546, l='ServerLevel[world]', x=-4.60, y=101.00, z=12.50] died: Blightling was killed
+[18:29:33] [Server thread/INFO]: Named entity dcc['Blightling'/7548, l='ServerLevel[world]', x=-11.50, y=101.00, z=-4.60] died: Blightling was killed
+[18:29:33] [Server thread/INFO]: Named entity dcc['Blightling'/7544, l='ServerLevel[world]', x=12.50, y=101.00, z=5.60] died: Blightling was killed
+[18:29:33] [Server thread/INFO]: Named entity dbw['Rotting Archer'/7552, l='ServerLevel[world]', x=9.51, y=101.00, z=14.65] died: Rotting Archer was killed
+[18:29:33] [Server thread/INFO]: Named entity dcc['Blightling'/7550, l='ServerLevel[world]', x=5.60, y=101.00, z=-11.50] died: Blightling was killed
+[18:29:33] [Server thread/INFO]: Named entity dbw['Rotting Archer'/7556, l='ServerLevel[world]', x=7.34, y=101.00, z=-14.30] died: Rotting Archer was killed
+[18:29:33] [Server thread/INFO]: Killed 7 entities
+[18:29:35] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:35] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:36] [Server thread/INFO]: Named entity dcc['Blightling'/7571, l='ServerLevel[world]', x=-7.40, y=101.00, z=9.50] died: Blightling was killed
+[18:29:36] [Server thread/INFO]: Named entity dcm['Plague Husk'/7581, l='ServerLevel[world]', x=-13.60, y=101.00, z=5.60] died: Plague Husk was killed
+[18:29:36] [Server thread/INFO]: Named entity dbw['Rotting Archer'/7577, l='ServerLevel[world]', x=-4.39, y=101.00, z=-16.19] died: Rotting Archer was killed
+[18:29:36] [Server thread/INFO]: Named entity dcc['Blightling'/7573, l='ServerLevel[world]', x=-3.30, y=101.00, z=-10.90] died: Blightling was killed
+[18:29:36] [Server thread/INFO]: Named entity dcc['Blightling'/7569, l='ServerLevel[world]', x=12.08, y=101.00, z=2.73] died: Blightling was killed
+[18:29:36] [Server thread/INFO]: Named entity dcm['Plague Husk'/7579, l='ServerLevel[world]', x=12.00, y=101.00, z=10.20] died: Plague Husk was killed
+[18:29:36] [Server thread/INFO]: Named entity dbw['Rotting Archer'/7575, l='ServerLevel[world]', x=5.50, y=101.00, z=16.07] died: Rotting Archer was killed
+[18:29:36] [Server thread/INFO]: Named entity dcm['Plague Husk'/7583, l='ServerLevel[world]', x=3.85, y=101.00, z=-13.87] died: Plague Husk was killed
+[18:29:36] [Server thread/INFO]: Killed 8 entities
+[18:29:38] [Server thread/INFO]: #s0 has 3 [ch.state]
+[18:29:38] [Server thread/INFO]: No entity was found
+[18:29:40] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:40] [Server thread/INFO]: #s0 has 4 [ch.state]
+[18:29:42] [Server thread/INFO]: [Not Secure] [Server] mobs-alive
+[18:29:43] [Server thread/INFO]: #s0 has 5 [ch.state]
+[18:29:46] [Server thread/INFO]: Named entity dcd['Nyxara, the Blightmother'/7597, l='ServerLevel[world]', x=0.50, y=101.00, z=0.50] died: Nyxara, the Blightmother was killed
+[18:29:46] [Server thread/INFO]: Killed Nyxara, the Blightmother
+[18:29:47] [Server thread/INFO]: Attacker has 1 [ch.awk.corruption]
+[18:29:47] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:48] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:49] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:50] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:51] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:52] [Server thread/INFO]: Attacker has 1 [ch.trial]
+[18:29:53] [Server thread/INFO]: Attacker has 0 [ch.trial]
+[18:29:53] [Server thread/INFO]: Running function ch:heart/set_active
+[18:29:54] [Server thread/INFO]: Attacker has 3 [ch.pts.rage]
+[18:29:54] [Server thread/INFO]: [Attacker: Triggered [hearts]]
+[18:29:55] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 31)]
+[18:29:55] [Server thread/INFO]: Attacker has 1 [ch.tree.rage]
+[18:29:56] [Server thread/INFO]: Attacker has 1 [ch.tree.rage]
+[18:29:56] [Server thread/INFO]: [Attacker: Triggered [chmenu] (set value to 39)]
+[18:29:57] [Server thread/INFO]: Attacker has 0 [ch.tree.rage]
+[18:29:57] [Server thread/INFO]: Running function ch:eye/on
+[18:29:59] [Server thread/INFO]: Attacker has 1 [ch.eye]
+[18:29:59] [Server thread/INFO]: Attacker has the following entity data: 1b
+[18:30:00] [Server thread/INFO]: [Not Secure] [Attacker] eye-model-ok
+[18:30:01] [Server thread/INFO]: Running function ch:eye/say
+[18:30:02] [Server thread/INFO]: Victim has 0 [ch.cnt.void]
+[18:30:02] [Server thread/INFO]: Running function ch:eye/give
+[18:30:04] [Server thread/INFO]: Victim has 1 [ch.cnt.void]
+[18:30:04] [Server thread/INFO]: Running function ch:eye/take
+[18:30:06] [Server thread/INFO]: Victim has 0 [ch.cnt.void]
+[18:30:06] [Server thread/INFO]: Running function ch:eye/off
+[18:30:08] [Server thread/INFO]: Attacker has 0 [ch.eye]
+[18:30:08] [Server thread/INFO]: Running function ch:admin/give
+[18:30:09] [Server thread/INFO]: Teleported Victim to 0.500000, 100.000000, -9.500000
+[18:30:09] [Server thread/INFO]: Teleported Attacker to 0.500000, 100.000000, -6.500000
+[18:30:11] [Server thread/INFO]: Applied 2.0 damage to Victim
+[18:30:12] [Server thread/INFO]: Victim has 16559 [ch.ctag]
+[18:30:12] [Server thread/INFO]: Victim has 1 [ch.opp]
+[18:30:13] [Server thread/INFO]: Attacker has 16559 [ch.ctag]
+[18:30:13] [Server thread/INFO]: Victim lost connection: Disconnected
+[18:30:13] [Server thread/INFO]: Victim left the game
+[18:30:16] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+java.lang.IllegalStateException: Unexpected request for task finish, current task: prepare_spawn, requested: server_resource_pack
+[18:30:16] [Server thread/INFO]: Victim[/127.0.0.1:55712] logged in with entity id 7738 at (0.5, 100.0, -9.5)
+[18:30:16] [Server thread/INFO]: Victim joined the game
+[18:30:19] [Server thread/INFO]: Running function ch:admin/list
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial dropped holder 2 collector 1
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm held holder 2 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 1 collector 0
+[18:30:19] [Server thread/INFO]: [Not Secure] [Server] heart 17 celestial held holder 2 collector 0
+[18:30:20] [Server thread/INFO]: Victim has 16433 [ch.seen]
+[18:30:20] [Server thread/INFO]: Victim lost connection: Disconnected
+[18:30:20] [Server thread/INFO]: Victim left the game
+[18:30:20] [Server thread/INFO]: Saving the game (this may take a moment!)
+[18:30:20] [Server thread/INFO]: Saved the game
+[18:30:22] [Server thread/INFO]: Attacker lost connection: Disconnected
+[18:30:22] [Server thread/INFO]: Attacker left the game
+[18:30:23] [Server thread/INFO]: Stopping the server
+[18:30:23] [Server thread/INFO]: Stopping server
+[18:30:23] [Server thread/INFO]: Saving players
+[18:30:23] [Server thread/INFO]: Saving worlds
+[18:30:23] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:30:23] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:30:23] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:30:23] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/ch:trials
+[18:30:23] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:30:23] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:30:23] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:30:23] [Server thread/INFO]: ThreadedAnvilChunkStorage (trials): All chunks are saved
+[18:30:23] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+Starting net.minecraft.server.Main
+[18:30:29] [ServerMain/WARN]: resource-pack-id missing, using default of 545980a7-57c3-3d89-b1f5-3d3ffd56f2da
+[18:30:29] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[18:30:32] [ServerMain/INFO]: Loaded 1470 recipes
+[18:30:32] [ServerMain/INFO]: Loaded 1591 advancements
+[18:30:32] [Server thread/INFO]: Starting minecraft server version 1.21.11
+[18:30:32] [Server thread/INFO]: Loading properties
+[18:30:32] [Server thread/INFO]: Default game type: SURVIVAL
+[18:30:32] [Server thread/INFO]: Generating keypair
+[18:30:32] [Server thread/INFO]: Starting Minecraft server on *:25565
+[18:30:32] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[18:30:32] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[18:30:32] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[18:30:32] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[18:30:32] [Server thread/INFO]: Preparing level "world"
+[18:30:33] [Server thread/INFO]: Loading 25 persistent chunks...
+[18:30:33] [Server thread/INFO]: Time elapsed: 122 ms
+[18:30:33] [Server thread/INFO]: Done (0.346s)! For help, type "help"
+[18:30:34] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+java.lang.IllegalStateException: Unexpected request for task finish, current task: prepare_spawn, requested: server_resource_pack
+[18:30:35] [Server thread/INFO]: Attacker[/127.0.0.1:60704] logged in with entity id 145 at (0.5, 100.0, -6.5)
+[18:30:35] [Server thread/INFO]: Attacker joined the game
+[18:30:38] [Server thread/INFO]: Attacker has 100 [ch.lvl.rage]
+[18:30:38] [Server thread/INFO]: Attacker has 1 [ch.awk.rage]
+[18:30:38] [Server thread/INFO]: Running function ch:admin/list
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 1 corruption held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 2 celestial dropped holder 2 collector 1
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 3 rage held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 4 storm held holder 2 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 5 rage held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 6 speed held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 7 infernal held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 8 void held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 9 frozen held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 10 storm held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 11 blood held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 12 titan held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 13 celestial held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 14 corruption held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 15 titan held holder 1 collector 0
+[18:30:38] [Server thread/INFO]: [Not Secure] [Server] heart 17 celestial held holder 2 collector 0
+[18:30:39] [Server thread/INFO]: The value of attribute Max Health for entity Attacker is 40.0
+[18:30:40] [Server thread/INFO]: Attacker lost connection: Disconnected
+[18:30:40] [Server thread/INFO]: Attacker left the game
+[18:30:41] [Server thread/INFO]: Stopping the server
+[18:30:41] [Server thread/INFO]: Stopping server
+[18:30:41] [Server thread/INFO]: Saving players
+[18:30:41] [Server thread/INFO]: Saving worlds
+[18:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[18:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/ch:trials
+[18:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[18:30:41] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[18:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[18:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (trials): All chunks are saved
+[18:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[18:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[18:30:41] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved

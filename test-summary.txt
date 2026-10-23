@@ -1,0 +1,107 @@
+=== Datapack load ===
+functions that failed to load: 0
+=== Multiplayer scenario ===
+PASS  two players join with vanilla clients
+PASS  each new player starts with a random Chaos Heart
+PASS  a held Chaos Heart adds a heart of max health
+PASS  there is no Focus item
+PASS  the server offers the resource pack
+PASS  the pack downloads and matches its SHA-1
+PASS  admin can give hearts
+PASS  admin can set mastery
+PASS  max health follows the hearts held
+PASS  sneak + back shuffles the active heart
+PASS  sneak + jump casts ability 1
+PASS  Rage Leap (Earthsplitter, looking down) damages a player in front
+PASS  rage ability 1 casts
+PASS  rage ability 2 casts
+PASS  rage ability 3 casts
+PASS  rage ability 4 casts
+PASS  speed ability 1 casts
+PASS  speed ability 2 casts
+PASS  speed ability 3 casts
+PASS  speed ability 4 casts
+PASS  infernal ability 1 casts
+PASS  infernal ability 2 casts
+PASS  infernal ability 3 casts
+PASS  infernal ability 4 casts
+PASS  void ability 1 casts
+PASS  void ability 2 casts
+PASS  void ability 3 casts
+PASS  void ability 4 casts
+PASS  frozen ability 1 casts
+PASS  frozen ability 2 casts
+PASS  frozen ability 3 casts
+PASS  frozen ability 4 casts
+PASS  storm ability 1 casts
+PASS  storm ability 2 casts
+PASS  storm ability 3 casts
+PASS  storm ability 4 casts
+PASS  blood ability 1 casts
+PASS  blood ability 2 casts
+PASS  blood ability 3 casts
+PASS  blood ability 4 casts
+PASS  titan ability 1 casts
+PASS  titan ability 2 casts
+PASS  titan ability 3 casts
+PASS  titan ability 4 casts
+PASS  celestial ability 1 casts
+PASS  celestial ability 2 casts
+PASS  celestial ability 3 casts
+PASS  celestial ability 4 casts
+PASS  corruption ability 1 casts
+PASS  corruption ability 2 casts
+PASS  corruption ability 3 casts
+PASS  corruption ability 4 casts
+PASS  a PvP death drops a heart for the killer
+PASS  the heart that drops is the most recent one (titan)
+PASS  the victim cannot pick their own heart back up
+PASS  the killer collects the heart by walking over it
+PASS  the victim keeps their other hearts
+PASS  the altar is built from unbreakable blocks
+PASS  a player at mastery 100 starts a trial at the altar
+PASS  the arena builds and the fight begins after the intro
+PASS  trial mobs spawn in the first wave
+PASS  the challenger holds the Trial Ward
+PASS  a lethal blow breaks the ward, fails the trial and sends the player home
+PASS  the player is alive after the failed trial
+PASS  the arena slot is free again
+PASS  trial mobs are removed after the run
+PASS  the rage trial runs: waves, boss, awakening
+PASS  the speed trial runs: waves, boss, awakening
+PASS  the infernal trial runs: waves, boss, awakening
+PASS  the void trial runs: waves, boss, awakening
+PASS  the frozen trial runs: waves, boss, awakening
+PASS  the storm trial runs: waves, boss, awakening
+PASS  the blood trial runs: waves, boss, awakening
+PASS  the titan trial runs: waves, boss, awakening
+PASS  the celestial trial runs: waves, boss, awakening
+PASS  the corruption trial runs: waves, boss, awakening
+PASS  awakening grants skill points
+PASS  a skill node can be taken from the menu
+PASS  the first respec is free and refunds the tree
+PASS  the admin becomes the Eye
+PASS  the Eye can fly
+PASS  the Eye model follows the admin
+PASS  the Eye speaks to players
+PASS  the Eye gives a heart
+PASS  the Eye takes a heart
+PASS  the Eye can close again
+PASS  logging out in combat drops the latest heart
+
+87/87 checks passed
+=== After a server restart ===
+PASS  mastery survives a server restart
+PASS  awakening survives a server restart
+PASS  the heart registry survives a restart
+PASS  max health is still right after a restart
+
+4/4 checks passed
+=== Runtime errors in the log ===
+      4 java.lang.IllegalStateException: Unexpected request for task finish, current task: prepare_spawn, requested: server_resource_pack
+      1 [18:30:34] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+      1 [18:30:16] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+      1 [18:16:54] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+      1 [18:16:51] [Server thread/ERROR]: Failed to handle packet acb[id=00000000-0000-0000-0000-000000000000, action=SUCCESSFULLY_LOADED], suppressing error
+      1 [18:16:35] [ServerMain/ERROR]: No key layers in MapLike[{}]
+Ticks behind warnings: 0
