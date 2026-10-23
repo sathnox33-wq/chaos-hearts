@@ -52,6 +52,7 @@ maxFps:60
 enableVsync:false
 fov:0.25
 guiScale:2
+chatVisibility:2
 soundCategory_master:0.0
 resourcePacks:["vanilla","file/chaoshearts-resourcepack.zip"]
 incompatibleResourcePacks:[]

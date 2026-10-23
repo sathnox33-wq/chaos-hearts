@@ -79,6 +79,7 @@ async function targets () {
 
 async function reset (pitch) {
   await run('kill @e[type=item]', 40)
+  await run('kill @e[type=slime]', 40)
   await run('tp Caster 0.5 -60 0.5 0 ' + pitch, 60)
   for (let s = 1; s <= 4; s++) await run(`scoreboard players set Caster ch.cd${s} 0`, 20)
   await run('scoreboard players set Caster ch.rage.fury 100', 20)
@@ -122,6 +123,7 @@ async function moves () {
 async function firstPerson () {
   // The HUD and screen overlays only show to the caster, so Cam plays a few moves in first person.
   await run('kill @e[type=husk]')
+  await run('kill @e[type=slime]')
   await run('scoreboard players set #mode cap 0')
   await run('tp Cam 0.5 -60 -2.5 0 5', 300)
   await run('gamemode survival Cam', 200)
@@ -135,6 +137,7 @@ async function firstPerson () {
     await run('scoreboard players set Cam ch.swapcd 0', 50)
     for (let s = 1; s <= 4; s++) await run(`scoreboard players set Cam ch.cd${s} 0`, 20)
     await run('tp Cam 0.5 -60 -2.5 0 5', 200)
+    await run('tp Caster 12.5 -60 -6.5 0 0', 100)
     await targets()
     await sleep(2500)
     shot(`hud_${h}.png`)
@@ -184,7 +187,8 @@ async function main () {
   caster.on('error', e => meta.errors.push('caster: ' + e.message))
   for (const c of ['op Cam', 'op Caster', 'gamemode spectator Cam', 'gamemode survival Caster', 'difficulty normal',
     'time set 6000', 'gamerule advance_time false', 'weather clear 1000000',
-    'gamerule advance_weather false', 'gamerule spawn_mobs false', 'kill @e[type=!player]', 'scoreboard players set #mode cap 1']) await run(c, 200)
+    'gamerule advance_weather false', 'gamerule spawn_mobs false', 'gamerule spawn_monsters false', 'gamerule send_command_feedback false',
+    'gamerule log_admin_commands false', 'gamerule sendCommandFeedback false', 'kill @e[type=!player]', 'scoreboard players set #mode cap 1']) await run(c, 200)
   await sleep(12000) // let the client finish loading chunks and the resource pack
   key('F1')
   await sleep(1000)
