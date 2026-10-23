@@ -20,3 +20,9 @@ scoreboard players set #15 ch.corruption.k 15
 scoreboard players set #16 ch.corruption.k 16
 scoreboard players set #45 ch.corruption.k 45
 scoreboard players set #115 ch.corruption.k 115
+scoreboard players set #30 ch.corruption.k 30
+scoreboard players set #40 ch.corruption.k 40
+scoreboard players set #100 ch.corruption.k 100
+scoreboard players set #160 ch.corruption.k 160
+scoreboard players set #180 ch.corruption.k 180
+scoreboard players set #300 ch.corruption.k 300

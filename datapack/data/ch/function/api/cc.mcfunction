@@ -5,7 +5,7 @@ execute if entity @s[tag=ch.noability] run return fail
 execute if entity @s[tag=ch.caster] run return fail
 execute if entity @s[type=player,gamemode=!survival,gamemode=!adventure] run return fail
 execute if entity @s[type=player] if score @s ch.ccimm matches 1.. run return fail
-execute if entity @s[type=player] if score #pvp ch.g matches 0 run return fail
+execute if entity @s[type=player] if score #pvp ch.g matches 0 unless entity @e[tag=ch.caster,tag=ch.tmob] run return fail
 $scoreboard players set #t ch.tmp $(sec)
 scoreboard players operation #t ch.tmp *= #20 ch.g
 execute if entity @s[type=player] run scoreboard players operation #t ch.tmp *= #cc_pct ch.cfg

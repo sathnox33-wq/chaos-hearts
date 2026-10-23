@@ -5,7 +5,7 @@ execute if entity @s[tag=ch.noability] run return fail
 execute if entity @s[tag=ch.caster] run return fail
 execute if entity @s[tag=ch.boss] run return fail
 execute if entity @s[type=player,gamemode=!survival,gamemode=!adventure] run return fail
-execute if entity @s[type=player] if score #pvp ch.g matches 0 run return fail
+execute if entity @s[type=player] if score #pvp ch.g matches 0 unless entity @e[tag=ch.caster,tag=ch.tmob] run return fail
 execute if entity @s[type=player] facing entity @s feet positioned as @s run return run function ch:api/push_player
 $execute facing entity @s feet rotated ~ 0 run function ch:api/vec {s:$(s)}
 $data modify storage ch:tmp y set value $(y)

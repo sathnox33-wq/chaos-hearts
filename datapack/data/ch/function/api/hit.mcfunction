@@ -5,7 +5,7 @@ execute if entity @s[tag=ch.caster] run return fail
 execute if entity @s[type=#ch:ignore] run return fail
 execute if entity @s[tag=ch.noability] run return fail
 execute if entity @s[type=player,gamemode=!survival,gamemode=!adventure] run return fail
-execute if entity @s[type=player] if score #pvp ch.g matches 0 run return fail
+execute if entity @s[type=player] if score #pvp ch.g matches 0 unless entity @e[tag=ch.caster,tag=ch.tmob] run return fail
 execute if entity @s[type=player,scores={ch.trial=1..}] if entity @a[tag=ch.caster,limit=1] run return fail
 execute if entity @s[type=player] if entity @a[tag=ch.caster,scores={ch.trial=1..}] run return fail
 execute if entity @s[tag=ch.tmob] if entity @e[tag=ch.caster,tag=ch.tmob,limit=1] run return fail
