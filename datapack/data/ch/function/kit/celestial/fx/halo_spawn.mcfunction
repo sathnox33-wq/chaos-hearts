@@ -1,0 +1,3 @@
+# A new halo: a spinning golden ring with a soft glow under it.
+execute positioned ~ ~2.15 ~ rotated 0 0 summon item_display run data merge entity @s {Tags:["ch.fx","ch.noability","ch.celestial.halo","ch.celestial.follow","ch.celestial.spin"],teleport_duration:1,brightness:{sky:15,block:15},view_range:2.0f,interpolation_duration:10,item:{id:"minecraft:paper",count:1,components:{"minecraft:item_model":"chaoshearts:fx/ring","minecraft:custom_model_data":{colors:[16765803]}}},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.55f,0.55f,0.55f]}}
+execute positioned ~ ~2.15 ~ as @e[type=item_display,tag=ch.celestial.halo,distance=..0.05] unless score @s ch.owner matches 1.. run function ch:kit/celestial/fx/follow_init

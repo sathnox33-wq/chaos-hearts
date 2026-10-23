@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "A sigil crackles under your target, then the sky answers. The bolt snaps onto them if they have not got clear.",
+   "variants": "Level: a telegraphed bolt on your aim (30 blocks). Up: Stormcall, the bolt strikes you and bursts out as a nova of lightning. Down: Ground Current, lightning races along the floor ahead, rooting everyone it touches."},
+  {"desc": "Blast every enemy away and ride the updraft into the sky.",
+   "variants": "Level: a ring of wind that throws everyone back while you soar. Up: Updraft Column, a telegraphed geyser at your aim hurls them skyward (mind the fall). Down: Downburst, a crushing wind slams everyone around you into the ground and pins them."},
+  {"desc": "A bolt that leaps from enemy to enemy, weaker with every jump.",
+   "variants": "Level: 5 jumps (7 with Conductor). Up: Ball Lightning, a slow orb that lashes everything near it and bursts into a chain. Down: Arc Snare, tether everyone around you; whoever strays more than 7 blocks is struck hard and dragged back."},
+  {"desc": "Become the storm. A thundercloud follows you and every second marks up to three enemies for falling bolts.",
+   "variants": "Level: the Tempest follows you for 10 seconds. Up: Eye of the Storm, a vortex anchored where you stand drags enemies in under faster bolts. Down: Supercell, root yourself for 1.5 seconds while the sky winds up, then five bolts and one cataclysmic blast."}
+ ],
+ "p1d": "Lightning runs straight through you. You move 20% faster in the rain.",
+ "p2d": "Every 4th melee hit arcs a spark to another enemy (the meter shows the charge).",
+ "awd": "Lightning Strike leaves charged ground that shocks and slows for 2 seconds."
+}

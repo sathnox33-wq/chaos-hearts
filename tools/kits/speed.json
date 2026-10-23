@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "Tear through space in a streak of light. Everything you pass through is cut.",
+   "variants": "Level: an 8-block blink that cuts everyone in your path. Up: Rising Rend, a diagonal cut that throws them into the air while you float. Down: Recoil, dash backward and leave a ticking slash sigil that detonates where you stood."},
+  {"desc": "Vanish completely, armour and all (you keep its protection), leaving a decoy with your face. Taking a hit or attacking reveals you.",
+   "variants": "Level: vanish behind a decoy. Up: Mirror Feint, the decoy sprints ahead and explodes in a blinding flash. Down: Shade Ambush, your first strike from hiding roots the target and echoes as a sonic boom."},
+  {"desc": "Surge into the slipstream. Your wake trails behind you and punishes anyone who crosses it.",
+   "variants": "Level: Speed III and a wake that slows. Up: Afterburner, rocket along your look and leave a burning, crackling wake. Down: Vortex Lap, a cyclone circles you, drags enemies into orbit and flings them out when it ends."},
+  {"desc": "Shatter the clock. Inside the fracture enemies crawl, arrows hang in the air and ability projectiles creep; you move freely.",
+   "variants": "Level: a 12-block stasis field where you stand. Up: Chrono Collapse, a smaller field that implodes and charges every caught enemy for the time they spent inside (get out!). Down: Moment Shell, the field rides with you."}
+ ],
+ "p1d": "You move 15% faster at all times.",
+ "p2d": "Sprint for 3 seconds to charge Momentum (shown on the meter). Your next melee hit blasts them away, and its sonic boom lands half a second later for +4 damage.",
+ "awd": "Dash recharges twice as fast and leaves a cyan lightning streak; sprinting leaves a crackling electric trail."
+}

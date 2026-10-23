@@ -1,0 +1,19 @@
+# Rage stopped being active: removes every Rage modifier and ends its running states.
+attribute @s minecraft:attack_damage modifier remove ch:rage_fury
+attribute @s minecraft:attack_damage modifier remove ch:rage_berserk
+attribute @s minecraft:armor modifier remove ch:rage_thick
+attribute @s minecraft:armor_toughness modifier remove ch:rage_thick
+attribute @s minecraft:armor modifier remove ch:rage_wrath
+attribute @s minecraft:armor_toughness modifier remove ch:rage_wrath
+attribute @s minecraft:fall_damage_multiplier modifier remove ch:rage_safe
+attribute @s minecraft:knockback_resistance modifier remove ch:rage_stance
+scoreboard players set @s ch.rage.s50 0
+scoreboard players set @s ch.rage.s100 0
+scoreboard players set @s ch.rage.leap 0
+scoreboard players set @s ch.rage.safe 0
+scoreboard players set @s ch.rage.bz 0
+scoreboard players set @s ch.rage.bzt 0
+scoreboard players set @s ch.rage.bzm 0
+scoreboard players set @s ch.rage.ramp 0
+scoreboard players set @s ch.rage.ava 0
+scoreboard players set @s ch.meter 0

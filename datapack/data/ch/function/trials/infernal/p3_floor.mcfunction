@@ -1,0 +1,101 @@
+# At the centre: rings of floor between 19 and 27 blocks turn to magma.
+fill ~0 ~-1 ~-27 ~0 ~-1 ~-27 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-7 ~-1 ~-26 ~7 ~-1 ~-26 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-10 ~-1 ~-25 ~10 ~-1 ~-25 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-12 ~-1 ~-24 ~12 ~-1 ~-24 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-14 ~-1 ~-23 ~14 ~-1 ~-23 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-15 ~-1 ~-22 ~15 ~-1 ~-22 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-16 ~-1 ~-21 ~16 ~-1 ~-21 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-18 ~-1 ~-20 ~18 ~-1 ~-20 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-19 ~-1 ~-19 ~19 ~-1 ~-19 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-20 ~-1 ~-18 ~-7 ~-1 ~-18 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~7 ~-1 ~-18 ~20 ~-1 ~-18 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-20 ~-1 ~-17 ~-9 ~-1 ~-17 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~9 ~-1 ~-17 ~20 ~-1 ~-17 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-21 ~-1 ~-16 ~-11 ~-1 ~-16 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~11 ~-1 ~-16 ~21 ~-1 ~-16 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-22 ~-1 ~-15 ~-12 ~-1 ~-15 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~12 ~-1 ~-15 ~22 ~-1 ~-15 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-23 ~-1 ~-14 ~-13 ~-1 ~-14 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~13 ~-1 ~-14 ~23 ~-1 ~-14 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-23 ~-1 ~-13 ~-14 ~-1 ~-13 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~14 ~-1 ~-13 ~23 ~-1 ~-13 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-24 ~-1 ~-12 ~-15 ~-1 ~-12 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~15 ~-1 ~-12 ~24 ~-1 ~-12 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-24 ~-1 ~-11 ~-16 ~-1 ~-11 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~16 ~-1 ~-11 ~24 ~-1 ~-11 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-25 ~-1 ~-10 ~-17 ~-1 ~-10 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~17 ~-1 ~-10 ~25 ~-1 ~-10 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-25 ~-1 ~-9 ~-17 ~-1 ~-9 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~17 ~-1 ~-9 ~25 ~-1 ~-9 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-25 ~-1 ~-8 ~-18 ~-1 ~-8 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~18 ~-1 ~-8 ~25 ~-1 ~-8 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-7 ~-18 ~-1 ~-7 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~18 ~-1 ~-7 ~26 ~-1 ~-7 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-6 ~-19 ~-1 ~-6 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~-6 ~26 ~-1 ~-6 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-5 ~-19 ~-1 ~-5 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~-5 ~26 ~-1 ~-5 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-4 ~-19 ~-1 ~-4 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~-4 ~26 ~-1 ~-4 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-3 ~-19 ~-1 ~-3 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~-3 ~26 ~-1 ~-3 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-2 ~-19 ~-1 ~-2 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~-2 ~26 ~-1 ~-2 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~-1 ~-19 ~-1 ~-1 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~-1 ~26 ~-1 ~-1 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-27 ~-1 ~0 ~-20 ~-1 ~0 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~20 ~-1 ~0 ~27 ~-1 ~0 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~1 ~-19 ~-1 ~1 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~1 ~26 ~-1 ~1 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~2 ~-19 ~-1 ~2 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~2 ~26 ~-1 ~2 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~3 ~-19 ~-1 ~3 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~3 ~26 ~-1 ~3 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~4 ~-19 ~-1 ~4 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~4 ~26 ~-1 ~4 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~5 ~-19 ~-1 ~5 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~5 ~26 ~-1 ~5 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~6 ~-19 ~-1 ~6 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~19 ~-1 ~6 ~26 ~-1 ~6 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-26 ~-1 ~7 ~-18 ~-1 ~7 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~18 ~-1 ~7 ~26 ~-1 ~7 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-25 ~-1 ~8 ~-18 ~-1 ~8 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~18 ~-1 ~8 ~25 ~-1 ~8 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-25 ~-1 ~9 ~-17 ~-1 ~9 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~17 ~-1 ~9 ~25 ~-1 ~9 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-25 ~-1 ~10 ~-17 ~-1 ~10 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~17 ~-1 ~10 ~25 ~-1 ~10 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-24 ~-1 ~11 ~-16 ~-1 ~11 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~16 ~-1 ~11 ~24 ~-1 ~11 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-24 ~-1 ~12 ~-15 ~-1 ~12 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~15 ~-1 ~12 ~24 ~-1 ~12 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-23 ~-1 ~13 ~-14 ~-1 ~13 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~14 ~-1 ~13 ~23 ~-1 ~13 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-23 ~-1 ~14 ~-13 ~-1 ~14 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~13 ~-1 ~14 ~23 ~-1 ~14 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-22 ~-1 ~15 ~-12 ~-1 ~15 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~12 ~-1 ~15 ~22 ~-1 ~15 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-21 ~-1 ~16 ~-11 ~-1 ~16 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~11 ~-1 ~16 ~21 ~-1 ~16 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-20 ~-1 ~17 ~-9 ~-1 ~17 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~9 ~-1 ~17 ~20 ~-1 ~17 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-20 ~-1 ~18 ~-7 ~-1 ~18 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~7 ~-1 ~18 ~20 ~-1 ~18 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-19 ~-1 ~19 ~19 ~-1 ~19 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-18 ~-1 ~20 ~18 ~-1 ~20 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-16 ~-1 ~21 ~16 ~-1 ~21 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-15 ~-1 ~22 ~15 ~-1 ~22 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-14 ~-1 ~23 ~14 ~-1 ~23 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-12 ~-1 ~24 ~12 ~-1 ~24 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-10 ~-1 ~25 ~10 ~-1 ~25 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~-7 ~-1 ~26 ~7 ~-1 ~26 minecraft:magma_block replace minecraft:polished_blackstone
+fill ~0 ~-1 ~27 ~0 ~-1 ~27 minecraft:magma_block replace minecraft:polished_blackstone
+execute positioned ~20 ~14 ~8 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~8 ~14 ~20 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~-8 ~14 ~20 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~-20 ~14 ~8 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~-20 ~14 ~-8 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~-8 ~14 ~-20 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~8 ~14 ~-20 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}
+execute positioned ~20 ~14 ~-8 run function ch:api/fx/pillar {model:"flame",color:16742938,w:2.5,h:10.0,t:6,life:40}

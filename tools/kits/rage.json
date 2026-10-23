@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "Leap and slam down where you land: damage falls off from the centre and everything is launched. A red circle shows where you will land.",
+   "variants": "Level: long arcing leap (longer and lower while moving forward). Up: Skyfall, rocket up, hang while a sigil marks the ground, then dive; +0.5 damage per block fallen. Down: Earthsplitter, a fissure tears 11 blocks forward and throws everything on it into the air."},
+  {"desc": "Draw breath, then roar: Weakness on everything near you and Strength for you. With 30 Fury it is spent for a roar that also wounds, staggers and slows.",
+   "variants": "Level: the inhaled roar (a collapsing ring warns enemies). Up: Blood Challenge, a war horn that drags enemies in and marks them; their blows on you feed double Fury. Down: Blood Oath, tear your own heart for 1.5 hearts: 40 Fury and Strength at once."},
+  {"desc": "Your next 3 melee hits deal bonus damage and send out shockwaves that grow with every link; the last one shatters the ground and stuns.",
+   "variants": "Level: the chain. Up: Retaliation, a 5 s stance: up to 4 blows you take erupt back at everyone near you, stronger with Fury. Down: Ravage, three whirling cleaves that drag enemies in, then hurl them away."},
+  {"desc": "Become fury itself for 10 s: Speed II, Strength II, Resistance and 15% melee lifesteal. Kills extend it.",
+   "variants": "Level: Rampage. Up: Wrathfall, rocket skyward and crash down as a meteor, then Rampage for 7 s. Down: Blood for Blood, no Resistance, but every blow you take is lashed back at the attacker, pain feeds double Fury and lifesteal rises to 25%."}
+ ],
+ "p1d": "Rage feeds on pain. Taking damage builds Fury fast (faster below half health); dealing it builds Fury too. At 50+ Fury your melee hits deal 10% more. Fury drains after 4 s out of combat.",
+ "p2d": "Reaching full Fury grants Strength I for 6 seconds.",
+ "awd": "Fury can reach 150. Above 100 Fury you burn with black flame and take less damage."
+}

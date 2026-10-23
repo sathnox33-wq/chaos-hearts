@@ -1,0 +1,3 @@
+# A big falling boulder of $(b): starts 24 blocks up, facing down, and slides to the ground.
+$execute positioned ~ ~24 ~ rotated 0 90 summon block_display run data merge entity @s {block_state:{Name:"$(b)"},Tags:["ch.fx","ch.noability","ch.titan.slide"],teleport_duration:11,view_range:4.0f,transformation:{left_rotation:[0.2f,0.3f,0.1f,0.93f],right_rotation:[0f,0f,0f,1f],translation:[-1f,-1f,-1f],scale:[2f,2f,2f]}}
+execute positioned ~ ~24 ~ as @e[type=block_display,tag=ch.titan.slide,distance=..1,limit=1,sort=nearest] unless score @s ch.life matches 1.. run function ch:kit/titan/rock/fall_init

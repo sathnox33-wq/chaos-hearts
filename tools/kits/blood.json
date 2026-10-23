@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "Hurl a spike of blood: 6 damage, a 3 s bleed, and you drink 2 health. At 100 Vitae it becomes a huge piercing Hemorrhage Lance.",
+   "variants": "Level: thrown spike (three with Spike Volley). Up: Crimson Rain, a circle where you look rains spikes three times after a warning. Down: Blood Thorns, a line of thorns bursts from the ground ahead, rooting and bleeding what it skewers."},
+  {"desc": "Pay 2 hearts of your own blood for power.",
+   "variants": "Level: Pact of Power, Strength II for 8 s. Up: Blood Ward, 4 hearts of absorption and everyone who hits you is lashed and bleeds. Down: Sanguine Nova, your heart swells (a ring warns) then bursts for 5 damage and a bleed around you, and you drink from every wound."},
+  {"desc": "Tether an enemy and drink 1.5 health every half second for 4 s. Break line of sight or get 14 blocks away to snap it.",
+   "variants": "Level: the tether (the enemy you look at, or the nearest). Up: Blood Hook, rip the target to you: 4 damage, a bleed and Slowness. Down: Exsanguinate, every enemy bleeding from you within 12 bursts for its remaining bleed at once, and you drink half."},
+  {"desc": "The moon bleeds for 12 s: Strength I, at least 40% lifesteal, and every enemy within 10 bleeds.",
+   "variants": "Level: the moon rises over you and follows you. Up: Crimson Eclipse, the moon stays where you cast it, 14 blocks wide; enemies inside bleed in darkness, and you drink deeply only inside. Down: Moonfall, a shadow marks where you look, the moon crashes there (10 damage, 6 s bleed), then a 6 s Blood Moon rises over you."}
+ ],
+ "p1d": "Heal 10% of the melee damage you deal, swallowed in 2-heart gulps. Healing fills Vitae, the meter under your abilities.",
+ "p2d": "Critical hits make enemies bleed for 4 seconds (1 damage a second).",
+ "awd": "Healing beyond full health becomes absorption (2 hearts)."
+}
