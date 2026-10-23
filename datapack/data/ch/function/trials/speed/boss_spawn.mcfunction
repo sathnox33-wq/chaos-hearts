@@ -1,0 +1,14 @@
+# Vael, the Stolen Second: a gilded vindicator wearing a clock halo, a crown star and a turning rune at its back.
+summon minecraft:vindicator ~ ~ ~8 {Tags:["ch.speed.bnew"],CustomNameVisible:1b,equipment:{mainhand:{id:"minecraft:golden_axe",count:1},head:{id:"minecraft:golden_helmet",count:1},chest:{id:"minecraft:golden_chestplate",count:1},feet:{id:"minecraft:golden_boots",count:1}},drop_chances:{mainhand:0.0f,head:0.0f,chest:0.0f,feet:0.0f},attributes:[{id:"minecraft:max_health",base:360.0},{id:"minecraft:movement_speed",base:0.4},{id:"minecraft:attack_damage",base:9.0},{id:"minecraft:armor",base:6.0},{id:"minecraft:scale",base:1.35},{id:"minecraft:knockback_resistance",base:1.0},{id:"minecraft:follow_range",base:64.0}],Health:360.0f}
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run function ch:api/trial/boss {name:"Vael, the Stolen Second",color:"yellow"}
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run scoreboard players set @s ch.v1 0
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run scoreboard players set @s ch.v2 0
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run scoreboard players set @s ch.v3 0
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run scoreboard players set @s ch.v4 1
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run scoreboard players set @s ch.v5 0
+execute as @e[type=vindicator,tag=ch.speed.bnew,limit=1] run scoreboard players set @s ch.owner 0
+tag @e[type=vindicator,tag=ch.speed.bnew] remove ch.speed.bnew
+summon minecraft:item_display ~ ~3 ~8 {Tags:["ch.tmob","ch.noability","ch.speed.deco","ch.speed.halo"],teleport_duration:2,brightness:{sky:15,block:15},item_display:"none",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[1.6f,1.6f,1.6f]},item:{id:"minecraft:paper",count:1,components:{"minecraft:item_model":"chaoshearts:fx/ring","minecraft:custom_model_data":{colors:[16113986]}}}}
+summon minecraft:item_display ~ ~3.4 ~8 {Tags:["ch.tmob","ch.noability","ch.speed.deco","ch.speed.star"],teleport_duration:2,brightness:{sky:15,block:15},item_display:"none",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,0.7f,0.7f]},item:{id:"minecraft:paper",count:1,components:{"minecraft:item_model":"chaoshearts:fx/star","minecraft:custom_model_data":{colors:[16771466]}}}}
+summon minecraft:item_display ~ ~2 ~8 {Tags:["ch.tmob","ch.noability","ch.speed.deco","ch.speed.rune"],teleport_duration:2,brightness:{sky:15,block:15},item_display:"none",transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[2.4f,2.4f,2.4f]},item:{id:"minecraft:paper",count:1,components:{"minecraft:item_model":"chaoshearts:fx/rune","minecraft:custom_model_data":{colors:[2741234]}}}}
+execute positioned ~ ~ ~8 run function ch:trials/speed/fx/entrance

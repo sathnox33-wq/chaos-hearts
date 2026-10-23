@@ -13,8 +13,8 @@ tag @e[type=#ch:hostile,tag=!ch.noability,distance=..14,sort=nearest,limit=1] ad
 execute unless entity @e[tag=ch.corruption.lt,distance=..14,limit=1] if score #pvp ch.g matches 1 run tag @a[tag=!ch.caster,gamemode=!creative,gamemode=!spectator,distance=..14,sort=nearest,limit=1] add ch.corruption.lt
 execute if entity @e[tag=ch.corruption.lt,distance=..14,limit=1] run function ch:kit/corruption/ling/hunt
 execute unless entity @e[tag=ch.corruption.lt,distance=..14,limit=1] unless entity @a[tag=ch.caster,distance=..4,limit=1] if entity @a[tag=ch.caster,distance=..40,limit=1] facing entity @a[tag=ch.caster,limit=1] feet rotated ~ 0 run function ch:kit/corruption/ling/move
-execute if block ~ ~-0.5 ~ #ch:passable run tp @s ~ ~-0.5 ~
-execute if block ~ ~-0.1 ~ #ch:passable run tp @s ~ ~-0.1 ~
+execute at @s if block ~ ~-0.5 ~ #ch:passable run tp @s ~ ~-0.5 ~
+execute at @s if block ~ ~-0.1 ~ #ch:passable run tp @s ~ ~-0.1 ~
 execute if score #ct ch.tmp matches 0 run particle minecraft:dust{color:[0.482,0.82,0.227],scale:0.9} ~ ~1 ~ 0.25 0.4 0.25 0 2
 tag @e[tag=ch.corruption.lt,distance=..40] remove ch.corruption.lt
 tag @a remove ch.caster

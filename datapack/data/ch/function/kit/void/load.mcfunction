@@ -23,3 +23,8 @@ scoreboard players set #45 ch.void.k 45
 scoreboard players set #90 ch.void.k 90
 scoreboard players set #300 ch.void.k 300
 scoreboard players set #2100 ch.void.k 2100
+scoreboard players set #40 ch.void.k 40
+scoreboard players set #70 ch.void.k 70
+scoreboard players set #100 ch.void.k 100
+scoreboard players set #140 ch.void.k 140
+scoreboard players set #160 ch.void.k 160

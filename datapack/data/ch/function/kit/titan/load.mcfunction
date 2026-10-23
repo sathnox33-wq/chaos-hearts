@@ -25,6 +25,8 @@ scoreboard objectives add ch.titan.bw dummy
 scoreboard objectives add ch.titan.thcd dummy
 scoreboard objectives add ch.titan.cid dummy
 scoreboard objectives add ch.titan.k dummy
+scoreboard objectives add ch.titan.tb1 dummy
+scoreboard objectives add ch.titan.tb2 dummy
 scoreboard players set #3 ch.titan.k 3
 scoreboard players set #5 ch.titan.k 5
 scoreboard players set #6 ch.titan.k 6

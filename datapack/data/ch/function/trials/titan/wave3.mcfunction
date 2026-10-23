@@ -1,0 +1,10 @@
+# Wave 3: the Boulderback ravager, Dust Wraiths and Stonemites.
+execute positioned ~ ~ ~14 summon minecraft:ravager run function ch:trials/titan/mob_ravager
+execute positioned ~13.8 ~ ~5.8 summon minecraft:husk run function ch:trials/titan/mob_wraith
+execute positioned ~-5.8 ~ ~13.8 summon minecraft:husk run function ch:trials/titan/mob_wraith
+execute positioned ~-13.8 ~ ~-5.8 summon minecraft:husk run function ch:trials/titan/mob_wraith
+execute positioned ~5.8 ~ ~-13.8 summon minecraft:husk run function ch:trials/titan/mob_wraith
+execute positioned ~4.5 ~ ~8.9 summon minecraft:silverfish run function ch:trials/titan/mob_mite
+execute positioned ~-8.9 ~ ~4.5 summon minecraft:silverfish run function ch:trials/titan/mob_mite
+execute positioned ~-4.5 ~ ~-8.9 summon minecraft:silverfish run function ch:trials/titan/mob_mite
+execute positioned ~8.9 ~ ~-4.5 summon minecraft:silverfish run function ch:trials/titan/mob_mite

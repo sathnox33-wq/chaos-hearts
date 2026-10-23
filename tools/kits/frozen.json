@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "Fire a shard of ice (5 damage) that chills and stacks Frostbite. Frozen hits fill Frost, the meter under your abilities. At 100 Frost your shard becomes a piercing Glacial Lance (11 damage).",
+   "variants": "Level: a single shard (a fan of shards with Shard Fan). Up: Icicle Rain, icicles fall onto the area you look at after a warning. Down: Frost Step, dash back and leave an ice decoy that explodes."},
+  {"desc": "Raise a wall of solid ice that blocks enemies and projectiles, then melts after 8 s.",
+   "variants": "Level: a wall of ice ahead of you. Up: Glacier Ram, a moving wall that bulldozes forward and slams enemies. Down: Frozen Bastion, a ring of ice pillars around you and Resistance II."},
+  {"desc": "Release a burst of frost that freezes everything around you solid.",
+   "variants": "Level: an instant 6-block nova. Up: leap and crash down in a bigger 8-block nova. Down: Glacial Implosion, a collapsing ring drags enemies in for 1 s, then freezes them solid."},
+  {"desc": "Call a blizzard that slows, chills and freezes enemies while ice spikes erupt beneath them.",
+   "variants": "Level: a 10-block blizzard where you stand. Up: Eye of the Storm, a tighter blizzard that travels with you. Down: Shatterpoint, freeze everything within 12 blocks solid, then shatter them all at once for 12 damage."}
+ ],
+ "p1d": "You never freeze in powder snow, and water freezes into ice beneath your feet.",
+ "p2d": "Melee hits stack Frostbite. At 5 stacks the target freezes solid.",
+ "awd": "Frozen enemies shatter when your abilities hit them and take 40% more damage."
+}

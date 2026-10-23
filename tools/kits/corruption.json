@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "A bolt of rot that bursts into a lingering poison cloud. At 100 Contagion it becomes a Pestilence Bolt (+60% damage, wider cloud, Wither II).",
+   "variants": "Level: a fast bolt that bursts into a plague cloud. Up: a lobbed plague mortar that arcs down into a bigger cloud with a splash of damage. Down: spew a 7-block cone of bile at point-blank range - damage, Poison II and a shove."},
+  {"desc": "Corrupt the earth: everything standing on it withers and slows.",
+   "variants": "Level: rot spreads where you look. Up: the rot blooms around you and follows you, mending you while you stand in it. Down: a sinking mire at your feet; after a 1 s windup grasping roots erupt, rooting and tearing everything on it."},
+  {"desc": "Plant an infection in a target. It bursts after a few seconds with a quickening heartbeat, poisoning everything near.",
+   "variants": "Level: infest the target you look at. Up: infest yourself - a double-size burst you are immune to, Resistance and Speed until it goes off, and healing per victim. Down: a leeching infection tethered to you that drains the host each second; break the 14-block tether and it bursts early."},
+  {"desc": "Spread the plague to everything around you and raise Rotlings that hunt your enemies.",
+   "variants": "Level: Outbreak - every enemy within 15 blocks is infested and Rotlings claw out around you. Up: Plague Storm - a rotting cloud rains telegraphed plague globs on your enemies for 8 s. Down: Mass Grave - after a 1 s windup the dead erupt beneath your enemies, rooting them, and rise as Rotlings."}
+ ],
+ "p1d": "Immune to Poison and Wither. Hits and plague fill the Contagion meter; at 100 your next Plague Bolt is a Pestilence Bolt.",
+ "p2d": "Melee hits poison; the third hit on the same enemy within 5 s makes it Poison II.",
+ "awd": "If an infested target dies before it bursts, the infection leaps to the nearest enemy."
+}
