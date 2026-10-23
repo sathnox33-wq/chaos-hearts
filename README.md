@@ -1,241 +1,175 @@
 # Chaos Hearts
 
-A server-side Fabric mod for **Minecraft Java 1.21.11** that turns an SMP into a fight over ten
-Chaos Hearts. Each heart gives a kit of four abilities and two passives. Players master each heart
-personally from 0 to 100, beat a solo Awakening Trial against a boss, then build a skill tree.
-Hearts change hands only through PvP.
+A **datapack and resource pack** for **Minecraft Java 1.21.11** that turns an SMP into a fight over ten
+Chaos Hearts. No mods, no plugins: it runs on a vanilla server (or Fabric/Paper, since they load datapacks
+too) and players join with a vanilla client.
 
-Players join with an **unmodded vanilla client**. Models, textures, sounds and trial music come from
-a resource pack the server offers on join. A player who declines the pack still plays normally,
-just with vanilla visuals.
+Each heart is a real heart on your health bar, drawn with its own icon. Every heart you hold adds one heart of
+max health and a kit of four abilities. You master each heart from 0 to 100 by fighting well, beat its
+Awakening Trial at an altar, then spend skill points in its tree. Hearts change hands only through PvP.
 
 | | |
 |---|---|
-| Minecraft | 1.21.11 (Java Edition) |
-| Fabric Loader | 0.19.5 or newer |
-| Fabric API | 0.141.6+1.21.11 or newer |
-| Java | 21 |
-| Client mods | none |
+| Minecraft | Java 1.21.11 |
+| Server | vanilla, Fabric or Paper |
+| Client | vanilla, with the resource pack |
 
 ## Install
 
-1. Install a Fabric server for 1.21.11 ([fabricmc.net/use/server](https://fabricmc.net/use/server/)).
-2. Put `chaoshearts-1.0.0.jar` and Fabric API in the server's `mods/` folder.
-3. Start the server once. It creates `config/chaoshearts.json`.
-4. Decide how players get the resource pack (next section), then restart.
-
-The mod adds a `chaoshearts:trials` dimension through its built-in datapack. Keep that datapack
-enabled (it is on by default) or trials won't start.
-
-### Resource pack
-
-The jar already contains the pack. Pick one of these:
-
-* **Built-in hosting (default).** The mod serves the pack over HTTP on `packPort` (25580). Open
-  that TCP port on your firewall or host panel, then set `packPublicUrl` to the address players
-  use, for example `http://play.example.com:25580/pack.zip`.
-* **External hosting.** Upload `chaoshearts-resourcepack.zip` (from the release page) somewhere
-  with a direct download link. Set `packExternalUrl` to that link and `packExternalSha1` to the
-  contents of `chaoshearts-resourcepack.zip.sha1`. This works on hosts that won't open an extra
-  port.
-
-`packRequired: true` kicks players who decline the pack. It's off by default.
+1. Download `chaoshearts-datapack.zip` and `chaoshearts-resourcepack.zip` from the release page.
+2. Put `chaoshearts-datapack.zip` in `world/datapacks/` (singleplayer: the world's `datapacks` folder).
+3. Host `chaoshearts-resourcepack.zip` anywhere with a direct download link (GitHub release links work), then in
+   `server.properties` set:
+   ```
+   resource-pack=<direct link to chaoshearts-resourcepack.zip>
+   resource-pack-sha1=<contents of chaoshearts-resourcepack.zip.sha1>
+   require-resource-pack=true
+   ```
+4. **Restart the server.** The pack adds the `ch:trials` dimension, and new dimensions only load on startup;
+   `/reload` is not enough the first time.
+5. As an op, stand where you want the trial altar and run `/function ch:admin/altar/place`.
 
 ## Playing
 
-On first join, each player gets one random heart and a **Focus**, the amulet they cast with.
+New players get one random heart. Your hearts show on the second row of the health bar, each with its own icon.
+The **active** heart is the one whose abilities you cast; its icon glows. The action bar shows your four
+abilities with their cooldowns, and the resource meter of the active heart (Fury, Momentum, Static and so on).
 
-### Controls (hold the Focus in your main hand)
+### Controls
 
-| Input | Ability |
+All casting is done with movement keys **while sneaking**. Tap the key (do not hold it).
+
+| Keys | Action |
 |---|---|
-| Right-click | Ability 1 |
-| Sneak + right-click | Ability 2 |
-| Swap-hands key (F) | Ability 3 |
-| Sneak + swap-hands key | Ultimate |
+| Sneak + Jump | Ability 1 |
+| Sneak + Sprint | Ability 2 |
+| Sneak + double-tap Left (A) | Ability 3 |
+| Sneak + double-tap Right (D) | Ultimate |
+| Sneak + Back (S) | Shuffle to your next heart |
 
-`/chaos cast <1-4>` casts the same abilities from a command, so players can bind them to keys
-with a macro or command-block setup if they prefer.
+**Variants:** every ability has three forms. Cast it looking level, looking up, or looking down. Many abilities
+also change when you cast them while moving forward. The menu describes each variant.
 
-The action bar shows cooldowns. A chime plays when an ability is ready. A landed hit shows
-`✦ HIT` with a sound and particles on the target.
+`/trigger hearts` opens the Chaos Hearts menu: your hearts, abilities and variants, feats, skill trees and
+controls. `/trigger cast set 1`..`4` casts and `/trigger cast set 5` shuffles, for anyone who prefers binding commands.
 
-### Player commands
+### The hearts
 
-| Command | What it does |
-|---|---|
-| `/hearts` | Opens the heart menu: your hearts, active heart, mastery, abilities, trial and tree |
-| `/hearts list` | Lists your hearts and mastery |
-| `/hearts equip <heart>` | Makes one of your hearts the active one (30 s cooldown, not in combat) |
-| `/hearts focus` | Gives you a new Focus if you lost yours |
-| `/hearts info <heart>` | Shows a heart's abilities and passives |
-| `/hearts feats [heart]` | Lists the one-time feats that grant mastery |
-| `/hearts trial` | Starts your active heart's Awakening Trial (needs mastery 100) |
-| `/hearts trial leave` | Gives up the current trial |
-| `/hearts tree [heart]` | Opens an awakened heart's skill tree |
+| Heart | Abilities (1 · 2 · 3 · Ultimate) | Trial boss |
+|---|---|---|
+| Rage | Rage Leap · War Cry · Berserk Chain · Rampage | Gorrath, the Unbroken |
+| Speed | Dash · Afterimage · Slipstream · Time Fracture | Vael, the Stolen Second |
+| Infernal | Fireball Volley · Flame Wall · Magma Eruption · Inferno Avatar | Ignaroth, Lord of Cinders |
+| Void | Void Step · Rift Orb · Displace · Singularity | The Hollow Sovereign |
+| Frozen | Ice Shard · Glacial Wall · Frost Nova · Absolute Zero | Hrimvald, the Last Winter |
+| Storm | Lightning Strike · Gale Burst · Chain Lightning · Tempest | Voltaris, Crown of the Tempest |
+| Blood | Blood Spike · Crimson Pact · Siphon · Blood Moon | Vesperine, the Crimson Matriarch |
+| Titan | Ground Slam · Stone Skin · Boulder Toss · Colossus | Golgoth, the Mountain That Walks |
+| Celestial | Starfall · Sanctuary · Radiant Beam · Ascension | Astrael, the Fallen Star |
+| Corruption | Plague Bolt · Rot Ground · Infest · Pandemic | Nyxara, the Blightmother |
 
-### Hearts and PvP
+Every heart also has two passives, an aura while active, and a stronger form once awakened.
 
-* A player can own several hearts. Only the **active** one gives abilities and earns mastery.
-* When a player kills another player, the victim's **most recently acquired** heart drops as an
-  item that only the killer can pick up. The killer has 5 minutes to collect it. After that it
-  goes back to the victim. Deaths from anything other than a player drop nothing.
-* Logging out during combat counts as losing the fight (`combatLogAction`).
-* Hearts can't be put in hoppers, chests, item frames, ender chests or bundles. They can't be
-  duplicated or destroyed. Every heart has an ID in a server registry that admins can inspect.
+### PvP and drops
+
+When a player kills you, only your **most recently gained** heart drops, as a glowing heart where you died.
+Only the killer can pick it up, by walking over it, for `#collect_sec` seconds. After that it returns to you.
+Your other hearts stay. Logging out during combat counts as a death to your opponent. Every heart has an id
+in a server-wide registry, so a heart can never exist twice.
 
 ### Mastery
 
-Mastery belongs to the **player**, not the heart. If someone takes your Speed Heart, they use
-their own Speed mastery. If you win it back, your progress is where you left it.
+Mastery goes from 0 to 100 per heart, per player. It rewards fighting, not grinding:
 
-Mastery comes from landing abilities on players and hostile mobs, from PvP kills and boss kills,
-and from feats. It doesn't come from casting into the air. Repeatedly hitting the same target pays
-less and less, and there is a daily soft cap. The full table is in [DESIGN.md](DESIGN.md#3-individual-mastery).
-
-Abilities unlock at mastery 0, 10, 40 and 75. Mastery 60 cuts cooldowns and raises damage.
-Mastery 100 unlocks the Awakening Trial.
+* XP comes from ability hits and kills on players and hostile mobs, PvP kills and boss kills.
+* Hitting the same target again gives less and less XP, and a daily soft cap slows XP after `#daily_cap`.
+* Feats (four per heart, such as hitting three enemies with one Rage Leap) give large one-time XP.
+* Ability 2 unlocks at mastery 10, ability 3 at 40 and the ultimate at 75. At 60 your abilities hit 10% harder.
 
 ### Awakening Trials
 
-Each heart has its own solo trial. You're taken to a private arena that is built just for your run
-in the trials dimension. The trial runs in this order:
-
-1. An intro cinematic with the theme music.
-2. Two waves of themed enemies.
-3. A boss fight with four phases, telegraphed attacks and a boss bar.
-
-You can't die in a trial. Losing ends the run and sends you back where you started, with full
-health and all your items. If you fail, you can try again after 10 minutes. Winning **awakens**
-the heart: you get the awakened Focus, the awakened passive and 3 skill points.
-
-| Heart | Boss | Signature mechanic |
-|---|---|---|
-| Rage | Gorrath, the Unbroken | Charges that follow a red lane, a roaring shockwave, magma meteors |
-| Speed | Vael, the Stolen Second | Blink strikes, afterimages that detonate, slowing clock fields |
-| Infernal | Ignaroth, Lord of Cinders | Meteor rain, flame waves you jump over, homing fire charges |
-| Void | The Hollow Sovereign | Pulling rifts, shadow steps, an event horizon that drags you in |
-| Frozen | Hrimvald, the Last Winter | Ice spike lines, a blizzard that freezes you if you stand still, ice prisons |
-| Storm | Voltaris, Crown of the Tempest | Called lightning, chain bolts that need line of sight, a tempest |
-| Blood | Vesperine, the Crimson Matriarch | A draining tether, dripstone spike fans, crimson rain that heals her |
-| Titan | Golgoth, the Mountain That Walks | Earthshatter lines, thrown boulders, stone skin, an avalanche |
-| Celestial | Astrael, the Fallen Star | Starfall, a radiant beam, a shield you break by hitting it, a supernova you hide from behind pillars |
-| Corruption | Nyxara, the Blightmother | Plague pools, web snares, broods, a rot circle that spreads from the centre |
+At mastery 100, go to the **Awakening Altar** and right-click its crystal. The altar is made of barrier blocks
+under its decoration, so nobody can break or blow it up. The trial is solo and takes you to an arena in the
+trial dimension: an intro, three waves, then the heart's boss with three phases. You hold a **Trial Ward**
+in your off hand; if it pops, you fail and return home unharmed. Win and the heart awakens: stronger
+abilities and passives, plus skill points. Failing locks the trial for `#trial_retry_min` minutes.
 
 ### Skill trees
 
-An awakened heart keeps earning XP, and every 1,000 XP gives another skill point, up to 15. Each
-tree has three branches and one capstone per branch, and you can own only one capstone. The first
-respec is free. After that, a respec costs 20 levels and has a 24-hour cooldown.
+Each heart has three branches of five nodes. Points come from awakening and from mastery XP earned after level 100.
+Only one capstone per heart. The first respec is free; later ones cost `#respec_lvls` XP levels.
 
-## Admin commands
+## Admin
 
-All admin commands need permission level 2 (op).
-
-### `/chaosadmin`
+Run `/function ch:admin/help` for the full list. The main ones:
 
 | Command | What it does |
 |---|---|
-| `give <player> <heart> [force]` | Creates a heart for a player. Adding the word `force` ignores unique-heart and max-heart limits |
-| `take <player> <heart>` | Removes a heart from a player and destroys it. Mastery is kept |
-| `transfer <from> <heart> <to>` | Moves a heart between players |
-| `registry` | Lists every heart on the server and where it is |
-| `destroy <id prefix>` | Destroys one heart by registry ID |
-| `returnall` | Sends every dropped, uncollected heart back to its previous owner |
-| `mastery <player> <heart> set <level>` | Sets mastery |
-| `mastery <player> <heart> add <xp>` | Adds mastery XP |
-| `awaken <player> <heart> [revoke]` | Awakens a heart for a player, or revokes it |
-| `points <player> <heart> <bonus>` | Gives bonus skill points |
-| `respec <player> <heart>` | Resets a skill tree for free |
-| `cooldowns <players>` | Clears ability cooldowns |
-| `trial start <player> <heart>` | Starts a trial and skips the normal requirements |
-| `trial stop <player>` / `trial win <player>` / `trial list` | Manages running trials |
-| `inspect <player>` | Shows a player's full record |
-| `reset <player> confirm` | Wipes a player's hearts and progress |
-| `reload` | Reloads `config/chaoshearts.json` |
-| `save` | Saves data now |
+| `/function ch:admin/panel` | Admin panel dialog |
+| `/function ch:admin/give {player:"Name",heart:"rage"}` | Give a heart |
+| `/function ch:admin/take {player:"Name",heart:"rage"}` | Take a heart |
+| `/function ch:admin/mastery {player:"Name",heart:"rage",level:100}` | Set mastery |
+| `/function ch:admin/awaken {player:"Name",heart:"rage"}` | Awaken a heart |
+| `/function ch:admin/altar/place` · `remove` | Build or remove an altar |
+| `/function ch:admin/list` | Every heart on the server and who holds it |
 
 ### The Eye
 
-`/eye` turns an admin into **The Eye**: a giant eye floating in a shroud of darkness. Your body
-and armour are hidden. You can fly and can't be hurt. Players within 20 blocks are touched by
-darkness. Everything you type in chat is spoken as the Eye and shown in a bubble above it.
+`/function ch:eye/on` turns you into **the Eye**: a giant eye that flies, watches players and speaks.
+Your inventory, health and position are saved and restored by `/function ch:eye/off`. `/function ch:eye/panel`
+opens its powers: speak to everyone, whisper, gaze at a player, give a heart or take one with a beam.
 
-| Command | What it does |
-|---|---|
-| `/eye` | Turns the form on or off |
-| `/eye on [scale]` / `/eye off` | Turns the form on at a size (1–12, default 4), or off |
-| `/eye size <scale>` | Resizes the Eye |
-| `/eye say <message>` | Speaks to everyone |
-| `/eye whisper <player> <message>` | Speaks only to one player |
-| `/eye proclaim <message>` | Shows a title on every player's screen |
-| `/eye gaze <player>` | Stares at a player, who sees darkness, glows and hears a heartbeat |
-| `/eye give <player> <heart>` | Sends a heart down a beam to the player |
-| `/eye take <player> [heart]` | Lifts the player up and pulls a heart into the Eye (the latest heart if none is named). Their mastery is kept |
-| `/eye hearts <player>` | Lists a player's hearts |
+## Settings
 
-The form ends safely if you disconnect, and anything left over is cleaned up on the next join or
-server restart.
+Settings are scoreboard values on `ch.cfg`. Change one with `/scoreboard players set <name> ch.cfg <value>`;
+changes survive reloads. `/function ch:gen/config_reset` restores the defaults.
 
-## Configuration
-
-`config/chaoshearts.json` is created on first start. Edit it, then run `/chaosadmin reload`.
-
-| Key | Default | Meaning |
+| Setting | Default | Meaning |
 |---|---|---|
-| `starterMode` | `random` | `random` gives each new player one heart, `none` gives nothing |
-| `uniqueHearts` | `false` | Allows only one heart of each type on the server |
-| `maxHeartsPerPlayer` | `0` | Caps how many hearts one player can own (0 = no cap) |
-| `collectWindowSeconds` | `300` | How long a killer has to pick up a dropped heart |
-| `combatTagSeconds` | `15` | How long combat lasts after PvP damage |
-| `combatLogAction` | `drop_heart` | What logging out in combat does: `drop_heart`, `kill` or `off` |
-| `heartSwapCooldownSeconds` | `30` | Cooldown on changing the active heart |
-| `masteryXpMultiplier` | `1.0` | Multiplies all mastery XP |
-| `dailySoftCap` / `softCapMultiplier` | `2500` / `0.25` | XP above the daily cap is multiplied by this |
-| `xpAbilityHitPlayer`, `xpAbilityHitMob`, `xpAbilityKillMob`, `xpPvpKill`, `xpBossKill` | 15, 5, 8, 150, 400 | XP sources |
-| `pvpKillRepeatMinutes` | `30` | A repeat kill on the same victim within this time gives no XP |
-| `pvpDamageMultiplier` | `0.75` | Ability damage against players |
-| `pvpCrowdControlMultiplier` | `0.5` | Duration of crowd control on players |
-| `crowdControlImmunitySeconds` | `3` | Immunity after being crowd-controlled |
-| `abilityDamageMultiplier` / `cooldownMultiplier` | `1.0` / `1.0` | Global tuning |
-| `maxSkillDamageBonus` | `0.40` | Cap on damage from skill trees |
-| `skillPointsOnAwaken`, `ascensionXpPerPoint`, `maxSkillPoints` | 3, 1000, 15 | Skill points |
-| `respecCostLevels` / `respecCooldownHours` | `20` / `24` | Respec rules |
-| `trialRetryCooldownMinutes` | `10` | Wait after failing a trial |
-| `trialDifficulty` | `1.0` | Scales trial mob health and damage |
-| `trialTimeLimitMinutes` | `15` | Trial time limit |
-| `trialBuildBlocksPerTick` | `6000` | Arena build speed. Lower it on weak hardware |
-| `packServeBuiltin`, `packPort`, `packPublicUrl` | `true`, `25580`, empty | Built-in pack hosting |
-| `packExternalUrl`, `packExternalSha1` | empty | External pack hosting |
-| `packRequired` | `false` | Kicks players who decline the pack |
-| `eyeDefaultScale`, `eyeFlySpeed`, `eyeShroudRadius` | `4.0`, `0.08`, `20` | The Eye |
+| `#starter` | 1 | 1 gives each new player a random heart, 0 gives nothing |
+| `#unique` | 0 | 1 allows only one heart of each type on the server |
+| `#max_hearts` | 0 | Most hearts one player can own (0 = no limit) |
+| `#collect_sec` | 300 | Seconds a killer has to collect a dropped heart |
+| `#combat_sec` | 15 | Seconds of combat tag after PvP damage |
+| `#combat_log` | 1 | 1 makes logging out in combat drop your latest heart for your opponent |
+| `#swap_sec` | 2 | Cooldown in seconds on shuffling the active heart |
+| `#xp_pct` | 100 | Mastery XP multiplier in percent |
+| `#daily_cap` | 2500 | Daily mastery XP before the soft cap applies |
+| `#cap_pct` | 25 | Percent of XP still earned above the daily cap |
+| `#xp_hit_player` | 15 | XP for an ability hit on a player |
+| `#xp_hit_mob` | 5 | XP for an ability hit on a hostile mob |
+| `#xp_kill_mob` | 8 | XP for an ability kill on a hostile mob |
+| `#xp_pvp_kill` | 150 | XP for a PvP kill with the heart active |
+| `#xp_boss` | 400 | XP for killing a Wither, Warden, Elder Guardian or Ender Dragon |
+| `#pvp_pct` | 75 | Ability damage against players in percent |
+| `#cc_pct` | 50 | Crowd-control duration on players in percent |
+| `#dmg_pct` | 100 | Global ability damage in percent |
+| `#cd_pct` | 100 | Global ability cooldowns in percent |
+| `#awaken_pts` | 3 | Skill points granted on awakening |
+| `#asc_per_pt` | 1000 | Ascension XP per extra skill point |
+| `#max_pts` | 15 | Most skill points per heart |
+| `#respec_lvls` | 20 | XP levels a respec costs after the free one |
+| `#trial_retry_min` | 10 | Minutes to wait after failing a trial |
+| `#trial_pct` | 100 | Trial mob health and damage in percent |
+| `#trial_min` | 15 | Trial time limit in minutes |
+
+`gamerule pvp false` turns off ability damage between players too.
 
 ## Data and safety
 
-* All progress is stored in `<world>/chaoshearts/data.json`. The file is written atomically, a
-  backup is kept, and it is saved on every heart transfer, every two minutes and on shutdown.
-* If the server stops during a trial, the player is returned to their saved position and game
-  mode on their next join. The arena is cleared.
-* The `chaoshearts.trial` entity tag marks trial mobs. Anything that wanders into a trial arena
-  is removed, and trial mobs can't hurt anyone except the challenger.
+Everything is stored in the world (scoreboards and storage `ch:*`), so it survives restarts and backups.
+Hearts are tracked by id: a drop, a pickup and a combat-log drop all move the same heart, and admin tools
+are the only way to create one.
 
 ## Building from source
 
 ```
-./gradlew build
+python3 tools/build_datapack.py      # generates datapack/data/ch/function/gen from tools/hearts.json and tools/kits
+python3 tools/lint_datapack.py       # static checks
+python3 tools/gen_assets.py          # regenerates the resource pack (needs numpy, Pillow, ffmpeg)
+python3 tools/check_resourcepack.py
 ```
 
-The jar is written to `build/libs/chaoshearts-<version>.jar` and the pack to
-`build/resourcepack/chaoshearts-resourcepack.zip`. GitHub Actions builds every push, boots a real
-1.21.11 server with the jar and runs the admin commands against it. Pushing a `v*` tag publishes
-a release.
-
-All textures, models, sounds and music are generated by `tools/gen_assets.py` (needs numpy,
-Pillow and ffmpeg with libvorbis). To regenerate them:
-
-```
-python3 tools/gen_assets.py
-```
-
-[DESIGN.md](DESIGN.md) has the full design: the numbers behind every system, the anti-duplication
-rules, and the per-heart ability tables.
+CI (`.github/workflows/build.yml`) builds both zips, boots a vanilla 1.21.11 server with them, and runs a
+two-player bot scenario covering hotkeys, every ability variant, PvP drops, all ten trials, menus, the Eye and a restart.
+`docs/DATAPACK_SPEC.md` is the contract for writing kits and trials.
