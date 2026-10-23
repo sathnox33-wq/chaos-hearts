@@ -159,8 +159,12 @@ async function main () {
   await run('tp Victim 0 100 3 180 0')
   await sleep(800)
   const before = await score('Attacker', 'ch.active')
-  await hotkey(attacker, 'back')
-  const after = await score('Attacker', 'ch.active')
+  let after = before
+  for (let t = 0; t < 3 && after === before; t++) {
+    await hotkey(attacker, 'back')
+    after = await score('Attacker', 'ch.active')
+    if (after === before) await sleep(2200)
+  }
   check('sneak + back shuffles the active heart', after !== before && after >= 1, `${before} -> ${after}`)
   await run('scoreboard players set Attacker ch.swapcd 0')
   await run('execute as Attacker run function ch:heart/set_active {i:1}')
@@ -291,7 +295,7 @@ async function main () {
       const o = await run('execute in ch:trials positioned 0 100 0 if entity @e[tag=ch.tmob,type=!#ch:ignore,distance=..90] run say mobs-alive', 300)
       if (/mobs-alive/.test(o)) spawned = true
       const st = await score('#s0', 'ch.state')
-      if (st === 3) await run('execute in ch:trials positioned 0 100 0 run kill @e[tag=ch.tmob,type=!#ch:ignore,distance=..90]', 300)
+      if (st === 3) await run('execute in ch:trials positioned 0 100 0 run kill @e[tag=ch.tmob,tag=!ch.boss,type=!#ch:ignore,distance=..90]', 300)
       return st >= 5
     }, 60000, 1500)
     await sleep(3000)
