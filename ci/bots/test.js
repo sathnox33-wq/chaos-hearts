@@ -87,17 +87,25 @@ function fetch (url) {
 }
 
 // Holds sneak and taps a key for two ticks, the way a player triggers a Chaos Hearts hotkey.
+// mineflayer only sends the sneak flag of the player_input packet, so the test sends the whole input state itself.
+function input (bot, flags) {
+  const inputs = { forward: false, backward: false, left: false, right: false, jump: false, shift: false, sprint: false }
+  bot._client.write('player_input', { inputs: Object.assign(inputs, flags) })
+}
+
+const KEY = { back: 'backward', left: 'left', right: 'right', jump: 'jump', sprint: 'sprint', forward: 'forward' }
+
 async function hotkey (bot, key, times = 1) {
-  bot.setControlState('sneak', true)
+  input(bot, { shift: true })
   await sleep(150)
   for (let n = 0; n < times; n++) {
-    bot.setControlState(key, true)
+    input(bot, { shift: true, [KEY[key]]: true })
     await sleep(110)
-    bot.setControlState(key, false)
+    input(bot, { shift: true })
     await sleep(120)
   }
   await sleep(150)
-  bot.setControlState('sneak', false)
+  input(bot, {})
   await sleep(200)
 }
 
@@ -122,8 +130,8 @@ async function main () {
   const aActive = await score('Attacker', 'ch.active')
   const vActive = await score('Victim', 'ch.active')
   check('each new player starts with a random Chaos Heart', aActive >= 1 && vActive >= 1, `attacker ${aActive}, victim ${vActive}`)
-  let out = await run('attribute Attacker minecraft:max_health get')
-  check('a held Chaos Heart adds a heart of max health', /is 22(\.0)?/.test(out), out)
+  let out = await run('attribute Attacker minecraft:max_health modifier value get ch:hearts')
+  check('a held Chaos Heart adds a heart of max health', /is 2(\.0)?\b/.test(out), out)
   check('there is no Focus item', attacker.inventory.items().length === 0, attacker.inventory.items().map(i => i.name))
 
   const offer = victim.packOffers[0]
@@ -140,8 +148,8 @@ async function main () {
   await run('function ch:admin/mastery {player:"Attacker",heart:"rage",level:100}')
   check('admin can give hearts', (await score('Attacker', 'ch.cnt.rage')) >= 1 && (await score('Victim', 'ch.cnt.storm')) >= 1)
   check('admin can set mastery', (await score('Attacker', 'ch.lvl.rage')) === 100, await score('Attacker', 'ch.lvl.rage'))
-  out = await run('attribute Attacker minecraft:max_health get')
-  check('max health follows the hearts held', /is 24(\.0)?/.test(out) || aActive === 1, out)
+  out = await run('attribute Attacker minecraft:max_health modifier value get ch:hearts')
+  check('max health follows the hearts held', /is 4(\.0)?\b/.test(out) || aActive === 1, out)
 
   // ---- hotkeys: shuffle, then cast with sneak + jump
   await run('execute as Attacker run function ch:heart/set_active {i:1}')

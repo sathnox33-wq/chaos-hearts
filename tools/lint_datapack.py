@@ -222,6 +222,10 @@ def check_command(p, ln, toks, funcs, tags, objectives):
         pid = strip_ns(re.split(r"[{\[]", toks[1])[0])
         if pid not in PARTICLES:
             err(p, ln, f"unknown particle {toks[1]}")
+    if cmd == "particle" and len(toks) > 8 and "$(" not in toks[8] and toks[8].startswith("-"):
+        err(p, ln, "particle speed must not be negative")
+    if cmd == "particle" and len(toks) > 9 and "$(" not in toks[9] and toks[9].startswith("-"):
+        err(p, ln, "particle count must not be negative")
     if cmd == "effect" and len(toks) > 3 and toks[1] == "give" and EFFECTS and "$(" not in toks[3]:
         if strip_ns(toks[3]) not in EFFECTS:
             err(p, ln, f"unknown effect {toks[3]}")
