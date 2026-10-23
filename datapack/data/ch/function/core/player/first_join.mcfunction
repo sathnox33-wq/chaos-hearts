@@ -5,7 +5,6 @@ scoreboard players operation @s ch.pid = #pid ch.g
 scoreboard players set @s ch.active 0
 scoreboard players set @s ch.leave 0
 scoreboard players set @s ch.deaths 0
-scoreboard players set @s ch.use 0
 scoreboard players set @s ch.trial 0
 scoreboard players set @s ch.eye 0
 scoreboard players set @s ch.ctag 0

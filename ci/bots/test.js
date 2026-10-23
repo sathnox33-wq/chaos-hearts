@@ -211,6 +211,11 @@ async function main () {
   await run('execute as Attacker run function ch:heart/set_active {i:1}')
 
   // ---- PvP kill: only the latest heart drops, only the killer can collect it
+  // let lingering abilities from the cast checks run out first, so nothing else kills the victim
+  await run('tp Victim 0 100 -40')
+  await run('kill @e[type=!player,type=!marker,type=!item_display,type=!block_display,type=!text_display,type=!interaction]')
+  await sleep(8000)
+  await run('effect give Victim minecraft:instant_health 1 10')
   await run('function ch:admin/give {player:"Victim",heart:"titan"}')
   await run('tp Attacker 0 100 40')
   await run('tp Victim 0 100 0')
@@ -277,6 +282,9 @@ async function main () {
     attacker.chat('/trigger chmenu set 900')
     await sleep(1000)
     const started = await waitFor(async () => (await score('Attacker', 'ch.trial')) >= 1, 6000)
+    // the bot cannot dodge, so it fights with heavy protection: this checks the trial's flow, not its difficulty
+    for (const e of ['resistance 9999 4', 'fire_resistance 9999 0', 'regeneration 9999 4', 'saturation 9999 0']) await run(`effect give Attacker minecraft:${e} true`, 60)
+    attacker.titles.length = 0
     const waves = await waitFor(async () => (await score('#s0', 'ch.state')) >= 3, 40000, 1500)
     let spawned = false
     const boss = await waitFor(async () => {
@@ -293,7 +301,7 @@ async function main () {
     const awake = await waitFor(async () => (await score('Attacker', `ch.awk.${h}`)) === 1, 8000)
     const home = await waitFor(async () => (await score('Attacker', 'ch.trial')) === 0, 15000)
     check(`the ${h} trial runs: waves, boss, awakening`, started && waves && spawned && boss && bossAlive && awake && home,
-      { started, waves, spawned, boss, bossAlive, awake, home })
+      { started, waves, spawned, boss, bossAlive, awake, home, titles: attacker.titles.slice(-6) })
     if (!home) { await run('function ch:trial/cleanup {s:0}'); await run('scoreboard players set Attacker ch.trial 0') }
   }
 
@@ -331,16 +339,17 @@ async function main () {
 
   // ---- combat logging drops the latest heart for the opponent
   await run('function ch:admin/give {player:"Victim",heart:"celestial"}')
-  await run('tp Victim 0 100 0')
-  await run('tp Attacker 0 100 3')
+  await run('tp Victim 0 100 -10')
+  await run('tp Attacker 0 100 -7')
   await sleep(800)
   await run('damage Victim 2 minecraft:player_attack by Attacker', 800)
+  const tagInfo = `victim ctag ${await score('Victim', 'ch.ctag')} opp ${await score('Victim', 'ch.opp')} attacker ctag ${await score('Attacker', 'ch.ctag')}`
   victim.quit()
   await sleep(2500)
   const victim2 = await join('Victim')
   await sleep(3000)
   reg = await registry()
-  check('logging out in combat drops the latest heart', reg.some(r => r.type === 'celestial' && r.state === 'dropped' && r.collector === attackerPid), reg)
+  check('logging out in combat drops the latest heart', reg.some(r => r.type === 'celestial' && r.state === 'dropped' && r.collector === attackerPid), `${tagInfo} seen ${await score('Victim', 'ch.seen')} ${JSON.stringify(reg.slice(-3))}`)
   victim2.quit()
   await run('save-all', 1500)
   attacker.quit()
