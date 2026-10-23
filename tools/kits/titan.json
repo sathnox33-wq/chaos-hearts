@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "Slam the earth and send a fault line ripping forward: slabs erupt along it, damaging and launching what they hit. Hits build Tremor; at full Tremor your next slam is a Cataclysm.",
+   "variants": "Level: a fault line tears 12 blocks ahead (three lines with Tectonic). Up: Skybreaker, leap high, a ring marks your landing, then dive and crater the ground around you. Down: Epicenter, three expanding shockwave rings burst out from where you stand."},
+  {"desc": "Turn your skin to stone: Resistance II and immunity to knockback for 5 s, with stone shards orbiting you.",
+   "variants": "Level: Stone Skin (it slows you unless you have Unshakable). Up: Obsidian Shell, Resistance IV but rooted for 2.5 s, then the shell bursts outward harder the more damage it absorbed. Down: Rockbind, stone hands burst from the ground and stun every enemy within 6 blocks."},
+  {"desc": "Tear a boulder out of the ground, lift it overhead and hurl it in an arc: 8 damage in a blast where it lands.",
+   "variants": "Level: one arcing boulder (three with World Breaker). Up: Meteor Lob, a warning marks the nearest enemy's spot, then a boulder drops from the sky onto it. Down: Shrapnel, the boulder bursts in your hands into a fan of stone shards ahead."},
+  {"desc": "Grow to giant size for 12 s: more health and reach, and every melee blow sends a shockwave.",
+   "variants": "Level: you swell over a second into a Colossus. Up: Titanfall, leap and crash down, then rise as a Colossus. Down: Bastion, root yourself as a bigger fortress with 10 extra hearts, the ground quaking around you every 1.5 s."}
+ ],
+ "p1d": "+2 hearts of maximum health and 30% knockback resistance. Taking and dealing hits builds Tremor, the meter under your abilities.",
+ "p2d": "Below half health your stone hardens: +4 armor and +2 armor toughness.",
+ "awd": "+1 more heart, a stone crown, and Colossus grows you to twice your size."
+}

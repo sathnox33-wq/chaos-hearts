@@ -1,0 +1,15 @@
+{
+ "abilities": [
+  {"desc": "A sigil marks your target, then a star falls from the sky onto it and explodes. Starlight fills over time, faster under the night sky; at full Starlight your next Starfall or Beam is Exalted.",
+   "variants": "Level: one star where you look (with two smaller ones on Meteor Shower). Up: Starstorm, six stars rain in a ring around the nearest enemy. Down: Nova Star, a star crashes onto you, blasting enemies away and shielding you with absorption."},
+  {"desc": "Consecrate the ground: allies inside heal and enemies inside are weakened.",
+   "variants": "Level: a glowing circle at your feet. Up: Aegis, a dome of light that heals you and throws enemies out of it. Down: Judgement, holy ground that burns enemies every second and detonates when it ends."},
+  {"desc": "Gather light, then fire a lance that pierces everything in a 28-block line.",
+   "variants": "Level: one beam (it splits in three with Prism). Up: Dawnbreaker, channel a sweeping beam for 2.5 s that you aim as you move. Down: Prism Nova, guide lines flash, then eight beams fire out around you."},
+  {"desc": "Rise into the air, shielded by light (Resistance III), as stars rain on your foes for 8 s. Light wings spread behind you.",
+   "variants": "Level: hover while stars strike enemies near you. Up: Zenith, the stars fall wherever you look. Down: Avatar, stay grounded and heal as rings of six stars fall around you."}
+ ],
+ "p1d": "Permanent Night Vision. Regeneration I while standing in sunlight under the open sky.",
+ "p2d": "Your abilities deal +25% damage to undead and your strikes set them alight. Every 4 seconds nearby teammates are healed.",
+ "awd": "A halo crowns you, and Ascension ends in a blinding supernova."
+}
