@@ -1,0 +1,21 @@
+# Rings every 2 blocks along a line 4 blocks forward, facing it (local).
+$particle $(p) ^0 ^0.55 ^2 0 0 0 0 1
+$particle $(p) ^0.32 ^0.44 ^2 0 0 0 0 1
+$particle $(p) ^0.52 ^0.17 ^2 0 0 0 0 1
+$particle $(p) ^0.52 ^-0.17 ^2 0 0 0 0 1
+$particle $(p) ^0.32 ^-0.44 ^2 0 0 0 0 1
+$particle $(p) ^0 ^-0.55 ^2 0 0 0 0 1
+$particle $(p) ^-0.32 ^-0.44 ^2 0 0 0 0 1
+$particle $(p) ^-0.52 ^-0.17 ^2 0 0 0 0 1
+$particle $(p) ^-0.52 ^0.17 ^2 0 0 0 0 1
+$particle $(p) ^-0.32 ^0.44 ^2 0 0 0 0 1
+$particle $(p) ^0 ^0.55 ^4 0 0 0 0 1
+$particle $(p) ^0.32 ^0.44 ^4 0 0 0 0 1
+$particle $(p) ^0.52 ^0.17 ^4 0 0 0 0 1
+$particle $(p) ^0.52 ^-0.17 ^4 0 0 0 0 1
+$particle $(p) ^0.32 ^-0.44 ^4 0 0 0 0 1
+$particle $(p) ^0 ^-0.55 ^4 0 0 0 0 1
+$particle $(p) ^-0.32 ^-0.44 ^4 0 0 0 0 1
+$particle $(p) ^-0.52 ^-0.17 ^4 0 0 0 0 1
+$particle $(p) ^-0.52 ^0.17 ^4 0 0 0 0 1
+$particle $(p) ^-0.32 ^0.44 ^4 0 0 0 0 1

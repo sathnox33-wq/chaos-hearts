@@ -59,6 +59,11 @@ scoreboard objectives add ch.v6 dummy
 scoreboard objectives add ch.tmp dummy
 scoreboard objectives add ch.g dummy
 scoreboard objectives add ch.cfg dummy
+scoreboard objectives add ch.mbx dummy
+scoreboard objectives add ch.mbl dummy
+scoreboard objectives add ch.mba dummy
+scoreboard objectives add ch.mbg dummy
+scoreboard objectives add ch.mbf dummy
 scoreboard objectives add ch.own.rage dummy
 scoreboard objectives add ch.cnt.rage dummy
 scoreboard objectives add ch.xp.rage dummy

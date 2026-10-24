@@ -3,3 +3,4 @@
 # of its life. Callers usually use the wrappers (wave, slash, pillar, beam, orb).
 $data modify storage ch:tmp fxa set value {model:"$(model)",color:$(color),s0:$(s0),s1:$(s1),t:$(t),life:$(life),spin:$(spin),dy:$(dy),roll:0}
 function ch:api/fx/sprite_go with storage ch:tmp fxa
+$function ch:vfx/up/sprite {model:"$(model)",color:$(color),s1:$(s1)}

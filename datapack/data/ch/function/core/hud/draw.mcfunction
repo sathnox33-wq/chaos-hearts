@@ -3,6 +3,7 @@
 #  - an icon for every Chaos Heart drawn exactly over the extra hearts it adds to the health bar (second row)
 #  - the active heart's four ability icons above the hotbar, with lock, cooldown sweep and seconds
 #  - the heart's resource meter under them
+#  - the mastery dock right of the hotbar
 scoreboard players set @s ch.hud 0
 execute if score @s ch.eye matches 1.. run return 0
 function ch:gen/count
@@ -31,6 +32,7 @@ scoreboard players set #k ch.tmp 0
 function ch:gen/hud_hearts
 execute if score @s ch.active matches 1.. run function ch:core/hud/abilities
 execute if score @s ch.active matches 1.. if score @s ch.meter matches 1.. run function ch:core/hud/meter
+execute if score @s ch.active matches 1.. run function ch:core/hud/mastery
 scoreboard players set #dx ch.tmp 0
 scoreboard players operation #dx ch.tmp -= #adv ch.tmp
 function ch:core/hud/move

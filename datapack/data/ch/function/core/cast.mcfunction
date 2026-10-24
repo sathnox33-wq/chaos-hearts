@@ -11,9 +11,13 @@ execute if entity @s[x_rotation=35..90] run scoreboard players set #var ch.tmp 2
 scoreboard players set #mov ch.tmp 0
 execute if predicate ch:input/forward run scoreboard players set #mov ch.tmp 1
 scoreboard players set #hits ch.tmp 0
+scoreboard players operation #sig_s ch.tmp = #slot ch.tmp
+scoreboard players operation #sig_v ch.tmp = #var ch.tmp
+scoreboard players operation #sig_m ch.tmp = #mov ch.tmp
 tag @s add ch.caster
 execute store result score #ok ch.tmp run function ch:gen/cast
 execute if score #ok ch.tmp matches 1.. run function ch:gen/cd_default
+execute if score #ok ch.tmp matches 1.. at @s run function ch:gen/vfx_sig
 tag @s remove ch.caster
 scoreboard players set @s ch.hud 5
 execute if score #ok ch.tmp matches 0 run playsound minecraft:block.dispenser.fail player @s ~ ~ ~ 0.5 1.4

@@ -158,12 +158,15 @@ for n in range(10):
     declared[chr(int(glyphs["digits"]["base"], 16) + n)] = (glyphs["digits"]["height"], glyphs["digits"]["ascent"], True)
 for n in range(21):
     declared[chr(int(glyphs["meter"]["base"], 16) + n)] = (glyphs["meter"]["height"], glyphs["meter"]["ascent"], True)
+mb = glyphs["mastery"]
+for n in range(sum(c for _, c in mb["parts"])):
+    declared[chr(int(mb["base"], 16) + n)] = (mb["height"], mb["ascent"], True)
 for code in glyphs["overlays"]["glyphs"].values():
     declared[chr(int(code, 16))] = (glyphs["overlays"]["height"], glyphs["overlays"]["ascent"], False)
 
 space_adv = {chr(int(k, 16)): v for k, v in glyphs["space"]["advances"].items()}
 font_dir = os.path.join(ASSETS, "chaoshearts", "font")
-expected_fonts = {"hud", "hud_r10", "hud_r9", "hud_r8", "hud_r7", "hud_num", "hud_meter", "overlay"}
+expected_fonts = {"hud", "hud_r10", "hud_r9", "hud_r8", "hud_r7", "hud_num", "hud_meter", "hud_mb", "overlay"}
 found = {f[:-5] for f in os.listdir(font_dir)} if os.path.isdir(font_dir) else set()
 for f in expected_fonts - found:
     err(f"font {f} missing")
