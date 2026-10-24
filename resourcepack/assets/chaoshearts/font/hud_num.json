@@ -24,8 +24,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_0.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a0"
       ]
@@ -33,8 +33,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_1.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a1"
       ]
@@ -42,8 +42,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_2.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a2"
       ]
@@ -51,8 +51,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_3.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a3"
       ]
@@ -60,8 +60,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_4.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a4"
       ]
@@ -69,8 +69,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_5.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a5"
       ]
@@ -78,8 +78,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_6.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a6"
       ]
@@ -87,8 +87,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_7.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a7"
       ]
@@ -96,8 +96,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_8.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a8"
       ]
@@ -105,8 +105,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/digit_9.png",
-      "ascent": 15,
-      "height": 15,
+      "ascent": 21,
+      "height": 21,
       "chars": [
         "\ue1a9"
       ]

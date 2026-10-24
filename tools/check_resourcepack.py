@@ -158,6 +158,8 @@ for n in range(10):
     declared[chr(int(glyphs["digits"]["base"], 16) + n)] = (glyphs["digits"]["height"], glyphs["digits"]["ascent"], True)
 for n in range(21):
     declared[chr(int(glyphs["meter"]["base"], 16) + n)] = (glyphs["meter"]["height"], glyphs["meter"]["ascent"], True)
+for n in range(4):
+    declared[chr(int(glyphs["keys"]["base"], 16) + n)] = (glyphs["keys"]["height"], glyphs["keys"]["ascent"], True)
 mb = glyphs["mastery"]
 for n in range(sum(c for _, c in mb["parts"])):
     declared[chr(int(mb["base"], 16) + n)] = (mb["height"], mb["ascent"], True)
@@ -215,7 +217,7 @@ for name in sorted(found):
 for name in ("hud_r10", "hud_r9", "hud_r8", "hud_r7"):
     if len(seen_chars.get(name, ())) != 60:
         err(f"font {name}: {len(seen_chars.get(name, ()))} heart glyphs, expected 60")
-if len(seen_chars.get("hud", ())) != 40 + len(glyphs["ability_extra"]["glyphs"]):
+if len(seen_chars.get("hud", ())) != 40 + len(glyphs["ability_extra"]["glyphs"]) + len(glyphs["keys"]["labels"]):
     err(f"font hud: {len(seen_chars.get('hud', ()))} glyphs")
 
 # ---- sounds and lang

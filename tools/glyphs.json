@@ -56,14 +56,14 @@
  "abilities": {
   "_doc": "16x16 ability icons above the hotbar, centre of screen. Code = base + (index-1)*4 + (slot-1).",
   "font": "chaoshearts:hud",
-  "ascent": 25,
+  "ascent": 31,
   "height": 16,
   "base": "E100",
   "texture": "chaoshearts:gui/hud/ability_<h>_<slot>.png"
  },
  "ability_extra": {
   "font": "chaoshearts:hud",
-  "ascent": 25,
+  "ascent": 31,
   "height": 16,
   "glyphs": {
    "lock": "E180",
@@ -84,10 +84,23 @@
  "digits": {
   "_doc": "3x5 white digits shown on the bottom right of a cooling icon.",
   "font": "chaoshearts:hud_num",
-  "ascent": 15,
+  "ascent": 21,
   "height": 5,
   "base": "E1A0",
   "texture": "chaoshearts:gui/hud/digit_<n>.png"
+ },
+ "keys": {
+  "_doc": "17x5 key labels under each ability icon (Shift arrow + key). Tinted by text colour. Code = base + slot - 1.",
+  "font": "chaoshearts:hud",
+  "ascent": 14,
+  "height": 5,
+  "base": "E1B0",
+  "labels": [
+   "SPC",
+   "CTL",
+   "AA",
+   "DD"
+  ]
  },
  "meter": {
   "_doc": "74x4 white bar under the icons, tinted by text colour. Code = base + fill (0..20).",

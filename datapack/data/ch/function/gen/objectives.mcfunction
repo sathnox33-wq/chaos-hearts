@@ -64,6 +64,7 @@ scoreboard objectives add ch.mbl dummy
 scoreboard objectives add ch.mba dummy
 scoreboard objectives add ch.mbg dummy
 scoreboard objectives add ch.mbf dummy
+scoreboard objectives add ch.adt dummy
 scoreboard objectives add ch.own.rage dummy
 scoreboard objectives add ch.cnt.rage dummy
 scoreboard objectives add ch.xp.rage dummy
@@ -180,3 +181,4 @@ scoreboard objectives add ch.leave minecraft.custom:minecraft.leave_game
 scoreboard objectives add hearts trigger
 scoreboard objectives add cast trigger
 scoreboard objectives add chmenu trigger
+scoreboard objectives add chadmin trigger

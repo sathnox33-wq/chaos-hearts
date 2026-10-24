@@ -101,17 +101,27 @@ Only one capstone per heart. The first respec is free; later ones cost `#respec_
 
 ## Admin
 
-Run `/function ch:admin/help` for the full list. The main ones:
+**`/function ch:admin`** opens the clickable admin panel and makes you a Chaos Hearts admin; after that
+**`/trigger chadmin`** reopens it (its buttons never ask for confirmation). To make someone else an admin:
+`/tag <name> add ch.admin`.
+
+The panel lists every online player. Pick one to give or take any heart, switch their active heart, set mastery
+(0/25/50/75/100) or awaken a heart, heal them or reset their cooldowns. It also places or removes an altar,
+turns you into the Eye, prints the heart registry, returns every dropped heart, and has a Settings page for the
+common `ch.cfg` values (first-join heart, unique hearts, combat-log drop, XP, damage, cooldowns, PvP damage,
+collect time).
+
+Typed commands still work (`player` can be a name, `@s` or any selector, and a wrong name or heart now says so):
 
 | Command | What it does |
 |---|---|
-| `/function ch:admin/panel` | Admin panel dialog |
-| `/function ch:admin/give {player:"Name",heart:"rage"}` | Give a heart |
-| `/function ch:admin/take {player:"Name",heart:"rage"}` | Take a heart |
-| `/function ch:admin/mastery {player:"Name",heart:"rage",level:100}` | Set mastery |
-| `/function ch:admin/awaken {player:"Name",heart:"rage"}` | Awaken a heart |
+| `/function ch:admin/give {player:"@s",heart:"rage"}` | Give a heart |
+| `/function ch:admin/take {player:"@s",heart:"rage"}` | Take a heart |
+| `/function ch:admin/mastery {player:"@s",heart:"rage",level:100}` | Set mastery |
+| `/function ch:admin/awaken {player:"@s",heart:"rage"}` | Awaken a heart |
 | `/function ch:admin/altar/place` · `remove` | Build or remove an altar |
 | `/function ch:admin/list` | Every heart on the server and who holds it |
+| `/function ch:admin/help` | All of the above in chat |
 
 ### The Eye
 

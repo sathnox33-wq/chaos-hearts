@@ -57,7 +57,7 @@ CORE = [
     "ch.seen", "ch.hud", "ch.ccimm", "ch.trial", "ch.retry", "ch.eye", "ch.msg", "ch.respec",
     "ch.owner", "ch.life", "ch.t", "ch.eid", "ch.hid", "ch.slot", "ch.state", "ch.phase",
     "ch.stun", "ch.shake", "ch.shakes", "ch.meter", "ch.tap", "ch.kj", "ch.ks", "ch.ka", "ch.kd", "ch.kb", "ch.dta", "ch.dtd", "ch.v1", "ch.v2", "ch.v3", "ch.v4", "ch.v5", "ch.v6", "ch.tmp", "ch.g", "ch.cfg",
-    "ch.mbx", "ch.mbl", "ch.mba", "ch.mbg", "ch.mbf",
+    "ch.mbx", "ch.mbl", "ch.mba", "ch.mbg", "ch.mbf", "ch.adt",
 ]
 CONFIG = {
     # name: (default, meaning)
@@ -129,6 +129,7 @@ def gen():
         "scoreboard objectives add hearts trigger",
         "scoreboard objectives add cast trigger",
         "scoreboard objectives add chmenu trigger",
+        "scoreboard objectives add chadmin trigger",
     ]
     fn("gen/objectives", lines)
 
@@ -295,6 +296,7 @@ def gen():
         "cd": [chr(int(ex[f"cd_{k}"], 16)) for k in range(9)],
         "dg": [chr(int(gl["digits"]["base"], 16) + k) for k in range(10)],
         "mt": [chr(int(gl["meter"]["base"], 16) + k) for k in range(21)],
+        "key": [""] + [chr(int(gl["keys"]["base"], 16) + k) for k in range(4)],
     }
     mb, k = {}, int(gl["mastery"]["base"], 16)
     for name, n in gl["mastery"]["parts"]:
@@ -312,6 +314,28 @@ def gen():
         lines.append(f"execute if score @s ch.active matches {i} run scoreboard players operation #ma ch.tmp = @s ch.asc.{h}")
         lines.append(f"execute if score @s ch.active matches {i} run scoreboard players operation #mp ch.tmp = @s ch.pts.{h}")
     fn("gen/mb_xp", lines)
+
+    # ---- admin panel: heart index -> name, and the per-heart buttons for the picked player (tag ch.adtgt)
+    lines = ["# Generated: runs $(f) {heart:\"<name>\"} for heart index #ai ch.tmp."]
+    for i, h, *_ in TYPES:
+        lines.append(f"$execute if score #ai ch.tmp matches {i} run return run function $(f) {{heart:\"{h}\"}}")
+    fn("gen/admin_heart", lines)
+    lines = ["# Generated: give / take / make-active buttons on the admin player page."]
+    for i, h, name, *_ in TYPES:
+        lines.append(f"function ch:admin/ui/btn {{l:\"+ Give {name}\",c:{2000 + i}}}")
+    for i, h, name, *_ in TYPES:
+        lines.append(f"execute if score @a[tag=ch.adtgt,limit=1] ch.cnt.{h} matches 1.. run function ch:admin/ui/btn {{l:\"− Take {name}\",c:{2100 + i}}}")
+    for i, h, name, *_ in TYPES:
+        lines.append(f"execute if score @a[tag=ch.adtgt,limit=1] ch.cnt.{h} matches 1.. unless score @a[tag=ch.adtgt,limit=1] ch.active matches {i} run function ch:admin/ui/btn {{l:\"◆ Make {name} active\",c:{2200 + i}}}")
+    fn("gen/admin_buttons", lines)
+    lines = ["# Generated: one row of mastery buttons (0 25 50 75 100, awaken) per heart the picked player holds."]
+    for i, h, name, *_ in TYPES:
+        cond = f"execute if score @a[tag=ch.adtgt,limit=1] ch.cnt.{h} matches 1.. run "
+        for lvl in (0, 25, 50, 75, 100):
+            label = f"{name} {lvl}" if lvl == 0 else str(lvl)
+            lines.append(cond + f"function ch:admin/ui/btn {{l:\"{label}\",c:{10000 + i * 1000 + lvl}}}")
+        lines.append(cond + f"function ch:admin/ui/btn {{l:\"Awaken\",c:{3000 + i}}}")
+    fn("gen/admin_mastery_buttons", lines)
     fn("gen/hud_tables", ["# Generated: HUD glyph characters and pixel spaces (sp[n+200] moves the pen n pixels).",
                           f"data modify storage ch:const hud set value {snbt(hud)}"])
 

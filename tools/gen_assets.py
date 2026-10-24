@@ -1551,7 +1551,7 @@ def mastery_glow():
     dx = np.maximum(np.maximum(bx - 1 - xx, xx - (bx + bw)), 0)
     dy = np.maximum(np.maximum(by - 1 - yy, yy - (by + bh)), 0)
     d = np.hypot(dx, dy)
-    over(img, (255, 255, 255), ((d > 0) & (d < 3.5)) * (1 - d / 3.5) ** 1.5 * 0.8)
+    over(img, (255, 255, 255), ((d > 0) & (d < 3.5)) * np.clip(1 - d / 3.5, 0, 1) ** 1.5 * 0.8)
     return img
 
 
@@ -1600,6 +1600,32 @@ def hud_mastery():
             font_add(font, f"gui/hud/mastery/{name}_{i}.png", asc, hgt, chr(off[name] + i), img)
 
 
+
+def hud_keys():
+    """Key labels under the ability icons: the Shift arrow (sneak) and the key, centred in 17 px, with a dark outline."""
+    g = GLYPHS["keys"]
+    base = int(g["base"], 16)
+    chev = ["00100", "01010", "11011", "01010", "01110"]  # the Shift key arrow
+    for n, label in enumerate(g["labels"]):
+        w = 5 + 1 + sum(len(FONT3[c][0]) + 1 for c in label) - 1
+        img = blank(5, 17)
+        x0 = (17 - w) // 2
+        ink = blank(5, 17)
+        for y, row in enumerate(chev):
+            for x, b in enumerate(row):
+                if b == "1":
+                    ink[y, x0 + x] = [170, 170, 180, 255]
+        text3(ink, x0 + 6, 0, label, (255, 255, 255), shadow=False)
+        a = ink[..., 3] > 0
+        dark = np.zeros(a.shape, bool)
+        dark[1:, :] |= a[:-1, :]
+        dark[:, 1:] |= a[:, :-1]
+        dark[:, :-1] |= a[:, 1:]
+        img[dark & ~a] = [16, 12, 20, 170]
+        img[a] = ink[a]
+        font_add(fname(g["font"]), f"gui/hud/key_{n + 1}.png", g["ascent"], g["height"], chr(base + n), img)
+
+
 def write_fonts():
     sp = {"type": "space", "advances": {cp(k): v for k, v in GLYPHS["space"]["advances"].items()}}
     names = set(FONTS) | {fname(GLYPHS["space"]["font"])}
@@ -1615,6 +1641,7 @@ def hud():
     hud_digits()
     hud_meters()
     hud_mastery()
+    hud_keys()
     hud_overlays()
     write_fonts()
 

@@ -150,7 +150,7 @@ def main():
         for p_ in ["own", "cnt", "xp", "lvl", "awk", "asc", "pts", "tree", "feat", "best", "ret"]:
             for h in ["rage", "speed", "infernal", "void", "frozen", "storm", "blood", "titan", "celestial", "corruption"]:
                 objectives.add(f"ch.{p_}.{h}")
-        objectives.update({"ch.deaths", "ch.leave", "hearts", "cast", "chmenu", "ch.health"})
+        objectives.update({"ch.deaths", "ch.leave", "hearts", "cast", "chmenu", "chadmin", "ch.health"})
     except OSError:
         pass
 

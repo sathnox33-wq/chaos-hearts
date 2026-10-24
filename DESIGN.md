@@ -11,7 +11,7 @@ Everything runs in functions under the `ch` namespace; assets live in the `chaos
 |---|---|
 | Hearts | Not items. Ownership lives in scoreboards (`ch.cnt.<heart>`) and the registry in storage `ch:reg`. Each heart held adds +2 max health through the `ch:hearts` attribute modifier |
 | Heart icons on the health bar | Action-bar text in custom fonts (`hud_r10`..`hud_r7`) whose glyphs sit exactly over the second health row; pixel-space glyphs position them with a net width of 0 |
-| Ability HUD | The same action bar: four ability icons with lock, cooldown sweep and digits, plus the heart's resource meter |
+| Ability HUD | The same action bar: four ability icons with lock, cooldown sweep and digits, the key that casts each one under it, plus the heart's resource meter |
 | Casting | The `minecraft:player` `input` predicate (sneak + jump, sprint, double-tap left/right, back), read every tick. `/trigger cast` as a fallback |
 | VFX library | `tools/vfx_shapes.py` generates 154 particle shapes into `gen/vfx` (rune circles, hexagrams, helixes, vortexes, spheres, implosions, bolts, cracks, wings, skulls, clocks...). `vfx/play` runs timelines (markers that spin, rise, travel or ride the caster and draw a frame each tick). Every shared FX call adds layers on top of its model (wave rings, pillar helixes, orb shells, beam braids, rune and crack particles), themed by the colour it was given and capped per tick. `tools/vfx_signatures.py` adds a signature sequence for each of the 40 abilities and their variants, played when a cast succeeds |
 | Mastery dock | Action-bar glyphs right of the hotbar (`core/hud/mastery`): the heart gem ringed by in-level progress, the level in big digits, a bar to 100 with milestone pips and a sliding light, an XP-in-level bar and the next unlock; Ascension progress at 100; glow on XP gain, flash on level up |
@@ -179,7 +179,7 @@ the awakened passive, **3 skill points**, and opens the heart's skill tree.
 
 ## 8. Admin tools
 
-`/chaosadmin` (permission level 2): give/take hearts, list the heart registry, set/add mastery,
+`/function ch:admin` (permission level 2) opens a clickable panel, then `/trigger chadmin` for players tagged `ch.admin`: give/take hearts, list the heart registry, set/add mastery,
 awaken/unawaken, add skill points, respec, reset cooldowns, start/stop/win trials, reload
 config, reset a player, return dropped hearts.
 

@@ -1,6 +1,5 @@
-# Op: creates a new heart of type $(heart) for $(player) (ignores the unique and max-hearts limits).
-$execute store result storage ch:tmp ad.i int 1 run function ch:gen/index/$(heart)
-$data modify storage ch:tmp ad.h set value "$(heart)"
-data modify storage ch:tmp ad.force set value 1
-$execute as $(player) at @s run function ch:heart/create with storage ch:tmp ad
-$tellraw @s [{text:"Gave a $(heart) heart to ",color:"gray"},{selector:"$(player)",color:"white"}]
+# Op: /function ch:admin/give {player:"Name",heart:"rage"} creates a new heart for a player (@s for yourself; any
+# selector works). Ignores the unique and max-hearts limits.
+$data modify storage ch:tmp ad set value {player:"$(player)",heart:"$(heart)"}
+execute unless function ch:admin/check run return fail
+function ch:admin/give_go with storage ch:tmp ad

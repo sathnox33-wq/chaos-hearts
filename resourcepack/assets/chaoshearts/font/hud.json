@@ -24,8 +24,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_rage_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue100"
       ]
@@ -33,8 +33,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_rage_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue101"
       ]
@@ -42,8 +42,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_rage_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue102"
       ]
@@ -51,8 +51,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_rage_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue103"
       ]
@@ -60,8 +60,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_speed_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue104"
       ]
@@ -69,8 +69,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_speed_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue105"
       ]
@@ -78,8 +78,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_speed_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue106"
       ]
@@ -87,8 +87,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_speed_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue107"
       ]
@@ -96,8 +96,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_infernal_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue108"
       ]
@@ -105,8 +105,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_infernal_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue109"
       ]
@@ -114,8 +114,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_infernal_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue10a"
       ]
@@ -123,8 +123,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_infernal_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue10b"
       ]
@@ -132,8 +132,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_void_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue10c"
       ]
@@ -141,8 +141,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_void_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue10d"
       ]
@@ -150,8 +150,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_void_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue10e"
       ]
@@ -159,8 +159,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_void_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue10f"
       ]
@@ -168,8 +168,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_frozen_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue110"
       ]
@@ -177,8 +177,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_frozen_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue111"
       ]
@@ -186,8 +186,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_frozen_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue112"
       ]
@@ -195,8 +195,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_frozen_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue113"
       ]
@@ -204,8 +204,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_storm_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue114"
       ]
@@ -213,8 +213,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_storm_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue115"
       ]
@@ -222,8 +222,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_storm_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue116"
       ]
@@ -231,8 +231,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_storm_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue117"
       ]
@@ -240,8 +240,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_blood_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue118"
       ]
@@ -249,8 +249,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_blood_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue119"
       ]
@@ -258,8 +258,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_blood_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue11a"
       ]
@@ -267,8 +267,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_blood_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue11b"
       ]
@@ -276,8 +276,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_titan_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue11c"
       ]
@@ -285,8 +285,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_titan_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue11d"
       ]
@@ -294,8 +294,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_titan_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue11e"
       ]
@@ -303,8 +303,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_titan_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue11f"
       ]
@@ -312,8 +312,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_celestial_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue120"
       ]
@@ -321,8 +321,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_celestial_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue121"
       ]
@@ -330,8 +330,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_celestial_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue122"
       ]
@@ -339,8 +339,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_celestial_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue123"
       ]
@@ -348,8 +348,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_corruption_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue124"
       ]
@@ -357,8 +357,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_corruption_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue125"
       ]
@@ -366,8 +366,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_corruption_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue126"
       ]
@@ -375,8 +375,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ability_corruption_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue127"
       ]
@@ -384,8 +384,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/lock.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue180"
       ]
@@ -393,8 +393,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/ready_frame.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue181"
       ]
@@ -402,8 +402,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/frame.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue182"
       ]
@@ -411,8 +411,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_0.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue190"
       ]
@@ -420,8 +420,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_1.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue191"
       ]
@@ -429,8 +429,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_2.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue192"
       ]
@@ -438,8 +438,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_3.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue193"
       ]
@@ -447,8 +447,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_4.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue194"
       ]
@@ -456,8 +456,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_5.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue195"
       ]
@@ -465,8 +465,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_6.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue196"
       ]
@@ -474,8 +474,8 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_7.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue197"
       ]
@@ -483,10 +483,46 @@
     {
       "type": "bitmap",
       "file": "chaoshearts:gui/hud/cd_8.png",
-      "ascent": 25,
-      "height": 25,
+      "ascent": 31,
+      "height": 31,
       "chars": [
         "\ue198"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/key_1.png",
+      "ascent": 14,
+      "height": 14,
+      "chars": [
+        "\ue1b0"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/key_2.png",
+      "ascent": 14,
+      "height": 14,
+      "chars": [
+        "\ue1b1"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/key_3.png",
+      "ascent": 14,
+      "height": 14,
+      "chars": [
+        "\ue1b2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/key_4.png",
+      "ascent": 14,
+      "height": 14,
+      "chars": [
+        "\ue1b3"
       ]
     }
   ]
