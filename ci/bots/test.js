@@ -154,6 +154,8 @@ async function main () {
   check('max health follows the hearts held', /is 4(\.0)?\b/.test(out) || aActive === 1, out)
 
   // ---- hotkeys: shuffle, then cast with sneak + jump
+  // The starting heart is random; when it was rage the Attacker holds only one heart and has nothing to shuffle to.
+  if (aActive === 1) await run('function ch:admin/give {player:"Attacker",heart:"speed"}')
   await run('execute as Attacker run function ch:heart/set_active {i:1}')
   await run('tp Attacker 0 100 0 0 0')
   await run('tp Victim 0 100 3 180 0')
