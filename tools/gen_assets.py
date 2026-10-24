@@ -1322,6 +1322,310 @@ def hud_overlays():
         print("overlay", name)
 
 
+# ---- mastery dock (right of the hotbar)
+
+FONT3 = {  # 3x5 caps, digits and a few marks; wider letters use more columns
+    "A": ["010", "101", "111", "101", "101"], "B": ["110", "101", "110", "101", "110"], "C": ["011", "100", "100", "100", "011"],
+    "D": ["110", "101", "101", "101", "110"], "E": ["111", "100", "110", "100", "111"], "F": ["111", "100", "110", "100", "100"],
+    "G": ["011", "100", "101", "101", "011"], "H": ["101", "101", "111", "101", "101"], "I": ["111", "010", "010", "010", "111"],
+    "J": ["001", "001", "001", "101", "010"], "K": ["101", "110", "100", "110", "101"], "L": ["100", "100", "100", "100", "111"],
+    "M": ["10001", "11011", "10101", "10001", "10001"], "N": ["1001", "1101", "1011", "1001", "1001"], "O": ["010", "101", "101", "101", "010"],
+    "P": ["110", "101", "110", "100", "100"], "Q": ["010", "101", "101", "110", "011"], "R": ["110", "101", "110", "101", "101"],
+    "S": ["011", "100", "010", "001", "110"], "T": ["111", "010", "010", "010", "010"], "U": ["101", "101", "101", "101", "111"],
+    "V": ["101", "101", "101", "101", "010"], "W": ["10001", "10001", "10101", "11011", "10001"], "X": ["101", "101", "010", "101", "101"],
+    "Y": ["101", "101", "010", "010", "010"], "Z": ["111", "001", "010", "100", "111"], " ": ["00", "00", "00", "00", "00"],
+    "0": ["111", "101", "101", "101", "111"], "1": ["010", "110", "010", "010", "111"], "2": ["111", "001", "111", "100", "111"],
+    "3": ["111", "001", "111", "001", "111"], "4": ["101", "101", "111", "001", "001"], "5": ["111", "100", "111", "001", "111"],
+    "6": ["111", "100", "111", "101", "111"], "7": ["111", "001", "010", "010", "010"], "8": ["111", "101", "111", "101", "111"],
+    "9": ["111", "101", "111", "001", "111"],
+}
+BIG = [  # 5x7 digits
+    ["01110", "10001", "10011", "10101", "11001", "10001", "01110"], ["00100", "01100", "00100", "00100", "00100", "00100", "01110"],
+    ["01110", "10001", "00001", "00110", "01000", "10000", "11111"], ["11110", "00001", "00001", "01110", "00001", "00001", "11110"],
+    ["00010", "00110", "01010", "10010", "11111", "00010", "00010"], ["11111", "10000", "11110", "00001", "00001", "10001", "01110"],
+    ["00110", "01000", "10000", "11110", "10001", "10001", "01110"], ["11111", "00001", "00010", "00100", "01000", "01000", "01000"],
+    ["01110", "10001", "10001", "01110", "10001", "10001", "01110"], ["01110", "10001", "10001", "01111", "00001", "00010", "01100"],
+]
+MW, MH = 112, 31
+M_EMB = (14.5, 15.5)            # emblem centre
+M_BAR = (31, 12, 78, 6)         # interior x, y, w, h of the main bar
+M_SUB = (31, 21, 78, 1)         # interior of the XP-in-level bar
+M_DIG = (93, 2)                 # first big digit slot (three slots, 6 px apart)
+
+
+def text3(img, x, y, s, col, a=255, shadow=True):
+    for ch in s:
+        rows = FONT3.get(ch, FONT3[" "])
+        for yy, row in enumerate(rows):
+            for xx, b in enumerate(row):
+                if b == "1":
+                    if shadow and 0 <= y + yy + 1 < img.shape[0] and x + xx + 1 < img.shape[1] and img[y + yy + 1, x + xx + 1, 3] < 200:
+                        img[y + yy + 1, x + xx + 1] = [12, 8, 16, 200]
+                    img[y + yy, x + xx] = [col[0], col[1], col[2], a]
+        x += len(rows[0]) + 1
+    return x
+
+
+def mastery_frame():
+    img = blank(MH, MW)
+    u, v = uv_grid(MH, MW)
+    yy, xx = np.mgrid[0:MH, 0:MW].astype(np.float64)
+    # plate: a slanted dark slab with a soft vertical gradient and faint diagonal grain
+    plate = (xx >= 4 - (yy < 3) * 0) & (xx <= MW - 2) & (yy >= 1) & (yy <= MH - 2)
+    plate &= ~((xx < 4 + (MH - 2 - yy) * 0.0) & False)
+    grain = (((xx + yy * 2) % 7) == 0) * 6.0
+    base = np.stack([16 + 10 * (1 - v) + grain, 12 + 6 * (1 - v) + grain, 22 + 12 * (1 - v) + grain], -1)
+    over(img, base, plate * 0.86)
+    # left wing reaching toward the hotbar
+    wing = (xx < 4) & (yy >= 9 + xx) & (yy <= 21 - xx)
+    over(img, (40, 30, 52), wing * 0.9)
+    # bevel: light top-left, dark bottom-right edges
+    edge = plate & ((yy == 1) | (xx == 4))
+    over(img, (92, 80, 104), edge * 1.0)
+    edge2 = plate & ((yy == MH - 2) | (xx == MW - 2))
+    over(img, (6, 4, 8), edge2 * 1.0)
+    # gold filigree corners
+    gold = (214, 178, 96)
+    for cx, cy, sx, sy in ((5, 2, 1, 1), (MW - 3, 2, -1, 1), (5, MH - 3, 1, -1), (MW - 3, MH - 3, -1, -1)):
+        for k in range(6):
+            for x_, y_ in ((cx + sx * k, cy), (cx, cy + sy * k)):
+                if 0 <= y_ < MH and 0 <= x_ < MW:
+                    img[y_, x_] = [gold[0], gold[1], gold[2], 255 - k * 30]
+        img[cy + sy, cx + sx] = [255, 236, 170, 255]
+        img[cy + sy * 2, cx + sx * 2] = [gold[0], gold[1], gold[2], 180]
+    # emblem socket: dark disc with an engraved double ring
+    cx, cy = M_EMB
+    r = np.hypot(xx + 0.5 - cx, yy + 0.5 - cy)
+    over(img, (6, 4, 10), smooth(13.6, 12.6, r))
+    over(img, (60, 52, 70), (np.abs(r - 13.4) < 0.55) * 1.0)
+    over(img, (34, 28, 42), (np.abs(r - 9.6) < 0.5) * 1.0)
+    for k in range(12):  # tick marks around the socket
+        a = k * math.pi / 6
+        px, py = cx + math.sin(a) * 13.4, cy - math.cos(a) * 13.4
+        img[int(py), int(px)] = [gold[0], gold[1], gold[2], 255]
+    # title
+    text3(img, M_BAR[0], 3, "MASTERY", (226, 206, 150))
+    text3(img, M_DIG[0] - 10, 4, "LV", (150, 136, 170))
+    # main bar slot: recessed groove with milestone notches and pip sockets
+    bx, by, bw, bh = M_BAR
+    over(img, (4, 2, 6), ((xx >= bx - 1) & (xx <= bx + bw) & (yy >= by - 1) & (yy <= by + bh)) * 1.0)
+    over(img, (26, 22, 32), ((xx >= bx) & (xx < bx + bw) & (yy >= by) & (yy < by + bh)) * 1.0)
+    over(img, (70, 60, 84), ((xx >= bx - 1) & (xx <= bx + bw) & (yy == by + bh + 1)) * 0.8)
+    for x_ in range(bx, bx + bw, 4):
+        img[by + bh - 1, x_] = [44, 38, 52, 255]
+    for m in GLYPHS["mastery"]["milestones"]:
+        x_ = bx + round(m * (bw - 1) / 100)
+        img[by:by + bh, x_] = [10, 8, 14, 255]
+        img[by - 3, x_] = [80, 70, 92, 255]
+        img[by - 2, x_ - 1:x_ + 2] = [80, 70, 92, 255]
+    # sub bar groove
+    sx, sy, sw, sh = M_SUB
+    over(img, (4, 2, 6), ((xx >= sx - 1) & (xx <= sx + sw) & (yy >= sy - 1) & (yy <= sy + sh)) * 1.0)
+    over(img, (34, 30, 44), ((xx >= sx) & (xx < sx + sw) & (yy >= sy) & (yy < sy + sh)) * 1.0)
+    return img
+
+
+def mastery_trim():
+    """White trim that takes the heart colour: lines along the top and bottom edges and a rim on the socket."""
+    img = blank(MH, MW)
+    yy, xx = np.mgrid[0:MH, 0:MW].astype(np.float64)
+    top = (yy == 0) & (xx >= 12) & (xx <= MW - 10)
+    bot = (yy == MH - 1) & (xx >= 12) & (xx <= MW - 10)
+    over(img, (255, 255, 255), top * smooth(12, 30, xx) * smooth(MW - 10, MW - 30, xx))
+    over(img, (255, 255, 255), bot * 0.7 * smooth(12, 30, xx) * smooth(MW - 10, MW - 30, xx))
+    cx, cy = M_EMB
+    r = np.hypot(xx + 0.5 - cx, yy + 0.5 - cy)
+    over(img, (255, 255, 255), (np.abs(r - 14.3) < 0.5) * 0.85)
+    # chevrons pointing at the hotbar
+    for k in range(3):
+        for d in range(3):
+            img[15 - d, 1 + k + d] = [255, 255, 255, 200 - k * 50]
+            img[15 + d, 1 + k + d] = [255, 255, 255, 200 - k * 50]
+    return img
+
+
+def mastery_ring(k, n=24):
+    """Emblem ring filled clockwise from the top: k of n segments, white with a bright leading edge."""
+    img = blank(MH, MW)
+    yy, xx = np.mgrid[0:MH, 0:MW].astype(np.float64)
+    cx, cy = M_EMB
+    dx, dy = xx + 0.5 - cx, yy + 0.5 - cy
+    r = np.hypot(dx, dy)
+    ang = (np.degrees(np.arctan2(dx, -dy)) + 360) % 360
+    band = (r >= 10.2) & (r <= 12.8)
+    seg = (ang % 15) > 1.6
+    lit = ang < k * 360 / n
+    lum = 170 + 85 * smooth(10.2, 12.8, r)
+    over(img, np.stack([lum, lum, lum], -1), band & seg & lit)
+    if 0 < k < n:
+        lead = band & (np.abs(ang - k * 360 / n) < 7)
+        over(img, (255, 255, 255), lead * 1.0)
+    return img
+
+
+def mastery_gem(main, sec):
+    img, inside, _, _ = shade_heart(main, sec, 0.95, np.random.default_rng(7))
+    g = to_image(img).resize((14, 14), Image.LANCZOS)
+    a = np.asarray(g).astype(np.float64)
+    a[..., 3] = np.where(a[..., 3] > 90, 255, 0)
+    out = blank(MH, MW)
+    x0, y0 = int(M_EMB[0] - 7), int(M_EMB[1] - 7)
+    out[y0:y0 + 14, x0:x0 + 14] = a
+    return out
+
+
+def mastery_bar(n, bw=78):
+    img = blank(MH, MW)
+    bx, by, _, bh = M_BAR
+    for x in range(n):
+        for y in range(bh):
+            lum = 255 - y * 18
+            if (x + y) % 6 == 0:
+                lum = min(255, lum + 30)
+            img[by + y, bx + x] = [lum, lum, lum, 255]
+        img[by, bx + x] = [255, 255, 255, 255]
+    if 0 < n < bw:
+        img[by - 1:by + bh + 1, bx + n - 1] = [255, 255, 255, 255]
+        if bx + n < bx + bw:
+            img[by:by + bh, bx + n] = [255, 255, 255, 120]
+    return img
+
+
+def mastery_sub(n):
+    img = blank(MH, MW)
+    sx, sy, _, _ = M_SUB
+    for x in range(min(78, n * 2)):
+        img[sy, sx + x] = [255, 255, 255, 255]
+    return img
+
+
+def mastery_pips(k):
+    img = blank(MH, MW)
+    bx, by, bw, _ = M_BAR
+    for m in GLYPHS["mastery"]["milestones"][:k]:
+        x_ = bx + round(m * (bw - 1) / 100)
+        img[by - 3, x_] = [255, 255, 255, 255]
+        img[by - 2, x_ - 1:x_ + 2] = [255, 255, 255, 255]
+        img[by - 4, x_] = [255, 255, 255, 110]
+    return img
+
+
+def mastery_digit(slot, d):
+    img = blank(MH, MW)
+    x0, y0 = M_DIG[0] + slot * 6, M_DIG[1]
+    for y, row in enumerate(BIG[d]):
+        for x, b in enumerate(row):
+            if b == "1":
+                img[y0 + y + 1, x0 + x + 1] = [20, 12, 24, 220]
+    for y, row in enumerate(BIG[d]):
+        for x, b in enumerate(row):
+            if b == "1":
+                lum = 255 - y * 9
+                img[y0 + y, x0 + x] = [lum, lum, lum, 255]
+    return img
+
+
+def mastery_label(s):
+    img = blank(MH, MW)
+    text3(img, M_SUB[0], 24, s, (200, 190, 214))
+    return img
+
+
+def mastery_shine(j, n=12):
+    """A soft highlight that slides along the bar, position j of n."""
+    img = blank(MH, MW)
+    bx, by, bw, bh = M_BAR
+    yy, xx = np.mgrid[0:MH, 0:MW].astype(np.float64)
+    c = bx + (j + 0.5) * bw / n
+    inbar = (xx >= bx) & (xx < bx + bw) & (yy >= by) & (yy < by + bh)
+    g = np.exp(-((xx - c + (yy - by) * 0.8) ** 2) / 5.0)
+    over(img, (255, 255, 255), inbar * g * 0.75)
+    return img
+
+
+def mastery_glow():
+    """Gain glow: a halo around the main bar."""
+    img = blank(MH, MW)
+    bx, by, bw, bh = M_BAR
+    yy, xx = np.mgrid[0:MH, 0:MW].astype(np.float64)
+    dx = np.maximum(np.maximum(bx - 1 - xx, xx - (bx + bw)), 0)
+    dy = np.maximum(np.maximum(by - 1 - yy, yy - (by + bh)), 0)
+    d = np.hypot(dx, dy)
+    over(img, (255, 255, 255), ((d > 0) & (d < 3.5)) * np.clip(1 - d / 3.5, 0, 1) ** 1.5 * 0.8)
+    return img
+
+
+def mastery_flash():
+    """Level-up flash: the whole dock lit, rays from the emblem."""
+    img = blank(MH, MW)
+    yy, xx = np.mgrid[0:MH, 0:MW].astype(np.float64)
+    cx, cy = M_EMB
+    r = np.hypot(xx + 0.5 - cx, yy + 0.5 - cy)
+    ang = np.arctan2(yy + 0.5 - cy, xx + 0.5 - cx)
+    rays = (np.cos(ang * 8) > 0.75) * np.clip(1 - r / 40, 0, 1)
+    over(img, (255, 255, 255), np.clip(rays * 0.7 + smooth(16, 8, r) * 0.6, 0, 1))
+    plate = (xx >= 4) & (yy >= 1) & (yy <= MH - 2)
+    over(img, (255, 255, 255), plate * 0.18)
+    return img
+
+
+def mastery_crown():
+    img = blank(MH, MW)
+    cx = int(M_EMB[0])
+    rows = ["1001001", "1101011", "1111111", "0111110"]
+    for y, row in enumerate(rows):
+        for x, b in enumerate(row):
+            if b == "1":
+                img[y, cx - 3 + x] = [255, 214, 90, 255] if y < 3 else [190, 140, 40, 255]
+    img[0, cx] = [255, 255, 220, 255]
+    return img
+
+
+def hud_mastery():
+    g = GLYPHS["mastery"]
+    font, asc, hgt = fname(g["font"]), g["ascent"], g["height"]
+    off, k = {}, int(g["base"], 16)
+    for name, n in g["parts"]:
+        off[name] = k
+        k += n
+    imgs = {"frame": [mastery_frame()], "trim": [mastery_trim()],
+            "gem": [mastery_gem(m, s) for _, m, s in HEARTS], "crown": [mastery_crown()], "glow": [mastery_glow()],
+            "flash": [mastery_flash()], "ring": [mastery_ring(i) for i in range(25)], "bar": [mastery_bar(i) for i in range(79)],
+            "sub": [mastery_sub(i) for i in range(40)], "pips": [mastery_pips(i) for i in range(8)],
+            "digit": [mastery_digit(s, d) for s in range(3) for d in range(10)],
+            "label": [mastery_label(t) for t in g["labels"]], "shine": [mastery_shine(j) for j in range(12)]}
+    for name, n in g["parts"]:
+        assert len(imgs[name]) == n, name
+        for i, img in enumerate(imgs[name]):
+            font_add(font, f"gui/hud/mastery/{name}_{i}.png", asc, hgt, chr(off[name] + i), img)
+
+
+
+def hud_keys():
+    """Key labels under the ability icons: the Shift arrow (sneak) and the key, centred in 17 px, with a dark outline."""
+    g = GLYPHS["keys"]
+    base = int(g["base"], 16)
+    chev = ["00100", "01010", "11011", "01010", "01110"]  # the Shift key arrow
+    for n, label in enumerate(g["labels"]):
+        w = 5 + 1 + sum(len(FONT3[c][0]) + 1 for c in label) - 1
+        img = blank(5, 17)
+        x0 = (17 - w) // 2
+        ink = blank(5, 17)
+        for y, row in enumerate(chev):
+            for x, b in enumerate(row):
+                if b == "1":
+                    ink[y, x0 + x] = [170, 170, 180, 255]
+        text3(ink, x0 + 6, 0, label, (255, 255, 255), shadow=False)
+        a = ink[..., 3] > 0
+        dark = np.zeros(a.shape, bool)
+        dark[1:, :] |= a[:-1, :]
+        dark[:, 1:] |= a[:, :-1]
+        dark[:, :-1] |= a[:, 1:]
+        img[dark & ~a] = [16, 12, 20, 170]
+        img[a] = ink[a]
+        font_add(fname(g["font"]), f"gui/hud/key_{n + 1}.png", g["ascent"], g["height"], chr(base + n), img)
+
+
 def write_fonts():
     sp = {"type": "space", "advances": {cp(k): v for k, v in GLYPHS["space"]["advances"].items()}}
     names = set(FONTS) | {fname(GLYPHS["space"]["font"])}
@@ -1336,6 +1640,8 @@ def hud():
     hud_extras()
     hud_digits()
     hud_meters()
+    hud_mastery()
+    hud_keys()
     hud_overlays()
     write_fonts()
 

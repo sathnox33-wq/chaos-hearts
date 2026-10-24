@@ -1,0 +1,1996 @@
+{
+  "providers": [
+    {
+      "type": "space",
+      "advances": {
+        "\uf801": -1,
+        "\uf802": -2,
+        "\uf803": -4,
+        "\uf804": -8,
+        "\uf805": -16,
+        "\uf806": -32,
+        "\uf807": -64,
+        "\uf808": -128,
+        "\uf821": 1,
+        "\uf822": 2,
+        "\uf823": 4,
+        "\uf824": 8,
+        "\uf825": 16,
+        "\uf826": 32,
+        "\uf827": 64,
+        "\uf828": 128
+      }
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/frame_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue400"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/trim_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue401"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue402"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue403"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue404"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue405"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue406"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue407"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue408"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue409"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue40a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/gem_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue40b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/crown_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue40c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/glow_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue40d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/flash_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue40e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue40f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue410"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue411"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue412"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue413"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue414"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue415"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue416"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue417"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue418"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_10.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue419"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_11.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue41a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_12.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue41b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_13.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue41c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_14.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue41d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_15.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue41e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_16.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue41f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_17.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue420"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_18.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue421"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_19.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue422"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_20.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue423"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_21.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue424"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_22.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue425"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_23.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue426"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/ring_24.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue427"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue428"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue429"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue42a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue42b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue42c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue42d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue42e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue42f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue430"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue431"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_10.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue432"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_11.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue433"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_12.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue434"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_13.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue435"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_14.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue436"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_15.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue437"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_16.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue438"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_17.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue439"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_18.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue43a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_19.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue43b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_20.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue43c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_21.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue43d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_22.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue43e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_23.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue43f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_24.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue440"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_25.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue441"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_26.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue442"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_27.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue443"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_28.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue444"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_29.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue445"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_30.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue446"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_31.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue447"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_32.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue448"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_33.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue449"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_34.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue44a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_35.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue44b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_36.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue44c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_37.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue44d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_38.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue44e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_39.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue44f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_40.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue450"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_41.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue451"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_42.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue452"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_43.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue453"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_44.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue454"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_45.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue455"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_46.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue456"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_47.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue457"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_48.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue458"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_49.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue459"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_50.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue45a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_51.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue45b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_52.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue45c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_53.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue45d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_54.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue45e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_55.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue45f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_56.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue460"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_57.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue461"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_58.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue462"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_59.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue463"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_60.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue464"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_61.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue465"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_62.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue466"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_63.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue467"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_64.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue468"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_65.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue469"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_66.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue46a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_67.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue46b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_68.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue46c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_69.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue46d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_70.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue46e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_71.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue46f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_72.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue470"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_73.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue471"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_74.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue472"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_75.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue473"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_76.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue474"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_77.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue475"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/bar_78.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue476"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue477"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue478"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue479"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue47a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue47b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue47c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue47d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue47e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue47f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue480"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_10.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue481"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_11.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue482"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_12.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue483"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_13.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue484"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_14.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue485"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_15.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue486"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_16.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue487"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_17.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue488"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_18.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue489"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_19.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue48a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_20.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue48b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_21.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue48c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_22.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue48d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_23.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue48e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_24.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue48f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_25.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue490"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_26.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue491"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_27.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue492"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_28.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue493"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_29.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue494"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_30.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue495"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_31.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue496"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_32.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue497"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_33.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue498"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_34.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue499"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_35.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue49a"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_36.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue49b"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_37.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue49c"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_38.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue49d"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/sub_39.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue49e"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue49f"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a0"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a1"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a3"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a4"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a5"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/pips_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a6"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a7"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a8"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4a9"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4aa"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ab"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ac"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ad"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ae"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4af"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b0"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_10.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b1"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_11.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_12.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b3"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_13.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b4"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_14.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b5"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_15.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b6"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_16.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b7"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_17.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b8"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_18.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4b9"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_19.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ba"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_20.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4bb"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_21.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4bc"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_22.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4bd"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_23.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4be"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_24.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4bf"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_25.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c0"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_26.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c1"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_27.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_28.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c3"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/digit_29.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c4"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c5"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c6"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c7"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c8"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4c9"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ca"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4cb"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4cc"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4cd"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/label_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4ce"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_0.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4cf"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_1.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d0"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_2.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d1"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_3.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d2"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_4.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d3"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_5.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d4"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_6.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d5"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_7.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d6"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_8.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d7"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_9.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d8"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_10.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4d9"
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "chaoshearts:gui/hud/mastery/shine_11.png",
+      "ascent": -34,
+      "height": 31,
+      "chars": [
+        "\ue4da"
+      ]
+    }
+  ]
+}

@@ -115,6 +115,23 @@ def balanced(s):
     return not stack and q is None
 
 
+VFX_SHAPE_RE = re.compile(r'\{s:"([a-z0-9_]+)"')
+VFX_TL_RE = re.compile(r'f:"(ch:[a-z0-9_/]+)"')
+
+
+def check_vfx_refs(p, ln, body, funcs):
+    """Shape names passed to ch:vfx/sh and timeline functions passed to ch:vfx/go|gof|gor|play are only resolved
+    inside macros, so the normal function check cannot see them."""
+    if "ch:vfx/" not in body:
+        return
+    for m in VFX_SHAPE_RE.findall(body):
+        if "ch:vfx/sh" in body and f"ch:gen/vfx/{m}" not in funcs:
+            err(p, ln, f"unknown VFX shape {m}")
+    for m in VFX_TL_RE.findall(body):
+        if m not in funcs:
+            err(p, ln, f"unknown VFX timeline {m}")
+
+
 def main():
     only = [os.path.abspath(a) for a in sys.argv[1:]]
     funcs, files, tags = collect()
@@ -133,7 +150,7 @@ def main():
         for p_ in ["own", "cnt", "xp", "lvl", "awk", "asc", "pts", "tree", "feat", "best", "ret"]:
             for h in ["rage", "speed", "infernal", "void", "frozen", "storm", "blood", "titan", "celestial", "corruption"]:
                 objectives.add(f"ch.{p_}.{h}")
-        objectives.update({"ch.deaths", "ch.leave", "hearts", "cast", "chmenu", "ch.health"})
+        objectives.update({"ch.deaths", "ch.leave", "hearts", "cast", "chmenu", "chadmin", "ch.health"})
     except OSError:
         pass
 
@@ -153,6 +170,7 @@ def main():
             if not balanced(body):
                 err(p, ln, "unbalanced brackets or quotes")
             check_line(p, ln, body, funcs, tags, objectives)
+            check_vfx_refs(p, ln, body, funcs)
     for path, ln, msg in errors:
         print(f"{path}:{ln}: {msg}")
     print(f"{len(errors)} problem(s)")

@@ -56,14 +56,14 @@
  "abilities": {
   "_doc": "16x16 ability icons above the hotbar, centre of screen. Code = base + (index-1)*4 + (slot-1).",
   "font": "chaoshearts:hud",
-  "ascent": 25,
+  "ascent": 31,
   "height": 16,
   "base": "E100",
   "texture": "chaoshearts:gui/hud/ability_<h>_<slot>.png"
  },
  "ability_extra": {
   "font": "chaoshearts:hud",
-  "ascent": 25,
+  "ascent": 31,
   "height": 16,
   "glyphs": {
    "lock": "E180",
@@ -84,10 +84,23 @@
  "digits": {
   "_doc": "3x5 white digits shown on the bottom right of a cooling icon.",
   "font": "chaoshearts:hud_num",
-  "ascent": 15,
+  "ascent": 21,
   "height": 5,
   "base": "E1A0",
   "texture": "chaoshearts:gui/hud/digit_<n>.png"
+ },
+ "keys": {
+  "_doc": "17x5 key labels under each ability icon (Shift arrow + key). Tinted by text colour. Code = base + slot - 1.",
+  "font": "chaoshearts:hud",
+  "ascent": 14,
+  "height": 5,
+  "base": "E1B0",
+  "labels": [
+   "SPC",
+   "CTL",
+   "AA",
+   "DD"
+  ]
  },
  "meter": {
   "_doc": "74x4 white bar under the icons, tinted by text colour. Code = base + fill (0..20).",
@@ -120,5 +133,89 @@
    "shatter": "E30E"
   },
   "texture": "chaoshearts:gui/overlay/<name>.png"
+ },
+ "mastery": {
+  "_doc": "Mastery dock right of the hotbar. Every glyph is a full 112x31 canvas so all layers are drawn at one pen position (advance 113). Code = base + offset of the part + index.",
+  "font": "chaoshearts:hud_mb",
+  "ascent": -34,
+  "height": 31,
+  "width": 112,
+  "base": "E400",
+  "x": 97,
+  "parts": [
+   [
+    "frame",
+    1
+   ],
+   [
+    "trim",
+    1
+   ],
+   [
+    "gem",
+    10
+   ],
+   [
+    "crown",
+    1
+   ],
+   [
+    "glow",
+    1
+   ],
+   [
+    "flash",
+    1
+   ],
+   [
+    "ring",
+    25
+   ],
+   [
+    "bar",
+    79
+   ],
+   [
+    "sub",
+    40
+   ],
+   [
+    "pips",
+    8
+   ],
+   [
+    "digit",
+    30
+   ],
+   [
+    "label",
+    10
+   ],
+   [
+    "shine",
+    12
+   ]
+  ],
+  "labels": [
+   "ABILITY II AT 10",
+   "PASSIVE II AT 25",
+   "ABILITY III AT 40",
+   "HONED AT 60",
+   "ULTIMATE AT 75",
+   "AURA AT 90",
+   "TRIAL AT 100",
+   "AWAKEN IN TRIAL",
+   "ASCENSION",
+   "MAX ASCENSION"
+  ],
+  "milestones": [
+   10,
+   25,
+   40,
+   60,
+   75,
+   90,
+   100
+  ]
  }
 }

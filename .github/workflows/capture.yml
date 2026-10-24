@@ -1,0 +1,59 @@
+name: Capture
+
+# Films every ability in a real client and saves the clips and screenshots on the capture-output branch.
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['ci/capture/**', '.github/workflows/capture.yml']
+  workflow_dispatch:
+    inputs:
+      hearts:
+        description: Comma-separated hearts to film (empty for all)
+        default: ''
+      steps:
+        description: Steps (hud,moves,firstperson,setpieces)
+        default: 'hud,firstperson,moves'
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Xvfb, Mesa, xdotool and ffmpeg
+        run: sudo apt-get update -q && sudo apt-get install -yq xvfb xdotool ffmpeg libgl1-mesa-dri libglx-mesa0 libxtst6 libxi6 libxrandr2 libxcursor1 libxxf86vm1
+      - name: Build and package
+        run: |
+          python3 tools/build_datapack.py
+          mkdir -p dist
+          (cd datapack && zip -qr -X ../dist/chaoshearts-datapack.zip pack.mcmeta data)
+          (cd resourcepack && zip -qr -X ../dist/chaoshearts-resourcepack.zip .)
+      - name: Film
+        env:
+          CAPTURE_HEARTS: ${{ inputs.hearts }}
+          CAPTURE_STEPS: ${{ inputs.steps || 'hud,firstperson,moves' }}
+        run: bash ci/capture/capture.sh dist /tmp/capture
+      - name: Save to the capture-output branch
+        if: always()
+        run: |
+          cd /tmp/capture
+          echo "run ${{ github.run_id }} on ${{ github.sha }}" > run.txt
+          git init -q -b capture-output
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+          git add -A
+          git commit -qm "Capture for run ${{ github.run_id }}"
+          git push -fq "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" capture-output

@@ -15,3 +15,4 @@ $execute rotated 270 0 run particle $(p) ^ ^ ^$(r) 0 0 0 0 1
 $execute rotated 292.5 0 run particle $(p) ^ ^ ^$(r) 0 0 0 0 1
 $execute rotated 315 0 run particle $(p) ^ ^ ^$(r) 0 0 0 0 1
 $execute rotated 337.5 0 run particle $(p) ^ ^ ^$(r) 0 0 0 0 1
+$function ch:vfx/up/ring {p:'$(p)',r:$(r)}

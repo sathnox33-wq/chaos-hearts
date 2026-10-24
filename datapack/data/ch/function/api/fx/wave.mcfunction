@@ -11,3 +11,4 @@ execute store result storage ch:tmp fxa.s1 float 0.017 run data get storage ch:t
 data modify storage ch:tmp fxa.spin set value -90
 execute positioned ~ ~0.3 ~ rotated 0 0 run function ch:api/fx/sprite_go with storage ch:tmp fxa
 particle minecraft:explosion ~ ~0.3 ~ 0 0 0 0 1
+$function ch:vfx/up/wave {color:$(color),r:$(r),t:$(t)}

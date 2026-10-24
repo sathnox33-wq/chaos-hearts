@@ -10,10 +10,11 @@
    "type": "minecraft:text",
    "key": "player",
    "label": {
-    "text": "Player"
+    "text": "Player (name, @s or a selector)"
    },
    "width": 200,
-   "max_length": 16
+   "max_length": 64,
+   "initial": "@s"
   },
   {
    "type": "minecraft:single_option",
@@ -175,5 +176,15 @@
   "label": {
    "text": "Done"
   }
- }
+ },
+ "body": [
+  {
+   "type": "minecraft:plain_message",
+   "width": 320,
+   "contents": {
+    "text": "Typed commands. The clickable panel (/trigger chadmin) is easier for online players.",
+    "color": "gray"
+   }
+  }
+ ]
 }

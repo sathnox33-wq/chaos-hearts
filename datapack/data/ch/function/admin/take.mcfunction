@@ -1,3 +1,4 @@
-# Op: removes one heart of type $(heart) from $(player). Their mastery stays.
-$execute as $(player) at @s run function ch:heart/destroy {h:"$(heart)"}
-$tellraw @s [{text:"Took a $(heart) heart from ",color:"gray"},{selector:"$(player)",color:"white"}]
+# Op: /function ch:admin/take {player:"Name",heart:"rage"} removes one heart of that type. Their mastery stays.
+$data modify storage ch:tmp ad set value {player:"$(player)",heart:"$(heart)"}
+execute unless function ch:admin/check run return fail
+function ch:admin/take_go with storage ch:tmp ad

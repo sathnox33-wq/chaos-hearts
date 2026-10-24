@@ -16,9 +16,11 @@ execute if score @s ch.dtd matches 1.. run scoreboard players remove @s ch.dtd 1
 execute if score @s hearts matches 1.. run function ch:menu/open
 execute if score @s cast matches 1.. run function ch:core/input/cast_trigger
 execute if score @s chmenu matches 1.. run function ch:menu/action
+execute if score @s chadmin matches 1.. run function ch:admin/ui/action
 scoreboard players enable @s hearts
 scoreboard players enable @s cast
 scoreboard players enable @s chmenu
+execute if entity @s[tag=ch.admin] run scoreboard players enable @s chadmin
 execute if score #t20 ch.g matches 0 if score @s ch.ctag > #now ch.g run function ch:core/player/combat_check
 scoreboard players add @s ch.hud 1
 execute if score @s ch.hud matches 5.. run function ch:core/hud/draw

@@ -153,7 +153,31 @@ async function main () {
   out = await run('attribute Attacker minecraft:max_health modifier value get ch:hearts')
   check('max health follows the hearts held', /is 4(\.0)?\b/.test(out) || aActive === 1, out)
 
+  // ---- admin panel: the Attacker becomes an admin and drives the panel through its trigger
+  await run('tag Attacker add ch.admin')
+  const vpid = await score('Victim', 'ch.pid')
+  await run(`scoreboard players set Attacker chadmin ${1000 + vpid}`, 500)
+  check('the admin panel picks a player', (await score('Attacker', 'ch.adt')) === vpid, await score('Attacker', 'ch.adt'))
+  const inf = async () => (await score('Victim', 'ch.cnt.infernal')) || 0
+  const inf0 = await inf()
+  await run('scoreboard players set Attacker chadmin 2003', 600)
+  check('the admin panel gives a heart', (await inf()) === inf0 + 1, `${inf0} -> ${await inf()}`)
+  await run('scoreboard players set Attacker chadmin 13050', 600)
+  check('the admin panel sets mastery', (await score('Victim', 'ch.lvl.infernal')) === 50, await score('Victim', 'ch.lvl.infernal'))
+  await run('scoreboard players set Attacker chadmin 2103', 600)
+  check('the admin panel takes a heart', (await inf()) === inf0, await inf())
+  await run('scoreboard players set Victim chadmin 2003', 600)
+  check('non-admins cannot use the admin panel', (await inf()) === inf0, await inf())
+  await run('scoreboard players set Attacker chadmin 54', 500)
+  check('the admin settings page changes a setting', (await score('#xp_pct', 'ch.cfg')) === 125, await score('#xp_pct', 'ch.cfg'))
+  await run('scoreboard players set Attacker chadmin 53', 500)
+  out = await run('function ch:admin/give {player:"",heart:"rage"}')
+  check('a typed admin command with no player fails cleanly', !/Unknown or incomplete|error/i.test(out), out)
+  await run('tag Attacker remove ch.admin')
+
   // ---- hotkeys: shuffle, then cast with sneak + jump
+  // The starting heart is random; when it was rage the Attacker holds only one heart and has nothing to shuffle to.
+  if (aActive === 1) await run('function ch:admin/give {player:"Attacker",heart:"speed"}')
   await run('execute as Attacker run function ch:heart/set_active {i:1}')
   await run('tp Attacker 0 100 0 0 0')
   await run('tp Victim 0 100 3 180 0')
