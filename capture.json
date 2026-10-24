@@ -1,0 +1,1150 @@
+{
+ "clips": [
+  {
+   "file": "dock_levelup.mp4",
+   "variant": "hud",
+   "seconds": 5
+  },
+  {
+   "file": "fp_frozen_ult.mp4",
+   "heart": "frozen",
+   "slot": 4,
+   "variant": "first-person",
+   "seconds": 8,
+   "preroll": 0.6
+  },
+  {
+   "file": "fp_rage_ult.mp4",
+   "heart": "rage",
+   "slot": 4,
+   "variant": "first-person",
+   "seconds": 8,
+   "preroll": 0.6
+  },
+  {
+   "file": "fp_celestial_ult.mp4",
+   "heart": "celestial",
+   "slot": 4,
+   "variant": "first-person",
+   "seconds": 8,
+   "preroll": 0.6
+  },
+  {
+   "file": "fp_void_ult.mp4",
+   "heart": "void",
+   "slot": 4,
+   "variant": "first-person",
+   "seconds": 8,
+   "preroll": 0.6
+  },
+  {
+   "file": "fp_storm_ult.mp4",
+   "heart": "storm",
+   "slot": 4,
+   "variant": "first-person",
+   "seconds": 8,
+   "preroll": 0.6
+  },
+  {
+   "file": "rage_a1_level.mp4",
+   "heart": "rage",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 21173
+  },
+  {
+   "file": "rage_a1_up.mp4",
+   "heart": "rage",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 22275
+  },
+  {
+   "file": "rage_a1_down.mp4",
+   "heart": "rage",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 23377
+  },
+  {
+   "file": "rage_a2_level.mp4",
+   "heart": "rage",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 24479
+  },
+  {
+   "file": "rage_a2_up.mp4",
+   "heart": "rage",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 25583
+  },
+  {
+   "file": "rage_a2_down.mp4",
+   "heart": "rage",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 26685
+  },
+  {
+   "file": "rage_a3_level.mp4",
+   "heart": "rage",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 27787
+  },
+  {
+   "file": "rage_a3_up.mp4",
+   "heart": "rage",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 28889
+  },
+  {
+   "file": "rage_a3_down.mp4",
+   "heart": "rage",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 29991
+  },
+  {
+   "file": "rage_a4_level.mp4",
+   "heart": "rage",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 31093
+  },
+  {
+   "file": "rage_a4_up.mp4",
+   "heart": "rage",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 32195
+  },
+  {
+   "file": "rage_a4_down.mp4",
+   "heart": "rage",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 33297
+  },
+  {
+   "file": "speed_a1_level.mp4",
+   "heart": "speed",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 34718
+  },
+  {
+   "file": "speed_a1_up.mp4",
+   "heart": "speed",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 35822
+  },
+  {
+   "file": "speed_a1_down.mp4",
+   "heart": "speed",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 36924
+  },
+  {
+   "file": "speed_a2_level.mp4",
+   "heart": "speed",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 38026
+  },
+  {
+   "file": "speed_a2_up.mp4",
+   "heart": "speed",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 39128
+  },
+  {
+   "file": "speed_a2_down.mp4",
+   "heart": "speed",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 40230
+  },
+  {
+   "file": "speed_a3_level.mp4",
+   "heart": "speed",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 41332
+  },
+  {
+   "file": "speed_a3_up.mp4",
+   "heart": "speed",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 42434
+  },
+  {
+   "file": "speed_a3_down.mp4",
+   "heart": "speed",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 43536
+  },
+  {
+   "file": "speed_a4_level.mp4",
+   "heart": "speed",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 44638
+  },
+  {
+   "file": "speed_a4_up.mp4",
+   "heart": "speed",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 45740
+  },
+  {
+   "file": "speed_a4_down.mp4",
+   "heart": "speed",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 46842
+  },
+  {
+   "file": "infernal_a1_level.mp4",
+   "heart": "infernal",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 48263
+  },
+  {
+   "file": "infernal_a1_up.mp4",
+   "heart": "infernal",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 49367
+  },
+  {
+   "file": "infernal_a1_down.mp4",
+   "heart": "infernal",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 50469
+  },
+  {
+   "file": "infernal_a2_level.mp4",
+   "heart": "infernal",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 51571
+  },
+  {
+   "file": "infernal_a2_up.mp4",
+   "heart": "infernal",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 52673
+  },
+  {
+   "file": "infernal_a2_down.mp4",
+   "heart": "infernal",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 53775
+  },
+  {
+   "file": "infernal_a3_level.mp4",
+   "heart": "infernal",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 54959
+  },
+  {
+   "file": "infernal_a3_up.mp4",
+   "heart": "infernal",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 56061
+  },
+  {
+   "file": "infernal_a3_down.mp4",
+   "heart": "infernal",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 57163
+  },
+  {
+   "file": "infernal_a4_level.mp4",
+   "heart": "infernal",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 58265
+  },
+  {
+   "file": "infernal_a4_up.mp4",
+   "heart": "infernal",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 59367
+  },
+  {
+   "file": "infernal_a4_down.mp4",
+   "heart": "infernal",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 60469
+  },
+  {
+   "file": "void_a1_level.mp4",
+   "heart": "void",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 61890
+  },
+  {
+   "file": "void_a1_up.mp4",
+   "heart": "void",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 62994
+  },
+  {
+   "file": "void_a1_down.mp4",
+   "heart": "void",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 64096
+  },
+  {
+   "file": "void_a2_level.mp4",
+   "heart": "void",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 65198
+  },
+  {
+   "file": "void_a2_up.mp4",
+   "heart": "void",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 66300
+  },
+  {
+   "file": "void_a2_down.mp4",
+   "heart": "void",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 67402
+  },
+  {
+   "file": "void_a3_level.mp4",
+   "heart": "void",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 68504
+  },
+  {
+   "file": "void_a3_up.mp4",
+   "heart": "void",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 69606
+  },
+  {
+   "file": "void_a3_down.mp4",
+   "heart": "void",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 70708
+  },
+  {
+   "file": "void_a4_level.mp4",
+   "heart": "void",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 71810
+  },
+  {
+   "file": "void_a4_up.mp4",
+   "heart": "void",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 72912
+  },
+  {
+   "file": "void_a4_down.mp4",
+   "heart": "void",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 74014
+  },
+  {
+   "file": "frozen_a1_level.mp4",
+   "heart": "frozen",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 75435
+  },
+  {
+   "file": "frozen_a1_up.mp4",
+   "heart": "frozen",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 76539
+  },
+  {
+   "file": "frozen_a1_down.mp4",
+   "heart": "frozen",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 77641
+  },
+  {
+   "file": "frozen_a2_level.mp4",
+   "heart": "frozen",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 78745
+  },
+  {
+   "file": "frozen_a2_up.mp4",
+   "heart": "frozen",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 79847
+  },
+  {
+   "file": "frozen_a2_down.mp4",
+   "heart": "frozen",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 80949
+  },
+  {
+   "file": "frozen_a3_level.mp4",
+   "heart": "frozen",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 82051
+  },
+  {
+   "file": "frozen_a3_up.mp4",
+   "heart": "frozen",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 83155
+  },
+  {
+   "file": "frozen_a3_down.mp4",
+   "heart": "frozen",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 84257
+  },
+  {
+   "file": "frozen_a4_level.mp4",
+   "heart": "frozen",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 85359
+  },
+  {
+   "file": "frozen_a4_up.mp4",
+   "heart": "frozen",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 86461
+  },
+  {
+   "file": "frozen_a4_down.mp4",
+   "heart": "frozen",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 87563
+  },
+  {
+   "file": "storm_a1_level.mp4",
+   "heart": "storm",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 88984
+  },
+  {
+   "file": "storm_a1_up.mp4",
+   "heart": "storm",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 90088
+  },
+  {
+   "file": "storm_a1_down.mp4",
+   "heart": "storm",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 91190
+  },
+  {
+   "file": "storm_a2_level.mp4",
+   "heart": "storm",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 92292
+  },
+  {
+   "file": "storm_a2_up.mp4",
+   "heart": "storm",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 93394
+  },
+  {
+   "file": "storm_a2_down.mp4",
+   "heart": "storm",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 94496
+  },
+  {
+   "file": "storm_a3_level.mp4",
+   "heart": "storm",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 95598
+  },
+  {
+   "file": "storm_a3_up.mp4",
+   "heart": "storm",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 96700
+  },
+  {
+   "file": "storm_a3_down.mp4",
+   "heart": "storm",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 97802
+  },
+  {
+   "file": "storm_a4_level.mp4",
+   "heart": "storm",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 98906
+  },
+  {
+   "file": "storm_a4_up.mp4",
+   "heart": "storm",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 100008
+  },
+  {
+   "file": "storm_a4_down.mp4",
+   "heart": "storm",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 101110
+  },
+  {
+   "file": "blood_a1_level.mp4",
+   "heart": "blood",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 102531
+  },
+  {
+   "file": "blood_a1_up.mp4",
+   "heart": "blood",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 103635
+  },
+  {
+   "file": "blood_a1_down.mp4",
+   "heart": "blood",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 104737
+  },
+  {
+   "file": "blood_a2_level.mp4",
+   "heart": "blood",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 105839
+  },
+  {
+   "file": "blood_a2_up.mp4",
+   "heart": "blood",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 106941
+  },
+  {
+   "file": "blood_a2_down.mp4",
+   "heart": "blood",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 108043
+  },
+  {
+   "file": "blood_a3_level.mp4",
+   "heart": "blood",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 109145
+  },
+  {
+   "file": "blood_a3_up.mp4",
+   "heart": "blood",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 110247
+  },
+  {
+   "file": "blood_a3_down.mp4",
+   "heart": "blood",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 111349
+  },
+  {
+   "file": "blood_a4_level.mp4",
+   "heart": "blood",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 112451
+  },
+  {
+   "file": "blood_a4_up.mp4",
+   "heart": "blood",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 113555
+  },
+  {
+   "file": "blood_a4_down.mp4",
+   "heart": "blood",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 114657
+  },
+  {
+   "file": "titan_a1_level.mp4",
+   "heart": "titan",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 116078
+  },
+  {
+   "file": "titan_a1_up.mp4",
+   "heart": "titan",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 117182
+  },
+  {
+   "file": "titan_a1_down.mp4",
+   "heart": "titan",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 118284
+  },
+  {
+   "file": "titan_a2_level.mp4",
+   "heart": "titan",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 119386
+  },
+  {
+   "file": "titan_a2_up.mp4",
+   "heart": "titan",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 120488
+  },
+  {
+   "file": "titan_a2_down.mp4",
+   "heart": "titan",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 121590
+  },
+  {
+   "file": "titan_a3_level.mp4",
+   "heart": "titan",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 122692
+  },
+  {
+   "file": "titan_a3_up.mp4",
+   "heart": "titan",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 123794
+  },
+  {
+   "file": "titan_a3_down.mp4",
+   "heart": "titan",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 124896
+  },
+  {
+   "file": "titan_a4_level.mp4",
+   "heart": "titan",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 125998
+  },
+  {
+   "file": "titan_a4_up.mp4",
+   "heart": "titan",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 127100
+  },
+  {
+   "file": "titan_a4_down.mp4",
+   "heart": "titan",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 128204
+  },
+  {
+   "file": "celestial_a1_level.mp4",
+   "heart": "celestial",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 129625
+  },
+  {
+   "file": "celestial_a1_up.mp4",
+   "heart": "celestial",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 130729
+  },
+  {
+   "file": "celestial_a1_down.mp4",
+   "heart": "celestial",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 131831
+  },
+  {
+   "file": "celestial_a2_level.mp4",
+   "heart": "celestial",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 132933
+  },
+  {
+   "file": "celestial_a2_up.mp4",
+   "heart": "celestial",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 134035
+  },
+  {
+   "file": "celestial_a2_down.mp4",
+   "heart": "celestial",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 135137
+  },
+  {
+   "file": "celestial_a3_level.mp4",
+   "heart": "celestial",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 136239
+  },
+  {
+   "file": "celestial_a3_up.mp4",
+   "heart": "celestial",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 137341
+  },
+  {
+   "file": "celestial_a3_down.mp4",
+   "heart": "celestial",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 138443
+  },
+  {
+   "file": "celestial_a4_level.mp4",
+   "heart": "celestial",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 139545
+  },
+  {
+   "file": "celestial_a4_up.mp4",
+   "heart": "celestial",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 140647
+  },
+  {
+   "file": "celestial_a4_down.mp4",
+   "heart": "celestial",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 141749
+  },
+  {
+   "file": "corruption_a1_level.mp4",
+   "heart": "corruption",
+   "slot": 1,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 143170
+  },
+  {
+   "file": "corruption_a1_up.mp4",
+   "heart": "corruption",
+   "slot": 1,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 144274
+  },
+  {
+   "file": "corruption_a1_down.mp4",
+   "heart": "corruption",
+   "slot": 1,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 145376
+  },
+  {
+   "file": "corruption_a2_level.mp4",
+   "heart": "corruption",
+   "slot": 2,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 146478
+  },
+  {
+   "file": "corruption_a2_up.mp4",
+   "heart": "corruption",
+   "slot": 2,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 147582
+  },
+  {
+   "file": "corruption_a2_down.mp4",
+   "heart": "corruption",
+   "slot": 2,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 148684
+  },
+  {
+   "file": "corruption_a3_level.mp4",
+   "heart": "corruption",
+   "slot": 3,
+   "variant": "level",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 149786
+  },
+  {
+   "file": "corruption_a3_up.mp4",
+   "heart": "corruption",
+   "slot": 3,
+   "variant": "up",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 150888
+  },
+  {
+   "file": "corruption_a3_down.mp4",
+   "heart": "corruption",
+   "slot": 3,
+   "variant": "down",
+   "seconds": 5.5,
+   "preroll": 0.6,
+   "logAt": 151990
+  },
+  {
+   "file": "corruption_a4_level.mp4",
+   "heart": "corruption",
+   "slot": 4,
+   "variant": "level",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 153092
+  },
+  {
+   "file": "corruption_a4_up.mp4",
+   "heart": "corruption",
+   "slot": 4,
+   "variant": "up",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 154627
+  },
+  {
+   "file": "corruption_a4_down.mp4",
+   "heart": "corruption",
+   "slot": 4,
+   "variant": "down",
+   "seconds": 9,
+   "preroll": 0.6,
+   "logAt": 156160
+  }
+ ],
+ "shots": [
+  "start.png",
+  "dock_rage_47.png",
+  "dock_frozen_12.png",
+  "dock_void_76.png",
+  "dock_titan_100.png",
+  "dock_celestial_awakened.png",
+  "dock_levelup.png",
+  "hud_frozen.png",
+  "hud_frozen_cooldown.png",
+  "hud_rage.png",
+  "hud_rage_cooldown.png",
+  "hud_celestial.png",
+  "hud_celestial_cooldown.png",
+  "hud_void.png",
+  "hud_void_cooldown.png",
+  "hud_storm.png",
+  "hud_storm_cooldown.png",
+  "end.png"
+ ],
+ "errors": []
+}

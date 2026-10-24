@@ -1,0 +1,2455 @@
+Unpacking 1.21.11/server-1.21.11.jar (versions:1.21.11) to versions/1.21.11/server-1.21.11.jar
+Unpacking at/yawk/lz4/lz4-java/1.8.1/lz4-java-1.8.1.jar (libraries:at.yawk.lz4:lz4-java:1.8.1) to libraries/at/yawk/lz4/lz4-java/1.8.1/lz4-java-1.8.1.jar
+Unpacking com/azure/azure-json/1.4.0/azure-json-1.4.0.jar (libraries:com.azure:azure-json:1.4.0) to libraries/com/azure/azure-json/1.4.0/azure-json-1.4.0.jar
+Unpacking com/github/oshi/oshi-core/6.9.0/oshi-core-6.9.0.jar (libraries:com.github.oshi:oshi-core:6.9.0) to libraries/com/github/oshi/oshi-core/6.9.0/oshi-core-6.9.0.jar
+Unpacking com/google/code/gson/gson/2.13.2/gson-2.13.2.jar (libraries:com.google.code.gson:gson:2.13.2) to libraries/com/google/code/gson/gson/2.13.2/gson-2.13.2.jar
+Unpacking com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar (libraries:com.google.guava:failureaccess:1.0.3) to libraries/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar
+Unpacking com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar (libraries:com.google.guava:guava:33.5.0-jre) to libraries/com/google/guava/guava/33.5.0-jre/guava-33.5.0-jre.jar
+Unpacking com/microsoft/azure/msal4j/1.23.1/msal4j-1.23.1.jar (libraries:com.microsoft.azure:msal4j:1.23.1) to libraries/com/microsoft/azure/msal4j/1.23.1/msal4j-1.23.1.jar
+Unpacking com/mojang/authlib/7.0.61/authlib-7.0.61.jar (libraries:com.mojang:authlib:7.0.61) to libraries/com/mojang/authlib/7.0.61/authlib-7.0.61.jar
+Unpacking com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar (libraries:com.mojang:brigadier:1.3.10) to libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar
+Unpacking com/mojang/datafixerupper/9.0.19/datafixerupper-9.0.19.jar (libraries:com.mojang:datafixerupper:9.0.19) to libraries/com/mojang/datafixerupper/9.0.19/datafixerupper-9.0.19.jar
+Unpacking com/mojang/jtracy/1.0.37/jtracy-1.0.37.jar (libraries:com.mojang:jtracy:1.0.37) to libraries/com/mojang/jtracy/1.0.37/jtracy-1.0.37.jar
+Unpacking com/mojang/logging/1.6.11/logging-1.6.11.jar (libraries:com.mojang:logging:1.6.11) to libraries/com/mojang/logging/1.6.11/logging-1.6.11.jar
+Unpacking commons-io/commons-io/2.20.0/commons-io-2.20.0.jar (libraries:commons-io:commons-io:2.20.0) to libraries/commons-io/commons-io/2.20.0/commons-io-2.20.0.jar
+Unpacking io/netty/netty-buffer/4.2.7.Final/netty-buffer-4.2.7.Final.jar (libraries:io.netty:netty-buffer:4.2.7.Final) to libraries/io/netty/netty-buffer/4.2.7.Final/netty-buffer-4.2.7.Final.jar
+Unpacking io/netty/netty-codec-base/4.2.7.Final/netty-codec-base-4.2.7.Final.jar (libraries:io.netty:netty-codec-base:4.2.7.Final) to libraries/io/netty/netty-codec-base/4.2.7.Final/netty-codec-base-4.2.7.Final.jar
+Unpacking io/netty/netty-codec-compression/4.2.7.Final/netty-codec-compression-4.2.7.Final.jar (libraries:io.netty:netty-codec-compression:4.2.7.Final) to libraries/io/netty/netty-codec-compression/4.2.7.Final/netty-codec-compression-4.2.7.Final.jar
+Unpacking io/netty/netty-codec-http/4.2.7.Final/netty-codec-http-4.2.7.Final.jar (libraries:io.netty:netty-codec-http:4.2.7.Final) to libraries/io/netty/netty-codec-http/4.2.7.Final/netty-codec-http-4.2.7.Final.jar
+Unpacking io/netty/netty-common/4.2.7.Final/netty-common-4.2.7.Final.jar (libraries:io.netty:netty-common:4.2.7.Final) to libraries/io/netty/netty-common/4.2.7.Final/netty-common-4.2.7.Final.jar
+Unpacking io/netty/netty-handler/4.2.7.Final/netty-handler-4.2.7.Final.jar (libraries:io.netty:netty-handler:4.2.7.Final) to libraries/io/netty/netty-handler/4.2.7.Final/netty-handler-4.2.7.Final.jar
+Unpacking io/netty/netty-resolver/4.2.7.Final/netty-resolver-4.2.7.Final.jar (libraries:io.netty:netty-resolver:4.2.7.Final) to libraries/io/netty/netty-resolver/4.2.7.Final/netty-resolver-4.2.7.Final.jar
+Unpacking io/netty/netty-transport/4.2.7.Final/netty-transport-4.2.7.Final.jar (libraries:io.netty:netty-transport:4.2.7.Final) to libraries/io/netty/netty-transport/4.2.7.Final/netty-transport-4.2.7.Final.jar
+Unpacking io/netty/netty-transport-classes-epoll/4.2.7.Final/netty-transport-classes-epoll-4.2.7.Final.jar (libraries:io.netty:netty-transport-classes-epoll:4.2.7.Final) to libraries/io/netty/netty-transport-classes-epoll/4.2.7.Final/netty-transport-classes-epoll-4.2.7.Final.jar
+Unpacking io/netty/netty-transport-classes-kqueue/4.2.7.Final/netty-transport-classes-kqueue-4.2.7.Final.jar (libraries:io.netty:netty-transport-classes-kqueue:4.2.7.Final) to libraries/io/netty/netty-transport-classes-kqueue/4.2.7.Final/netty-transport-classes-kqueue-4.2.7.Final.jar
+Unpacking io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-x86_64.jar (libraries:io.netty:netty-transport-native-epoll:4.2.7.Final:linux-x86_64) to libraries/io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-x86_64.jar
+Unpacking io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-aarch_64.jar (libraries:io.netty:netty-transport-native-epoll:4.2.7.Final:linux-aarch_64) to libraries/io/netty/netty-transport-native-epoll/4.2.7.Final/netty-transport-native-epoll-4.2.7.Final-linux-aarch_64.jar
+Unpacking io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-x86_64.jar (libraries:io.netty:netty-transport-native-kqueue:4.2.7.Final:osx-x86_64) to libraries/io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-x86_64.jar
+Unpacking io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-aarch_64.jar (libraries:io.netty:netty-transport-native-kqueue:4.2.7.Final:osx-aarch_64) to libraries/io/netty/netty-transport-native-kqueue/4.2.7.Final/netty-transport-native-kqueue-4.2.7.Final-osx-aarch_64.jar
+Unpacking io/netty/netty-transport-native-unix-common/4.2.7.Final/netty-transport-native-unix-common-4.2.7.Final.jar (libraries:io.netty:netty-transport-native-unix-common:4.2.7.Final) to libraries/io/netty/netty-transport-native-unix-common/4.2.7.Final/netty-transport-native-unix-common-4.2.7.Final.jar
+Unpacking it/unimi/dsi/fastutil/8.5.18/fastutil-8.5.18.jar (libraries:it.unimi.dsi:fastutil:8.5.18) to libraries/it/unimi/dsi/fastutil/8.5.18/fastutil-8.5.18.jar
+Unpacking net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar (libraries:net.java.dev.jna:jna:5.17.0) to libraries/net/java/dev/jna/jna/5.17.0/jna-5.17.0.jar
+Unpacking net/java/dev/jna/jna-platform/5.17.0/jna-platform-5.17.0.jar (libraries:net.java.dev.jna:jna-platform:5.17.0) to libraries/net/java/dev/jna/jna-platform/5.17.0/jna-platform-5.17.0.jar
+Unpacking net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar (libraries:net.sf.jopt-simple:jopt-simple:5.0.4) to libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar
+Unpacking org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar (libraries:org.apache.commons:commons-lang3:3.19.0) to libraries/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar
+Unpacking org/apache/logging/log4j/log4j-api/2.25.2/log4j-api-2.25.2.jar (libraries:org.apache.logging.log4j:log4j-api:2.25.2) to libraries/org/apache/logging/log4j/log4j-api/2.25.2/log4j-api-2.25.2.jar
+Unpacking org/apache/logging/log4j/log4j-core/2.25.2/log4j-core-2.25.2.jar (libraries:org.apache.logging.log4j:log4j-core:2.25.2) to libraries/org/apache/logging/log4j/log4j-core/2.25.2/log4j-core-2.25.2.jar
+Unpacking org/apache/logging/log4j/log4j-slf4j2-impl/2.25.2/log4j-slf4j2-impl-2.25.2.jar (libraries:org.apache.logging.log4j:log4j-slf4j2-impl:2.25.2) to libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.25.2/log4j-slf4j2-impl-2.25.2.jar
+Unpacking org/joml/joml/1.10.8/joml-1.10.8.jar (libraries:org.joml:joml:1.10.8) to libraries/org/joml/joml/1.10.8/joml-1.10.8.jar
+Unpacking org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar (libraries:org.jspecify:jspecify:1.0.0) to libraries/org/jspecify/jspecify/1.0.0/jspecify-1.0.0.jar
+Unpacking org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar (libraries:org.slf4j:slf4j-api:2.0.17) to libraries/org/slf4j/slf4j-api/2.0.17/slf4j-api-2.0.17.jar
+Starting net.minecraft.server.Main
+[01:09:12] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[01:09:12] [ServerMain/INFO]: Found new data pack file/capture.zip, loading it automatically
+[01:09:12] [ServerMain/INFO]: Found new data pack file/chaoshearts-datapack.zip, loading it automatically
+[01:09:13] [ServerMain/INFO]: No existing world data, creating new world
+[01:09:13] [ServerMain/ERROR]: No key layers in MapLike[{}]
+[01:09:14] [ServerMain/INFO]: Loaded 1470 recipes
+[01:09:14] [ServerMain/INFO]: Loaded 1591 advancements
+[01:09:14] [Server thread/INFO]: Starting minecraft server version 1.21.11
+[01:09:14] [Server thread/INFO]: Loading properties
+[01:09:14] [Server thread/INFO]: Default game type: SURVIVAL
+[01:09:14] [Server thread/INFO]: Generating keypair
+[01:09:14] [Server thread/INFO]: Starting Minecraft server on *:25565
+[01:09:14] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[01:09:14] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[01:09:14] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[01:09:14] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[01:09:14] [Server thread/INFO]: Preparing level "world"
+[01:09:14] [Server thread/INFO]: Selecting global world spawn...
+[01:09:15] [Server thread/INFO]: Loading 0 persistent chunks...
+[01:09:15] [Server thread/INFO]: Preparing spawn area: 100%
+[01:09:15] [Server thread/INFO]: Time elapsed: 333 ms
+[01:09:15] [Server thread/INFO]: Done (0.413s)! For help, type "help"
+[01:09:15] [Server thread/INFO]: There are 3 data pack(s) enabled: [vanilla (built-in)], [file/capture.zip (world)], [file/chaoshearts-datapack.zip (world)]
+[01:09:40] [Server thread/INFO]: Cam[/127.0.0.1:48862] logged in with entity id 3 at (9.5, -60.0, 0.5)
+[01:09:40] [Server thread/INFO]: Cam joined the game
+[01:09:41] [Server thread/INFO]: Caster[/127.0.0.1:48868] logged in with entity id 7 at (-3.5, -60.0, 9.5)
+[01:09:41] [Server thread/INFO]: Caster joined the game
+[01:09:41] [Server thread/INFO]: Made Cam a server operator
+[01:09:41] [Server thread/INFO]: Made Caster a server operator
+[01:09:42] [Server thread/INFO]: Set Cam's game mode to Spectator Mode
+[01:09:42] [Server thread/INFO]: The difficulty has been set to Normal
+[01:09:42] [Server thread/INFO]: Set the time to 6000
+[01:09:42] [Server thread/INFO]: Gamerule advance_time is now set to: false
+[01:09:43] [Server thread/INFO]: Set the weather to clear
+[01:09:43] [Server thread/INFO]: Gamerule advance_weather is now set to: false
+[01:09:43] [Server thread/INFO]: Gamerule spawn_mobs is now set to: false
+[01:09:43] [Server thread/INFO]: Gamerule spawn_monsters is now set to: false
+[01:09:43] [Server thread/INFO]: Gamerule send_command_feedback is now set to: false
+[01:09:44] [Server thread/INFO]: Gamerule log_admin_commands is now set to: false
+[01:09:44] [Server thread/INFO]: Incorrect argument for command
+[01:09:44] [Server thread/INFO]: gamerule sendCommandFeedback false<--[HERE]
+[01:09:44] [Server thread/INFO]: Killed 16 entities
+[01:09:44] [Server thread/INFO]: Set [cap] for #mode to 1
+[01:09:58] [Server thread/INFO]: No entity was found
+[01:09:58] [Server thread/INFO]: Set [cap] for #mode to 0
+[01:09:58] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:09:58] [Server thread/INFO]: Set Cam's game mode to Survival Mode
+[01:09:59] [Server thread/INFO]: Applied effect Resistance to Cam
+[01:09:59] [Server thread/INFO]: Running function ch:admin/give
+[01:09:59] [Server thread/INFO]: Running function ch:admin/give
+[01:09:59] [Server thread/INFO]: Running function ch:admin/give
+[01:10:00] [Server thread/INFO]: Running function ch:admin/give
+[01:10:00] [Server thread/INFO]: Running function ch:admin/give
+[01:10:00] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:01] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:01] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:01] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:03] [Server thread/INFO]: Added 120 to [ch.xp.rage] for Cam (now 6324)
+[01:10:04] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:05] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:05] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:05] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:07] [Server thread/INFO]: Added 30 to [ch.xp.frozen] for Cam (now 774)
+[01:10:08] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:09] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:09] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:09] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:11] [Server thread/INFO]: Added 200 to [ch.xp.void] for Cam (now 14640)
+[01:10:12] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:13] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:13] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:13] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:16] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:16] [Server thread/INFO]: Running function ch:admin/awaken
+[01:10:17] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:17] [Server thread/INFO]: Added 600 to [ch.asc.celestial] for Cam (now 600)
+[01:10:19] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:19] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:20] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:22] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:27] [Server thread/INFO]: Set Cam's game mode to Spectator Mode
+[01:10:27] [Server thread/INFO]: Set [cap] for #mode to 1
+[01:10:27] [Server thread/INFO]: No entity was found
+[01:10:27] [Server thread/INFO]: Killed 22 entities
+[01:10:27] [Server thread/INFO]: Set [cap] for #mode to 0
+[01:10:28] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:28] [Server thread/INFO]: Set Cam's game mode to Survival Mode
+[01:10:28] [Server thread/INFO]: Applied effect Resistance to Cam
+[01:10:28] [Server thread/INFO]: Running function ch:admin/give
+[01:10:28] [Server thread/INFO]: Running function ch:admin/give
+[01:10:29] [Server thread/INFO]: Running function ch:admin/give
+[01:10:29] [Server thread/INFO]: Running function ch:admin/give
+[01:10:29] [Server thread/INFO]: Running function ch:admin/give
+[01:10:30] [Server thread/INFO]: Set [cap] for #mode to 0
+[01:10:30] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:30] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:30] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:30] [Server thread/INFO]: Set [ch.cd1] for Cam to 0
+[01:10:30] [Server thread/INFO]: Set [ch.cd2] for Cam to 0
+[01:10:30] [Server thread/INFO]: Set [ch.cd3] for Cam to 0
+[01:10:31] [Server thread/INFO]: Set [ch.cd4] for Cam to 0
+[01:10:31] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:31] [Server thread/INFO]: Teleported Caster to 12.500000, -60.000000, -6.500000
+[01:10:31] [Server thread/INFO]: No entity was found
+[01:10:31] [Server thread/INFO]: Summoned new Husk
+[01:10:31] [Server thread/INFO]: Summoned new Husk
+[01:10:31] [Server thread/INFO]: Summoned new Husk
+[01:10:31] [Server thread/INFO]: Summoned new Husk
+[01:10:34] [Server thread/INFO]: Running function ch:core/cast
+[01:10:44] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:44] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:45] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:45] [Server thread/INFO]: Set [ch.cd1] for Cam to 0
+[01:10:45] [Server thread/INFO]: Set [ch.cd2] for Cam to 0
+[01:10:45] [Server thread/INFO]: Set [ch.cd3] for Cam to 0
+[01:10:45] [Server thread/INFO]: Set [ch.cd4] for Cam to 0
+[01:10:45] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:45] [Server thread/INFO]: Teleported Caster to 12.500000, -60.000000, -6.500000
+[01:10:45] [Server thread/INFO]: Killed 4 entities
+[01:10:45] [Server thread/INFO]: Summoned new Husk
+[01:10:45] [Server thread/INFO]: Summoned new Husk
+[01:10:45] [Server thread/INFO]: Summoned new Husk
+[01:10:45] [Server thread/INFO]: Summoned new Husk
+[01:10:49] [Server thread/INFO]: Running function ch:core/cast
+[01:10:58] [Server thread/INFO]: Running function ch:admin/mastery
+[01:10:58] [Server thread/INFO]: Running function ch:heart/set_active
+[01:10:59] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:10:59] [Server thread/INFO]: Set [ch.cd1] for Cam to 0
+[01:10:59] [Server thread/INFO]: Set [ch.cd2] for Cam to 0
+[01:10:59] [Server thread/INFO]: Set [ch.cd3] for Cam to 0
+[01:10:59] [Server thread/INFO]: Set [ch.cd4] for Cam to 0
+[01:10:59] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:10:59] [Server thread/INFO]: Teleported Caster to 12.500000, -60.000000, -6.500000
+[01:10:59] [Server thread/INFO]: Killed 4 entities
+[01:10:59] [Server thread/INFO]: Summoned new Husk
+[01:10:59] [Server thread/INFO]: Summoned new Husk
+[01:10:59] [Server thread/INFO]: Summoned new Husk
+[01:10:59] [Server thread/INFO]: Summoned new Husk
+[01:11:03] [Server thread/INFO]: Running function ch:core/cast
+[01:11:06] [Server thread/INFO]: death.attack.ch_ability
+[01:11:10] [Server thread/INFO]: death.attack.ch_ability
+[01:11:12] [Server thread/INFO]: Running function ch:admin/mastery
+[01:11:13] [Server thread/INFO]: Running function ch:heart/set_active
+[01:11:13] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:11:13] [Server thread/INFO]: Set [ch.cd1] for Cam to 0
+[01:11:13] [Server thread/INFO]: Set [ch.cd2] for Cam to 0
+[01:11:13] [Server thread/INFO]: Set [ch.cd3] for Cam to 0
+[01:11:13] [Server thread/INFO]: Set [ch.cd4] for Cam to 0
+[01:11:13] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:11:13] [Server thread/INFO]: Teleported Caster to 12.500000, -60.000000, -6.500000
+[01:11:13] [Server thread/INFO]: Cam has made the advancement [Monster Hunter]
+[01:11:13] [Server thread/INFO]: Killed 4 entities
+[01:11:13] [Server thread/INFO]: Summoned new Husk
+[01:11:13] [Server thread/INFO]: Summoned new Husk
+[01:11:13] [Server thread/INFO]: Summoned new Husk
+[01:11:14] [Server thread/INFO]: Summoned new Husk
+[01:11:17] [Server thread/INFO]: Running function ch:core/cast
+[01:11:26] [Server thread/INFO]: Running function ch:admin/mastery
+[01:11:27] [Server thread/INFO]: Running function ch:heart/set_active
+[01:11:27] [Server thread/INFO]: Set [ch.swapcd] for Cam to 0
+[01:11:27] [Server thread/INFO]: Set [ch.cd1] for Cam to 0
+[01:11:27] [Server thread/INFO]: Set [ch.cd2] for Cam to 0
+[01:11:27] [Server thread/INFO]: Set [ch.cd3] for Cam to 0
+[01:11:27] [Server thread/INFO]: Set [ch.cd4] for Cam to 0
+[01:11:27] [Server thread/INFO]: Teleported Cam to 0.500000, -60.000000, -2.500000
+[01:11:27] [Server thread/INFO]: Teleported Caster to 12.500000, -60.000000, -6.500000
+[01:11:27] [Server thread/INFO]: Killed 4 entities
+[01:11:28] [Server thread/INFO]: Summoned new Husk
+[01:11:28] [Server thread/INFO]: Summoned new Husk
+[01:11:28] [Server thread/INFO]: Summoned new Husk
+[01:11:28] [Server thread/INFO]: Summoned new Husk
+[01:11:31] [Server thread/INFO]: Running function ch:core/cast
+[01:11:37] [Server thread/INFO]: death.attack.ch_ability
+[01:11:41] [Server thread/INFO]: Set Cam's game mode to Spectator Mode
+[01:11:41] [Server thread/INFO]: Running function ch:admin/give
+[01:11:41] [Server thread/INFO]: Running function ch:admin/mastery
+[01:11:41] [Server thread/INFO]: Running function ch:heart/set_active
+[01:11:42] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:11:43] [Server thread/INFO]: Killed 27 entities
+[01:11:43] [Server thread/INFO]: Killed 12 entities
+[01:11:43] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:11:43] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:11:43] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:11:43] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:11:44] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:11:44] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:11:44] [Server thread/INFO]: Target has no effects to remove
+[01:11:44] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:11:44] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:11:44] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:11:44] [Server thread/INFO]: Killed 4 entities
+[01:11:44] [Server thread/INFO]: Summoned new Husk
+[01:11:44] [Server thread/INFO]: Summoned new Husk
+[01:11:44] [Server thread/INFO]: Summoned new Husk
+[01:11:44] [Server thread/INFO]: Summoned new Husk
+[01:11:45] [Server thread/INFO]: Running function ch:core/cast
+[01:11:51] [Server thread/INFO]: Killed 9 entities
+[01:11:51] [Server thread/INFO]: No entity was found
+[01:11:51] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:11:51] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:11:51] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:11:51] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:11:51] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:11:51] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:11:51] [Server thread/INFO]: Removed every effect from Caster
+[01:11:51] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:11:51] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:11:51] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:11:51] [Server thread/INFO]: Killed 4 entities
+[01:11:51] [Server thread/INFO]: Summoned new Husk
+[01:11:52] [Server thread/INFO]: Summoned new Husk
+[01:11:52] [Server thread/INFO]: Summoned new Husk
+[01:11:52] [Server thread/INFO]: Summoned new Husk
+[01:11:53] [Server thread/INFO]: Running function ch:core/cast
+[01:11:59] [Server thread/INFO]: Killed 3 entities
+[01:11:59] [Server thread/INFO]: No entity was found
+[01:11:59] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:11:59] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:11:59] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:11:59] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:11:59] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:11:59] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:11:59] [Server thread/INFO]: Removed every effect from Caster
+[01:11:59] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:11:59] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:11:59] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:11:59] [Server thread/INFO]: Killed 4 entities
+[01:11:59] [Server thread/INFO]: Summoned new Husk
+[01:11:59] [Server thread/INFO]: Summoned new Husk
+[01:11:59] [Server thread/INFO]: Summoned new Husk
+[01:11:59] [Server thread/INFO]: Summoned new Husk
+[01:12:01] [Server thread/INFO]: Running function ch:core/cast
+[01:12:07] [Server thread/INFO]: Killed 4 entities
+[01:12:07] [Server thread/INFO]: No entity was found
+[01:12:07] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:07] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:07] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:07] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:07] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:07] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:07] [Server thread/INFO]: Removed every effect from Caster
+[01:12:07] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:07] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:07] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:07] [Server thread/INFO]: Killed 4 entities
+[01:12:07] [Server thread/INFO]: Summoned new Husk
+[01:12:07] [Server thread/INFO]: Summoned new Husk
+[01:12:07] [Server thread/INFO]: Summoned new Husk
+[01:12:07] [Server thread/INFO]: Summoned new Husk
+[01:12:08] [Server thread/INFO]: Running function ch:core/cast
+[01:12:14] [Server thread/INFO]: Killed Rotten Flesh
+[01:12:14] [Server thread/INFO]: No entity was found
+[01:12:14] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:14] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:14] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:14] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:14] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:15] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:15] [Server thread/INFO]: Removed every effect from Caster
+[01:12:15] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:15] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:15] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:15] [Server thread/INFO]: Killed 4 entities
+[01:12:15] [Server thread/INFO]: Summoned new Husk
+[01:12:15] [Server thread/INFO]: Summoned new Husk
+[01:12:15] [Server thread/INFO]: Summoned new Husk
+[01:12:15] [Server thread/INFO]: Summoned new Husk
+[01:12:16] [Server thread/INFO]: Running function ch:core/cast
+[01:12:22] [Server thread/INFO]: Killed 2 entities
+[01:12:22] [Server thread/INFO]: No entity was found
+[01:12:22] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:22] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:22] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:22] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:22] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:22] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:22] [Server thread/INFO]: Removed every effect from Caster
+[01:12:22] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:22] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:22] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:22] [Server thread/INFO]: Killed 4 entities
+[01:12:22] [Server thread/INFO]: Summoned new Husk
+[01:12:23] [Server thread/INFO]: Summoned new Husk
+[01:12:23] [Server thread/INFO]: Summoned new Husk
+[01:12:23] [Server thread/INFO]: Summoned new Husk
+[01:12:24] [Server thread/INFO]: Running function ch:core/cast
+[01:12:30] [Server thread/INFO]: Killed 2 entities
+[01:12:30] [Server thread/INFO]: No entity was found
+[01:12:30] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:30] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:30] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:30] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:30] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:30] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:30] [Server thread/INFO]: Removed every effect from Caster
+[01:12:30] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:30] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:30] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:30] [Server thread/INFO]: Killed 4 entities
+[01:12:30] [Server thread/INFO]: Summoned new Husk
+[01:12:30] [Server thread/INFO]: Summoned new Husk
+[01:12:30] [Server thread/INFO]: Summoned new Husk
+[01:12:30] [Server thread/INFO]: Summoned new Husk
+[01:12:32] [Server thread/INFO]: Running function ch:core/cast
+[01:12:37] [Server thread/INFO]: Killed 3 entities
+[01:12:38] [Server thread/INFO]: No entity was found
+[01:12:38] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:38] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:38] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:38] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:38] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:38] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:38] [Server thread/INFO]: Removed every effect from Caster
+[01:12:38] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:38] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:38] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:38] [Server thread/INFO]: Killed 4 entities
+[01:12:38] [Server thread/INFO]: Summoned new Husk
+[01:12:38] [Server thread/INFO]: Summoned new Husk
+[01:12:38] [Server thread/INFO]: Summoned new Husk
+[01:12:38] [Server thread/INFO]: Summoned new Husk
+[01:12:39] [Server thread/INFO]: Running function ch:core/cast
+[01:12:45] [Server thread/INFO]: Killed 3 entities
+[01:12:45] [Server thread/INFO]: No entity was found
+[01:12:45] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:45] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:45] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:45] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:45] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:45] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:45] [Server thread/INFO]: Removed every effect from Caster
+[01:12:46] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:46] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:46] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:46] [Server thread/INFO]: Killed 4 entities
+[01:12:46] [Server thread/INFO]: Summoned new Husk
+[01:12:46] [Server thread/INFO]: Summoned new Husk
+[01:12:46] [Server thread/INFO]: Summoned new Husk
+[01:12:46] [Server thread/INFO]: Summoned new Husk
+[01:12:47] [Server thread/INFO]: Running function ch:core/cast
+[01:12:53] [Server thread/INFO]: Killed 2 entities
+[01:12:53] [Server thread/INFO]: No entity was found
+[01:12:53] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:12:53] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:12:53] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:12:53] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:12:53] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:12:53] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:12:53] [Server thread/INFO]: Removed every effect from Caster
+[01:12:53] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:12:53] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:12:53] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:12:53] [Server thread/INFO]: Killed 4 entities
+[01:12:53] [Server thread/INFO]: Summoned new Husk
+[01:12:53] [Server thread/INFO]: Summoned new Husk
+[01:12:53] [Server thread/INFO]: Summoned new Husk
+[01:12:54] [Server thread/INFO]: Summoned new Husk
+[01:12:55] [Server thread/INFO]: Running function ch:core/cast
+[01:13:04] [Server thread/INFO]: Killed 2 entities
+[01:13:04] [Server thread/INFO]: No entity was found
+[01:13:04] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:13:04] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:13:04] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:13:04] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:13:04] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:13:04] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:13:04] [Server thread/INFO]: Removed every effect from Caster
+[01:13:04] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:13:04] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:13:05] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:13:05] [Server thread/INFO]: Killed 4 entities
+[01:13:05] [Server thread/INFO]: Summoned new Husk
+[01:13:05] [Server thread/INFO]: Summoned new Husk
+[01:13:05] [Server thread/INFO]: Summoned new Husk
+[01:13:05] [Server thread/INFO]: Summoned new Husk
+[01:13:06] [Server thread/INFO]: Running function ch:core/cast
+[01:13:15] [Server thread/INFO]: Killed 2 entities
+[01:13:15] [Server thread/INFO]: No entity was found
+[01:13:16] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:13:16] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:13:16] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:13:16] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:13:16] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:13:16] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:13:16] [Server thread/INFO]: Removed every effect from Caster
+[01:13:16] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:13:16] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:13:16] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:13:16] [Server thread/INFO]: Killed 4 entities
+[01:13:16] [Server thread/INFO]: Summoned new Husk
+[01:13:16] [Server thread/INFO]: Summoned new Husk
+[01:13:16] [Server thread/INFO]: Summoned new Husk
+[01:13:16] [Server thread/INFO]: Summoned new Husk
+[01:13:17] [Server thread/INFO]: Running function ch:core/cast
+[01:13:27] [Server thread/INFO]: Killed 4 entities
+[01:13:30] [Server thread/INFO]: Running function ch:admin/give
+[01:13:30] [Server thread/INFO]: Running function ch:admin/mastery
+[01:13:30] [Server thread/INFO]: Running function ch:heart/set_active
+[01:13:31] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:13:32] [Server thread/INFO]: Killed 5 entities
+[01:13:32] [Server thread/INFO]: No entity was found
+[01:13:32] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:13:32] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:13:32] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:13:32] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:13:32] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:13:32] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:13:32] [Server thread/INFO]: Removed every effect from Caster
+[01:13:33] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:13:33] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:13:33] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:13:33] [Server thread/INFO]: No entity was found
+[01:13:33] [Server thread/INFO]: Summoned new Husk
+[01:13:33] [Server thread/INFO]: Summoned new Husk
+[01:13:33] [Server thread/INFO]: Summoned new Husk
+[01:13:33] [Server thread/INFO]: Summoned new Husk
+[01:13:34] [Server thread/INFO]: Running function ch:core/cast
+[01:13:40] [Server thread/INFO]: No entity was found
+[01:13:40] [Server thread/INFO]: No entity was found
+[01:13:40] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:13:40] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:13:40] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:13:40] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:13:40] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:13:40] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:13:40] [Server thread/INFO]: Removed every effect from Caster
+[01:13:40] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:13:40] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:13:40] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:13:40] [Server thread/INFO]: Killed 4 entities
+[01:13:40] [Server thread/INFO]: Summoned new Husk
+[01:13:40] [Server thread/INFO]: Summoned new Husk
+[01:13:41] [Server thread/INFO]: Summoned new Husk
+[01:13:41] [Server thread/INFO]: Summoned new Husk
+[01:13:42] [Server thread/INFO]: Running function ch:core/cast
+[01:13:48] [Server thread/INFO]: Killed 3 entities
+[01:13:48] [Server thread/INFO]: No entity was found
+[01:13:48] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:13:48] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:13:48] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:13:48] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:13:48] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:13:48] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:13:48] [Server thread/INFO]: Removed every effect from Caster
+[01:13:48] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:13:48] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:13:48] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:13:48] [Server thread/INFO]: Killed 4 entities
+[01:13:48] [Server thread/INFO]: Summoned new Husk
+[01:13:48] [Server thread/INFO]: Summoned new Husk
+[01:13:48] [Server thread/INFO]: Summoned new Husk
+[01:13:48] [Server thread/INFO]: Summoned new Husk
+[01:13:50] [Server thread/INFO]: Running function ch:core/cast
+[01:13:55] [Server thread/INFO]: Killed 3 entities
+[01:13:56] [Server thread/INFO]: No entity was found
+[01:13:56] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:13:56] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:13:56] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:13:56] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:13:56] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:13:56] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:13:56] [Server thread/INFO]: Removed every effect from Caster
+[01:13:56] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:13:56] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:13:56] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:13:56] [Server thread/INFO]: Killed 4 entities
+[01:13:56] [Server thread/INFO]: Summoned new Husk
+[01:13:56] [Server thread/INFO]: Summoned new Husk
+[01:13:56] [Server thread/INFO]: Summoned new Husk
+[01:13:56] [Server thread/INFO]: Summoned new Husk
+[01:13:57] [Server thread/INFO]: Running function ch:core/cast
+[01:14:03] [Server thread/INFO]: Killed 2 entities
+[01:14:03] [Server thread/INFO]: No entity was found
+[01:14:03] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:03] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:03] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:03] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:03] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:03] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:03] [Server thread/INFO]: Removed every effect from Caster
+[01:14:03] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:04] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:04] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:04] [Server thread/INFO]: Killed 4 entities
+[01:14:04] [Server thread/INFO]: Summoned new Husk
+[01:14:04] [Server thread/INFO]: Summoned new Husk
+[01:14:04] [Server thread/INFO]: Summoned new Husk
+[01:14:04] [Server thread/INFO]: Summoned new Husk
+[01:14:05] [Server thread/INFO]: Running function ch:core/cast
+[01:14:11] [Server thread/INFO]: Killed 4 entities
+[01:14:11] [Server thread/INFO]: No entity was found
+[01:14:11] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:11] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:11] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:11] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:11] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:11] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:11] [Server thread/INFO]: Removed every effect from Caster
+[01:14:11] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:11] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:11] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:11] [Server thread/INFO]: Killed 4 entities
+[01:14:11] [Server thread/INFO]: Summoned new Husk
+[01:14:11] [Server thread/INFO]: Summoned new Husk
+[01:14:12] [Server thread/INFO]: Summoned new Husk
+[01:14:12] [Server thread/INFO]: Summoned new Husk
+[01:14:13] [Server thread/INFO]: Running function ch:core/cast
+[01:14:19] [Server thread/INFO]: Killed 2 entities
+[01:14:19] [Server thread/INFO]: No entity was found
+[01:14:19] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:19] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:19] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:19] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:19] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:19] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:19] [Server thread/INFO]: Removed every effect from Caster
+[01:14:19] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:19] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:19] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:19] [Server thread/INFO]: Killed 4 entities
+[01:14:19] [Server thread/INFO]: Summoned new Husk
+[01:14:19] [Server thread/INFO]: Summoned new Husk
+[01:14:19] [Server thread/INFO]: Summoned new Husk
+[01:14:19] [Server thread/INFO]: Summoned new Husk
+[01:14:21] [Server thread/INFO]: Running function ch:core/cast
+[01:14:26] [Server thread/INFO]: Killed 3 entities
+[01:14:26] [Server thread/INFO]: No entity was found
+[01:14:27] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:27] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:27] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:27] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:27] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:27] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:27] [Server thread/INFO]: Removed every effect from Caster
+[01:14:27] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:27] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:27] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:27] [Server thread/INFO]: Killed 4 entities
+[01:14:27] [Server thread/INFO]: Summoned new Husk
+[01:14:27] [Server thread/INFO]: Summoned new Husk
+[01:14:27] [Server thread/INFO]: Summoned new Husk
+[01:14:27] [Server thread/INFO]: Summoned new Husk
+[01:14:28] [Server thread/INFO]: Running function ch:core/cast
+[01:14:34] [Server thread/INFO]: Killed 2 entities
+[01:14:34] [Server thread/INFO]: No entity was found
+[01:14:34] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:34] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:34] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:34] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:34] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:34] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:34] [Server thread/INFO]: Removed every effect from Caster
+[01:14:34] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:34] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:34] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:35] [Server thread/INFO]: Killed 4 entities
+[01:14:35] [Server thread/INFO]: Summoned new Husk
+[01:14:35] [Server thread/INFO]: Summoned new Husk
+[01:14:35] [Server thread/INFO]: Summoned new Husk
+[01:14:35] [Server thread/INFO]: Summoned new Husk
+[01:14:36] [Server thread/INFO]: Running function ch:core/cast
+[01:14:42] [Server thread/INFO]: Killed 2 entities
+[01:14:42] [Server thread/INFO]: No entity was found
+[01:14:42] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:42] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:42] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:42] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:42] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:42] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:42] [Server thread/INFO]: Removed every effect from Caster
+[01:14:42] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:42] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:42] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:42] [Server thread/INFO]: Killed 4 entities
+[01:14:42] [Server thread/INFO]: Summoned new Husk
+[01:14:42] [Server thread/INFO]: Summoned new Husk
+[01:14:42] [Server thread/INFO]: Summoned new Husk
+[01:14:42] [Server thread/INFO]: Summoned new Husk
+[01:14:44] [Server thread/INFO]: Running function ch:core/cast
+[01:14:53] [Server thread/INFO]: Killed 2 entities
+[01:14:53] [Server thread/INFO]: No entity was found
+[01:14:53] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:14:53] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:14:53] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:14:53] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:14:53] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:14:53] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:14:53] [Server thread/INFO]: Removed every effect from Caster
+[01:14:53] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:14:53] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:14:53] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:14:53] [Server thread/INFO]: Killed 4 entities
+[01:14:54] [Server thread/INFO]: Summoned new Husk
+[01:14:54] [Server thread/INFO]: Summoned new Husk
+[01:14:54] [Server thread/INFO]: Summoned new Husk
+[01:14:54] [Server thread/INFO]: Summoned new Husk
+[01:14:55] [Server thread/INFO]: Running function ch:core/cast
+[01:15:04] [Server thread/INFO]: Killed 3 entities
+[01:15:04] [Server thread/INFO]: No entity was found
+[01:15:04] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:15:05] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:15:05] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:15:05] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:15:05] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:15:05] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:15:05] [Server thread/INFO]: Removed every effect from Caster
+[01:15:05] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:15:05] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:15:05] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:15:05] [Server thread/INFO]: Killed 4 entities
+[01:15:05] [Server thread/INFO]: Summoned new Husk
+[01:15:05] [Server thread/INFO]: Summoned new Husk
+[01:15:05] [Server thread/INFO]: Summoned new Husk
+[01:15:05] [Server thread/INFO]: Summoned new Husk
+[01:15:06] [Server thread/INFO]: Running function ch:core/cast
+[01:15:16] [Server thread/INFO]: Killed 4 entities
+[01:15:19] [Server thread/INFO]: Running function ch:admin/give
+[01:15:19] [Server thread/INFO]: Running function ch:admin/mastery
+[01:15:19] [Server thread/INFO]: Running function ch:heart/set_active
+[01:15:20] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:15:21] [Server thread/INFO]: Killed 8 entities
+[01:15:21] [Server thread/INFO]: No entity was found
+[01:15:21] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:15:21] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:15:21] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:15:21] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:15:21] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:15:21] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:15:21] [Server thread/INFO]: Removed every effect from Caster
+[01:15:21] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:15:21] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:15:22] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:15:22] [Server thread/INFO]: No entity was found
+[01:15:22] [Server thread/INFO]: Summoned new Husk
+[01:15:22] [Server thread/INFO]: Summoned new Husk
+[01:15:22] [Server thread/INFO]: Summoned new Husk
+[01:15:22] [Server thread/INFO]: Summoned new Husk
+[01:15:23] [Server thread/INFO]: Running function ch:core/cast
+[01:15:29] [Server thread/INFO]: No entity was found
+[01:15:29] [Server thread/INFO]: No entity was found
+[01:15:29] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:15:29] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:15:29] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:15:29] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:15:29] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:15:29] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:15:29] [Server thread/INFO]: Removed every effect from Caster
+[01:15:29] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:15:29] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:15:29] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:15:29] [Server thread/INFO]: Killed 4 entities
+[01:15:29] [Server thread/INFO]: Summoned new Husk
+[01:15:29] [Server thread/INFO]: Summoned new Husk
+[01:15:29] [Server thread/INFO]: Summoned new Husk
+[01:15:30] [Server thread/INFO]: Summoned new Husk
+[01:15:31] [Server thread/INFO]: Running function ch:core/cast
+[01:15:37] [Server thread/INFO]: Killed 3 entities
+[01:15:37] [Server thread/INFO]: No entity was found
+[01:15:37] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:15:37] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:15:37] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:15:37] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:15:37] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:15:37] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:15:37] [Server thread/INFO]: Removed every effect from Caster
+[01:15:37] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:15:37] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:15:37] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:15:37] [Server thread/INFO]: Killed 4 entities
+[01:15:37] [Server thread/INFO]: Summoned new Husk
+[01:15:37] [Server thread/INFO]: Summoned new Husk
+[01:15:37] [Server thread/INFO]: Summoned new Husk
+[01:15:37] [Server thread/INFO]: Summoned new Husk
+[01:15:39] [Server thread/INFO]: Running function ch:core/cast
+[01:15:44] [Server thread/INFO]: Killed 3 entities
+[01:15:44] [Server thread/INFO]: No entity was found
+[01:15:45] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:15:45] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:15:45] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:15:45] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:15:45] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:15:45] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:15:45] [Server thread/INFO]: Removed every effect from Caster
+[01:15:45] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:15:45] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:15:45] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:15:45] [Server thread/INFO]: Killed 4 entities
+[01:15:45] [Server thread/INFO]: Summoned new Husk
+[01:15:45] [Server thread/INFO]: Summoned new Husk
+[01:15:45] [Server thread/INFO]: Summoned new Husk
+[01:15:45] [Server thread/INFO]: Summoned new Husk
+[01:15:46] [Server thread/INFO]: Running function ch:core/cast
+[01:15:52] [Server thread/INFO]: Killed 3 entities
+[01:15:52] [Server thread/INFO]: No entity was found
+[01:15:52] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:15:52] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:15:52] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:15:52] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:15:52] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:15:52] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:15:52] [Server thread/INFO]: Removed every effect from Caster
+[01:15:52] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:15:52] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:15:52] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:15:52] [Server thread/INFO]: Killed 4 entities
+[01:15:53] [Server thread/INFO]: Summoned new Husk
+[01:15:53] [Server thread/INFO]: Summoned new Husk
+[01:15:53] [Server thread/INFO]: Summoned new Husk
+[01:15:53] [Server thread/INFO]: Summoned new Husk
+[01:15:54] [Server thread/INFO]: Running function ch:core/cast
+[01:16:00] [Server thread/INFO]: Killed 3 entities
+[01:16:00] [Server thread/INFO]: No entity was found
+[01:16:00] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:00] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:00] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:00] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:00] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:00] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:00] [Server thread/INFO]: Removed every effect from Caster
+[01:16:00] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:00] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:00] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:00] [Server thread/INFO]: Killed 4 entities
+[01:16:00] [Server thread/INFO]: Summoned new Husk
+[01:16:00] [Server thread/INFO]: Summoned new Husk
+[01:16:00] [Server thread/INFO]: Summoned new Husk
+[01:16:00] [Server thread/INFO]: Summoned new Husk
+[01:16:02] [Server thread/INFO]: Running function ch:core/cast
+[01:16:08] [Server thread/INFO]: Killed 3 entities
+[01:16:08] [Server thread/INFO]: No entity was found
+[01:16:08] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:08] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:08] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:08] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:08] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:08] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:08] [Server thread/INFO]: Removed every effect from Caster
+[01:16:08] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:08] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:08] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:08] [Server thread/INFO]: Caster has made the advancement [Monster Hunter]
+[01:16:08] [Server thread/INFO]: Killed 4 entities
+[01:16:08] [Server thread/INFO]: Summoned new Husk
+[01:16:08] [Server thread/INFO]: Summoned new Husk
+[01:16:08] [Server thread/INFO]: Summoned new Husk
+[01:16:08] [Server thread/INFO]: Summoned new Husk
+[01:16:10] [Server thread/INFO]: Running function ch:core/cast
+[01:16:15] [Server thread/INFO]: Killed 4 entities
+[01:16:15] [Server thread/INFO]: No entity was found
+[01:16:15] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:16] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:16] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:16] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:16] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:16] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:16] [Server thread/INFO]: Removed every effect from Caster
+[01:16:16] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:16] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:16] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:16] [Server thread/INFO]: Killed 4 entities
+[01:16:16] [Server thread/INFO]: Summoned new Husk
+[01:16:16] [Server thread/INFO]: Summoned new Husk
+[01:16:16] [Server thread/INFO]: Summoned new Husk
+[01:16:16] [Server thread/INFO]: Summoned new Husk
+[01:16:17] [Server thread/INFO]: Running function ch:core/cast
+[01:16:23] [Server thread/INFO]: Killed 3 entities
+[01:16:23] [Server thread/INFO]: No entity was found
+[01:16:23] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:23] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:23] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:23] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:23] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:23] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:23] [Server thread/INFO]: Removed every effect from Caster
+[01:16:23] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:23] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:23] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:23] [Server thread/INFO]: Killed 4 entities
+[01:16:24] [Server thread/INFO]: Summoned new Husk
+[01:16:24] [Server thread/INFO]: Summoned new Husk
+[01:16:24] [Server thread/INFO]: Summoned new Husk
+[01:16:24] [Server thread/INFO]: Summoned new Husk
+[01:16:25] [Server thread/INFO]: Running function ch:core/cast
+[01:16:31] [Server thread/INFO]: Killed 2 entities
+[01:16:31] [Server thread/INFO]: No entity was found
+[01:16:31] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:31] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:31] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:31] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:31] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:31] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:31] [Server thread/INFO]: Removed every effect from Caster
+[01:16:31] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:31] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:31] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:31] [Server thread/INFO]: Killed 4 entities
+[01:16:31] [Server thread/INFO]: Summoned new Husk
+[01:16:31] [Server thread/INFO]: Summoned new Husk
+[01:16:31] [Server thread/INFO]: Summoned new Husk
+[01:16:31] [Server thread/INFO]: Summoned new Husk
+[01:16:33] [Server thread/INFO]: Running function ch:core/cast
+[01:16:42] [Server thread/INFO]: Killed 2 entities
+[01:16:42] [Server thread/INFO]: No entity was found
+[01:16:42] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:42] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:42] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:42] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:42] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:42] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:42] [Server thread/INFO]: Removed every effect from Caster
+[01:16:42] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:42] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:42] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:42] [Server thread/INFO]: Killed 4 entities
+[01:16:43] [Server thread/INFO]: Summoned new Husk
+[01:16:43] [Server thread/INFO]: Summoned new Husk
+[01:16:43] [Server thread/INFO]: Summoned new Husk
+[01:16:43] [Server thread/INFO]: Summoned new Husk
+[01:16:44] [Server thread/INFO]: Running function ch:core/cast
+[01:16:53] [Server thread/INFO]: Killed 3 entities
+[01:16:53] [Server thread/INFO]: No entity was found
+[01:16:53] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:16:53] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:16:54] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:16:54] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:16:54] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:16:54] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:16:54] [Server thread/INFO]: Removed every effect from Caster
+[01:16:54] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:16:54] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:16:54] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:16:54] [Server thread/INFO]: Killed 4 entities
+[01:16:54] [Server thread/INFO]: Summoned new Husk
+[01:16:54] [Server thread/INFO]: Summoned new Husk
+[01:16:54] [Server thread/INFO]: Summoned new Husk
+[01:16:54] [Server thread/INFO]: Summoned new Husk
+[01:16:55] [Server thread/INFO]: Running function ch:core/cast
+[01:17:05] [Server thread/INFO]: Killed 4 entities
+[01:17:08] [Server thread/INFO]: Running function ch:admin/give
+[01:17:08] [Server thread/INFO]: Running function ch:admin/mastery
+[01:17:08] [Server thread/INFO]: Running function ch:heart/set_active
+[01:17:09] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:17:10] [Server thread/INFO]: Killed 5 entities
+[01:17:10] [Server thread/INFO]: No entity was found
+[01:17:10] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:10] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:10] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:10] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:10] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:10] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:10] [Server thread/INFO]: Removed every effect from Caster
+[01:17:10] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:10] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:10] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:10] [Server thread/INFO]: No entity was found
+[01:17:11] [Server thread/INFO]: Summoned new Husk
+[01:17:11] [Server thread/INFO]: Summoned new Husk
+[01:17:11] [Server thread/INFO]: Summoned new Husk
+[01:17:11] [Server thread/INFO]: Summoned new Husk
+[01:17:12] [Server thread/INFO]: Running function ch:core/cast
+[01:17:18] [Server thread/INFO]: No entity was found
+[01:17:18] [Server thread/INFO]: No entity was found
+[01:17:18] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:18] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:18] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:18] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:18] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:18] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:18] [Server thread/INFO]: Removed every effect from Caster
+[01:17:18] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:18] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:18] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:18] [Server thread/INFO]: Killed 4 entities
+[01:17:18] [Server thread/INFO]: Summoned new Husk
+[01:17:18] [Server thread/INFO]: Summoned new Husk
+[01:17:18] [Server thread/INFO]: Summoned new Husk
+[01:17:18] [Server thread/INFO]: Summoned new Husk
+[01:17:20] [Server thread/INFO]: Running function ch:core/cast
+[01:17:26] [Server thread/INFO]: Killed 2 entities
+[01:17:26] [Server thread/INFO]: No entity was found
+[01:17:26] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:26] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:26] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:26] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:26] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:26] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:26] [Server thread/INFO]: Removed every effect from Caster
+[01:17:26] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:26] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:26] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:26] [Server thread/INFO]: Killed 4 entities
+[01:17:26] [Server thread/INFO]: Summoned new Husk
+[01:17:26] [Server thread/INFO]: Summoned new Husk
+[01:17:26] [Server thread/INFO]: Summoned new Husk
+[01:17:26] [Server thread/INFO]: Summoned new Husk
+[01:17:28] [Server thread/INFO]: Running function ch:core/cast
+[01:17:33] [Server thread/INFO]: Killed 3 entities
+[01:17:33] [Server thread/INFO]: No entity was found
+[01:17:33] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:34] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:34] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:34] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:34] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:34] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:34] [Server thread/INFO]: Removed every effect from Caster
+[01:17:34] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:34] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:34] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:34] [Server thread/INFO]: Killed 4 entities
+[01:17:34] [Server thread/INFO]: Summoned new Husk
+[01:17:34] [Server thread/INFO]: Summoned new Husk
+[01:17:34] [Server thread/INFO]: Summoned new Husk
+[01:17:34] [Server thread/INFO]: Summoned new Husk
+[01:17:35] [Server thread/INFO]: Running function ch:core/cast
+[01:17:41] [Server thread/INFO]: Killed 3 entities
+[01:17:41] [Server thread/INFO]: No entity was found
+[01:17:41] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:41] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:41] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:41] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:41] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:41] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:41] [Server thread/INFO]: Removed every effect from Caster
+[01:17:41] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:41] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:41] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:41] [Server thread/INFO]: Killed 4 entities
+[01:17:42] [Server thread/INFO]: Summoned new Husk
+[01:17:42] [Server thread/INFO]: Summoned new Husk
+[01:17:42] [Server thread/INFO]: Summoned new Husk
+[01:17:42] [Server thread/INFO]: Summoned new Husk
+[01:17:43] [Server thread/INFO]: Running function ch:core/cast
+[01:17:49] [Server thread/INFO]: Killed 3 entities
+[01:17:49] [Server thread/INFO]: No entity was found
+[01:17:49] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:49] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:49] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:49] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:49] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:49] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:49] [Server thread/INFO]: Removed every effect from Caster
+[01:17:49] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:49] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:49] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:49] [Server thread/INFO]: Killed 4 entities
+[01:17:49] [Server thread/INFO]: Summoned new Husk
+[01:17:49] [Server thread/INFO]: Summoned new Husk
+[01:17:49] [Server thread/INFO]: Summoned new Husk
+[01:17:49] [Server thread/INFO]: Summoned new Husk
+[01:17:51] [Server thread/INFO]: Running function ch:core/cast
+[01:17:57] [Server thread/INFO]: Killed 3 entities
+[01:17:57] [Server thread/INFO]: No entity was found
+[01:17:57] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:17:57] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:17:57] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:17:57] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:17:57] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:17:57] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:17:57] [Server thread/INFO]: Removed every effect from Caster
+[01:17:57] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:17:57] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:17:57] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:17:57] [Server thread/INFO]: Killed 4 entities
+[01:17:57] [Server thread/INFO]: Summoned new Husk
+[01:17:57] [Server thread/INFO]: Summoned new Husk
+[01:17:57] [Server thread/INFO]: Summoned new Husk
+[01:17:57] [Server thread/INFO]: Summoned new Husk
+[01:17:58] [Server thread/INFO]: Running function ch:core/cast
+[01:18:04] [Server thread/INFO]: Killed 3 entities
+[01:18:04] [Server thread/INFO]: No entity was found
+[01:18:04] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:18:04] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:18:04] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:18:05] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:18:05] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:18:05] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:18:05] [Server thread/INFO]: Removed every effect from Caster
+[01:18:05] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:18:05] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:18:05] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:18:05] [Server thread/INFO]: Killed 4 entities
+[01:18:05] [Server thread/INFO]: Summoned new Husk
+[01:18:05] [Server thread/INFO]: Summoned new Husk
+[01:18:05] [Server thread/INFO]: Summoned new Husk
+[01:18:05] [Server thread/INFO]: Summoned new Husk
+[01:18:06] [Server thread/INFO]: Running function ch:core/cast
+[01:18:12] [Server thread/INFO]: Killed 4 entities
+[01:18:12] [Server thread/INFO]: No entity was found
+[01:18:12] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:18:12] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:18:12] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:18:12] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:18:12] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:18:12] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:18:12] [Server thread/INFO]: Removed every effect from Caster
+[01:18:12] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:18:12] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:18:12] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:18:12] [Server thread/INFO]: Killed 4 entities
+[01:18:13] [Server thread/INFO]: Summoned new Husk
+[01:18:13] [Server thread/INFO]: Summoned new Husk
+[01:18:13] [Server thread/INFO]: Summoned new Husk
+[01:18:13] [Server thread/INFO]: Summoned new Husk
+[01:18:14] [Server thread/INFO]: Running function ch:core/cast
+[01:18:20] [Server thread/INFO]: Killed 2 entities
+[01:18:20] [Server thread/INFO]: No entity was found
+[01:18:20] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:18:20] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:18:20] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:18:20] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:18:20] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:18:20] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:18:20] [Server thread/INFO]: Removed every effect from Caster
+[01:18:20] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:18:20] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:18:20] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:18:20] [Server thread/INFO]: Killed 4 entities
+[01:18:20] [Server thread/INFO]: Summoned new Husk
+[01:18:20] [Server thread/INFO]: Summoned new Husk
+[01:18:20] [Server thread/INFO]: Summoned new Husk
+[01:18:20] [Server thread/INFO]: Summoned new Husk
+[01:18:22] [Server thread/INFO]: Running function ch:core/cast
+[01:18:31] [Server thread/INFO]: Killed 4 entities
+[01:18:31] [Server thread/INFO]: No entity was found
+[01:18:31] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:18:31] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:18:31] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:18:31] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:18:31] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:18:31] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:18:31] [Server thread/INFO]: Removed every effect from Caster
+[01:18:31] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:18:31] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:18:31] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:18:31] [Server thread/INFO]: Killed 4 entities
+[01:18:32] [Server thread/INFO]: Summoned new Husk
+[01:18:32] [Server thread/INFO]: Summoned new Husk
+[01:18:32] [Server thread/INFO]: Summoned new Husk
+[01:18:32] [Server thread/INFO]: Summoned new Husk
+[01:18:33] [Server thread/INFO]: Running function ch:core/cast
+[01:18:42] [Server thread/INFO]: Killed 3 entities
+[01:18:42] [Server thread/INFO]: No entity was found
+[01:18:42] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:18:42] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:18:42] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:18:42] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:18:43] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:18:43] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:18:43] [Server thread/INFO]: Removed every effect from Caster
+[01:18:43] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:18:43] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:18:43] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:18:43] [Server thread/INFO]: Killed 4 entities
+[01:18:43] [Server thread/INFO]: Summoned new Husk
+[01:18:43] [Server thread/INFO]: Summoned new Husk
+[01:18:43] [Server thread/INFO]: Summoned new Husk
+[01:18:43] [Server thread/INFO]: Summoned new Husk
+[01:18:44] [Server thread/INFO]: Running function ch:core/cast
+[01:18:54] [Server thread/INFO]: Killed 4 entities
+[01:18:57] [Server thread/INFO]: Running function ch:admin/give
+[01:18:57] [Server thread/INFO]: Running function ch:admin/mastery
+[01:18:57] [Server thread/INFO]: Running function ch:heart/set_active
+[01:18:58] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:18:59] [Server thread/INFO]: Killed 6 entities
+[01:18:59] [Server thread/INFO]: No entity was found
+[01:18:59] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:18:59] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:18:59] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:18:59] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:18:59] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:18:59] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:18:59] [Server thread/INFO]: Removed every effect from Caster
+[01:18:59] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:18:59] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:18:59] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:18:59] [Server thread/INFO]: No entity was found
+[01:19:00] [Server thread/INFO]: Summoned new Husk
+[01:19:00] [Server thread/INFO]: Summoned new Husk
+[01:19:00] [Server thread/INFO]: Summoned new Husk
+[01:19:00] [Server thread/INFO]: Summoned new Husk
+[01:19:01] [Server thread/INFO]: Running function ch:core/cast
+[01:19:07] [Server thread/INFO]: No entity was found
+[01:19:07] [Server thread/INFO]: No entity was found
+[01:19:07] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:07] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:07] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:07] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:07] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:07] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:07] [Server thread/INFO]: Removed every effect from Caster
+[01:19:07] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:07] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:07] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:07] [Server thread/INFO]: Killed 4 entities
+[01:19:07] [Server thread/INFO]: Summoned new Husk
+[01:19:07] [Server thread/INFO]: Summoned new Husk
+[01:19:07] [Server thread/INFO]: Summoned new Husk
+[01:19:07] [Server thread/INFO]: Summoned new Husk
+[01:19:09] [Server thread/INFO]: Running function ch:core/cast
+[01:19:15] [Server thread/INFO]: Killed 2 entities
+[01:19:15] [Server thread/INFO]: No entity was found
+[01:19:15] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:15] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:15] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:15] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:15] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:15] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:15] [Server thread/INFO]: Removed every effect from Caster
+[01:19:15] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:15] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:15] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:15] [Server thread/INFO]: Killed 4 entities
+[01:19:15] [Server thread/INFO]: Summoned new Husk
+[01:19:15] [Server thread/INFO]: Summoned new Husk
+[01:19:15] [Server thread/INFO]: Summoned new Husk
+[01:19:15] [Server thread/INFO]: Summoned new Husk
+[01:19:17] [Server thread/INFO]: Running function ch:core/cast
+[01:19:22] [Server thread/INFO]: Killed Rotten Flesh
+[01:19:22] [Server thread/INFO]: No entity was found
+[01:19:22] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:22] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:23] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:23] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:23] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:23] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:23] [Server thread/INFO]: Removed every effect from Caster
+[01:19:23] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:23] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:23] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:23] [Server thread/INFO]: Killed 4 entities
+[01:19:23] [Server thread/INFO]: Summoned new Husk
+[01:19:23] [Server thread/INFO]: Summoned new Husk
+[01:19:23] [Server thread/INFO]: Summoned new Husk
+[01:19:23] [Server thread/INFO]: Summoned new Husk
+[01:19:24] [Server thread/INFO]: Running function ch:core/cast
+[01:19:30] [Server thread/INFO]: Killed 3 entities
+[01:19:30] [Server thread/INFO]: No entity was found
+[01:19:30] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:30] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:30] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:30] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:30] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:30] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:30] [Server thread/INFO]: Removed every effect from Caster
+[01:19:30] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:30] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:30] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:30] [Server thread/INFO]: Killed 4 entities
+[01:19:31] [Server thread/INFO]: Summoned new Husk
+[01:19:31] [Server thread/INFO]: Summoned new Husk
+[01:19:31] [Server thread/INFO]: Summoned new Husk
+[01:19:31] [Server thread/INFO]: Summoned new Husk
+[01:19:32] [Server thread/INFO]: Running function ch:core/cast
+[01:19:38] [Server thread/INFO]: Killed 3 entities
+[01:19:38] [Server thread/INFO]: No entity was found
+[01:19:38] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:38] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:38] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:38] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:38] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:38] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:38] [Server thread/INFO]: Removed every effect from Caster
+[01:19:38] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:38] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:38] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:38] [Server thread/INFO]: Killed 4 entities
+[01:19:38] [Server thread/INFO]: Summoned new Husk
+[01:19:38] [Server thread/INFO]: Summoned new Husk
+[01:19:38] [Server thread/INFO]: Summoned new Husk
+[01:19:38] [Server thread/INFO]: Summoned new Husk
+[01:19:40] [Server thread/INFO]: Running function ch:core/cast
+[01:19:46] [Server thread/INFO]: Killed 4 entities
+[01:19:46] [Server thread/INFO]: No entity was found
+[01:19:46] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:46] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:46] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:46] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:46] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:46] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:46] [Server thread/INFO]: Removed every effect from Caster
+[01:19:46] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:46] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:46] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:46] [Server thread/INFO]: Killed 4 entities
+[01:19:46] [Server thread/INFO]: Summoned new Husk
+[01:19:46] [Server thread/INFO]: Summoned new Husk
+[01:19:46] [Server thread/INFO]: Summoned new Husk
+[01:19:46] [Server thread/INFO]: Summoned new Husk
+[01:19:47] [Server thread/INFO]: Running function ch:core/cast
+[01:19:53] [Server thread/INFO]: Killed Rotten Flesh
+[01:19:53] [Server thread/INFO]: No entity was found
+[01:19:53] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:19:53] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:19:53] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:19:53] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:19:54] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:19:54] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:19:54] [Server thread/INFO]: Removed every effect from Caster
+[01:19:54] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:19:54] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:19:54] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:19:54] [Server thread/INFO]: Killed 4 entities
+[01:19:54] [Server thread/INFO]: Summoned new Husk
+[01:19:54] [Server thread/INFO]: Summoned new Husk
+[01:19:54] [Server thread/INFO]: Summoned new Husk
+[01:19:54] [Server thread/INFO]: Summoned new Husk
+[01:19:55] [Server thread/INFO]: Running function ch:core/cast
+[01:20:01] [Server thread/INFO]: Killed 3 entities
+[01:20:01] [Server thread/INFO]: No entity was found
+[01:20:01] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:20:01] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:20:01] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:20:01] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:20:01] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:20:01] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:20:01] [Server thread/INFO]: Removed every effect from Caster
+[01:20:01] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:20:01] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:20:01] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:20:01] [Server thread/INFO]: Killed 4 entities
+[01:20:01] [Server thread/INFO]: Summoned new Husk
+[01:20:02] [Server thread/INFO]: Summoned new Husk
+[01:20:02] [Server thread/INFO]: Summoned new Husk
+[01:20:02] [Server thread/INFO]: Summoned new Husk
+[01:20:03] [Server thread/INFO]: Running function ch:core/cast
+[01:20:09] [Server thread/INFO]: Killed 3 entities
+[01:20:09] [Server thread/INFO]: No entity was found
+[01:20:09] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:20:09] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:20:09] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:20:09] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:20:09] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:20:09] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:20:09] [Server thread/INFO]: Removed every effect from Caster
+[01:20:09] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:20:09] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:20:09] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:20:09] [Server thread/INFO]: Killed 4 entities
+[01:20:09] [Server thread/INFO]: Summoned new Husk
+[01:20:09] [Server thread/INFO]: Summoned new Husk
+[01:20:09] [Server thread/INFO]: Summoned new Husk
+[01:20:09] [Server thread/INFO]: Summoned new Husk
+[01:20:11] [Server thread/INFO]: Running function ch:core/cast
+[01:20:20] [Server thread/INFO]: Killed 3 entities
+[01:20:20] [Server thread/INFO]: No entity was found
+[01:20:20] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:20:20] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:20:20] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:20:20] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:20:20] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:20:20] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:20:20] [Server thread/INFO]: Removed every effect from Caster
+[01:20:20] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:20:20] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:20:20] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:20:20] [Server thread/INFO]: Killed 4 entities
+[01:20:20] [Server thread/INFO]: Summoned new Husk
+[01:20:20] [Server thread/INFO]: Summoned new Husk
+[01:20:21] [Server thread/INFO]: Summoned new Husk
+[01:20:21] [Server thread/INFO]: Summoned new Husk
+[01:20:22] [Server thread/INFO]: Running function ch:core/cast
+[01:20:31] [Server thread/INFO]: Killed 4 entities
+[01:20:31] [Server thread/INFO]: No entity was found
+[01:20:31] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:20:31] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:20:31] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:20:31] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:20:31] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:20:31] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:20:31] [Server thread/INFO]: Removed every effect from Caster
+[01:20:32] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:20:32] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:20:32] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:20:32] [Server thread/INFO]: Killed 4 entities
+[01:20:32] [Server thread/INFO]: Summoned new Husk
+[01:20:32] [Server thread/INFO]: Summoned new Husk
+[01:20:32] [Server thread/INFO]: Summoned new Husk
+[01:20:32] [Server thread/INFO]: Summoned new Husk
+[01:20:33] [Server thread/INFO]: Running function ch:core/cast
+[01:20:42] [Server thread/INFO]: Killed 4 entities
+[01:20:46] [Server thread/INFO]: Running function ch:admin/give
+[01:20:46] [Server thread/INFO]: Running function ch:admin/mastery
+[01:20:46] [Server thread/INFO]: Running function ch:heart/set_active
+[01:20:47] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:20:48] [Server thread/INFO]: Killed 6 entities
+[01:20:48] [Server thread/INFO]: No entity was found
+[01:20:48] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:20:48] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:20:48] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:20:48] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:20:48] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:20:48] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:20:48] [Server thread/INFO]: Removed every effect from Caster
+[01:20:48] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:20:48] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:20:48] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:20:48] [Server thread/INFO]: No entity was found
+[01:20:49] [Server thread/INFO]: Summoned new Husk
+[01:20:49] [Server thread/INFO]: Summoned new Husk
+[01:20:49] [Server thread/INFO]: Summoned new Husk
+[01:20:49] [Server thread/INFO]: Summoned new Husk
+[01:20:50] [Server thread/INFO]: Running function ch:core/cast
+[01:20:56] [Server thread/INFO]: No entity was found
+[01:20:56] [Server thread/INFO]: No entity was found
+[01:20:56] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:20:56] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:20:56] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:20:56] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:20:56] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:20:56] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:20:56] [Server thread/INFO]: Removed every effect from Caster
+[01:20:56] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:20:56] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:20:56] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:20:56] [Server thread/INFO]: Killed 4 entities
+[01:20:56] [Server thread/INFO]: Summoned new Husk
+[01:20:56] [Server thread/INFO]: Summoned new Husk
+[01:20:56] [Server thread/INFO]: Summoned new Husk
+[01:20:56] [Server thread/INFO]: Summoned new Husk
+[01:20:58] [Server thread/INFO]: Running function ch:core/cast
+[01:21:04] [Server thread/INFO]: Killed 2 entities
+[01:21:04] [Server thread/INFO]: No entity was found
+[01:21:04] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:04] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:04] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:04] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:04] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:04] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:04] [Server thread/INFO]: Removed every effect from Caster
+[01:21:04] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:04] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:04] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:04] [Server thread/INFO]: Killed 4 entities
+[01:21:04] [Server thread/INFO]: Summoned new Husk
+[01:21:04] [Server thread/INFO]: Summoned new Husk
+[01:21:04] [Server thread/INFO]: Summoned new Husk
+[01:21:04] [Server thread/INFO]: Summoned new Husk
+[01:21:05] [Server thread/INFO]: Running function ch:core/cast
+[01:21:11] [Server thread/INFO]: Killed 4 entities
+[01:21:11] [Server thread/INFO]: No entity was found
+[01:21:11] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:11] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:11] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:11] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:11] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:12] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:12] [Server thread/INFO]: Removed every effect from Caster
+[01:21:12] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:12] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:12] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:12] [Server thread/INFO]: Killed 4 entities
+[01:21:12] [Server thread/INFO]: Summoned new Husk
+[01:21:12] [Server thread/INFO]: Summoned new Husk
+[01:21:12] [Server thread/INFO]: Summoned new Husk
+[01:21:12] [Server thread/INFO]: Summoned new Husk
+[01:21:13] [Server thread/INFO]: Running function ch:core/cast
+[01:21:19] [Server thread/INFO]: Killed 3 entities
+[01:21:19] [Server thread/INFO]: No entity was found
+[01:21:19] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:19] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:19] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:19] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:19] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:19] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:19] [Server thread/INFO]: Removed every effect from Caster
+[01:21:19] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:19] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:19] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:19] [Server thread/INFO]: Killed 4 entities
+[01:21:19] [Server thread/INFO]: Summoned new Husk
+[01:21:20] [Server thread/INFO]: Summoned new Husk
+[01:21:20] [Server thread/INFO]: Summoned new Husk
+[01:21:20] [Server thread/INFO]: Summoned new Husk
+[01:21:21] [Server thread/INFO]: Running function ch:core/cast
+[01:21:27] [Server thread/INFO]: Killed 3 entities
+[01:21:27] [Server thread/INFO]: No entity was found
+[01:21:27] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:27] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:27] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:27] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:27] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:27] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:27] [Server thread/INFO]: Removed every effect from Caster
+[01:21:27] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:27] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:27] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:27] [Server thread/INFO]: Killed 4 entities
+[01:21:27] [Server thread/INFO]: Summoned new Husk
+[01:21:27] [Server thread/INFO]: Summoned new Husk
+[01:21:27] [Server thread/INFO]: Summoned new Husk
+[01:21:27] [Server thread/INFO]: Summoned new Husk
+[01:21:29] [Server thread/INFO]: Running function ch:core/cast
+[01:21:34] [Server thread/INFO]: Killed 2 entities
+[01:21:35] [Server thread/INFO]: No entity was found
+[01:21:35] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:35] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:35] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:35] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:35] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:35] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:35] [Server thread/INFO]: Removed every effect from Caster
+[01:21:35] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:35] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:35] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:35] [Server thread/INFO]: Killed 4 entities
+[01:21:35] [Server thread/INFO]: Summoned new Husk
+[01:21:35] [Server thread/INFO]: Summoned new Husk
+[01:21:35] [Server thread/INFO]: Summoned new Husk
+[01:21:35] [Server thread/INFO]: Summoned new Husk
+[01:21:36] [Server thread/INFO]: Running function ch:core/cast
+[01:21:42] [Server thread/INFO]: Killed 2 entities
+[01:21:42] [Server thread/INFO]: No entity was found
+[01:21:42] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:42] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:42] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:42] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:42] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:42] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:42] [Server thread/INFO]: Removed every effect from Caster
+[01:21:43] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:43] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:43] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:43] [Server thread/INFO]: Killed 4 entities
+[01:21:43] [Server thread/INFO]: Summoned new Husk
+[01:21:43] [Server thread/INFO]: Summoned new Husk
+[01:21:43] [Server thread/INFO]: Summoned new Husk
+[01:21:43] [Server thread/INFO]: Summoned new Husk
+[01:21:44] [Server thread/INFO]: Running function ch:core/cast
+[01:21:50] [Server thread/INFO]: Killed 3 entities
+[01:21:50] [Server thread/INFO]: No entity was found
+[01:21:50] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:50] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:50] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:50] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:50] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:50] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:50] [Server thread/INFO]: Removed every effect from Caster
+[01:21:50] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:50] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:50] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:50] [Server thread/INFO]: Killed 4 entities
+[01:21:50] [Server thread/INFO]: Summoned new Husk
+[01:21:50] [Server thread/INFO]: Summoned new Husk
+[01:21:50] [Server thread/INFO]: Summoned new Husk
+[01:21:51] [Server thread/INFO]: Summoned new Husk
+[01:21:52] [Server thread/INFO]: Running function ch:core/cast
+[01:21:58] [Server thread/INFO]: Killed Rotten Flesh
+[01:21:58] [Server thread/INFO]: No entity was found
+[01:21:58] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:21:58] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:21:58] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:21:58] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:21:58] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:21:58] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:21:58] [Server thread/INFO]: Removed every effect from Caster
+[01:21:58] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:21:58] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:21:58] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:21:58] [Server thread/INFO]: Killed 4 entities
+[01:21:58] [Server thread/INFO]: Summoned new Husk
+[01:21:58] [Server thread/INFO]: Summoned new Husk
+[01:21:58] [Server thread/INFO]: Summoned new Husk
+[01:21:58] [Server thread/INFO]: Summoned new Husk
+[01:22:00] [Server thread/INFO]: Running function ch:core/cast
+[01:22:09] [Server thread/INFO]: Killed 4 entities
+[01:22:09] [Server thread/INFO]: No entity was found
+[01:22:09] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:22:09] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:22:09] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:22:09] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:22:09] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:22:09] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:22:09] [Server thread/INFO]: Removed every effect from Caster
+[01:22:09] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:22:09] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:22:09] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:22:09] [Server thread/INFO]: Killed 4 entities
+[01:22:09] [Server thread/INFO]: Summoned new Husk
+[01:22:09] [Server thread/INFO]: Summoned new Husk
+[01:22:09] [Server thread/INFO]: Summoned new Husk
+[01:22:09] [Server thread/INFO]: Summoned new Husk
+[01:22:11] [Server thread/INFO]: Running function ch:core/cast
+[01:22:20] [Server thread/INFO]: Killed 3 entities
+[01:22:20] [Server thread/INFO]: No entity was found
+[01:22:20] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:22:20] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:22:20] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:22:20] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:22:20] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:22:20] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:22:20] [Server thread/INFO]: Removed every effect from Caster
+[01:22:20] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:22:20] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:22:20] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:22:20] [Server thread/INFO]: Killed 4 entities
+[01:22:21] [Server thread/INFO]: Summoned new Husk
+[01:22:21] [Server thread/INFO]: Summoned new Husk
+[01:22:21] [Server thread/INFO]: Summoned new Husk
+[01:22:21] [Server thread/INFO]: Summoned new Husk
+[01:22:22] [Server thread/INFO]: Running function ch:core/cast
+[01:22:31] [Server thread/INFO]: Killed 4 entities
+[01:22:35] [Server thread/INFO]: Running function ch:admin/give
+[01:22:35] [Server thread/INFO]: Running function ch:admin/mastery
+[01:22:35] [Server thread/INFO]: Running function ch:heart/set_active
+[01:22:35] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:22:37] [Server thread/INFO]: Killed 3 entities
+[01:22:37] [Server thread/INFO]: No entity was found
+[01:22:37] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:22:37] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:22:37] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:22:37] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:22:37] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:22:37] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:22:37] [Server thread/INFO]: Removed every effect from Caster
+[01:22:37] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:22:37] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:22:37] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:22:37] [Server thread/INFO]: No entity was found
+[01:22:37] [Server thread/INFO]: Summoned new Husk
+[01:22:37] [Server thread/INFO]: Summoned new Husk
+[01:22:37] [Server thread/INFO]: Summoned new Husk
+[01:22:38] [Server thread/INFO]: Summoned new Husk
+[01:22:39] [Server thread/INFO]: Running function ch:core/cast
+[01:22:45] [Server thread/INFO]: No entity was found
+[01:22:45] [Server thread/INFO]: No entity was found
+[01:22:45] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:22:45] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:22:45] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:22:45] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:22:45] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:22:45] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:22:45] [Server thread/INFO]: Removed every effect from Caster
+[01:22:45] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:22:45] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:22:45] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:22:45] [Server thread/INFO]: Killed 4 entities
+[01:22:45] [Server thread/INFO]: Summoned new Husk
+[01:22:45] [Server thread/INFO]: Summoned new Husk
+[01:22:45] [Server thread/INFO]: Summoned new Husk
+[01:22:45] [Server thread/INFO]: Summoned new Husk
+[01:22:47] [Server thread/INFO]: Running function ch:core/cast
+[01:22:52] [Server thread/INFO]: Killed 3 entities
+[01:22:52] [Server thread/INFO]: No entity was found
+[01:22:53] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:22:53] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:22:53] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:22:53] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:22:53] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:22:53] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:22:53] [Server thread/INFO]: Removed every effect from Caster
+[01:22:53] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:22:53] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:22:53] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:22:53] [Server thread/INFO]: Killed 4 entities
+[01:22:53] [Server thread/INFO]: Summoned new Husk
+[01:22:53] [Server thread/INFO]: Summoned new Husk
+[01:22:53] [Server thread/INFO]: Summoned new Husk
+[01:22:53] [Server thread/INFO]: Summoned new Husk
+[01:22:54] [Server thread/INFO]: Running function ch:core/cast
+[01:23:00] [Server thread/INFO]: Killed 3 entities
+[01:23:00] [Server thread/INFO]: No entity was found
+[01:23:00] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:00] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:00] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:00] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:00] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:00] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:00] [Server thread/INFO]: Removed every effect from Caster
+[01:23:00] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:00] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:00] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:00] [Server thread/INFO]: Killed 4 entities
+[01:23:01] [Server thread/INFO]: Summoned new Husk
+[01:23:01] [Server thread/INFO]: Summoned new Husk
+[01:23:01] [Server thread/INFO]: Summoned new Husk
+[01:23:01] [Server thread/INFO]: Summoned new Husk
+[01:23:02] [Server thread/INFO]: Running function ch:core/cast
+[01:23:08] [Server thread/INFO]: Killed 3 entities
+[01:23:08] [Server thread/INFO]: No entity was found
+[01:23:08] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:08] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:08] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:08] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:08] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:08] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:08] [Server thread/INFO]: Removed every effect from Caster
+[01:23:08] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:08] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:08] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:08] [Server thread/INFO]: Killed 4 entities
+[01:23:08] [Server thread/INFO]: Summoned new Husk
+[01:23:08] [Server thread/INFO]: Summoned new Husk
+[01:23:08] [Server thread/INFO]: Summoned new Husk
+[01:23:08] [Server thread/INFO]: Summoned new Husk
+[01:23:10] [Server thread/INFO]: Running function ch:core/cast
+[01:23:16] [Server thread/INFO]: Killed 3 entities
+[01:23:16] [Server thread/INFO]: No entity was found
+[01:23:16] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:16] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:16] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:16] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:16] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:16] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:16] [Server thread/INFO]: Removed every effect from Caster
+[01:23:16] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:16] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:16] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:16] [Server thread/INFO]: Killed 4 entities
+[01:23:16] [Server thread/INFO]: Summoned new Husk
+[01:23:16] [Server thread/INFO]: Summoned new Husk
+[01:23:16] [Server thread/INFO]: Summoned new Husk
+[01:23:16] [Server thread/INFO]: Summoned new Husk
+[01:23:18] [Server thread/INFO]: Running function ch:core/cast
+[01:23:23] [Server thread/INFO]: Killed 3 entities
+[01:23:23] [Server thread/INFO]: No entity was found
+[01:23:23] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:23] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:23] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:24] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:24] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:24] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:24] [Server thread/INFO]: Removed every effect from Caster
+[01:23:24] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:24] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:24] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:24] [Server thread/INFO]: Killed 4 entities
+[01:23:24] [Server thread/INFO]: Summoned new Husk
+[01:23:24] [Server thread/INFO]: Summoned new Husk
+[01:23:24] [Server thread/INFO]: Summoned new Husk
+[01:23:24] [Server thread/INFO]: Summoned new Husk
+[01:23:25] [Server thread/INFO]: Running function ch:core/cast
+[01:23:31] [Server thread/INFO]: Killed 2 entities
+[01:23:31] [Server thread/INFO]: No entity was found
+[01:23:31] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:31] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:31] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:31] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:31] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:31] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:31] [Server thread/INFO]: Removed every effect from Caster
+[01:23:31] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:31] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:31] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:31] [Server thread/INFO]: Killed 4 entities
+[01:23:31] [Server thread/INFO]: Summoned new Husk
+[01:23:32] [Server thread/INFO]: Summoned new Husk
+[01:23:32] [Server thread/INFO]: Summoned new Husk
+[01:23:32] [Server thread/INFO]: Summoned new Husk
+[01:23:33] [Server thread/INFO]: Running function ch:core/cast
+[01:23:39] [Server thread/INFO]: Killed 4 entities
+[01:23:39] [Server thread/INFO]: No entity was found
+[01:23:39] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:39] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:39] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:39] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:39] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:39] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:39] [Server thread/INFO]: Removed every effect from Caster
+[01:23:39] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:39] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:39] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:39] [Server thread/INFO]: Killed 4 entities
+[01:23:39] [Server thread/INFO]: Summoned new Husk
+[01:23:39] [Server thread/INFO]: Summoned new Husk
+[01:23:39] [Server thread/INFO]: Summoned new Husk
+[01:23:39] [Server thread/INFO]: Summoned new Husk
+[01:23:41] [Server thread/INFO]: Running function ch:core/cast
+[01:23:47] [Server thread/INFO]: Killed 4 entities
+[01:23:47] [Server thread/INFO]: No entity was found
+[01:23:47] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:47] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:47] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:47] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:47] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:47] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:47] [Server thread/INFO]: Removed every effect from Caster
+[01:23:47] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:47] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:47] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:47] [Server thread/INFO]: Killed 4 entities
+[01:23:47] [Server thread/INFO]: Summoned new Husk
+[01:23:47] [Server thread/INFO]: Summoned new Husk
+[01:23:47] [Server thread/INFO]: Summoned new Husk
+[01:23:47] [Server thread/INFO]: Summoned new Husk
+[01:23:48] [Server thread/INFO]: Running function ch:core/cast
+[01:23:58] [Server thread/INFO]: Killed Rotten Flesh
+[01:23:58] [Server thread/INFO]: No entity was found
+[01:23:58] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:23:58] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:23:58] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:23:58] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:23:58] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:23:58] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:23:58] [Server thread/INFO]: Removed every effect from Caster
+[01:23:58] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:23:58] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:23:58] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:23:58] [Server thread/INFO]: Killed 4 entities
+[01:23:58] [Server thread/INFO]: Summoned new Husk
+[01:23:58] [Server thread/INFO]: Summoned new Husk
+[01:23:58] [Server thread/INFO]: Summoned new Husk
+[01:23:58] [Server thread/INFO]: Summoned new Husk
+[01:24:00] [Server thread/INFO]: Running function ch:core/cast
+[01:24:09] [Server thread/INFO]: Killed 4 entities
+[01:24:09] [Server thread/INFO]: No entity was found
+[01:24:09] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:24:09] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:24:09] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:24:09] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:24:09] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:24:09] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:24:09] [Server thread/INFO]: Removed every effect from Caster
+[01:24:09] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:24:09] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:24:09] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:24:09] [Server thread/INFO]: Killed 4 entities
+[01:24:09] [Server thread/INFO]: Summoned new Husk
+[01:24:09] [Server thread/INFO]: Summoned new Husk
+[01:24:09] [Server thread/INFO]: Summoned new Husk
+[01:24:10] [Server thread/INFO]: Summoned new Husk
+[01:24:11] [Server thread/INFO]: Running function ch:core/cast
+[01:24:20] [Server thread/INFO]: Killed 4 entities
+[01:24:23] [Server thread/INFO]: Running function ch:admin/give
+[01:24:24] [Server thread/INFO]: Running function ch:admin/mastery
+[01:24:24] [Server thread/INFO]: Running function ch:heart/set_active
+[01:24:24] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:24:26] [Server thread/INFO]: Killed 4 entities
+[01:24:26] [Server thread/INFO]: No entity was found
+[01:24:26] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:24:26] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:24:26] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:24:26] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:24:26] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:24:26] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:24:26] [Server thread/INFO]: Removed every effect from Caster
+[01:24:26] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:24:26] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:24:26] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:24:26] [Server thread/INFO]: No entity was found
+[01:24:26] [Server thread/INFO]: Summoned new Husk
+[01:24:26] [Server thread/INFO]: Summoned new Husk
+[01:24:26] [Server thread/INFO]: Summoned new Husk
+[01:24:26] [Server thread/INFO]: Summoned new Husk
+[01:24:28] [Server thread/INFO]: Running function ch:core/cast
+[01:24:34] [Server thread/INFO]: No entity was found
+[01:24:34] [Server thread/INFO]: No entity was found
+[01:24:34] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:24:34] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:24:34] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:24:34] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:24:34] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:24:34] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:24:34] [Server thread/INFO]: Removed every effect from Caster
+[01:24:34] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:24:34] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:24:34] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:24:34] [Server thread/INFO]: Killed 4 entities
+[01:24:34] [Server thread/INFO]: Summoned new Husk
+[01:24:34] [Server thread/INFO]: Summoned new Husk
+[01:24:34] [Server thread/INFO]: Summoned new Husk
+[01:24:34] [Server thread/INFO]: Summoned new Husk
+[01:24:35] [Server thread/INFO]: Running function ch:core/cast
+[01:24:41] [Server thread/INFO]: Killed 4 entities
+[01:24:41] [Server thread/INFO]: No entity was found
+[01:24:41] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:24:41] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:24:41] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:24:41] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:24:41] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:24:41] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:24:41] [Server thread/INFO]: Removed every effect from Caster
+[01:24:42] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:24:42] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:24:42] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:24:42] [Server thread/INFO]: Killed 4 entities
+[01:24:42] [Server thread/INFO]: Summoned new Husk
+[01:24:42] [Server thread/INFO]: Summoned new Husk
+[01:24:42] [Server thread/INFO]: Summoned new Husk
+[01:24:42] [Server thread/INFO]: Summoned new Husk
+[01:24:43] [Server thread/INFO]: Running function ch:core/cast
+[01:24:49] [Server thread/INFO]: Killed 3 entities
+[01:24:49] [Server thread/INFO]: No entity was found
+[01:24:49] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:24:49] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:24:49] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:24:49] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:24:49] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:24:49] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:24:49] [Server thread/INFO]: Removed every effect from Caster
+[01:24:49] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:24:49] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:24:49] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:24:49] [Server thread/INFO]: Killed 4 entities
+[01:24:49] [Server thread/INFO]: Summoned new Husk
+[01:24:49] [Server thread/INFO]: Summoned new Husk
+[01:24:50] [Server thread/INFO]: Summoned new Husk
+[01:24:50] [Server thread/INFO]: Summoned new Husk
+[01:24:51] [Server thread/INFO]: Running function ch:core/cast
+[01:24:57] [Server thread/INFO]: Killed 3 entities
+[01:24:57] [Server thread/INFO]: No entity was found
+[01:24:57] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:24:57] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:24:57] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:24:57] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:24:57] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:24:57] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:24:57] [Server thread/INFO]: Removed every effect from Caster
+[01:24:57] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:24:57] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:24:57] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:24:57] [Server thread/INFO]: Killed 4 entities
+[01:24:57] [Server thread/INFO]: Summoned new Husk
+[01:24:57] [Server thread/INFO]: Summoned new Husk
+[01:24:57] [Server thread/INFO]: Summoned new Husk
+[01:24:57] [Server thread/INFO]: Summoned new Husk
+[01:24:59] [Server thread/INFO]: Running function ch:core/cast
+[01:25:04] [Server thread/INFO]: Killed 3 entities
+[01:25:04] [Server thread/INFO]: No entity was found
+[01:25:04] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:05] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:05] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:05] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:05] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:05] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:05] [Server thread/INFO]: Removed every effect from Caster
+[01:25:05] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:05] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:05] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:05] [Server thread/INFO]: Killed 4 entities
+[01:25:05] [Server thread/INFO]: Summoned new Husk
+[01:25:05] [Server thread/INFO]: Summoned new Husk
+[01:25:05] [Server thread/INFO]: Summoned new Husk
+[01:25:05] [Server thread/INFO]: Summoned new Husk
+[01:25:06] [Server thread/INFO]: Running function ch:core/cast
+[01:25:12] [Server thread/INFO]: Killed 3 entities
+[01:25:12] [Server thread/INFO]: No entity was found
+[01:25:12] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:12] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:12] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:12] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:12] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:12] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:12] [Server thread/INFO]: Removed every effect from Caster
+[01:25:12] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:12] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:12] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:12] [Server thread/INFO]: Killed 4 entities
+[01:25:13] [Server thread/INFO]: Summoned new Husk
+[01:25:13] [Server thread/INFO]: Summoned new Husk
+[01:25:13] [Server thread/INFO]: Summoned new Husk
+[01:25:13] [Server thread/INFO]: Summoned new Husk
+[01:25:14] [Server thread/INFO]: Running function ch:core/cast
+[01:25:20] [Server thread/INFO]: Killed 4 entities
+[01:25:20] [Server thread/INFO]: No entity was found
+[01:25:20] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:20] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:20] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:20] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:20] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:20] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:20] [Server thread/INFO]: Removed every effect from Caster
+[01:25:20] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:20] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:20] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:20] [Server thread/INFO]: Killed 4 entities
+[01:25:20] [Server thread/INFO]: Summoned new Husk
+[01:25:20] [Server thread/INFO]: Summoned new Husk
+[01:25:20] [Server thread/INFO]: Summoned new Husk
+[01:25:20] [Server thread/INFO]: Summoned new Husk
+[01:25:22] [Server thread/INFO]: Running function ch:core/cast
+[01:25:28] [Server thread/INFO]: Killed 2 entities
+[01:25:28] [Server thread/INFO]: No entity was found
+[01:25:28] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:28] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:28] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:28] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:28] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:28] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:28] [Server thread/INFO]: Removed every effect from Caster
+[01:25:28] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:28] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:28] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:28] [Server thread/INFO]: Killed 4 entities
+[01:25:28] [Server thread/INFO]: Summoned new Husk
+[01:25:28] [Server thread/INFO]: Summoned new Husk
+[01:25:28] [Server thread/INFO]: Summoned new Husk
+[01:25:28] [Server thread/INFO]: Summoned new Husk
+[01:25:30] [Server thread/INFO]: Running function ch:core/cast
+[01:25:35] [Server thread/INFO]: Killed 3 entities
+[01:25:35] [Server thread/INFO]: No entity was found
+[01:25:35] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:36] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:36] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:36] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:36] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:36] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:36] [Server thread/INFO]: Removed every effect from Caster
+[01:25:36] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:36] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:36] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:36] [Server thread/INFO]: Killed 4 entities
+[01:25:36] [Server thread/INFO]: Summoned new Husk
+[01:25:36] [Server thread/INFO]: Summoned new Husk
+[01:25:36] [Server thread/INFO]: Summoned new Husk
+[01:25:36] [Server thread/INFO]: Summoned new Husk
+[01:25:37] [Server thread/INFO]: Running function ch:core/cast
+[01:25:47] [Server thread/INFO]: Killed 3 entities
+[01:25:47] [Server thread/INFO]: No entity was found
+[01:25:47] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:47] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:47] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:47] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:47] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:47] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:47] [Server thread/INFO]: Removed every effect from Caster
+[01:25:47] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:47] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:47] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:47] [Server thread/INFO]: Killed 4 entities
+[01:25:47] [Server thread/INFO]: Summoned new Husk
+[01:25:47] [Server thread/INFO]: Summoned new Husk
+[01:25:47] [Server thread/INFO]: Summoned new Husk
+[01:25:47] [Server thread/INFO]: Summoned new Husk
+[01:25:48] [Server thread/INFO]: Running function ch:core/cast
+[01:25:58] [Server thread/INFO]: Killed Rotten Flesh
+[01:25:58] [Server thread/INFO]: No entity was found
+[01:25:58] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:25:58] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:25:58] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:25:58] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:25:58] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:25:58] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:25:58] [Server thread/INFO]: Removed every effect from Caster
+[01:25:58] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:25:58] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:25:58] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:25:58] [Server thread/INFO]: Killed 4 entities
+[01:25:58] [Server thread/INFO]: Summoned new Husk
+[01:25:58] [Server thread/INFO]: Summoned new Husk
+[01:25:58] [Server thread/INFO]: Summoned new Husk
+[01:25:58] [Server thread/INFO]: Summoned new Husk
+[01:26:00] [Server thread/INFO]: Running function ch:core/cast
+[01:26:09] [Server thread/INFO]: Killed 4 entities
+[01:26:12] [Server thread/INFO]: Running function ch:admin/give
+[01:26:12] [Server thread/INFO]: Running function ch:admin/mastery
+[01:26:13] [Server thread/INFO]: Running function ch:heart/set_active
+[01:26:13] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:26:15] [Server thread/INFO]: Killed 5 entities
+[01:26:15] [Server thread/INFO]: No entity was found
+[01:26:15] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:26:15] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:26:15] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:26:15] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:26:15] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:26:15] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:26:15] [Server thread/INFO]: Removed every effect from Caster
+[01:26:15] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:26:15] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:26:15] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:26:15] [Server thread/INFO]: No entity was found
+[01:26:15] [Server thread/INFO]: Summoned new Husk
+[01:26:15] [Server thread/INFO]: Summoned new Husk
+[01:26:15] [Server thread/INFO]: Summoned new Husk
+[01:26:15] [Server thread/INFO]: Summoned new Husk
+[01:26:17] [Server thread/INFO]: Running function ch:core/cast
+[01:26:22] [Server thread/INFO]: No entity was found
+[01:26:22] [Server thread/INFO]: No entity was found
+[01:26:22] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:26:22] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:26:22] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:26:23] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:26:23] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:26:23] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:26:23] [Server thread/INFO]: Removed every effect from Caster
+[01:26:23] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:26:23] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:26:23] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:26:23] [Server thread/INFO]: Killed 4 entities
+[01:26:23] [Server thread/INFO]: Summoned new Husk
+[01:26:23] [Server thread/INFO]: Summoned new Husk
+[01:26:23] [Server thread/INFO]: Summoned new Husk
+[01:26:23] [Server thread/INFO]: Summoned new Husk
+[01:26:24] [Server thread/INFO]: Running function ch:core/cast
+[01:26:30] [Server thread/INFO]: Killed 3 entities
+[01:26:30] [Server thread/INFO]: No entity was found
+[01:26:30] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:26:30] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:26:30] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:26:30] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:26:30] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:26:30] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:26:30] [Server thread/INFO]: Removed every effect from Caster
+[01:26:30] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:26:30] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:26:30] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:26:30] [Server thread/INFO]: Killed 4 entities
+[01:26:31] [Server thread/INFO]: Summoned new Husk
+[01:26:31] [Server thread/INFO]: Summoned new Husk
+[01:26:31] [Server thread/INFO]: Summoned new Husk
+[01:26:31] [Server thread/INFO]: Summoned new Husk
+[01:26:32] [Server thread/INFO]: Running function ch:core/cast
+[01:26:38] [Server thread/INFO]: Killed 3 entities
+[01:26:38] [Server thread/INFO]: No entity was found
+[01:26:38] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:26:38] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:26:38] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:26:38] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:26:38] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:26:38] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:26:38] [Server thread/INFO]: Removed every effect from Caster
+[01:26:38] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:26:38] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:26:38] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:26:38] [Server thread/INFO]: Killed 4 entities
+[01:26:38] [Server thread/INFO]: Summoned new Husk
+[01:26:38] [Server thread/INFO]: Summoned new Husk
+[01:26:38] [Server thread/INFO]: Summoned new Husk
+[01:26:38] [Server thread/INFO]: Summoned new Husk
+[01:26:40] [Server thread/INFO]: Running function ch:core/cast
+[01:26:46] [Server thread/INFO]: Killed 3 entities
+[01:26:46] [Server thread/INFO]: No entity was found
+[01:26:46] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:26:46] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:26:46] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:26:46] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:26:46] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:26:46] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:26:46] [Server thread/INFO]: Removed every effect from Caster
+[01:26:46] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:26:46] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:26:46] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:26:46] [Server thread/INFO]: Killed 4 entities
+[01:26:46] [Server thread/INFO]: Summoned new Husk
+[01:26:46] [Server thread/INFO]: Summoned new Husk
+[01:26:46] [Server thread/INFO]: Summoned new Husk
+[01:26:46] [Server thread/INFO]: Summoned new Husk
+[01:26:47] [Server thread/INFO]: Running function ch:core/cast
+[01:26:53] [Server thread/INFO]: Killed 3 entities
+[01:26:53] [Server thread/INFO]: No entity was found
+[01:26:53] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:26:53] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:26:53] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:26:53] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:26:53] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:26:53] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:26:53] [Server thread/INFO]: Removed every effect from Caster
+[01:26:53] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:26:54] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:26:54] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:26:54] [Server thread/INFO]: Killed 4 entities
+[01:26:54] [Server thread/INFO]: Summoned new Husk
+[01:26:54] [Server thread/INFO]: Summoned new Husk
+[01:26:54] [Server thread/INFO]: Summoned new Husk
+[01:26:54] [Server thread/INFO]: Summoned new Husk
+[01:26:55] [Server thread/INFO]: Running function ch:core/cast
+[01:27:01] [Server thread/INFO]: Killed 4 entities
+[01:27:01] [Server thread/INFO]: No entity was found
+[01:27:01] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:27:01] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:27:01] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:27:01] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:27:01] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:27:01] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:27:01] [Server thread/INFO]: Removed every effect from Caster
+[01:27:01] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:27:01] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:27:01] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:27:01] [Server thread/INFO]: Killed 4 entities
+[01:27:01] [Server thread/INFO]: Summoned new Husk
+[01:27:01] [Server thread/INFO]: Summoned new Husk
+[01:27:01] [Server thread/INFO]: Summoned new Husk
+[01:27:02] [Server thread/INFO]: Summoned new Husk
+[01:27:03] [Server thread/INFO]: Running function ch:core/cast
+[01:27:09] [Server thread/INFO]: Killed 3 entities
+[01:27:09] [Server thread/INFO]: No entity was found
+[01:27:09] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:27:09] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:27:09] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:27:09] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:27:09] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:27:09] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:27:09] [Server thread/INFO]: Removed every effect from Caster
+[01:27:09] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:27:09] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:27:09] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:27:09] [Server thread/INFO]: Killed 4 entities
+[01:27:09] [Server thread/INFO]: Summoned new Husk
+[01:27:09] [Server thread/INFO]: Summoned new Husk
+[01:27:09] [Server thread/INFO]: Summoned new Husk
+[01:27:09] [Server thread/INFO]: Summoned new Husk
+[01:27:11] [Server thread/INFO]: Running function ch:core/cast
+[01:27:16] [Server thread/INFO]: Killed 3 entities
+[01:27:16] [Server thread/INFO]: No entity was found
+[01:27:16] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:27:17] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:27:17] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:27:17] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:27:17] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:27:17] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:27:17] [Server thread/INFO]: Removed every effect from Caster
+[01:27:17] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:27:17] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:27:17] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:27:17] [Server thread/INFO]: Killed 4 entities
+[01:27:17] [Server thread/INFO]: Summoned new Husk
+[01:27:17] [Server thread/INFO]: Summoned new Husk
+[01:27:17] [Server thread/INFO]: Summoned new Husk
+[01:27:17] [Server thread/INFO]: Summoned new Husk
+[01:27:18] [Server thread/INFO]: Running function ch:core/cast
+[01:27:24] [Server thread/INFO]: Killed 3 entities
+[01:27:24] [Server thread/INFO]: No entity was found
+[01:27:24] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:27:24] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:27:24] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:27:24] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:27:24] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:27:24] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:27:24] [Server thread/INFO]: Removed every effect from Caster
+[01:27:24] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:27:24] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:27:24] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:27:24] [Server thread/INFO]: Killed 4 entities
+[01:27:25] [Server thread/INFO]: Summoned new Husk
+[01:27:25] [Server thread/INFO]: Summoned new Husk
+[01:27:25] [Server thread/INFO]: Summoned new Husk
+[01:27:25] [Server thread/INFO]: Summoned new Husk
+[01:27:26] [Server thread/INFO]: Running function ch:core/cast
+[01:27:35] [Server thread/INFO]: Killed 4 entities
+[01:27:35] [Server thread/INFO]: No entity was found
+[01:27:35] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:27:35] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:27:36] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:27:36] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:27:36] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:27:36] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:27:36] [Server thread/INFO]: Removed every effect from Caster
+[01:27:36] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:27:36] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:27:36] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:27:36] [Server thread/INFO]: Killed 4 entities
+[01:27:36] [Server thread/INFO]: Summoned new Husk
+[01:27:36] [Server thread/INFO]: Summoned new Husk
+[01:27:36] [Server thread/INFO]: Summoned new Husk
+[01:27:36] [Server thread/INFO]: Summoned new Husk
+[01:27:37] [Server thread/INFO]: Running function ch:core/cast
+[01:27:47] [Server thread/INFO]: Killed 4 entities
+[01:27:47] [Server thread/INFO]: No entity was found
+[01:27:47] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:27:47] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:27:47] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:27:47] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:27:47] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:27:47] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:27:47] [Server thread/INFO]: Removed every effect from Caster
+[01:27:47] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:27:47] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:27:47] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:27:47] [Server thread/INFO]: Killed 4 entities
+[01:27:47] [Server thread/INFO]: Summoned new Husk
+[01:27:47] [Server thread/INFO]: Summoned new Husk
+[01:27:47] [Server thread/INFO]: Summoned new Husk
+[01:27:47] [Server thread/INFO]: Summoned new Husk
+[01:27:48] [Server thread/INFO]: Running function ch:core/cast
+[01:27:58] [Server thread/INFO]: Killed 4 entities
+[01:28:01] [Server thread/INFO]: Running function ch:admin/give
+[01:28:01] [Server thread/INFO]: Running function ch:admin/mastery
+[01:28:02] [Server thread/INFO]: Running function ch:heart/set_active
+[01:28:02] [Server thread/INFO]: Set [ch.swapcd] for Caster to 0
+[01:28:03] [Server thread/INFO]: Killed 5 entities
+[01:28:03] [Server thread/INFO]: No entity was found
+[01:28:03] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:04] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:04] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:04] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:04] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:04] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:04] [Server thread/INFO]: Removed every effect from Caster
+[01:28:04] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:04] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:04] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:04] [Server thread/INFO]: No entity was found
+[01:28:04] [Server thread/INFO]: Summoned new Husk
+[01:28:04] [Server thread/INFO]: Summoned new Husk
+[01:28:04] [Server thread/INFO]: Summoned new Husk
+[01:28:04] [Server thread/INFO]: Summoned new Husk
+[01:28:05] [Server thread/INFO]: Running function ch:core/cast
+[01:28:11] [Server thread/INFO]: No entity was found
+[01:28:11] [Server thread/INFO]: No entity was found
+[01:28:11] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:11] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:11] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:11] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:11] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:11] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:11] [Server thread/INFO]: Removed every effect from Caster
+[01:28:11] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:11] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:11] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:11] [Server thread/INFO]: Killed 4 entities
+[01:28:12] [Server thread/INFO]: Summoned new Husk
+[01:28:12] [Server thread/INFO]: Summoned new Husk
+[01:28:12] [Server thread/INFO]: Summoned new Husk
+[01:28:12] [Server thread/INFO]: Summoned new Husk
+[01:28:13] [Server thread/INFO]: Running function ch:core/cast
+[01:28:19] [Server thread/INFO]: Killed 3 entities
+[01:28:19] [Server thread/INFO]: No entity was found
+[01:28:19] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:19] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:19] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:19] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:19] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:19] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:19] [Server thread/INFO]: Removed every effect from Caster
+[01:28:19] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:19] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:19] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:19] [Server thread/INFO]: Killed 4 entities
+[01:28:19] [Server thread/INFO]: Summoned new Husk
+[01:28:19] [Server thread/INFO]: Summoned new Husk
+[01:28:19] [Server thread/INFO]: Summoned new Husk
+[01:28:19] [Server thread/INFO]: Summoned new Husk
+[01:28:21] [Server thread/INFO]: Running function ch:core/cast
+[01:28:27] [Server thread/INFO]: Killed 3 entities
+[01:28:27] [Server thread/INFO]: No entity was found
+[01:28:27] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:27] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:27] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:27] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:27] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:27] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:27] [Server thread/INFO]: Removed every effect from Caster
+[01:28:27] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:27] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:27] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:27] [Server thread/INFO]: Killed 4 entities
+[01:28:27] [Server thread/INFO]: Summoned new Husk
+[01:28:27] [Server thread/INFO]: Summoned new Husk
+[01:28:27] [Server thread/INFO]: Summoned new Husk
+[01:28:27] [Server thread/INFO]: Summoned new Husk
+[01:28:28] [Server thread/INFO]: Running function ch:core/cast
+[01:28:34] [Server thread/INFO]: Killed Rotten Flesh
+[01:28:34] [Server thread/INFO]: No entity was found
+[01:28:34] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:34] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:34] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:34] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:34] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:34] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:35] [Server thread/INFO]: Removed every effect from Caster
+[01:28:35] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:35] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:35] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:35] [Server thread/INFO]: Killed 4 entities
+[01:28:35] [Server thread/INFO]: Summoned new Husk
+[01:28:35] [Server thread/INFO]: Summoned new Husk
+[01:28:35] [Server thread/INFO]: Summoned new Husk
+[01:28:35] [Server thread/INFO]: Summoned new Husk
+[01:28:36] [Server thread/INFO]: Running function ch:core/cast
+[01:28:42] [Server thread/INFO]: Killed 2 entities
+[01:28:42] [Server thread/INFO]: No entity was found
+[01:28:42] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:42] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:42] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:42] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:42] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:42] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:42] [Server thread/INFO]: Removed every effect from Caster
+[01:28:42] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:42] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:42] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:42] [Server thread/INFO]: Killed 4 entities
+[01:28:42] [Server thread/INFO]: Summoned new Husk
+[01:28:42] [Server thread/INFO]: Summoned new Husk
+[01:28:43] [Server thread/INFO]: Summoned new Husk
+[01:28:43] [Server thread/INFO]: Summoned new Husk
+[01:28:44] [Server thread/INFO]: Running function ch:core/cast
+[01:28:50] [Server thread/INFO]: Killed 4 entities
+[01:28:50] [Server thread/INFO]: No entity was found
+[01:28:50] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:50] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:50] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:50] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:50] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:50] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:50] [Server thread/INFO]: Removed every effect from Caster
+[01:28:50] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:50] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:50] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:50] [Server thread/INFO]: Killed 4 entities
+[01:28:50] [Server thread/INFO]: Summoned new Husk
+[01:28:50] [Server thread/INFO]: Summoned new Husk
+[01:28:50] [Server thread/INFO]: Summoned new Husk
+[01:28:50] [Server thread/INFO]: Summoned new Husk
+[01:28:52] [Server thread/INFO]: Running function ch:core/cast
+[01:28:57] [Server thread/INFO]: Killed 2 entities
+[01:28:58] [Server thread/INFO]: No entity was found
+[01:28:58] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:28:58] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:28:58] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:28:58] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:28:58] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:28:58] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:28:58] [Server thread/INFO]: Removed every effect from Caster
+[01:28:58] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:28:58] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:28:58] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:28:58] [Server thread/INFO]: Killed 4 entities
+[01:28:58] [Server thread/INFO]: Summoned new Husk
+[01:28:58] [Server thread/INFO]: Summoned new Husk
+[01:28:58] [Server thread/INFO]: Summoned new Husk
+[01:28:58] [Server thread/INFO]: Summoned new Husk
+[01:28:59] [Server thread/INFO]: Running function ch:core/cast
+[01:29:05] [Server thread/INFO]: Killed 3 entities
+[01:29:05] [Server thread/INFO]: No entity was found
+[01:29:05] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:29:05] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:29:05] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:29:05] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:29:05] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:29:05] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:29:05] [Server thread/INFO]: Removed every effect from Caster
+[01:29:05] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:29:05] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:29:05] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:29:06] [Server thread/INFO]: Killed 4 entities
+[01:29:06] [Server thread/INFO]: Summoned new Husk
+[01:29:06] [Server thread/INFO]: Summoned new Husk
+[01:29:06] [Server thread/INFO]: Summoned new Husk
+[01:29:06] [Server thread/INFO]: Summoned new Husk
+[01:29:07] [Server thread/INFO]: Running function ch:core/cast
+[01:29:13] [Server thread/INFO]: Killed 3 entities
+[01:29:13] [Server thread/INFO]: No entity was found
+[01:29:13] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:29:13] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:29:13] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:29:13] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:29:13] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:29:13] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:29:13] [Server thread/INFO]: Removed every effect from Caster
+[01:29:13] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:29:13] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:29:13] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:29:13] [Server thread/INFO]: Killed 4 entities
+[01:29:13] [Server thread/INFO]: Summoned new Husk
+[01:29:13] [Server thread/INFO]: Summoned new Husk
+[01:29:13] [Server thread/INFO]: Summoned new Husk
+[01:29:13] [Server thread/INFO]: Summoned new Husk
+[01:29:15] [Server thread/INFO]: Running function ch:core/cast
+[01:29:24] [Server thread/INFO]: Killed 2 entities
+[01:29:24] [Server thread/INFO]: No entity was found
+[01:29:24] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:29:24] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:29:24] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:29:24] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:29:24] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:29:24] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:29:24] [Server thread/INFO]: Removed every effect from Caster
+[01:29:24] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:29:24] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:29:24] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:29:24] [Server thread/INFO]: Named entity dcm['Rotling'/10843, l='ServerLevel[world]', x=0.50, y=-60.00, z=16.10] died: Rotling was killed
+[01:29:24] [Server thread/INFO]: Named entity dcm['Rotling'/10845, l='ServerLevel[world]', x=-10.71, y=-60.00, z=23.02] died: Rotling was killed
+[01:29:24] [Server thread/INFO]: Named entity dcm['Rotling'/10847, l='ServerLevel[world]', x=-10.73, y=-60.00, z=23.07] died: Rotling was killed
+[01:29:24] [Server thread/INFO]: Killed 7 entities
+[01:29:25] [Server thread/INFO]: Summoned new Husk
+[01:29:25] [Server thread/INFO]: Summoned new Husk
+[01:29:25] [Server thread/INFO]: Summoned new Husk
+[01:29:25] [Server thread/INFO]: Summoned new Husk
+[01:29:26] [Server thread/INFO]: Running function ch:core/cast
+[01:29:35] [Server thread/INFO]: Killed 4 entities
+[01:29:35] [Server thread/INFO]: No entity was found
+[01:29:35] [Server thread/INFO]: Teleported Caster to 0.500000, -60.000000, 0.500000
+[01:29:35] [Server thread/INFO]: Set [ch.cd1] for Caster to 0
+[01:29:36] [Server thread/INFO]: Set [ch.cd2] for Caster to 0
+[01:29:36] [Server thread/INFO]: Set [ch.cd3] for Caster to 0
+[01:29:36] [Server thread/INFO]: Set [ch.cd4] for Caster to 0
+[01:29:36] [Server thread/INFO]: Set [ch.rage.fury] for Caster to 100
+[01:29:36] [Server thread/INFO]: Removed every effect from Caster
+[01:29:36] [Server thread/INFO]: Applied effect Resistance to Caster
+[01:29:36] [Server thread/INFO]: Applied effect Instant Health to Caster
+[01:29:36] [Server thread/INFO]: Applied effect Saturation to Caster
+[01:29:36] [Server thread/INFO]: Named entity dcm['Rotling'/11018, l='ServerLevel[world]', x=0.50, y=-60.00, z=19.70] died: Rotling was killed
+[01:29:36] [Server thread/INFO]: Named entity dcm['Rotling'/11020, l='ServerLevel[world]', x=-9.73, y=-60.00, z=21.04] died: Rotling was killed
+[01:29:36] [Server thread/INFO]: Named entity dcm['Rotling'/11027, l='ServerLevel[world]', x=-9.76, y=-60.00, z=21.10] died: Rotling was killed
+[01:29:36] [Server thread/INFO]: Killed 7 entities
+[01:29:36] [Server thread/INFO]: Summoned new Husk
+[01:29:36] [Server thread/INFO]: Summoned new Husk
+[01:29:36] [Server thread/INFO]: Summoned new Husk
+[01:29:36] [Server thread/INFO]: Summoned new Husk
+[01:29:37] [Server thread/INFO]: Running function ch:core/cast
+[01:29:47] [Server thread/INFO]: Named entity dcm['Rotling'/11384, l='ServerLevel[world]', x=0.50, y=-60.00, z=14.25] died: Rotling was killed
+[01:29:47] [Server thread/INFO]: Named entity dcm['Rotling'/11391, l='ServerLevel[world]', x=-11.56, y=-60.00, z=24.74] died: Rotling was killed
+[01:29:47] [Server thread/INFO]: Named entity dcm['Rotling'/11398, l='ServerLevel[world]', x=10.10, y=-60.00, z=25.00] died: Rotling was killed
+[01:29:47] [Server thread/INFO]: Named entity dcm['Rotling'/11406, l='ServerLevel[world]', x=0.50, y=-60.00, z=14.30] died: Rotling was killed
+[01:29:47] [Server thread/INFO]: Named entity dcm['Rotling'/11412, l='ServerLevel[world]', x=0.49, y=-60.00, z=14.34] died: Rotling was killed
+[01:29:47] [Server thread/INFO]: Named entity dcm['Rotling'/11414, l='ServerLevel[world]', x=0.49, y=-60.00, z=14.25] died: Rotling was killed
+[01:29:47] [Server thread/INFO]: Killed 10 entities
+[01:29:50] [Server thread/INFO]: Caster lost connection: Disconnected
+[01:29:50] [Server thread/INFO]: Caster left the game
+[01:29:51] [Server thread/INFO]: Stopping the server
+[01:29:51] [Server thread/INFO]: Stopping server
+[01:29:51] [Server thread/INFO]: Saving players
+[01:29:51] [Server thread/INFO]: Cam lost connection: Server closed
+[01:29:51] [Server thread/INFO]: Cam left the game
+[01:29:51] [Server thread/INFO]: Saving worlds
+[01:29:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[01:29:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/ch:trials
+[01:29:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[01:29:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[01:29:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[01:29:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (trials): All chunks are saved
+[01:29:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[01:29:52] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[01:29:52] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
